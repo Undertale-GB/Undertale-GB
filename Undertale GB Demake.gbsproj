@@ -47682,6 +47682,21 @@
             "triggers": [],
             "script": [
                 {
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                    "args": {
+                        "customEventId": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a",
+                        "__collapse": false
+                    },
+                    "id": "3556fbbd-4fde-4753-8442-2aca23a0c491"
+                },
+                {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "VM_UNLOCK"
+                    },
+                    "id": "84169001-b426-440c-bb3f-2dce433b0270"
+                },
+                {
                     "command": "EVENT_ACTOR_DEACTIVATE",
                     "args": {
                         "actorId": "$self$"
@@ -47694,14 +47709,6 @@
                         "actorId": "$self$"
                     },
                     "id": "44159470-9893-4474-9199-8690dd574f1d"
-                },
-                {
-                    "command": "EVENT_CALL_CUSTOM_EVENT",
-                    "args": {
-                        "customEventId": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a",
-                        "__collapse": false
-                    },
-                    "id": "3556fbbd-4fde-4753-8442-2aca23a0c491"
                 },
                 {
                     "command": "EVENT_OVERLAY_SHOW",
@@ -48129,6 +48136,20 @@
                     "id": "ac0dd916-6f9c-4252-ad56-87cfa2052527"
                 },
                 {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "VM_UNLOCK"
+                    },
+                    "id": "d130ecfb-3a22-4c4f-a434-d116bb28c535"
+                },
+                {
+                    "command": "EVENT_ACTOR_DEACTIVATE",
+                    "args": {
+                        "actorId": "$self$"
+                    },
+                    "id": "508ded70-bca6-4400-93ea-0a68b62f349e"
+                },
+                {
                     "command": "EVENT_OVERLAY_SHOW",
                     "args": {
                         "color": "black",
@@ -48552,6 +48573,13 @@
                         "customEventId": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a"
                     },
                     "id": "6c342966-245f-48bb-a192-cc7816e06574"
+                },
+                {
+                    "command": "EVENT_ACTOR_DEACTIVATE",
+                    "args": {
+                        "actorId": "$self$"
+                    },
+                    "id": "4283b265-fdb9-435f-b222-56669dde262f"
                 },
                 {
                     "command": "EVENT_OVERLAY_SHOW",
@@ -48979,6 +49007,13 @@
                     "id": "93c71070-4874-45b6-85eb-69eeaebc74a9"
                 },
                 {
+                    "command": "EVENT_ACTOR_DEACTIVATE",
+                    "args": {
+                        "actorId": "$self$"
+                    },
+                    "id": "8e55fce1-1446-417c-9f3b-485e49e58047"
+                },
+                {
                     "command": "EVENT_OVERLAY_SHOW",
                     "args": {
                         "color": "black",
@@ -49402,6 +49437,13 @@
                         "customEventId": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a"
                     },
                     "id": "8ede22f6-d38a-432a-8c58-7a1bb9b419b0"
+                },
+                {
+                    "command": "EVENT_ACTOR_DEACTIVATE",
+                    "args": {
+                        "actorId": "$self$"
+                    },
+                    "id": "2f212028-c875-4c9c-a164-b80fb4f551d2"
                 },
                 {
                     "command": "EVENT_OVERLAY_SHOW",
@@ -49829,6 +49871,13 @@
                     "id": "a265e64c-cdee-4a47-9e0b-9e8ad5ea2ff4"
                 },
                 {
+                    "command": "EVENT_ACTOR_DEACTIVATE",
+                    "args": {
+                        "actorId": "$self$"
+                    },
+                    "id": "7ba7479e-1328-4d81-9fa4-0fb48054536b"
+                },
+                {
                     "command": "EVENT_OVERLAY_SHOW",
                     "args": {
                         "color": "black",
@@ -50254,11 +50303,19 @@
                     "id": "91e0bf6d-4f29-42bf-b97b-4bd30007b2d1"
                 },
                 {
+                    "command": "EVENT_ACTOR_DEACTIVATE",
+                    "args": {
+                        "actorId": "$self$"
+                    },
+                    "id": "54737480-612e-4140-bbd7-cea3f6031f4e"
+                },
+                {
                     "command": "EVENT_OVERLAY_SHOW",
                     "args": {
                         "color": "black",
                         "x": 0,
-                        "y": 11
+                        "y": 11,
+                        "actorId": "$self$"
                     },
                     "id": "1a128e95-47ff-4005-9139-6c2cfe21fae0"
                 },
@@ -53479,9 +53536,40 @@
             "playerHit3Script": [],
             "playerSpriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
             "symbol": "scene_gameover"
+        },
+        {
+            "name": "!tilebank-water",
+            "backgroundId": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0",
+            "width": 20,
+            "height": 18,
+            "type": "TOPDOWN",
+            "paletteIds": [],
+            "spritePaletteIds": [],
+            "collisions": [],
+            "autoFadeSpeed": 1,
+            "id": "7352f2da-dd49-4609-a44e-1011f5084db2",
+            "symbol": "scene_40",
+            "x": 772,
+            "y": 123.75,
+            "actors": [],
+            "triggers": [],
+            "script": [],
+            "playerHit1Script": [],
+            "playerHit2Script": [],
+            "playerHit3Script": []
         }
     ],
     "backgrounds": [
+        {
+            "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0",
+            "name": "!tilebank-water",
+            "symbol": "bg_tilebank_water",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "!tilebank-water.png"
+        },
         {
             "id": "5126a5ed-c156-4a23-a5cc-76db2b59d4ce",
             "name": "Battle1 Test",
@@ -60751,16 +60839,16 @@
         }
     ],
     "settings": {
-        "startSceneId": "93481461-209a-497c-8304-a54799217280",
-        "startX": 11,
-        "startY": 6,
+        "startSceneId": "b4887780-0a45-45e6-b7af-d171ae0018ff",
+        "startX": 0,
+        "startY": 0,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
-        "showConnections": "all",
+        "showConnections": "selected",
         "worldScrollX": 0,
-        "worldScrollY": 345,
+        "worldScrollY": 0,
         "zoom": 100,
         "customColorsEnabled": false,
         "sgbEnabled": false,
@@ -60789,9 +60877,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            298,
-            302,
-            814
+            199,
+            201,
+            547
         ],
         "showNavigator": true,
         "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",

@@ -47682,6 +47682,13 @@
             "triggers": [],
             "script": [
                 {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "VM_UNLOCK"
+                    },
+                    "id": "84169001-b426-440c-bb3f-2dce433b0270"
+                },
+                {
                     "command": "EVENT_ACTOR_DEACTIVATE",
                     "args": {
                         "actorId": "$self$"
@@ -51114,7 +51121,15 @@
                     "paletteId": "",
                     "isPinned": true,
                     "script": [],
-                    "startScript": [],
+                    "startScript": [
+                        {
+                            "command": "EVENT_ACTOR_STOP_UPDATE",
+                            "args": {
+                                "actorId": "$self$"
+                            },
+                            "id": "93ca11fc-1d26-477a-a704-af7cc03c0d0c"
+                        }
+                    ],
                     "updateScript": [],
                     "hit1Script": [],
                     "hit2Script": [],
@@ -52153,6 +52168,171 @@
                     "x": 3,
                     "y": 17,
                     "symbol": "actor_4"
+                },
+                {
+                    "name": "UI Controller",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 255,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_5",
+                    "script": [],
+                    "startScript": [
+                        {
+                            "command": "EVENT_ACTOR_STOP_UPDATE",
+                            "args": {
+                                "actorId": "$self$"
+                            },
+                            "id": "12e90cba-a40a-4cda-a3eb-73d33c118039"
+                        }
+                    ],
+                    "updateScript": [
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Dialouge",
+                                "__collapse": true
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_IF_VALUE",
+                                        "args": {
+                                            "variable": "5",
+                                            "operator": "==",
+                                            "comparator": "0",
+                                            "__collapseElse": false,
+                                            "__collapse": true
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "PT_EVENT_BACKGROUND_TEXT",
+                                                    "args": {
+                                                        "text": "*The Debug",
+                                                        "x": 3,
+                                                        "y": 10
+                                                    },
+                                                    "id": "31fa4329-da91-499b-b351-16ab5cc4a776"
+                                                },
+                                                {
+                                                    "command": "PT_EVENT_BACKGROUND_TEXT",
+                                                    "args": {
+                                                        "text": " enemy",
+                                                        "x": 3,
+                                                        "y": 11
+                                                    },
+                                                    "id": "73b9bf86-8ebe-46d9-8710-f74e70bc82d6"
+                                                },
+                                                {
+                                                    "command": "PT_EVENT_BACKGROUND_TEXT",
+                                                    "args": {
+                                                        "text": " attacks!",
+                                                        "x": 3,
+                                                        "y": 12
+                                                    },
+                                                    "id": "e7e33b2f-5630-4751-b66f-ed8e1c28778e"
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "command": "EVENT_IF_VALUE",
+                                                    "args": {
+                                                        "variable": "5",
+                                                        "operator": "==",
+                                                        "comparator": 1,
+                                                        "__collapseElse": false
+                                                    },
+                                                    "children": {
+                                                        "true": [
+                                                            {
+                                                                "command": "PT_EVENT_BACKGROUND_TEXT",
+                                                                "args": {
+                                                                    "text": "*The enemy",
+                                                                    "x": 3,
+                                                                    "y": 10
+                                                                },
+                                                                "id": "05146771-930c-48de-bdc1-036afd11f577"
+                                                            },
+                                                            {
+                                                                "command": "PT_EVENT_BACKGROUND_TEXT",
+                                                                "args": {
+                                                                    "text": " seems",
+                                                                    "x": 3,
+                                                                    "y": 11
+                                                                },
+                                                                "id": "762e8aa3-1a5c-4293-afac-3555f34af973"
+                                                            },
+                                                            {
+                                                                "command": "PT_EVENT_BACKGROUND_TEXT",
+                                                                "args": {
+                                                                    "text": " confused...",
+                                                                    "x": 3,
+                                                                    "y": 12
+                                                                },
+                                                                "id": "453322fd-403c-47f4-8d3e-7163d133ffa6"
+                                                            }
+                                                        ],
+                                                        "false": [
+                                                            {
+                                                                "command": "PT_EVENT_BACKGROUND_TEXT",
+                                                                "args": {
+                                                                    "text": "*The enemy",
+                                                                    "x": 3,
+                                                                    "y": 10
+                                                                },
+                                                                "id": "0716dfb5-86ba-43f5-b3bb-c59e4ae5962b"
+                                                            },
+                                                            {
+                                                                "command": "PT_EVENT_BACKGROUND_TEXT",
+                                                                "args": {
+                                                                    "text": " is out of",
+                                                                    "x": 3,
+                                                                    "y": 11
+                                                                },
+                                                                "id": "8442b468-aaec-4308-bb29-c8a0cac8211e"
+                                                            },
+                                                            {
+                                                                "command": "PT_EVENT_BACKGROUND_TEXT",
+                                                                "args": {
+                                                                    "text": " lines...",
+                                                                    "x": 3,
+                                                                    "y": 12
+                                                                },
+                                                                "id": "bcbeb988-28ff-4798-b191-759e3f4e88eb"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "id": "2fa93a80-d021-4c19-9a5c-553662d295d2"
+                                                }
+                                            ]
+                                        },
+                                        "id": "a82b84bb-3c49-4408-908a-b362e1dc3aee"
+                                    }
+                                ]
+                            },
+                            "id": "f33b2308-6a9f-4328-965a-637438f53dba"
+                        },
+                        {
+                            "command": "EVENT_ACTOR_STOP_UPDATE",
+                            "args": {
+                                "actorId": "$self$"
+                            },
+                            "id": "f85c5256-657c-4650-9254-8daf150bfd7d"
+                        }
+                    ],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "f5b54d96-dd99-46da-82da-e6f178ac6f23",
+                    "x": 18,
+                    "y": 0
                 }
             ],
             "triggers": [],
@@ -53309,6 +53489,16 @@
         }
     ],
     "backgrounds": [
+        {
+            "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0",
+            "name": "!tilebank-water",
+            "symbol": "bg_tilebank_water",
+            "width": 20,
+            "height": 18,
+            "imageWidth": 160,
+            "imageHeight": 144,
+            "filename": "!tilebank-water.png"
+        },
         {
             "id": "5126a5ed-c156-4a23-a5cc-76db2b59d4ce",
             "name": "Battle1 Test",
@@ -60585,9 +60775,9 @@
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
-        "showConnections": "all",
+        "showConnections": "selected",
         "worldScrollX": 0,
-        "worldScrollY": 345,
+        "worldScrollY": 0,
         "zoom": 100,
         "customColorsEnabled": false,
         "sgbEnabled": false,
@@ -60616,9 +60806,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            298,
-            302,
-            814
+            199,
+            201,
+            547
         ],
         "showNavigator": true,
         "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",
