@@ -7934,7 +7934,7 @@
             "playerHit3Script": []
         },
         {
-            "name": "Room_06 (dummy)",
+            "name": "Room_06",
             "backgroundId": "a9d50f87-2a71-41bb-8e03-00e0d42cc3db",
             "width": 32,
             "height": 24,
@@ -17813,7 +17813,7 @@
             "playerHit3Script": []
         },
         {
-            "name": "Room_09 (candy)",
+            "name": "Room_09",
             "backgroundId": "e48f68e8-e512-4ce6-96ef-d1f369170eac",
             "width": 32,
             "height": 24,
@@ -29483,7 +29483,7 @@
             "playerHit3Script": []
         },
         {
-            "name": "Room_15 (cheese)",
+            "name": "Room_15",
             "backgroundId": "870af115-9150-4971-9d6b-88c3a2ae1538",
             "width": 32,
             "height": 24,
@@ -31180,7 +31180,7 @@
             "symbol": "scene_room_16"
         },
         {
-            "name": "Room_17 (sale)",
+            "name": "Room_17",
             "backgroundId": "f26fd7b9-136e-495d-8edc-a3bb4ef4b7cc",
             "width": 32,
             "height": 24,
@@ -61348,8 +61348,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 3482.39990234375,
-        "worldScrollY": 386.3999938964844,
+        "worldScrollX": 0,
+        "worldScrollY": 1047.199951171875,
         "zoom": 87.5,
         "customColorsEnabled": false,
         "sgbEnabled": false,
