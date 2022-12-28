@@ -7984,6 +7984,52 @@
                     "id": "b628516b-c6e4-4a61-a3a3-12e747ad7007",
                     "x": 63,
                     "y": 7
+                },
+                {
+                    "name": "",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "2583f40b-b989-4dad-8c7d-1157d117074a",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_10",
+                    "script": [],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "f34112da-d521-454f-ab1a-088a30c4c9a7",
+                    "x": 70,
+                    "y": 15
+                },
+                {
+                    "name": "",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "2583f40b-b989-4dad-8c7d-1157d117074a",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_11",
+                    "script": [],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "1ab503d3-ad5c-4378-bc5f-2005211dc229",
+                    "x": 70,
+                    "y": 17
                 }
             ],
             "triggers": [
@@ -62821,9 +62867,9 @@
             "id": "8f806537-a514-4007-b9cf-5be18feb3924",
             "name": "Wood",
             "colors": [
-                "F8C858",
-                "B88828",
-                "784820",
+                "F8D890",
+                "D09830",
+                "986028",
                 "000000"
             ]
         },
@@ -62841,9 +62887,9 @@
             "id": "998e3de7-3050-4c9c-8541-8321251a94ae",
             "name": "Gold",
             "colors": [
+                "F8F8C0",
                 "F8F800",
-                "A8A820",
-                "606038",
+                "909038",
                 "000000"
             ]
         }
@@ -63767,9 +63813,9 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 2875,
-        "worldScrollY": 3234,
-        "zoom": 425,
+        "worldScrollX": 2007,
+        "worldScrollY": 2241,
+        "zoom": 300,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
