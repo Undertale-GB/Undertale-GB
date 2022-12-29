@@ -1,0 +1,159 @@
+[Flowey intro]
+
+{normal}
+
+Flowey:
+
+* Howdy!
+* I'm FLOWEY.
+*FLOWEY the FLOWER!
+---
+* Hmmm...
+---
+* You're new to the UNDERGROUND, aren' tcha?
+---
+* Golly, you must be so confused.
+---
+* Someone ough to teach you how things work around here!
+---
+* I guess little old me will have to do.
+---
+* Ready?
+* Here we go!
+
+{battle (tutorial flowey)}
+
+See that heart?
+That is your SOUL,
+the very culmination of your being!
+---
+Your SOUL starts to weak, but can grow strong if you gain a lot of LV.
+---
+What's LV stand for?
+Why, LOVE, of course!
+---
+You want some LOVE, don't you?
+---
+Don't worry, I'll share some with you
+
+[that stupid flowey wink. -_-]
+
+Down here, LOVE is shared through...
+---
+Little white...
+"firendliness pellets."
+---
+Are you ready?
+---
+Move around!
+Get as much as you can!
+[if hit]
+
+You idiot.
+---
+In this world, it's kill or BE killed.
+---
+Why would ANYONE pass up an opportunity like this!?
+
+[if miss 1]
+
+Hey buddy, you missed them.
+---
+Let's try again, okay?
+
+[miss again]
+
+Is this a joke?
+Are you braindead?
+RUN. INTO. THE.
+BULLETS!!!
+(change to)
+friendliness pellets.
+---
+You know what's going on here, don't you?
+---
+You just wanted to see me suffer.
+---
+
+(after bullets)
+
+Die.
+---
+
+[toriel after pewpewing flowey]
+
+
+Toriel:
+What a terrible creature, torturing such a poor, innocent youth...
+---
+Ah, do not be afraid, my child.
+---
+I am TORIEL, caretaker of the RUINS.
+---
+I pass through this place every day to see if anyone has fallen down.
+---
+You are the first human to come here in a long time.
+---
+Come!
+I will guide you through the catacombs.
+{normal}
+
+Toriel:
+
+* This way.
+
+[after some walking with toriel]
+
+* Welcome to your new home, innocent one.
+---
+* Allow me to educate you in the operation of the RUINS.
+
+[After flexing on puzzle #1]
+
+* The RUINS are full of puzzles.
+---
+* Ancient fusions between diversions and doorkeys.
+---
+* One must solve them to move from room to room.
+---
+* PLease adjust yourself to the sight of them.
+[the stone inscription #1]
+
+* Only the fearless may proceed.
+* Brave ones, foolish ones.
+* Both walk not the middle road
+[next room]
+
+* To make progress here, you will need to trigger several switches.
+---
+* Do not worry, I have labelled the ones that you need to flip.
+
+[board that says how to interact with objects.]
+
+* "Press B to read signs!"
+
+[inscription #2]
+
+* Stay on the path.
+
+[switch #1]
+
+Please press this switch.
+    -TORIEL
+[switch #2]
+
+Please press this switch too.
+    -TORIEL
+
+[if trying wrong switch with toriel with an eye on you.]
+{i need to find that...}
+
+[after puzzle]
+* Splendid!
+* I'm proud of you, little one.
+---
+* Let us move to the next room.
+
+[if trying wrong switch]
+* This doesn't even work...
+
