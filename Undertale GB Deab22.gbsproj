@@ -52651,8 +52651,8 @@
             ],
             "autoFadeSpeed": null,
             "id": "60ad4f47-2d42-429c-b7f8-440fd5693287",
-            "x": 210,
-            "y": 843,
+            "x": 153.33333333333334,
+            "y": 850.6666666666666,
             "actors": [
                 {
                     "name": "",
@@ -52898,7 +52898,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Dialouge",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "children": {
                         "true": [
@@ -52909,7 +52909,7 @@
                                     "operator": "==",
                                     "comparator": "0",
                                     "__collapseElse": false,
-                                    "__collapse": true
+                                    "__collapse": false
                                 },
                                 "children": {
                                     "true": [
@@ -62850,10 +62850,10 @@
             "id": "default-ui",
             "name": "Default UI",
             "colors": [
-                "F8F8B8",
-                "90C8C8",
-                "486878",
-                "082048"
+                "F8F8F8",
+                "F8F800",
+                "F80000",
+                "000000"
             ],
             "defaultName": "Default UI",
             "defaultColors": [
@@ -63650,6 +63650,22 @@
     "sounds": [],
     "fonts": [
         {
+            "id": "38e541cc-301d-4b48-9363-901d1d601b06",
+            "name": "Determination Color VarWid",
+            "symbol": "font_determination_color_va",
+            "width": 128,
+            "height": 112,
+            "filename": "Determination Color VarWid.png"
+        },
+        {
+            "id": "2ab203e9-ae59-46a2-b8ef-4039d41fe37d",
+            "name": "Determination Color",
+            "symbol": "font_determination_color",
+            "width": 128,
+            "height": 112,
+            "filename": "Determination Color.png"
+        },
+        {
             "id": "bb9d8e13-bf55-4376-974b-139136970901",
             "name": "Determination VarWid",
             "symbol": "font_determination_varwid",
@@ -63805,16 +63821,16 @@
         }
     ],
     "settings": {
-        "startSceneId": "b4887780-0a45-45e6-b7af-d171ae0018ff",
-        "startX": 0,
-        "startY": 0,
+        "startSceneId": "93481461-209a-497c-8304-a54799217280",
+        "startX": 17,
+        "startY": 7,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 2007,
-        "worldScrollY": 2241,
+        "worldScrollX": 125,
+        "worldScrollY": 2442,
         "zoom": 300,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -63848,7 +63864,7 @@
             556
         ],
         "showNavigator": true,
-        "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",
+        "defaultFontId": "bb9d8e13-bf55-4376-974b-139136970901",
         "defaultCharacterEncoding": "",
         "defaultPlayerSprites": {
             "TOPDOWN": "bd3937aa-3c54-43e5-8fa8-55bb06662ade",
