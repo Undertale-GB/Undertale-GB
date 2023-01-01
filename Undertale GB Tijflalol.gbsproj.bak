@@ -9,10 +9,8 @@
             "backgroundId": "af73ebf6-726e-49d6-a8ec-54cb0c4db892",
             "width": 20,
             "height": 18,
-            "type": "LOGO",
-            "paletteIds": [
-                "7ed1dffb-f23a-4eca-a040-55b262727460"
-            ],
+            "type": "TOPDOWN",
+            "paletteIds": [],
             "spritePaletteIds": [],
             "collisions": [
                 0,
@@ -885,10 +883,7 @@
             "width": 68,
             "height": 22,
             "type": "TOPDOWN",
-            "paletteIds": [
-                "567ea9e8-99db-4455-a703-7d70ed1c64c6",
-                "febb35e6-e85e-4843-a2a4-739d9bd45eb3"
-            ],
+            "paletteIds": [],
             "spritePaletteIds": [],
             "collisions": [
                 0,
@@ -6101,20 +6096,7 @@
                     "persistent": false,
                     "collisionGroup": "",
                     "symbol": "actor_19",
-                    "script": [
-                        {
-                            "command": "EVENT_TEXT",
-                            "args": {
-                                "text": [
-                                    "* Only the\n  fearless may\n  proceed.",
-                                    "* Brave ones,\n  foolish ones.",
-                                    "* Both walk not\n  the middle road."
-                                ],
-                                "avatarId": ""
-                            },
-                            "id": "fd2ab193-4b5e-4bb5-a22b-1bee57bc33c5"
-                        }
-                    ],
+                    "script": [],
                     "startScript": [],
                     "updateScript": [],
                     "hit1Script": [],
@@ -8135,18 +8117,7 @@
                     "persistent": false,
                     "collisionGroup": "",
                     "symbol": "actor_16",
-                    "script": [
-                        {
-                            "command": "EVENT_TEXT",
-                            "args": {
-                                "text": [
-                                    "* Please press\n  this switch.\n     - TORIEL"
-                                ],
-                                "avatarId": ""
-                            },
-                            "id": "08287d0e-49d9-459d-a6e7-2ca267fa5691"
-                        }
-                    ],
+                    "script": [],
                     "startScript": [],
                     "updateScript": [],
                     "hit1Script": [],
@@ -8169,18 +8140,7 @@
                     "persistent": false,
                     "collisionGroup": "",
                     "symbol": "actor_17",
-                    "script": [
-                        {
-                            "command": "EVENT_TEXT",
-                            "args": {
-                                "text": [
-                                    "* Please press\n  this switch too.\n     - TORIEL"
-                                ],
-                                "avatarId": ""
-                            },
-                            "id": "76324452-0ea5-4c11-90d2-6fab75c37467"
-                        }
-                    ],
+                    "script": [],
                     "startScript": [],
                     "updateScript": [],
                     "hit1Script": [],
@@ -8203,18 +8163,7 @@
                     "persistent": false,
                     "collisionGroup": "",
                     "symbol": "actor_18",
-                    "script": [
-                        {
-                            "command": "EVENT_TEXT",
-                            "args": {
-                                "text": [
-                                    "* Stay on \n  the path."
-                                ],
-                                "avatarId": ""
-                            },
-                            "id": "cb1b02e7-1016-41dc-b168-a0108c97c051"
-                        }
-                    ],
+                    "script": [],
                     "startScript": [],
                     "updateScript": [],
                     "hit1Script": [],
@@ -65706,16 +65655,6 @@
                 "B820C0",
                 "000000"
             ]
-        },
-        {
-            "id": "7ed1dffb-f23a-4eca-a040-55b262727460",
-            "name": "Undertale Logo",
-            "colors": [
-                "F8F8F8",
-                "888888",
-                "F80000",
-                "000000"
-            ]
         }
     ],
     "customEvents": [
@@ -66653,8 +66592,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 896.7999877929688,
-        "worldScrollY": 962.4000244140625,
+        "worldScrollX": 688,
+        "worldScrollY": 2252,
         "zoom": 150,
         "customColorsEnabled": true,
         "sgbEnabled": false,
