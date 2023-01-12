@@ -8100,6 +8100,15 @@
                                             }
                                         },
                                         "id": "17d506d6-b1e1-400f-aa08-614c203c6703"
+                                    },
+                                    {
+                                        "command": "EVENT_CAMERA_SHAKE",
+                                        "args": {
+                                            "time": 0.2,
+                                            "frames": 30,
+                                            "shakeDirection": "horizontal"
+                                        },
+                                        "id": "3f2b9a4d-9e14-43ba-b397-52a1d1e35512"
                                     }
                                 ],
                                 "false": []
@@ -8177,6 +8186,15 @@
                                             }
                                         },
                                         "id": "6e2ef8cc-5983-40ef-9b34-9f8e501c1105"
+                                    },
+                                    {
+                                        "command": "EVENT_CAMERA_SHAKE",
+                                        "args": {
+                                            "time": 0.2,
+                                            "frames": 30,
+                                            "shakeDirection": "horizontal"
+                                        },
+                                        "id": "6ad482f2-ffcc-46e6-b7bc-9572911ed3c2"
                                     }
                                 ],
                                 "false": []
@@ -90650,11 +90668,6 @@
             "symbol": "var_insubmenu"
         },
         {
-            "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
-            "name": "Counter",
-            "symbol": "var_counter_0"
-        },
-        {
             "id": "10",
             "name": "room_local_01",
             "symbol": "var_room_local_01"
@@ -90678,6 +90691,11 @@
             "id": "14",
             "name": "room_local_05",
             "symbol": "var_room_local_05"
+        },
+        {
+            "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
+            "name": "Counter",
+            "symbol": "var_counter_0"
         }
     ],
     "engineFieldValues": [
@@ -90695,7 +90713,7 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 1620,
+        "worldScrollX": 2220,
         "worldScrollY": 1999,
         "zoom": 274.99998474121094,
         "customColorsEnabled": true,

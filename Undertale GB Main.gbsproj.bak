@@ -8148,7 +8148,7 @@
                         {
                             "command": "EVENT_IF_EXPRESSION",
                             "args": {
-                                "expression": "$11$ && $06$ >= 1",
+                                "expression": "$11$ && $10$ >= 1",
                                 "__collapseElse": false
                             },
                             "children": {
