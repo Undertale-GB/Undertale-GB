@@ -8100,6 +8100,15 @@
                                             }
                                         },
                                         "id": "17d506d6-b1e1-400f-aa08-614c203c6703"
+                                    },
+                                    {
+                                        "command": "EVENT_CAMERA_SHAKE",
+                                        "args": {
+                                            "time": 0.2,
+                                            "frames": 30,
+                                            "shakeDirection": "horizontal"
+                                        },
+                                        "id": "3f2b9a4d-9e14-43ba-b397-52a1d1e35512"
                                     }
                                 ],
                                 "false": []
@@ -8177,6 +8186,15 @@
                                             }
                                         },
                                         "id": "6e2ef8cc-5983-40ef-9b34-9f8e501c1105"
+                                    },
+                                    {
+                                        "command": "EVENT_CAMERA_SHAKE",
+                                        "args": {
+                                            "time": 0.2,
+                                            "frames": 30,
+                                            "shakeDirection": "horizontal"
+                                        },
+                                        "id": "6ad482f2-ffcc-46e6-b7bc-9572911ed3c2"
                                     }
                                 ],
                                 "false": []
@@ -89652,6 +89670,26 @@
                 "F80000",
                 "000000"
             ]
+        },
+        {
+            "id": "77094775-035b-41c3-8de3-c2d8af10a5a6",
+            "name": "Vines 1",
+            "colors": [
+                "00D848",
+                "384850",
+                "B820C0",
+                "000000"
+            ]
+        },
+        {
+            "id": "469ea28d-cddd-4969-8b2c-fed5c3aeacf0",
+            "name": "Vines 2",
+            "colors": [
+                "00D848",
+                "D850E0",
+                "384850",
+                "000000"
+            ]
         }
     ],
     "customEvents": [
@@ -90650,11 +90688,6 @@
             "symbol": "var_insubmenu"
         },
         {
-            "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
-            "name": "Counter",
-            "symbol": "var_counter_0"
-        },
-        {
             "id": "10",
             "name": "room_local_01",
             "symbol": "var_room_local_01"
@@ -90678,6 +90711,11 @@
             "id": "14",
             "name": "room_local_05",
             "symbol": "var_room_local_05"
+        },
+        {
+            "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
+            "name": "Counter",
+            "symbol": "var_counter_0"
         }
     ],
     "engineFieldValues": [
@@ -90687,17 +90725,17 @@
         }
     ],
     "settings": {
-        "startSceneId": "36af1c03-9d6b-404c-9180-0ebcb21ec8f5",
-        "startX": 7,
-        "startY": 16,
+        "startSceneId": "27697607-24f3-4a08-9706-e372955b1642",
+        "startX": 10,
+        "startY": 10,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 1620,
-        "worldScrollY": 1999,
-        "zoom": 274.99998474121094,
+        "worldScrollX": 527,
+        "worldScrollY": 717,
+        "zoom": 100,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
@@ -90726,8 +90764,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            202,
-            724
+            200,
+            717
         ],
         "showNavigator": true,
         "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",
