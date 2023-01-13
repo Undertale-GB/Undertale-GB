@@ -3649,7 +3649,7 @@
                         {
                             "command": "PT_EVENT_ADVANCED_DIALOGUE",
                             "args": {
-                                "__scriptTabs": "layout",
+                                "__scriptTabs": "text",
                                 "minHeight": 4,
                                 "maxHeight": 7,
                                 "position": "bottom",
@@ -3661,7 +3661,8 @@
                                 "closeWhen": "notModal",
                                 "closeButton": "a",
                                 "text": [
-                                    "test"
+                                    "test 1",
+                                    "test 2"
                                 ],
                                 "avatarId": "069e819a-6837-479f-adfd-a4c19fa3ff4f"
                             },
@@ -3672,14 +3673,15 @@
                             "args": {
                                 "input": [
                                     "a"
-                                ]
+                                ],
+                                "__collapse": true
                             },
                             "id": "4737007d-68df-4f3e-bfa2-31a8926dffb3"
                         },
                         {
                             "command": "PT_EVENT_ADVANCED_DIALOGUE",
                             "args": {
-                                "__scriptTabs": "layout",
+                                "__scriptTabs": "text",
                                 "minHeight": 4,
                                 "maxHeight": 7,
                                 "position": "bottom",
@@ -5279,7 +5281,187 @@
                     "persistent": false,
                     "collisionGroup": "",
                     "symbol": "actor_7",
-                    "script": [],
+                    "script": [
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "*(The shadow of\n the ruins looms\n above,",
+                                    " filling you with\n determination.)",
+                                    "*(HP fully\n restored.)"
+                                ],
+                                "avatarId": ""
+                            },
+                            "id": "d79ba3ec-c425-4a8f-9f9c-859a2fa28ae4"
+                        },
+                        {
+                            "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                            "args": {
+                                "__scriptTabs": "layout",
+                                "minHeight": 6,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "showBorder": "true",
+                                "clearPrevious": false,
+                                "textX": 1,
+                                "textY": 1,
+                                "textHeight": 3,
+                                "closeWhen": "notModal",
+                                "closeButton": "a",
+                                "text": [
+                                    "Chara\nRuins-Entrance"
+                                ],
+                                "avatarId": "",
+                                "__comment": true
+                            },
+                            "id": "63d7ba20-eee4-469d-b284-1680a7b1eec0"
+                        },
+                        {
+                            "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                            "args": {
+                                "__scriptTabs": "text",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "showBorder": "true",
+                                "clearPrevious": true,
+                                "textX": 0,
+                                "textY": 0,
+                                "textHeight": 3,
+                                "closeWhen": "key",
+                                "closeButton": "a",
+                                "text": [
+                                    "test"
+                                ],
+                                "avatarId": ""
+                            },
+                            "id": "2885fdde-9dde-4a03-8336-6acc5214a26f"
+                        },
+                        {
+                            "command": "PT_EVENT_ADVANCED_MENU",
+                            "args": {
+                                "variable": "L0",
+                                "__scriptTabs": "items",
+                                "width": 20,
+                                "height": 6,
+                                "from": "bottom",
+                                "items": 4,
+                                "option_1_text": "Save",
+                                "option1_x": 1,
+                                "option1_y": 4,
+                                "option1_l": 0,
+                                "option1_r": 2,
+                                "option1_u": 0,
+                                "option1_d": 0,
+                                "option_2_text": "Return",
+                                "option2_x": 11,
+                                "option2_y": 4,
+                                "option2_l": 1,
+                                "option2_r": 0,
+                                "option2_u": 0,
+                                "option2_d": 0,
+                                "option_3_text": "Chara",
+                                "option3_x": 1,
+                                "option3_y": 1,
+                                "option3_l": 0,
+                                "option3_r": 0,
+                                "option3_u": 0,
+                                "option3_d": 0,
+                                "option_4_text": "Ruins-Entrance",
+                                "option4_x": 1,
+                                "option4_y": 2,
+                                "option4_l": 0,
+                                "option4_r": 0,
+                                "option4_u": 0,
+                                "option4_d": 0,
+                                "option_5_text": "",
+                                "option5_x": 0,
+                                "option5_y": 0,
+                                "option5_l": 0,
+                                "option5_r": 0,
+                                "option5_u": 0,
+                                "option5_d": 0,
+                                "option_6_text": "",
+                                "option6_x": 0,
+                                "option6_y": 0,
+                                "option6_l": 0,
+                                "option6_r": 0,
+                                "option6_u": 0,
+                                "option6_d": 0,
+                                "option_7_text": "",
+                                "option7_x": 0,
+                                "option7_y": 0,
+                                "option7_l": 0,
+                                "option7_r": 0,
+                                "option7_u": 0,
+                                "option7_d": 0,
+                                "option_8_text": "",
+                                "option8_x": 0,
+                                "option8_y": 0,
+                                "option8_l": 0,
+                                "option8_r": 0,
+                                "option8_u": 0,
+                                "option8_d": 0,
+                                "option_9_text": "",
+                                "option9_x": 0,
+                                "option9_y": 0,
+                                "option9_l": 0,
+                                "option9_r": 0,
+                                "option9_u": 0,
+                                "option9_d": 0,
+                                "option_10_text": "",
+                                "option10_x": 0,
+                                "option10_y": 0,
+                                "option10_l": 0,
+                                "option10_r": 0,
+                                "option10_u": 0,
+                                "option10_d": 0,
+                                "option_11_text": "",
+                                "option11_x": 0,
+                                "option11_y": 0,
+                                "option11_l": 0,
+                                "option11_r": 0,
+                                "option11_u": 0,
+                                "option11_d": 0,
+                                "option_12_text": "",
+                                "option12_x": 0,
+                                "option12_y": 0,
+                                "option12_l": 0,
+                                "option12_r": 0,
+                                "option12_u": 0,
+                                "option12_d": 0,
+                                "option_13_text": "",
+                                "option13_x": 0,
+                                "option13_y": 0,
+                                "option13_l": 0,
+                                "option13_r": 0,
+                                "option13_u": 0,
+                                "option13_d": 0,
+                                "option_14_text": "",
+                                "option14_x": 0,
+                                "option14_y": 0,
+                                "option14_l": 0,
+                                "option14_r": 0,
+                                "option14_u": 0,
+                                "option14_d": 0,
+                                "option_15_text": "",
+                                "option15_x": 0,
+                                "option15_y": 0,
+                                "option15_l": 0,
+                                "option15_r": 0,
+                                "option15_u": 0,
+                                "option15_d": 0,
+                                "option_16_text": "",
+                                "option16_x": 0,
+                                "option16_y": 0,
+                                "option16_l": 0,
+                                "option16_r": 0,
+                                "option16_u": 0,
+                                "option16_d": 0
+                            },
+                            "id": "74ed4630-36ea-445b-a44c-be85df7a0977"
+                        }
+                    ],
                     "startScript": [],
                     "updateScript": [],
                     "hit1Script": [],
@@ -5288,6 +5470,41 @@
                     "id": "61c1a1c1-261e-478d-be3e-136b67d1f330",
                     "x": 15,
                     "y": 19
+                },
+                {
+                    "name": "testdummy",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "b12fe7db-7c3b-4b95-86ac-99d7dcc907ef",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_33",
+                    "script": [
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "\\007\\002!F:80bc4a07-9e5b-4fb6-9685-743e602af619!Guess what?\nThe !F:65b14082-e495-439d-998b-852e6b72073f!VarWidth !F:80bc4a07-9e5b-4fb6-9685-743e602af619!fonts\nwork now!",
+                                    "!F:6137f920-929a-4044-bb71-2325fde01476!another test...\nthese white lines \nare very abnoxious..."
+                                ],
+                                "avatarId": ""
+                            },
+                            "id": "88e8e383-1618-4bb0-a38b-55d646c290bc"
+                        }
+                    ],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "1d702bb7-ab96-4912-996f-25771b0a8daf",
+                    "x": 20,
+                    "y": 24
                 }
             ],
             "triggers": [
@@ -8458,6 +8675,293 @@
                     "id": "4e2482a5-c9ec-4b58-b7b3-256e71d48687",
                     "x": 70,
                     "y": 17
+                },
+                {
+                    "name": "Tileswapper",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": true,
+                    "collisionGroup": "",
+                    "symbol": "actor_34",
+                    "script": [],
+                    "startScript": [],
+                    "updateScript": [
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Water Tileswapping"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__label": "Frame 1",
+                                            "__collapse": true
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 1\nVM_REPLACE_TILE_XY 24, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "889f6ece-a3a6-44e8-97ec-34c836e66163"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 3\nVM_REPLACE_TILE_XY 27, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "c75e10cf-85c3-4c0a-ab6a-f883a9f69d7d"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 5\nVM_REPLACE_TILE_XY 24, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "c0b29173-e77a-47db-9ab1-3ec37929f195"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 9\nVM_REPLACE_TILE_XY 27, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "e0fe5b0e-39d6-44fd-9509-f6610f568ea7"
+                                                }
+                                            ]
+                                        },
+                                        "id": "80c69158-9997-4d70-af80-6a0ddd992821"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "7f5eb19f-ac0f-48d8-9ff7-8c33f1d27b9a"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__collapse": true,
+                                            "__label": "Frame 2"
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 6\nVM_REPLACE_TILE_XY 24, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "4c3dd75f-d7cb-4485-8f26-e05782d47e84"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 10\nVM_REPLACE_TILE_XY 27, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "3c6cf6cc-dc07-4918-99d0-ecca787624ac"
+                                                }
+                                            ]
+                                        },
+                                        "id": "c84b0982-e2b4-4b9a-8fc0-995fbfc2cbcb"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "6d5c5052-5dcb-4311-bd63-9b1b21107d38"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__label": "Frame 3",
+                                            "__collapse": true
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 24, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "0ed96be9-d1a4-4167-a20e-e455adb61a75"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 2\nVM_REPLACE_TILE_XY 27, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "cef2b2de-c73d-4eea-bf92-5b80a6846487"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 7\nVM_REPLACE_TILE_XY 24, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "ca4de533-7cb4-4059-85fb-c1ee04084247"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 27, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "e91cf1b8-16aa-4516-9824-ca40ec851fa3"
+                                                }
+                                            ]
+                                        },
+                                        "id": "1d7ee731-2614-45e4-ae54-7fea06695c8e"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "3af21009-88dd-4b7a-8af5-5060b504c1d1"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__collapse": true,
+                                            "__label": "Frame 4"
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 4\nVM_REPLACE_TILE_XY 24, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "f42687ac-50d9-4bcb-947b-1754363d0c5f"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 8\nVM_REPLACE_TILE_XY 27, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "c82c5def-bfbc-4943-b795-338714793906"
+                                                }
+                                            ]
+                                        },
+                                        "id": "56d51c50-91a6-407c-9054-7effc0691cab"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "df115242-50b6-4825-a26b-7cca590c1a00"
+                                    }
+                                ]
+                            },
+                            "id": "07918826-957b-44d9-8a0e-b7bd077ca10d"
+                        }
+                    ],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "faa5fa2d-d0b6-4e69-9e30-05e9962a3ece",
+                    "x": 0,
+                    "y": 0
                 }
             ],
             "triggers": [
@@ -8559,18 +9063,6 @@
                         ]
                     },
                     "id": "3366e136-0f1c-40b4-b406-1830d811ec2f"
-                },
-                {
-                    "command": "EVENT_SET_TIMER_SCRIPT",
-                    "args": {
-                        "duration": 0.5,
-                        "frames": 30,
-                        "__scriptTabs": "end"
-                    },
-                    "children": {
-                        "script": []
-                    },
-                    "id": "44d4efa2-ff18-4a6e-8d03-5186067bed2c"
                 }
             ],
             "playerHit1Script": [],
@@ -55097,7 +55589,7 @@
             "symbol": "scene_gameover"
         },
         {
-            "name": "!tilebank-water",
+            "name": "water",
             "backgroundId": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0",
             "width": 20,
             "height": 18,
@@ -97406,6 +97898,14 @@
             "width": 128,
             "height": 112,
             "filename": "Determination.png"
+        },
+        {
+            "id": "80bc4a07-9e5b-4fb6-9685-743e602af619",
+            "name": "Inverted VarWid",
+            "symbol": "font_inverted_varwid",
+            "width": 128,
+            "height": 112,
+            "filename": "Inverted VarWid.png"
         }
     ],
     "avatars": [
@@ -97575,6 +98075,16 @@
             "id": "36af1c03-9d6b-404c-9180-0ebcb21ec8f5__L0",
             "name": "switch 1",
             "symbol": "var_switch_1"
+        },
+        {
+            "id": "61c1a1c1-261e-478d-be3e-136b67d1f330__L0",
+            "name": "SaveMenu",
+            "symbol": "var_savemenu"
+        },
+        {
+            "id": "15",
+            "name": "CharaName",
+            "symbol": "var_charaname"
         }
     ],
     "engineFieldValues": [
@@ -97584,17 +98094,17 @@
         }
     ],
     "settings": {
-        "startSceneId": "147ca1ef-aa1b-4cf9-a79d-b1d95d5896de",
-        "startX": 15,
-        "startY": 28,
+        "startSceneId": "36af1c03-9d6b-404c-9180-0ebcb21ec8f5",
+        "startX": 19,
+        "startY": 10,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 0,
-        "worldScrollY": 301,
-        "zoom": 100,
+        "worldScrollX": 2743,
+        "worldScrollY": 1354,
+        "zoom": 450,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
@@ -97622,9 +98132,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
+            888,
             30,
-            202,
-            724
+            30
         ],
         "showNavigator": true,
         "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",
