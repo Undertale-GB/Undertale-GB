@@ -13013,6 +13013,294 @@
                     "id": "9fe8385d-0d6a-43b6-a415-a8cedeb9e383",
                     "x": 60,
                     "y": 15
+                },
+                {
+                    "name": "Tileswapper",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": true,
+                    "collisionGroup": "",
+                    "symbol": "actor_37",
+                    "script": [],
+                    "startScript": [],
+                    "updateScript": [
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Water Tileswapping",
+                                "__collapse": true
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__label": "Frame 1",
+                                            "__collapse": true
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 1\nVM_REPLACE_TILE_XY 80, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "f14c945a-d483-4f77-889b-122a431bd26b"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 3\nVM_REPLACE_TILE_XY 115, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "e6acb20c-875a-450a-bed3-a94313243211"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 5\nVM_REPLACE_TILE_XY 80, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "983a7d29-04a4-4385-9421-4a43e376d9a6"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 9\nVM_REPLACE_TILE_XY 115, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "332ddcaf-ae37-40a9-b858-37e7f5c5b407"
+                                                }
+                                            ]
+                                        },
+                                        "id": "e851cca4-7d13-4ec8-b9b2-49413818cc78"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "936b6206-3ba0-492b-ba98-63315ba68ce9"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__collapse": true,
+                                            "__label": "Frame 2"
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 6\nVM_REPLACE_TILE_XY 80, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "7fd2fc5d-82b5-4ece-9d9f-576b5e970fdd"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 10\nVM_REPLACE_TILE_XY 115, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": false
+                                                    },
+                                                    "id": "e1022511-108f-4708-8dc6-7eda99e92b4f"
+                                                }
+                                            ]
+                                        },
+                                        "id": "d6193b2d-4bc8-4c62-9f5e-d9f959a03844"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "018f7e72-ddda-4202-9401-ba2591ea7102"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__label": "Frame 3",
+                                            "__collapse": true
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 80, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "5006113a-e762-48cb-a310-694d21f84d2e"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 2\nVM_REPLACE_TILE_XY 115, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "d856a1f9-76ec-4bdd-a3c9-aec04ca713d5"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 7\nVM_REPLACE_TILE_XY 80, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "8d15146e-001b-4f7a-b12f-4d995ec01f8b"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 115, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "fb2ab853-3016-4555-88e4-8d89b0bc3807"
+                                                }
+                                            ]
+                                        },
+                                        "id": "d4d74018-8105-4df1-bda1-bd8e5c617449"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "db8c7fec-7434-49cc-bfc7-81b439f6a031"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__collapse": true,
+                                            "__label": "Frame 4"
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 4\nVM_REPLACE_TILE_XY 80, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "974deebb-90b1-4239-a8db-5fd8486a082f"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 8\nVM_REPLACE_TILE_XY 115, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": false
+                                                    },
+                                                    "id": "b22bcd92-8117-4d73-a2be-5ae88aa04177"
+                                                }
+                                            ]
+                                        },
+                                        "id": "f4b02abe-de9d-4f14-b170-e2d99ff70592"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "4e9326c3-16b5-46a1-b1c0-2a56c5e64a3d"
+                                    }
+                                ]
+                            },
+                            "id": "4442904f-62ee-4756-b5ea-076f51889e92"
+                        }
+                    ],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "4807c6bd-e73a-4e55-a623-ab66b0035303",
+                    "x": 0,
+                    "y": 0
                 }
             ],
             "triggers": [
@@ -19956,7 +20244,294 @@
                     "hit3Script": [],
                     "id": "56b0720d-2718-48a5-8e3c-17ac1abe7abf",
                     "x": 15,
-                    "y": 11
+                    "y": 13
+                },
+                {
+                    "name": "Tileswapper",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": true,
+                    "collisionGroup": "",
+                    "symbol": "actor_38",
+                    "script": [],
+                    "startScript": [],
+                    "updateScript": [
+                        {
+                            "command": "EVENT_GROUP",
+                            "args": {
+                                "__label": "Water Tileswapping"
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__label": "Frame 1",
+                                            "__collapse": true
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 1\nVM_REPLACE_TILE_XY 8, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "81691117-0334-4758-8a9a-54fd3eb8d95d"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 3\nVM_REPLACE_TILE_XY 11, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "3b6c2818-55db-41be-8ea2-3e06b1252c48"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 5\nVM_REPLACE_TILE_XY 8, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "4c652c58-b9f1-47cb-87be-eb7d3cc23e7e"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 9\nVM_REPLACE_TILE_XY 11, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "3c9ef0b7-fc8b-4928-9fdc-58ab53d1b0d2"
+                                                }
+                                            ]
+                                        },
+                                        "id": "74aeeb2a-7bb5-44b2-bb85-9e628dbe7560"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "e9950aec-8043-4813-87b6-b573b8862931"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__collapse": true,
+                                            "__label": "Frame 2"
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 6\nVM_REPLACE_TILE_XY 8, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "efd3962a-bd48-4d11-9b26-0e9385236a2e"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 10\nVM_REPLACE_TILE_XY 11, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "043ea5c1-df47-4755-9104-88e946c8dd60"
+                                                }
+                                            ]
+                                        },
+                                        "id": "a9440220-89aa-4b79-a624-660217b1f5e9"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "0a2340f3-1499-49fa-aef3-0000e959f0bc"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__label": "Frame 3",
+                                            "__collapse": true
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 8, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "d178adf4-5a4f-4d8b-b518-cf18c2e63889"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 2\nVM_REPLACE_TILE_XY 11, 8, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "806a235b-e4b0-453e-b3af-79b4566ca7e9"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 7\nVM_REPLACE_TILE_XY 8, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "c7e8ea6c-96bf-4f14-84d5-c0ade1c95c48"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 11, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "01b4a16f-6e78-4a95-b19c-3a5f739ab07f"
+                                                }
+                                            ]
+                                        },
+                                        "id": "45faa9cc-05c7-4523-b35f-0e30ab1e0e90"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "19409031-1e80-41d3-8e9a-825ccc769586"
+                                    },
+                                    {
+                                        "command": "EVENT_GROUP",
+                                        "args": {
+                                            "__collapse": false,
+                                            "__label": "Frame 4"
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 4\nVM_REPLACE_TILE_XY 8, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "66ee8912-d4c7-45eb-88da-af4575960aa2"
+                                                },
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "references": [
+                                                            {
+                                                                "type": "background",
+                                                                "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                                                            }
+                                                        ],
+                                                        "script": "VM_PUSH_CONST 8\nVM_REPLACE_TILE_XY 11, 9, ___bank_bg_tilebank_water_tileset, _bg_tilebank_water_tileset .ARG0\nVM_POP 1",
+                                                        "__collapse": false
+                                                    },
+                                                    "id": "d14ac824-5509-4ed9-9112-65e20896abb1"
+                                                }
+                                            ]
+                                        },
+                                        "id": "04a76596-c0a0-4091-97cf-cee4eb563b0f"
+                                    },
+                                    {
+                                        "command": "EVENT_WAIT",
+                                        "args": {
+                                            "time": 0.3,
+                                            "frames": 30,
+                                            "__collapse": true
+                                        },
+                                        "id": "553c6c51-619a-4460-9876-ee80089c4f3a"
+                                    }
+                                ]
+                            },
+                            "id": "020cf589-00f8-4d5d-ac08-75ffeb00fab8"
+                        }
+                    ],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "a04bfb42-caf8-4dea-8341-2f21a21a5d55",
+                    "x": 0,
+                    "y": 0
                 }
             ],
             "triggers": [
@@ -53959,9 +54534,11 @@
             "height": 18,
             "type": "TOPDOWN",
             "paletteIds": [
-                "567ea9e8-99db-4455-a703-7d70ed1c64c6"
+                "318e3d4e-9d0a-4c52-a0a9-fa0e4c14b335"
             ],
-            "spritePaletteIds": [],
+            "spritePaletteIds": [
+                "eae6c644-256e-4e84-a220-175c9e4c2902"
+            ],
             "collisions": [
                 0,
                 0,
@@ -54327,54 +54904,8 @@
             "autoFadeSpeed": null,
             "id": "60ad4f47-2d42-429c-b7f8-440fd5693287",
             "x": 210,
-            "y": 843,
+            "y": 843.3333333333334,
             "actors": [
-                {
-                    "name": "",
-                    "frame": 0,
-                    "animate": false,
-                    "spriteSheetId": "b7e8633e-ead8-4808-98c5-dd1273c2f978",
-                    "direction": "down",
-                    "moveSpeed": 1,
-                    "animSpeed": 15,
-                    "paletteId": "",
-                    "isPinned": false,
-                    "collisionGroup": "",
-                    "script": [],
-                    "startScript": [],
-                    "updateScript": [
-                        {
-                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
-                            "args": {
-                                "variable": "L0",
-                                "expression": "($07$ - 1) * 4 + 3"
-                            },
-                            "id": "4fd7191f-a7f0-4459-9502-b1d93c0fdc47"
-                        },
-                        {
-                            "command": "EVENT_ACTOR_SET_POSITION",
-                            "args": {
-                                "actorId": "$self$",
-                                "x": {
-                                    "type": "variable",
-                                    "value": "L0"
-                                },
-                                "y": {
-                                    "type": "number",
-                                    "value": 17
-                                }
-                            },
-                            "id": "8eeff400-fc70-4c4c-aca6-a00746ad3b65"
-                        }
-                    ],
-                    "hit1Script": [],
-                    "hit2Script": [],
-                    "hit3Script": [],
-                    "id": "8b975831-da6c-4ed9-b5e0-3d41819113de",
-                    "x": 3,
-                    "y": 17,
-                    "symbol": "actor_4"
-                },
                 {
                     "name": "UI Controller",
                     "frame": 0,
@@ -54539,6 +55070,49 @@
                     "id": "f5b54d96-dd99-46da-82da-e6f178ac6f23",
                     "x": 18,
                     "y": 0
+                },
+                {
+                    "name": "",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "33d19ced-9dd0-4bb4-915a-ef36b05026b1",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 255,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_39",
+                    "script": [],
+                    "startScript": [],
+                    "updateScript": [
+                        {
+                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                            "args": {
+                                "variable": "L0",
+                                "expression": "$07$ - 1"
+                            },
+                            "id": "a6e475a6-5775-40a2-99b0-654790dd1a69"
+                        },
+                        {
+                            "command": "EVENT_ACTOR_SET_FRAME",
+                            "args": {
+                                "actorId": "$self$",
+                                "frame": {
+                                    "type": "variable",
+                                    "value": "L0"
+                                }
+                            },
+                            "id": "2bdfd2c7-37f4-4d35-9f1b-5a0b20ec2472"
+                        }
+                    ],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "a7d8d231-2d0d-4886-a15b-684fb0550eb4",
+                    "x": 9,
+                    "y": 17
                 }
             ],
             "triggers": [],
@@ -54550,6 +55124,18 @@
                         "__collapse": true
                     },
                     "id": "d37cd9aa-ce05-4fb8-8251-61a6944a190e"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "7",
+                        "value": {
+                            "type": "number",
+                            "value": 1
+                        },
+                        "__collapse": true
+                    },
+                    "id": "4e25ec80-c7b5-4af0-9087-52bbb6b28c7d"
                 },
                 {
                     "command": "PT_EVENT_BACKGROUND_TEXT",
@@ -54741,7 +55327,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Menu Keys",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "children": {
                         "true": [
@@ -54753,7 +55339,7 @@
                                     ],
                                     "override": true,
                                     "__scriptTabs": "press",
-                                    "__collapse": true,
+                                    "__collapse": false,
                                     "__label": "Menu Left"
                                 },
                                 "children": {
@@ -54948,7 +55534,7 @@
                                     "override": true,
                                     "__scriptTabs": "press",
                                     "__label": "Menu A",
-                                    "__collapse": false
+                                    "__collapse": true
                                 },
                                 "children": {
                                     "true": [
@@ -55000,9 +55586,11 @@
             "height": 18,
             "type": "ADVENTURE",
             "paletteIds": [
-                "567ea9e8-99db-4455-a703-7d70ed1c64c6"
+                "318e3d4e-9d0a-4c52-a0a9-fa0e4c14b335"
             ],
-            "spritePaletteIds": [],
+            "spritePaletteIds": [
+                "eae6c644-256e-4e84-a220-175c9e4c2902"
+            ],
             "collisions": [
                 0,
                 0,
@@ -55427,7 +56015,8 @@
                                 "variable": "L0",
                                 "operator": "<",
                                 "comparator": 200,
-                                "__collapseElse": true
+                                "__collapseElse": true,
+                                "__collapse": false
                             },
                             "children": {
                                 "true": [
@@ -55453,7 +56042,8 @@
                                                 "player"
                                             ],
                                             "loopAnim": true,
-                                            "destroyOnHit": true
+                                            "destroyOnHit": true,
+                                            "__collapse": true
                                         },
                                         "id": "432da09b-2c33-481f-ac5b-1246f0e87bf7"
                                     },
@@ -55479,14 +56069,16 @@
                                                 "player"
                                             ],
                                             "loopAnim": true,
-                                            "destroyOnHit": true
+                                            "destroyOnHit": true,
+                                            "__collapse": true
                                         },
                                         "id": "ab247bde-8ad1-49b2-b2c2-b6dd677f69d4"
                                     },
                                     {
                                         "command": "EVENT_INC_VALUE",
                                         "args": {
-                                            "variable": "L0"
+                                            "variable": "L0",
+                                            "__collapse": true
                                         },
                                         "id": "c8ed5b57-15dd-4782-8574-6544582ea42e"
                                     },
@@ -55496,7 +56088,8 @@
                                             "variable": "L0",
                                             "operator": ">=",
                                             "comparator": 20,
-                                            "__collapseElse": true
+                                            "__collapseElse": true,
+                                            "__collapse": false
                                         },
                                         "children": {
                                             "true": [
@@ -55740,7 +56333,368 @@
             "imageWidth": 160,
             "imageHeight": 144,
             "filename": "Battle1 Test.png",
-            "tileColors": []
+            "tileColors": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                0,
+                0,
+                0,
+                0,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                0,
+                0,
+                0,
+                0,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                0,
+                0,
+                0,
+                0,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                0,
+                0,
+                0,
+                0,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                0,
+                0,
+                0,
+                0,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                7,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
         },
         {
             "id": "e70ff7ec-f463-491f-bedc-cf3bb270619f",
@@ -91186,6 +92140,331 @@
     ],
     "spriteSheets": [
         {
+            "id": "33d19ced-9dd0-4bb4-915a-ef36b05026b1",
+            "name": "BattleUI",
+            "symbol": "sprite_battleui",
+            "numFrames": 2,
+            "type": "animated",
+            "filename": "BattleUI.png",
+            "checksum": "222ce8c9d397d1e27486c291d76a789ab356fae0",
+            "width": 32,
+            "height": 64,
+            "states": [
+                {
+                    "id": "863476f4-4ec2-4489-a14a-de3e88e2bc3f",
+                    "name": "",
+                    "animationType": "fixed",
+                    "flipLeft": true,
+                    "animations": [
+                        {
+                            "id": "f1940683-63a2-4b7f-a5ea-9a38eaf2e086",
+                            "frames": [
+                                {
+                                    "id": "0f1bdc8d-aa62-4e34-af7e-87bccedd3e10",
+                                    "tiles": [
+                                        {
+                                            "id": "a7684173-4145-4ad1-bfd0-03f20d187ef0",
+                                            "x": -56,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "62ecb753-81e2-4195-9c70-e5c3fe1153fc",
+                                            "x": -48,
+                                            "y": 0,
+                                            "sliceX": 8,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "c98eac39-48bc-4334-bece-ed2d76520d3f",
+                                            "x": -40,
+                                            "y": 0,
+                                            "sliceX": 16,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "b1ad2ee4-61a9-4410-a3fb-b9ffd952a034",
+                                            "x": -32,
+                                            "y": 0,
+                                            "sliceX": 24,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "41ac9c9c-6b21-48c1-aab5-85ad39f0f887",
+                                    "tiles": [
+                                        {
+                                            "id": "4b1b105b-5ca4-41a2-af58-43c29db682f4",
+                                            "x": -24,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "28c0dc45-1117-4659-8187-83bcb5975ec8",
+                                            "x": -16,
+                                            "y": 0,
+                                            "sliceX": 8,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "2a55797f-0f35-467b-bed2-cf673d1e2eba",
+                                            "x": -8,
+                                            "y": 0,
+                                            "sliceX": 16,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "a0d4bd08-4199-4ab2-961d-9d435f3e5e3d",
+                                            "x": 0,
+                                            "y": 0,
+                                            "sliceX": 24,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "56fc1aff-28e3-4af3-9bf7-05da5f333cd4",
+                                    "tiles": [
+                                        {
+                                            "id": "67d1f2f5-da1e-4aa2-9b32-079d0c0e0988",
+                                            "x": 8,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 32,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "c0c038d9-932e-4bee-b3af-4f27455be2ba",
+                                            "x": 16,
+                                            "y": 0,
+                                            "sliceX": 8,
+                                            "sliceY": 32,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "65a2d4c3-840a-49b8-8336-a7d6dd7dbf69",
+                                            "x": 24,
+                                            "y": 0,
+                                            "sliceX": 16,
+                                            "sliceY": 32,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "d1a432dd-962f-434b-adba-c0c9f06d4bab",
+                                            "x": 32,
+                                            "y": 0,
+                                            "sliceX": 24,
+                                            "sliceY": 32,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "4c25f940-5d19-449d-96e0-2931f494db85",
+                                    "tiles": [
+                                        {
+                                            "id": "0b6380ae-d6f7-4efe-baa0-3e4c879a9fc8",
+                                            "x": 40,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 48,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "e20062ea-ac5e-4038-b4db-018871b6710f",
+                                            "x": 48,
+                                            "y": 0,
+                                            "sliceX": 8,
+                                            "sliceY": 48,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "29639d75-1c2f-42c4-9f36-4864e9b5f57f",
+                                            "x": 56,
+                                            "y": 0,
+                                            "sliceX": 16,
+                                            "sliceY": 48,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "61a4ae3b-788a-4fdb-b13b-389975591522",
+                                            "x": 64,
+                                            "y": 0,
+                                            "sliceX": 24,
+                                            "sliceY": 48,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "0c671e3a-7875-47ca-8708-a15e15f1616c",
+                            "frames": [
+                                {
+                                    "id": "8b40754a-01bf-4242-bf7c-be44c40b0475",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "e82c261a-096e-46c5-bb2a-aa5ce965ea8f",
+                            "frames": [
+                                {
+                                    "id": "e8f178cd-5753-4a55-a7af-2831dae33062",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "d4caefa7-d711-4689-a102-db6f5736da69",
+                            "frames": [
+                                {
+                                    "id": "a19059b7-85fe-46be-97b7-9391664a5f58",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "7c7b00dc-5166-43dd-93cb-1ae53b1b783d",
+                            "frames": [
+                                {
+                                    "id": "c0574102-a322-493a-a463-e14250001f73",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "60a01bb2-c228-4fd4-8f82-65493d16049a",
+                            "frames": [
+                                {
+                                    "id": "ec9bca6d-9538-4b2f-b1f7-cccef680fc1d",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "73fe208f-05cd-4a67-bcb4-d94894ec2bb5",
+                            "frames": [
+                                {
+                                    "id": "31fc9d5b-a66e-48de-8395-a67f3008cfea",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "9ad504fd-6bd4-4157-bc9f-31e07f058f95",
+                            "frames": [
+                                {
+                                    "id": "3519e157-dd14-4bcb-8af5-7bbbad049a76",
+                                    "tiles": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "numTiles": 13,
+            "canvasWidth": 128,
+            "canvasHeight": 16,
+            "boundsX": 0,
+            "boundsY": 0,
+            "boundsWidth": 16,
+            "boundsHeight": 16,
+            "animSpeed": 15
+        },
+        {
             "id": "b7e8633e-ead8-4808-98c5-dd1273c2f978",
             "name": "BattleUIDebug",
             "symbol": "sprite_battleuidebug",
@@ -94070,6 +95349,208 @@
             "numTiles": 6,
             "canvasWidth": 16,
             "canvasHeight": 16,
+            "boundsX": 0,
+            "boundsY": 0,
+            "boundsWidth": 16,
+            "boundsHeight": 16,
+            "animSpeed": 15
+        },
+        {
+            "id": "be69f659-0668-49df-acff-461564c2ae17",
+            "name": "Frisk_NEW",
+            "symbol": "sprite_frisk_new",
+            "numFrames": 7,
+            "type": "animated",
+            "filename": "Frisk_NEW.png",
+            "checksum": "124ad715dfd8ae698870a15e62fcf8d04e7209f6",
+            "width": 112,
+            "height": 48,
+            "states": [
+                {
+                    "id": "b2906a2e-2134-46bb-8785-abc011828805",
+                    "name": "",
+                    "animationType": "multi_movement",
+                    "flipLeft": true,
+                    "animations": [
+                        {
+                            "id": "952c50a2-5e3d-4a6f-b2b9-b1ea4116af35",
+                            "frames": [
+                                {
+                                    "id": "48324c77-0902-4554-b440-e065eca7b86d",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "d1368982-5aab-4e57-9fba-3856cd3a2819",
+                            "frames": [
+                                {
+                                    "id": "859a8334-8e58-4d45-b745-933c007ac5ae",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "baf9028d-ef2e-4286-9451-36dac3735a9f",
+                            "frames": [
+                                {
+                                    "id": "e5782d28-63b3-4825-aae5-f1b67df1d4d8",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "184b283b-25e7-4ccc-a349-5289c8847185",
+                            "frames": [
+                                {
+                                    "id": "3a552234-d11f-40eb-9e2b-74a2ea38795e",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "617d4a7f-c51c-4ab7-af9d-aa0a6eb2a1be",
+                            "frames": [
+                                {
+                                    "id": "df7b187b-15f7-4e84-a141-cdde29460c80",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "06b419f8-d0b9-4c83-bda0-4bae4ac5a6f2",
+                            "frames": [
+                                {
+                                    "id": "8c2055fd-3110-478f-a522-22c9a5492587",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "0f0f338c-ed37-4939-889e-756de26d326c",
+                            "frames": [
+                                {
+                                    "id": "82dbb731-f8bb-4da4-9e93-275d2a16c1cf",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "cf4ba2d9-80e9-4547-bab7-83f6c00cf7cf",
+                            "frames": [
+                                {
+                                    "id": "54304a4b-2487-41e5-849d-ce4d8ca24eea",
+                                    "tiles": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "numTiles": 0,
+            "canvasWidth": 32,
+            "canvasHeight": 32,
+            "boundsX": 0,
+            "boundsY": 0,
+            "boundsWidth": 16,
+            "boundsHeight": 16,
+            "animSpeed": 15
+        },
+        {
+            "id": "0581c521-bbc8-40df-bf8e-e8ff1d50b66e",
+            "name": "Frisk_WakeUp",
+            "symbol": "sprite_frisk_wakeup",
+            "numFrames": 6,
+            "type": "actor_animated",
+            "filename": "Frisk_WakeUp.png",
+            "checksum": "b7d80dc41e10e03b6fcbe4a90f518e51a6ac9412",
+            "width": 96,
+            "height": 48,
+            "states": [
+                {
+                    "id": "4c8b6ed6-4009-4819-850b-7503791ca0c3",
+                    "name": "",
+                    "animationType": "multi_movement",
+                    "flipLeft": true,
+                    "animations": [
+                        {
+                            "id": "1b2c6c12-9c40-4965-bd80-a14d4e82cd3a",
+                            "frames": [
+                                {
+                                    "id": "7a603929-aae8-4365-9956-f18a4384a2dd",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1d0f741f-52c7-4a84-af10-7d2b1676bf43",
+                            "frames": [
+                                {
+                                    "id": "375e919a-8e7e-4049-9301-4f5fc8321ccd",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "24ab4c6d-0780-4dec-a15a-6c1085937034",
+                            "frames": [
+                                {
+                                    "id": "634dd39f-7a79-4f39-ac28-ca1bb7011d41",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "58ff352a-ff8b-4e23-8074-8238f99f2dc5",
+                            "frames": [
+                                {
+                                    "id": "ad30639e-b23c-4dd9-a395-564352fe89bd",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "9bc1a311-6530-4133-8d01-aecc3f299847",
+                            "frames": [
+                                {
+                                    "id": "e78bd8df-fadb-4e27-b89a-802209da4710",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1f3d05f6-c668-4aea-8462-9e7487b98819",
+                            "frames": [
+                                {
+                                    "id": "dd11913b-5eb3-4617-bd75-32837a7fbba2",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "83bf7d15-a14c-44ee-b1a2-0b72c1d45f91",
+                            "frames": [
+                                {
+                                    "id": "93a39ef9-bc4f-4129-88f7-c4ba4ce680b5",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "69e97b9e-aa7c-457c-9d0b-2e85672319a5",
+                            "frames": [
+                                {
+                                    "id": "88d9acb6-3ee3-4f32-abe8-31b4ba9eb0f2",
+                                    "tiles": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "numTiles": 0,
+            "canvasWidth": 32,
+            "canvasHeight": 32,
             "boundsX": 0,
             "boundsY": 0,
             "boundsWidth": 16,
@@ -97774,6 +99255,26 @@
                 "384850",
                 "000000"
             ]
+        },
+        {
+            "id": "318e3d4e-9d0a-4c52-a0a9-fa0e4c14b335",
+            "name": "Battle BG",
+            "colors": [
+                "F8F8F8",
+                "E0B000",
+                "F800F8",
+                "000000"
+            ]
+        },
+        {
+            "id": "eae6c644-256e-4e84-a220-175c9e4c2902",
+            "name": "Battle FG",
+            "colors": [
+                "F8F820",
+                "F80000",
+                "F800F8",
+                "000000"
+            ]
         }
     ],
     "customEvents": [
@@ -97851,7 +99352,7 @@
                                         {
                                             "command": "PT_EVENT_BACKGROUND_TEXT",
                                             "args": {
-                                                "text": "\\002\\002Sorry,",
+                                                "text": "\\002\\005Sorry,",
                                                 "x": 13,
                                                 "y": 3
                                             },
@@ -97860,7 +99361,7 @@
                                         {
                                             "command": "PT_EVENT_BACKGROUND_TEXT",
                                             "args": {
-                                                "text": "\\002\\002it's a",
+                                                "text": "\\002\\005it's a",
                                                 "x": 13,
                                                 "y": 4
                                             },
@@ -97869,7 +99370,7 @@
                                         {
                                             "command": "PT_EVENT_BACKGROUND_TEXT",
                                             "args": {
-                                                "text": "\\002\\002{WIP...",
+                                                "text": "\\002\\005{WIP...",
                                                 "x": 12,
                                                 "y": 5
                                             },
@@ -98825,21 +100326,6 @@
             "symbol": "var_charaname"
         },
         {
-            "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
-            "name": "Counter",
-            "symbol": "var_counter_0"
-        },
-        {
-            "id": "36af1c03-9d6b-404c-9180-0ebcb21ec8f5__L0",
-            "name": "switch 1",
-            "symbol": "var_switch_1"
-        },
-        {
-            "id": "61c1a1c1-261e-478d-be3e-136b67d1f330__L0",
-            "name": "SaveMenu",
-            "symbol": "var_savemenu"
-        },
-        {
             "id": "20",
             "name": "Name_1",
             "symbol": "var_name_1"
@@ -98868,6 +100354,21 @@
             "id": "25",
             "name": "Name_6",
             "symbol": "var_name_6"
+        },
+        {
+            "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
+            "name": "Counter",
+            "symbol": "var_counter_0"
+        },
+        {
+            "id": "36af1c03-9d6b-404c-9180-0ebcb21ec8f5__L0",
+            "name": "switch 1",
+            "symbol": "var_switch_1"
+        },
+        {
+            "id": "61c1a1c1-261e-478d-be3e-136b67d1f330__L0",
+            "name": "SaveMenu",
+            "symbol": "var_savemenu"
         }
     ],
     "engineFieldValues": [
@@ -98877,16 +100378,16 @@
         }
     ],
     "settings": {
-        "startSceneId": "27697607-24f3-4a08-9706-e372955b1642",
-        "startX": 16,
-        "startY": 19,
+        "startSceneId": "93481461-209a-497c-8304-a54799217280",
+        "startX": 20,
+        "startY": 10,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 139,
-        "worldScrollY": 486,
+        "worldScrollX": 0,
+        "worldScrollY": 0,
         "zoom": 100,
         "customColorsEnabled": true,
         "sgbEnabled": false,
