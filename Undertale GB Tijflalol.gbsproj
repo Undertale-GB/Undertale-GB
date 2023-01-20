@@ -6198,9 +6198,9 @@
                             "command": "EVENT_TEXT",
                             "args": {
                                 "text": [
-                                    "*Only the fearless\n may proceed",
+                                    "*Only the fearless\n may proceed.",
                                     "*Brave ones,\n foolish ones.",
-                                    "*Both walk not \nthe middle road."
+                                    "*Both walk not\n the middle road."
                                 ],
                                 "avatarId": ""
                             },
@@ -97612,8 +97612,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 1522.4000244140625,
-        "worldScrollY": 4296.7998046875,
+        "worldScrollX": 1617.5999755859375,
+        "worldScrollY": 2418.39990234375,
         "zoom": 262.5,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -97643,8 +97643,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            155,
-            556
+            154,
+            557
         ],
         "showNavigator": true,
         "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",
