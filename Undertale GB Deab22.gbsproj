@@ -2492,10 +2492,18 @@
                 {
                     "command": "EVENT_GROUP",
                     "args": {
-                        "__collapse": false
+                        "__collapse": false,
+                        "__label": "DEBUG"
                     },
                     "children": {
                         "true": [
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "c8beff9d-3839-4a5c-9b72-f9b957fbf6fa"
+                                },
+                                "id": "93d2efbc-a110-4822-a9bb-d3bdc7df9faa"
+                            },
                             {
                                 "command": "EVENT_SET_VALUE",
                                 "args": {
@@ -2554,10 +2562,12 @@
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
@@ -2584,10 +2594,12 @@
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
@@ -2614,10 +2626,12 @@
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
@@ -2644,10 +2658,12 @@
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
@@ -2674,10 +2690,12 @@
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
@@ -2704,10 +2722,12 @@
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
@@ -2734,24 +2754,12 @@
                 0,
                 0,
                 0,
+                15,
                 0,
                 0,
                 0,
                 0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                15,
                 0,
                 0,
                 0,
@@ -3647,57 +3655,54 @@
                     "isPinned": false,
                     "script": [
                         {
-                            "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                            "command": "EVENT_CALL_CUSTOM_EVENT",
                             "args": {
-                                "__scriptTabs": "text",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "showBorder": "true",
-                                "clearPrevious": true,
-                                "textX": 1,
-                                "textY": 1,
-                                "textHeight": 3,
-                                "closeWhen": "notModal",
-                                "closeButton": "a",
-                                "text": [
-                                    "test 1",
-                                    "test 2"
-                                ],
-                                "avatarId": "069e819a-6837-479f-adfd-a4c19fa3ff4f"
+                                "customEventId": "c8beff9d-3839-4a5c-9b72-f9b957fbf6fa",
+                                "__collapse": true,
+                                "__comment": true
                             },
-                            "id": "d43952bd-f872-4dd0-bb73-da02dce1d98c"
+                            "id": "b687f549-d7aa-4e69-a4cb-44a0206c2cee"
                         },
                         {
-                            "command": "EVENT_AWAIT_INPUT",
+                            "command": "EVENT_CALL_CUSTOM_EVENT",
                             "args": {
-                                "input": [
-                                    "a"
-                                ],
+                                "customEventId": "e25b9f0c-0067-45c5-806c-32a206cbfce5",
+                                "$variable[V1]$": {
+                                    "type": "variable",
+                                    "value": "L1"
+                                },
+                                "$variable[V2]$": {
+                                    "type": "variable",
+                                    "value": "L2"
+                                },
+                                "$variable[V3]$": {
+                                    "type": "variable",
+                                    "value": "L3"
+                                },
+                                "$variable[V4]$": {
+                                    "type": "variable",
+                                    "value": "T0"
+                                },
+                                "$variable[V5]$": {
+                                    "type": "variable",
+                                    "value": "T1"
+                                },
+                                "__comment": true,
                                 "__collapse": true
                             },
-                            "id": "4737007d-68df-4f3e-bfa2-31a8926dffb3"
+                            "id": "c0cca54a-d2e9-4c23-94a2-bd2a27a8d2be"
                         },
                         {
-                            "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                            "command": "EVENT_TEXT",
                             "args": {
-                                "__scriptTabs": "text",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "showBorder": "true",
-                                "clearPrevious": true,
-                                "textX": 1,
-                                "textY": 1,
-                                "textHeight": 3,
-                                "closeWhen": "key",
-                                "closeButton": "a",
                                 "text": [
-                                    "hmm..."
+                                    "Hey #L0##L1##L2##L3##T0##T1# !"
                                 ],
-                                "avatarId": "d876b785-8c90-4f6e-8097-c36277b5d61c"
+                                "avatarId": "",
+                                "__comment": true,
+                                "__collapse": true
                             },
-                            "id": "dc17355b-ce72-4f70-9a5e-eadc77b3fb9c"
+                            "id": "70edc86f-95c3-41ba-90f3-272a2f6f331c"
                         }
                     ],
                     "startScript": [],
@@ -5312,7 +5317,8 @@
                                     "Chara\nRuins-Entrance"
                                 ],
                                 "avatarId": "",
-                                "__comment": true
+                                "__comment": true,
+                                "__collapse": true
                             },
                             "id": "63d7ba20-eee4-469d-b284-1680a7b1eec0"
                         },
@@ -5555,7 +5561,15 @@
                     "symbol": "trigger_5"
                 }
             ],
-            "script": [],
+            "script": [
+                {
+                    "command": "EVENT_MUSIC_PLAY",
+                    "args": {
+                        "musicId": "f2705afb-63fb-4f4e-a4bb-a3af7184ddaf"
+                    },
+                    "id": "3be7f5a7-56f2-41c3-84c6-52e8ee8f4a4c"
+                }
+            ],
             "playerHit1Script": [],
             "playerHit2Script": [],
             "playerHit3Script": [],
@@ -55327,7 +55341,7 @@
                     "command": "EVENT_GROUP",
                     "args": {
                         "__label": "Menu Keys",
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "children": {
                         "true": [
@@ -99971,6 +99985,322 @@
                     "id": "58ec7aff-76ba-46ea-a84a-194e219cf881"
                 }
             ]
+        },
+        {
+            "id": "e25b9f0c-0067-45c5-806c-32a206cbfce5",
+            "name": "Decode name",
+            "description": "Decodes the two Name variables into 6 ascii-indexes, useable in most textboxes",
+            "variables": {
+                "V0": {
+                    "id": "V0",
+                    "name": "Letter_1",
+                    "passByReference": true
+                },
+                "V1": {
+                    "id": "V1",
+                    "name": "Letter_2",
+                    "passByReference": true
+                },
+                "V2": {
+                    "id": "V2",
+                    "name": "Letter_3",
+                    "passByReference": true
+                },
+                "V3": {
+                    "id": "V3",
+                    "name": "Letter_4",
+                    "passByReference": true
+                },
+                "V4": {
+                    "id": "V4",
+                    "name": "Letter_5",
+                    "passByReference": true
+                },
+                "V5": {
+                    "id": "V5",
+                    "name": "Letter_6",
+                    "passByReference": true
+                }
+            },
+            "actors": {},
+            "symbol": "script_9",
+            "script": [
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "Name_1",
+                        "__collapse": false,
+                        "__comment": false
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                "args": {
+                                    "variable": "V0",
+                                    "expression": "($20$ & 31744) >> 10",
+                                    "__collapse": false
+                                },
+                                "id": "d03020df-6b35-4284-a79e-343f5db36ac0"
+                            },
+                            {
+                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                "args": {
+                                    "variable": "V1",
+                                    "expression": "($20$ & 992) >> 5",
+                                    "__collapse": false
+                                },
+                                "id": "9b4da3f7-a04f-46e0-916b-00f3ada99b66"
+                            },
+                            {
+                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                "args": {
+                                    "variable": "V2",
+                                    "expression": "($20$ & 31)",
+                                    "__collapse": false
+                                },
+                                "id": "82bc5548-348a-4ecc-8ef3-e78d3f22e313"
+                            }
+                        ]
+                    },
+                    "id": "7bf67de0-3ab8-4ac1-a2bc-aea4fd8deafa"
+                },
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "Name_2",
+                        "__collapse": false,
+                        "__comment": true
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                "args": {
+                                    "variable": "V3",
+                                    "expression": "($21$ & 31744) >> 10",
+                                    "__collapse": false
+                                },
+                                "id": "3cacc428-445c-430a-9580-eb39ef2798b7"
+                            },
+                            {
+                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                "args": {
+                                    "variable": "V4",
+                                    "expression": "($21$ & 992) >> 5",
+                                    "__collapse": false
+                                },
+                                "id": "2ec8e781-1b73-4c90-bdb0-8204ca036aef"
+                            },
+                            {
+                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                "args": {
+                                    "variable": "V5",
+                                    "expression": "($21$ & 31)",
+                                    "__collapse": false
+                                },
+                                "id": "aa1e5b67-654a-42a7-bf25-321121a4feac"
+                            }
+                        ]
+                    },
+                    "id": "09470e2d-887f-4da2-9869-b04e9f1561ae"
+                },
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "Letter index to Ascii",
+                        "__collapse": true,
+                        "__comment": true
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "V0",
+                                    "operator": "!=",
+                                    "comparator": "0",
+                                    "__collapseElse": true,
+                                    "__collapse": false
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                            "args": {
+                                                "variable": "V0",
+                                                "expression": "$V0$ + 32",
+                                                "__collapse": false
+                                            },
+                                            "id": "c4070e73-dfa1-4049-8674-9aa1b30df819"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "d42ce3f4-70ef-4237-b7b8-74c610be24dd"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "V1",
+                                    "operator": "!=",
+                                    "comparator": "0",
+                                    "__collapseElse": true,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                            "args": {
+                                                "variable": "V1",
+                                                "expression": "$V1$ + 32",
+                                                "__collapse": false
+                                            },
+                                            "id": "4b3e9dbf-4ac7-43c2-88fd-83b5999fe6f5"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "44a256e5-b49d-43aa-807f-1d80acf06c33"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "V2",
+                                    "operator": "!=",
+                                    "comparator": "0",
+                                    "__collapseElse": true,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                            "args": {
+                                                "variable": "V2",
+                                                "expression": "$V2$ + 32",
+                                                "__collapse": false
+                                            },
+                                            "id": "1f8ae156-b3f3-4ad8-9001-0e3fc9d4812c"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "b85a7fee-770c-40d0-baf5-5594f25e89ce"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "V3",
+                                    "operator": "!=",
+                                    "comparator": "0",
+                                    "__collapseElse": true,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                            "args": {
+                                                "variable": "V3",
+                                                "expression": "$V3$ + 32",
+                                                "__collapse": false
+                                            },
+                                            "id": "eb5773a1-f8a2-4639-bf3c-041cc52027fb"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "837cb8d2-0b26-4e92-b41a-2de1a9a10f07"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "V4",
+                                    "operator": "!=",
+                                    "comparator": "0",
+                                    "__collapseElse": true,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                            "args": {
+                                                "variable": "V4",
+                                                "expression": "$V4$ + 32",
+                                                "__collapse": false
+                                            },
+                                            "id": "90906484-3ffa-408b-a852-6ee716b80ab0"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "2b822737-3c92-4253-be62-93f1efa87f31"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "V5",
+                                    "operator": "!=",
+                                    "comparator": "0",
+                                    "__collapseElse": true,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                            "args": {
+                                                "variable": "V5",
+                                                "expression": "$V5$ + 32",
+                                                "__collapse": false
+                                            },
+                                            "id": "cdea278f-5c8d-46fb-a6c8-4ae896e9f600"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "749dc70f-da7d-4704-a1a6-76dfaf425a01"
+                            }
+                        ]
+                    },
+                    "id": "7b757325-2b4e-4dc4-b9fa-e3258aee5b46"
+                }
+            ]
+        },
+        {
+            "id": "c8beff9d-3839-4a5c-9b72-f9b957fbf6fa",
+            "name": "Set default name",
+            "description": "sets the name to \"CHARA \"",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_10",
+            "script": [
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "20",
+                        "value": {
+                            "type": "number",
+                            "value": 3329
+                        }
+                    },
+                    "id": "06ca1065-3468-4ffe-932b-2cd1973af35a"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "21",
+                        "value": {
+                            "type": "number",
+                            "value": 18464
+                        }
+                    },
+                    "id": "289f5c75-6885-46ea-8044-2b12c623543d"
+                }
+            ]
         }
     ],
     "music": [
@@ -100378,16 +100708,16 @@
         }
     ],
     "settings": {
-        "startSceneId": "93481461-209a-497c-8304-a54799217280",
-        "startX": 20,
-        "startY": 10,
+        "startSceneId": "fcfd0e97-ba43-4871-b2f5-010f0c192b4c",
+        "startX": 12,
+        "startY": 25,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 0,
-        "worldScrollY": 0,
+        "worldScrollX": 471,
+        "worldScrollY": 759,
         "zoom": 100,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -100417,8 +100747,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            30,
-            897
+            202,
+            715
         ],
         "showNavigator": true,
         "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",
