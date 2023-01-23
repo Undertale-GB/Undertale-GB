@@ -2540,7 +2540,13 @@
                 null,
                 "96ed06b5-ae33-4829-aebe-336481d6d229"
             ],
-            "spritePaletteIds": [],
+            "spritePaletteIds": [
+                null,
+                null,
+                null,
+                null,
+                "a12d0b0d-dedb-4ad8-8d13-35e5fb60811b"
+            ],
             "collisions": [
                 0,
                 0,
@@ -8826,7 +8832,13 @@
                 "77094775-035b-41c3-8de3-c2d8af10a5a6",
                 "469ea28d-cddd-4969-8b2c-fed5c3aeacf0"
             ],
-            "spritePaletteIds": [],
+            "spritePaletteIds": [
+                null,
+                null,
+                null,
+                null,
+                "a1566361-db8a-4828-bf68-c11b6cbfe78c"
+            ],
             "collisions": [
                 0,
                 0,
@@ -25181,7 +25193,7 @@
             "autoFadeSpeed": 1,
             "id": "dab16749-6471-4414-8d76-2f078a832ecc",
             "symbol": "scene_room_12",
-            "x": 4687.949999999997,
+            "x": 4688.449999999997,
             "y": 763.1000000000005,
             "actors": [
                 {
@@ -92635,7 +92647,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 4,
                                             "priority": false
                                         },
                                         {
@@ -92648,7 +92660,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 4,
                                             "priority": false
                                         },
                                         {
@@ -92661,7 +92673,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 4,
                                             "priority": false
                                         },
                                         {
@@ -92674,7 +92686,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 4,
                                             "priority": false
                                         }
                                     ]
@@ -92748,7 +92760,7 @@
                 }
             ],
             "numTiles": 4,
-            "canvasWidth": 32,
+            "canvasWidth": 16,
             "canvasHeight": 32,
             "boundsX": 0,
             "boundsY": 0,
@@ -92916,7 +92928,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "palette": 0,
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 4,
                                             "objPalette": "OBP0",
                                             "priority": false
                                         },
@@ -92929,7 +92941,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "palette": 0,
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 4,
                                             "objPalette": "OBP0",
                                             "priority": false
                                         }
@@ -96153,7 +96165,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "palette": 0,
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "objPalette": "OBP0",
                                             "priority": false
                                         },
@@ -96166,7 +96178,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "palette": 0,
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "objPalette": "OBP0",
                                             "priority": false
                                         }
@@ -96184,7 +96196,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "palette": 0,
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "objPalette": "OBP0",
                                             "priority": false
                                         },
@@ -96197,7 +96209,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "palette": 0,
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "objPalette": "OBP0",
                                             "priority": false
                                         }
@@ -99225,6 +99237,16 @@
                 "F800F8",
                 "000000"
             ]
+        },
+        {
+            "id": "a1566361-db8a-4828-bf68-c11b6cbfe78c",
+            "name": "Dummy",
+            "colors": [
+                "F8F890",
+                "A8A888",
+                "F800F8",
+                "000000"
+            ]
         }
     ],
     "customEvents": [
@@ -100291,8 +100313,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 771,
-        "worldScrollY": 2893,
+        "worldScrollX": 7555,
+        "worldScrollY": 747,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,

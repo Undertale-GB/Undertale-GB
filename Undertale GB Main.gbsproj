@@ -3722,6 +3722,88 @@
                     ],
                     "leaveScript": [],
                     "symbol": "trigger_3"
+                },
+                {
+                    "name": "",
+                    "id": "a49ae610-e902-4593-a203-84907384cca0",
+                    "x": 6,
+                    "y": 28,
+                    "symbol": "trigger_37",
+                    "width": 20,
+                    "height": 1,
+                    "script": [
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "* Howdy!\n* I'm !F:be4454bf-4583-4683-ae77-0a0bedc5e82d!FLOWEY!F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!.\n* !F:be4454bf-4583-4683-ae77-0a0bedc5e82d!FLOWEY !F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!the \n  !F:be4454bf-4583-4683-ae77-0a0bedc5e82d!FLOWER!F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!!"
+                                ],
+                                "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+                            },
+                            "id": "bd59427f-5bd6-40a3-9411-8075bfb4a594"
+                        },
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "* Hmm..."
+                                ],
+                                "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+                            },
+                            "id": "740b96cb-ba5f-4752-a957-1fc17c2361cf"
+                        },
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "* You're new\n  to the\n  underground,\n  aren'tcha?"
+                                ],
+                                "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+                            },
+                            "id": "b42f8e00-4995-4c86-9a45-f994f7ee32d4"
+                        },
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "* Golly,\n  you must be\n  so confused."
+                                ],
+                                "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+                            },
+                            "id": "6c466f38-ad7d-442d-9cac-dff2da216640"
+                        },
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "* Someone ought\n  to teach you\n  how things\n  work around\n  here!"
+                                ],
+                                "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+                            },
+                            "id": "9c0ab1ba-2868-4e46-b803-665cfa137b44"
+                        },
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "* I guess little\n  old me will\n  have to do."
+                                ],
+                                "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+                            },
+                            "id": "1728b3a0-eb3b-4a54-9978-9c645bc1624c"
+                        },
+                        {
+                            "command": "EVENT_TEXT",
+                            "args": {
+                                "text": [
+                                    "* Ready?\n* Here we go!"
+                                ],
+                                "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+                            },
+                            "id": "2a789a52-b999-46d3-836c-39b53b48525d"
+                        }
+                    ],
+                    "leaveScript": []
                 }
             ],
             "script": [],
@@ -6124,9 +6206,9 @@
                             "command": "EVENT_TEXT",
                             "args": {
                                 "text": [
-                                    "*Only the fearless\n may proceed",
+                                    "*Only the fearless\n may proceed.",
                                     "*Brave ones,\n foolish ones.",
-                                    "*Both walk not \nthe middle road."
+                                    "*Both walk not \n the middle road."
                                 ],
                                 "avatarId": ""
                             },
@@ -100313,8 +100395,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 7555,
-        "worldScrollY": 747,
+        "worldScrollX": 1031,
+        "worldScrollY": 1763,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -100344,8 +100426,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            202,
-            724
+            133,
+            481
         ],
         "showNavigator": true,
         "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",
