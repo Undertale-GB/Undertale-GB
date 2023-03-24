@@ -2504,9 +2504,9 @@
                         {
                             "command": "EVENT_SWITCH_SCENE",
                             "args": {
-                                "sceneId": "60ad4f47-2d42-429c-b7f8-440fd5693287",
+                                "sceneId": "d9c04569-abc2-4817-b4f5-a02b5160ba07",
                                 "x": 0,
-                                "y": 0,
+                                "y": 1,
                                 "direction": "down",
                                 "fadeSpeed": "2",
                                 "__collapse": false
@@ -60642,7 +60642,7 @@
                             "command": "EVENT_VARIABLE_MATH_EVALUATE",
                             "args": {
                                 "variable": "L0",
-                                "expression": "$07$ - 1"
+                                "expression": "($07$ - 1) + ($09$ * 4)"
                             },
                             "id": "4ddfbc34-1a99-493b-a620-d166fcb28725"
                         },
@@ -60675,7 +60675,7 @@
                     "name": "UI Controller",
                     "frame": 0,
                     "animate": false,
-                    "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+                    "spriteSheetId": "d0aed1ac-601b-4d72-b2ef-f24728342e1e",
                     "direction": "down",
                     "moveSpeed": 1,
                     "animSpeed": 255,
@@ -60685,7 +60685,15 @@
                     "collisionGroup": "",
                     "symbol": "actor_7",
                     "script": [],
-                    "startScript": [],
+                    "startScript": [
+                        {
+                            "command": "EVENT_ACTOR_HIDE",
+                            "args": {
+                                "actorId": "$self$"
+                            },
+                            "id": "b62100f6-62cd-4a9a-93a5-9a4f01daa889"
+                        }
+                    ],
                     "updateScript": [
                         {
                             "command": "EVENT_GROUP",
@@ -60818,7 +60826,9 @@
                             "command": "EVENT_IF_FALSE",
                             "args": {
                                 "variable": "9",
-                                "__collapseElse": false
+                                "__collapseElse": false,
+                                "__label": "Regular Dialogue?",
+                                "__collapse": false
                             },
                             "children": {
                                 "true": [
@@ -60828,6 +60838,14 @@
                                             "text": "*The DEBUG\\n enemy\\n attacks!"
                                         },
                                         "id": "68e7ef14-315f-481d-a5ac-0cf9633ff506"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_STOP_UPDATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "__collapse": false
+                                        },
+                                        "id": "1051a881-916a-41d1-8f65-461c5e0630ce"
                                     }
                                 ],
                                 "false": [
@@ -60836,13 +60854,13 @@
                                         "args": {
                                             "variable": "7",
                                             "choices": 4,
-                                            "__collapseCase0": false,
+                                            "__collapseCase0": true,
                                             "value0": 1,
                                             "__collapseCase1": false,
                                             "value1": 2,
-                                            "__collapseCase2": false,
+                                            "__collapseCase2": true,
                                             "value2": 3,
-                                            "__collapseCase3": false,
+                                            "__collapseCase3": true,
                                             "value3": 4,
                                             "__collapseCase4": false,
                                             "value4": 5,
@@ -60868,10 +60886,36 @@
                                             "value14": 15,
                                             "__collapseCase15": false,
                                             "value15": 16,
-                                            "__collapseElse": true
+                                            "__collapseElse": true,
+                                            "__label": "Bottom menu selection (Fight = 1, Act = 2 etc.)",
+                                            "__collapse": false
                                         },
                                         "children": {
-                                            "true0": [],
+                                            "true0": [
+                                                {
+                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                    "args": {
+                                                        "text": "Placeholder\\nText!"
+                                                    },
+                                                    "id": "2f0f0d56-7bcc-4a0e-97ea-eee3fbeb3ce0"
+                                                },
+                                                {
+                                                    "command": "EVENT_AWAIT_INPUT",
+                                                    "args": {
+                                                        "input": [
+                                                            "b"
+                                                        ]
+                                                    },
+                                                    "id": "79ce1ac1-5192-4315-a569-6573883c60b3"
+                                                },
+                                                {
+                                                    "command": "EVENT_SET_FALSE",
+                                                    "args": {
+                                                        "variable": "9"
+                                                    },
+                                                    "id": "7991eca4-c206-4988-bb3e-ee34dd4642b2"
+                                                }
+                                            ],
                                             "true1": [
                                                 {
                                                     "command": "UTGB_EVENT_BATTLE_MENU",
@@ -60885,31 +60929,224 @@
                                                         "option_5_text": "",
                                                         "option_6_text": "",
                                                         "option_7_text": "",
-                                                        "option_8_text": ""
+                                                        "option_8_text": "",
+                                                        "twoRows": false
                                                     },
                                                     "id": "ec4d5bdd-ded0-4c4d-91e4-da284febd51a"
                                                 },
                                                 {
+                                                    "command": "EVENT_IF_VALUE",
+                                                    "args": {
+                                                        "variable": "8",
+                                                        "operator": ">",
+                                                        "comparator": "0",
+                                                        "__collapseElse": false,
+                                                        "__label": "If Enemy selected"
+                                                    },
+                                                    "children": {
+                                                        "true": [
+                                                            {
+                                                                "command": "UTGB_EVENT_BATTLE_MENU",
+                                                                "args": {
+                                                                    "variable": "8",
+                                                                    "items": 3,
+                                                                    "option_1_text": "Check",
+                                                                    "option_2_text": "Fix",
+                                                                    "option_3_text": "Ignore",
+                                                                    "option_4_text": "",
+                                                                    "option_5_text": "",
+                                                                    "option_6_text": "",
+                                                                    "option_7_text": "",
+                                                                    "option_8_text": "",
+                                                                    "twoRows": true,
+                                                                    "__collapse": true
+                                                                },
+                                                                "id": "3f2e8df3-cdca-4b37-9095-1669b4b50dd7"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_SWITCH",
+                                                                "args": {
+                                                                    "variable": "8",
+                                                                    "choices": 3,
+                                                                    "__collapseCase0": false,
+                                                                    "value0": 1,
+                                                                    "__collapseCase1": false,
+                                                                    "value1": 2,
+                                                                    "__collapseCase2": true,
+                                                                    "value2": 3,
+                                                                    "__collapseCase3": false,
+                                                                    "value3": 4,
+                                                                    "__collapseCase4": false,
+                                                                    "value4": 5,
+                                                                    "__collapseCase5": false,
+                                                                    "value5": 6,
+                                                                    "__collapseCase6": false,
+                                                                    "value6": 7,
+                                                                    "__collapseCase7": false,
+                                                                    "value7": 8,
+                                                                    "__collapseCase8": false,
+                                                                    "value8": 9,
+                                                                    "__collapseCase9": false,
+                                                                    "value9": 10,
+                                                                    "__collapseCase10": false,
+                                                                    "value10": 11,
+                                                                    "__collapseCase11": false,
+                                                                    "value11": 12,
+                                                                    "__collapseCase12": false,
+                                                                    "value12": 13,
+                                                                    "__collapseCase13": false,
+                                                                    "value13": 14,
+                                                                    "__collapseCase14": false,
+                                                                    "value14": 15,
+                                                                    "__collapseCase15": false,
+                                                                    "value15": 16,
+                                                                    "__collapseElse": false,
+                                                                    "__collapse": false,
+                                                                    "__label": "Select Action (Check = 1 etc.)"
+                                                                },
+                                                                "children": {
+                                                                    "true0": [
+                                                                        {
+                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "args": {
+                                                                                "text": "*Debug\\n 5HP 6DF\\n No graphics\\n yet!"
+                                                                            },
+                                                                            "id": "50f10176-ff16-4ca6-adef-72727b644b3f"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                            "args": {
+                                                                                "input": [
+                                                                                    "b",
+                                                                                    "a"
+                                                                                ]
+                                                                            },
+                                                                            "id": "b1697c0a-bc13-416a-a03a-ad96c613a7e2"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SET_FALSE",
+                                                                            "args": {
+                                                                                "variable": "9"
+                                                                            },
+                                                                            "id": "6706f414-e23b-4437-8aeb-94871fa1c8b7"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SWITCH_SCENE",
+                                                                            "args": {
+                                                                                "sceneId": "dd6410e0-2cd1-4fc5-87b4-157e82b64387",
+                                                                                "x": 9,
+                                                                                "y": 12,
+                                                                                "direction": "",
+                                                                                "fadeSpeed": "2"
+                                                                            },
+                                                                            "id": "65b1305b-07aa-4280-b572-b60fb650c24d"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_ACTOR_STOP_UPDATE",
+                                                                            "args": {
+                                                                                "actorId": "$self$",
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "id": "677b54ca-a371-4763-a73c-2690c15d71af"
+                                                                        }
+                                                                    ],
+                                                                    "true1": [
+                                                                        {
+                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "args": {
+                                                                                "text": "*(You attempt\\n to fix the\\n bug...)"
+                                                                            },
+                                                                            "id": "0b75a3cf-a131-4b54-89e7-b40cfe5643ab"
+                                                                        }
+                                                                    ],
+                                                                    "true2": [],
+                                                                    "true3": [],
+                                                                    "true4": [],
+                                                                    "true5": [],
+                                                                    "true6": [],
+                                                                    "true7": [],
+                                                                    "true8": [],
+                                                                    "true9": [],
+                                                                    "true10": [],
+                                                                    "true11": [],
+                                                                    "true12": [],
+                                                                    "true13": [],
+                                                                    "true14": [],
+                                                                    "true15": [],
+                                                                    "false": [
+                                                                        {
+                                                                            "command": "EVENT_SET_FALSE",
+                                                                            "args": {
+                                                                                "variable": "9"
+                                                                            },
+                                                                            "id": "5e984eb5-a378-4811-a894-a018a75dd833"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                "id": "f48e0974-2f60-4118-88c5-0a31d2543c11"
+                                                            }
+                                                        ],
+                                                        "false": [
+                                                            {
+                                                                "command": "EVENT_SET_FALSE",
+                                                                "args": {
+                                                                    "variable": "9"
+                                                                },
+                                                                "id": "e62bb1d4-743b-483f-8392-1a193313f110"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "id": "7c38a43c-76bd-486a-b5b9-5bac47914937"
+                                                }
+                                            ],
+                                            "true2": [
+                                                {
+                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                    "args": {
+                                                        "text": "Item systems\\nare hard..."
+                                                    },
+                                                    "id": "6192c41a-d7e1-4b1b-a71d-031038ad0193"
+                                                },
+                                                {
+                                                    "command": "EVENT_AWAIT_INPUT",
+                                                    "args": {
+                                                        "input": [
+                                                            "b"
+                                                        ]
+                                                    },
+                                                    "id": "7c5fdba6-89bc-497d-a654-92e8bbcff68e"
+                                                },
+                                                {
+                                                    "command": "EVENT_SET_FALSE",
+                                                    "args": {
+                                                        "variable": "9"
+                                                    },
+                                                    "id": "690ab8b2-d304-44e9-b7c2-bc1fe2c7abd7"
+                                                }
+                                            ],
+                                            "true3": [
+                                                {
                                                     "command": "UTGB_EVENT_BATTLE_MENU",
                                                     "args": {
                                                         "variable": "8",
-                                                        "items": 3,
-                                                        "option_1_text": "Check",
-                                                        "option_2_text": "Fix",
-                                                        "option_3_text": "Ignore",
+                                                        "items": 1,
+                                                        "twoRows": false,
+                                                        "option_1_text": "Debug",
+                                                        "option_2_text": "",
+                                                        "option_3_text": "",
                                                         "option_4_text": "",
                                                         "option_5_text": "",
                                                         "option_6_text": "",
                                                         "option_7_text": "",
                                                         "option_8_text": ""
                                                     },
-                                                    "id": "3f2e8df3-cdca-4b37-9095-1669b4b50dd7"
+                                                    "id": "17020096-6adb-4d3b-ba79-252ee9e8b52e"
                                                 },
                                                 {
                                                     "command": "EVENT_SWITCH",
                                                     "args": {
                                                         "variable": "8",
-                                                        "choices": 3,
+                                                        "choices": 1,
                                                         "__collapseCase0": false,
                                                         "value0": 1,
                                                         "__collapseCase1": false,
@@ -60942,44 +61179,179 @@
                                                         "value14": 15,
                                                         "__collapseCase15": false,
                                                         "value15": 16,
-                                                        "__collapseElse": false
+                                                        "__collapseElse": false,
+                                                        "__label": "Select Enemy"
                                                     },
                                                     "children": {
                                                         "true0": [
                                                             {
-                                                                "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                "command": "UTGB_EVENT_BATTLE_MENU",
                                                                 "args": {
-                                                                    "text": "*Debug\\n 5HP 6DF\\n No graphics\\n yet!"
+                                                                    "variable": "8",
+                                                                    "items": 2,
+                                                                    "twoRows": false,
+                                                                    "option_1_text": "Spare",
+                                                                    "option_2_text": "Run",
+                                                                    "option_3_text": "",
+                                                                    "option_4_text": "",
+                                                                    "option_5_text": "",
+                                                                    "option_6_text": "",
+                                                                    "option_7_text": "",
+                                                                    "option_8_text": "",
+                                                                    "__collapse": true
                                                                 },
-                                                                "id": "50f10176-ff16-4ca6-adef-72727b644b3f"
+                                                                "id": "3abae0bb-7b8e-46bf-b0e0-18d0390101f2"
                                                             },
                                                             {
-                                                                "command": "EVENT_AWAIT_INPUT",
+                                                                "command": "EVENT_SWITCH",
                                                                 "args": {
-                                                                    "input": [
-                                                                        "a",
-                                                                        "b"
+                                                                    "variable": "8",
+                                                                    "choices": 2,
+                                                                    "__collapseCase0": false,
+                                                                    "value0": 1,
+                                                                    "__collapseCase1": false,
+                                                                    "value1": 2,
+                                                                    "__collapseCase2": false,
+                                                                    "value2": 3,
+                                                                    "__collapseCase3": false,
+                                                                    "value3": 4,
+                                                                    "__collapseCase4": false,
+                                                                    "value4": 5,
+                                                                    "__collapseCase5": false,
+                                                                    "value5": 6,
+                                                                    "__collapseCase6": false,
+                                                                    "value6": 7,
+                                                                    "__collapseCase7": false,
+                                                                    "value7": 8,
+                                                                    "__collapseCase8": false,
+                                                                    "value8": 9,
+                                                                    "__collapseCase9": false,
+                                                                    "value9": 10,
+                                                                    "__collapseCase10": false,
+                                                                    "value10": 11,
+                                                                    "__collapseCase11": false,
+                                                                    "value11": 12,
+                                                                    "__collapseCase12": false,
+                                                                    "value12": 13,
+                                                                    "__collapseCase13": false,
+                                                                    "value13": 14,
+                                                                    "__collapseCase14": false,
+                                                                    "value14": 15,
+                                                                    "__collapseCase15": false,
+                                                                    "value15": 16,
+                                                                    "__collapseElse": false,
+                                                                    "__label": "Spare / Save?"
+                                                                },
+                                                                "children": {
+                                                                    "true0": [
+                                                                        {
+                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "args": {
+                                                                                "text": "*You tried\\n to spare\\n Debug,"
+                                                                            },
+                                                                            "id": "a63f8938-abeb-4e45-a5b8-db1c1cdf898c"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                            "args": {
+                                                                                "input": [
+                                                                                    "b",
+                                                                                    "a"
+                                                                                ],
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "03bcd9cc-797f-4c42-a28a-7c857eeaa59a"
+                                                                        },
+                                                                        {
+                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "args": {
+                                                                                "text": "*But its name\\n wasn't\\n yellow!"
+                                                                            },
+                                                                            "id": "bf533df0-dd39-487d-827c-79f60ef28b67"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                            "args": {
+                                                                                "input": [
+                                                                                    "b",
+                                                                                    "a"
+                                                                                ],
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "ce09dfdf-634f-43c0-9e96-51dbcbb81e36"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SET_FALSE",
+                                                                            "args": {
+                                                                                "variable": "9",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "86c91934-a859-4b10-b433-4e97c2c32f80"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SWITCH_SCENE",
+                                                                            "args": {
+                                                                                "sceneId": "dd6410e0-2cd1-4fc5-87b4-157e82b64387",
+                                                                                "x": 9,
+                                                                                "y": 12,
+                                                                                "direction": "",
+                                                                                "fadeSpeed": "2",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "1f67626a-0184-4bda-b36a-003f845d17ab"
+                                                                        }
+                                                                    ],
+                                                                    "true1": [
+                                                                        {
+                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "args": {
+                                                                                "text": "*...where to?"
+                                                                            },
+                                                                            "id": "77a9432a-a4dd-47d5-b232-ab847e193229"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                            "args": {
+                                                                                "input": [
+                                                                                    "b"
+                                                                                ]
+                                                                            },
+                                                                            "id": "411ca8bd-6e78-4e34-ac21-b22adc6cc4b0"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SET_FALSE",
+                                                                            "args": {
+                                                                                "variable": "9",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "7ce05dd4-0f9f-43d9-8dae-4819b70700b0"
+                                                                        }
+                                                                    ],
+                                                                    "true2": [],
+                                                                    "true3": [],
+                                                                    "true4": [],
+                                                                    "true5": [],
+                                                                    "true6": [],
+                                                                    "true7": [],
+                                                                    "true8": [],
+                                                                    "true9": [],
+                                                                    "true10": [],
+                                                                    "true11": [],
+                                                                    "true12": [],
+                                                                    "true13": [],
+                                                                    "true14": [],
+                                                                    "true15": [],
+                                                                    "false": [
+                                                                        {
+                                                                            "command": "EVENT_SET_FALSE",
+                                                                            "args": {
+                                                                                "variable": "9"
+                                                                            },
+                                                                            "id": "f404a5f0-0932-40ca-b334-7eebefe88c51"
+                                                                        }
                                                                     ]
                                                                 },
-                                                                "id": "b1697c0a-bc13-416a-a03a-ad96c613a7e2"
-                                                            },
-                                                            {
-                                                                "command": "EVENT_SET_FALSE",
-                                                                "args": {
-                                                                    "variable": "9"
-                                                                },
-                                                                "id": "6706f414-e23b-4437-8aeb-94871fa1c8b7"
-                                                            },
-                                                            {
-                                                                "command": "EVENT_SWITCH_SCENE",
-                                                                "args": {
-                                                                    "sceneId": "dd6410e0-2cd1-4fc5-87b4-157e82b64387",
-                                                                    "x": 0,
-                                                                    "y": 0,
-                                                                    "direction": "",
-                                                                    "fadeSpeed": "2"
-                                                                },
-                                                                "id": "65b1305b-07aa-4280-b572-b60fb650c24d"
+                                                                "id": "c4ff9d3e-658d-4813-b27a-a2d8135d452b"
                                                             }
                                                         ],
                                                         "true1": [],
@@ -61003,15 +61375,13 @@
                                                                 "args": {
                                                                     "variable": "9"
                                                                 },
-                                                                "id": "5e984eb5-a378-4811-a894-a018a75dd833"
+                                                                "id": "3dda8cd7-d7ce-4768-bf74-0721bae217ca"
                                                             }
                                                         ]
                                                     },
-                                                    "id": "f48e0974-2f60-4118-88c5-0a31d2543c11"
+                                                    "id": "a341f0d4-6828-4c8e-9718-aa657163cabe"
                                                 }
                                             ],
-                                            "true2": [],
-                                            "true3": [],
                                             "true4": [],
                                             "true5": [],
                                             "true6": [],
@@ -61031,13 +61401,6 @@
                                 ]
                             },
                             "id": "847fd2a7-3b9d-4978-9daf-3f3230e77277"
-                        },
-                        {
-                            "command": "EVENT_ACTOR_STOP_UPDATE",
-                            "args": {
-                                "actorId": "$self$"
-                            },
-                            "id": "9291a4a5-cb10-4cc1-a681-203b01d6bd5d"
                         }
                     ],
                     "hit1Script": [],
@@ -61098,7 +61461,7 @@
                                 "args": {
                                     "sceneId": "dd6410e0-2cd1-4fc5-87b4-157e82b64387",
                                     "x": 9,
-                                    "y": 11,
+                                    "y": 12,
                                     "direction": "down",
                                     "fadeSpeed": "2"
                                 },
@@ -61270,6 +61633,25 @@
                                                             "variable": "9"
                                                         },
                                                         "id": "e3061bf2-3b3c-48d5-bc06-dbf946cfe784"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                        "args": {
+                                                            "variable": "L0",
+                                                            "expression": "($07$ - 1) + ($09$ * 4)"
+                                                        },
+                                                        "id": "3e490dc7-346d-4a13-921f-47af18278945"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_ACTOR_SET_FRAME",
+                                                        "args": {
+                                                            "actorId": "321902d5-89c6-4e2a-b2cf-253064187689",
+                                                            "frame": {
+                                                                "type": "variable",
+                                                                "value": "L0"
+                                                            }
+                                                        },
+                                                        "id": "bb46c8bf-7ba1-441d-b23b-08c8850c72d8"
                                                     },
                                                     {
                                                         "command": "EVENT_ACTOR_START_UPDATE",
@@ -62171,7 +62553,7 @@
                 0,
                 0,
                 0,
-                1,
+                0,
                 0,
                 0,
                 0,
@@ -98619,6 +99001,134 @@
             "animSpeed": 15
         },
         {
+            "id": "d0aed1ac-601b-4d72-b2ef-f24728342e1e",
+            "name": "BattleCursor",
+            "symbol": "sprite_battlecursor",
+            "numFrames": 0.5,
+            "type": "animated",
+            "filename": "BattleCursor.png",
+            "checksum": "269b97565f93ba37f37c08deaa4986692f543f63",
+            "width": 8,
+            "height": 32,
+            "states": [
+                {
+                    "id": "06a306a5-09ac-4f80-ba44-b69459f4a0c4",
+                    "name": "",
+                    "animationType": "fixed",
+                    "flipLeft": true,
+                    "animations": [
+                        {
+                            "id": "4844230c-6351-4691-9f95-2de7621676aa",
+                            "frames": [
+                                {
+                                    "id": "8ce733ab-ec34-43f0-bdee-7930dee45856",
+                                    "tiles": [
+                                        {
+                                            "id": "b879249c-80ab-4eaf-af8c-f99357a142d4",
+                                            "x": 0,
+                                            "y": 16,
+                                            "sliceX": 0,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 2,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "fb671fdb-fdcd-456a-b107-329d5a7ff842",
+                                            "x": 0,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 2,
+                                            "priority": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "a37f1981-d2c7-4013-8d87-5e1cc06fbad6",
+                            "frames": [
+                                {
+                                    "id": "b41c8da4-ce84-44c9-b0d4-3d00de21d82f",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4b89d902-cde5-4b5c-b854-839e509f7dda",
+                            "frames": [
+                                {
+                                    "id": "4c675edb-555b-4421-9fb8-aa3a00c6baf5",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "1e643282-d2cc-4fb8-8f89-acfc6c741bb7",
+                            "frames": [
+                                {
+                                    "id": "217d3dec-8718-4fd0-8b5e-047b9a1dc93c",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "86a88d0b-e28b-47be-9ca5-ecb4bc53bd19",
+                            "frames": [
+                                {
+                                    "id": "57eaea77-649f-4937-850d-abffd7344583",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "4e7f215a-4914-41bd-a529-38826c2e4af0",
+                            "frames": [
+                                {
+                                    "id": "d04871d1-0665-4226-ac9b-ff16bc5f469f",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5103dc03-15e7-475b-9b0e-243394dcaa3f",
+                            "frames": [
+                                {
+                                    "id": "0bc04899-d0d5-4a2b-844c-8c8190430eb0",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "67a282a6-7aec-4f86-8d2d-549e9d6192da",
+                            "frames": [
+                                {
+                                    "id": "ab34566e-016f-4afa-83e6-5d3767edf157",
+                                    "tiles": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "numTiles": 1,
+            "canvasWidth": 16,
+            "canvasHeight": 32,
+            "boundsX": 0,
+            "boundsY": 0,
+            "boundsWidth": 16,
+            "boundsHeight": 16,
+            "animSpeed": 15
+        },
+        {
             "id": "5e032fce-1aaa-413e-a212-f0f079c51b35",
             "name": "BattleUI",
             "symbol": "sprite_battleui",
@@ -98917,6 +99427,234 @@
                                             "priority": false
                                         }
                                     ]
+                                },
+                                {
+                                    "id": "d34ba2ff-5f6d-4723-89b1-a261a28b3fbe",
+                                    "tiles": [
+                                        {
+                                            "id": "6ba7b2c8-441e-4b3a-952d-8a0a8ed434fe",
+                                            "x": -48,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "158dd838-011c-43d3-a6df-c15a4a65eb3a",
+                                            "x": -40,
+                                            "y": 0,
+                                            "sliceX": 8,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "2bd71a59-cd20-437c-b65f-665a1057c6a5",
+                                            "x": -32,
+                                            "y": 0,
+                                            "sliceX": 16,
+                                            "sliceY": 0,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "71f8918c-f6ba-42ff-a13e-46ee2061175f",
+                                            "x": -56,
+                                            "y": 0,
+                                            "sliceX": 24,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "978c189e-2c66-44b2-b518-df2f89c32e81",
+                                    "tiles": [
+                                        {
+                                            "id": "5bdb1126-c252-4e23-b6da-cdd06538bd1b",
+                                            "x": -16,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "dacc85dc-5a40-4693-bac7-0bc9b4384a25",
+                                            "x": -8,
+                                            "y": 0,
+                                            "sliceX": 8,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "6ac04e17-e88e-45c1-bec7-bcac49b29de7",
+                                            "x": 0,
+                                            "y": 0,
+                                            "sliceX": 16,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "bc6f7698-d4b7-4b6e-8399-a26c0016e49a",
+                                            "x": -24,
+                                            "y": 0,
+                                            "sliceX": 24,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "e34f2ddb-c3e2-424d-982e-d064b092a363",
+                                    "tiles": [
+                                        {
+                                            "id": "23c88a95-baa9-45d2-997a-4c1ac3d2094c",
+                                            "x": 16,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 32,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "25857184-d748-4c78-b462-7fe0114c0009",
+                                            "x": 24,
+                                            "y": 0,
+                                            "sliceX": 8,
+                                            "sliceY": 32,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "07ea55c4-1eb1-400b-8c07-84853b4d7ced",
+                                            "x": 32,
+                                            "y": 0,
+                                            "sliceX": 16,
+                                            "sliceY": 32,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "1438732b-405d-4e5c-b9fa-2dcb0072aaf5",
+                                            "x": 8,
+                                            "y": 0,
+                                            "sliceX": 24,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "617f4828-a9d9-4811-8aca-888221b06d65",
+                                    "tiles": [
+                                        {
+                                            "id": "fc76e989-6221-4c5c-b033-dfe542f10b27",
+                                            "x": 48,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 48,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "434779ca-c41a-4463-813e-dbef6206241d",
+                                            "x": 56,
+                                            "y": 0,
+                                            "sliceX": 8,
+                                            "sliceY": 48,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "557b273f-cb93-4b25-8b4a-225e313538ef",
+                                            "x": 64,
+                                            "y": 0,
+                                            "sliceX": 16,
+                                            "sliceY": 48,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "c88c8a92-cb79-40b3-80a0-e64690db9976",
+                                            "x": 40,
+                                            "y": 0,
+                                            "sliceX": 24,
+                                            "sliceY": 16,
+                                            "palette": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "objPalette": "OBP0",
+                                            "paletteIndex": 0,
+                                            "priority": false
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -98984,310 +99722,6 @@
                             ]
                         }
                     ]
-                },
-                {
-                    "id": "33aa387b-1143-4455-b640-eb34bceb1da8",
-                    "name": "Animation_2",
-                    "animations": [
-                        {
-                            "id": "40438ca5-d7d8-4239-a4e7-e8c87b8d251c",
-                            "frames": [
-                                {
-                                    "id": "492b094a-c630-42ba-9262-a27bee4b3ffa",
-                                    "tiles": [
-                                        {
-                                            "id": "6362b884-6b6d-4838-8423-1bafc2298682",
-                                            "x": -48,
-                                            "y": 0,
-                                            "sliceX": 0,
-                                            "sliceY": 0,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "35d56c5b-636b-4456-b0ce-ad4f0cd588df",
-                                            "x": -40,
-                                            "y": 0,
-                                            "sliceX": 8,
-                                            "sliceY": 0,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "26ba25c4-581b-4a32-b285-86e53a255b00",
-                                            "x": -32,
-                                            "y": 0,
-                                            "sliceX": 16,
-                                            "sliceY": 0,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "43bb875c-43dc-4234-885c-a78a938acd95",
-                                            "x": -56,
-                                            "y": 0,
-                                            "sliceX": 24,
-                                            "sliceY": 16,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": "3d284b1d-a5bd-49a6-bdbf-9872eb236340",
-                                    "tiles": [
-                                        {
-                                            "id": "5386afb0-9952-411d-92a4-60b421e50421",
-                                            "x": -16,
-                                            "y": 0,
-                                            "sliceX": 0,
-                                            "sliceY": 16,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "177c7c39-c7a8-41e1-91fa-7129ce995124",
-                                            "x": -8,
-                                            "y": 0,
-                                            "sliceX": 8,
-                                            "sliceY": 16,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "e77241ba-c325-4a31-9911-8c0aace69688",
-                                            "x": 0,
-                                            "y": 0,
-                                            "sliceX": 16,
-                                            "sliceY": 16,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "b7377f4f-6b61-475e-b206-f1e142bd5394",
-                                            "x": -24,
-                                            "y": 0,
-                                            "sliceX": 24,
-                                            "sliceY": 16,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": "e50963bb-1d48-4bb7-80a5-2b65854c2be6",
-                                    "tiles": [
-                                        {
-                                            "id": "30f12eb7-1f62-4be8-84b5-7bf8a35e903e",
-                                            "x": 16,
-                                            "y": 0,
-                                            "sliceX": 0,
-                                            "sliceY": 32,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "f68f3791-926e-40d7-a12d-4ef119a0b939",
-                                            "x": 24,
-                                            "y": 0,
-                                            "sliceX": 8,
-                                            "sliceY": 32,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "e443ffab-f8fa-45e8-b17f-2bd9f3a7f975",
-                                            "x": 32,
-                                            "y": 0,
-                                            "sliceX": 16,
-                                            "sliceY": 32,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "6f044cca-ff9e-47ae-ada8-b0f7f6bad5f7",
-                                            "x": 8,
-                                            "y": 0,
-                                            "sliceX": 24,
-                                            "sliceY": 16,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        }
-                                    ]
-                                },
-                                {
-                                    "id": "5de7ff91-c9b0-49c2-aff7-1fb916932ec8",
-                                    "tiles": [
-                                        {
-                                            "id": "dbc618d0-8225-4237-aa25-6f2992027c9b",
-                                            "x": 48,
-                                            "y": 0,
-                                            "sliceX": 0,
-                                            "sliceY": 48,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "2c5c556b-340c-498a-9c0e-77bdfc525732",
-                                            "x": 56,
-                                            "y": 0,
-                                            "sliceX": 8,
-                                            "sliceY": 48,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "ec0024a3-32c9-489a-86d2-ac00d8797230",
-                                            "x": 64,
-                                            "y": 0,
-                                            "sliceX": 16,
-                                            "sliceY": 48,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        },
-                                        {
-                                            "id": "57c57c28-c239-4ef6-8c9d-91e23421ee00",
-                                            "x": 40,
-                                            "y": 0,
-                                            "sliceX": 24,
-                                            "sliceY": 16,
-                                            "palette": 0,
-                                            "flipX": false,
-                                            "flipY": false,
-                                            "objPalette": "OBP0",
-                                            "paletteIndex": 0,
-                                            "priority": false
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "id": "3d83a339-ebd6-4899-83dd-574eeb3e0931",
-                            "frames": [
-                                {
-                                    "id": "150ff19d-8867-4f61-bcfc-16346f388ac6",
-                                    "tiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "e9e85e8b-99dd-4768-9d6e-8eef4747c515",
-                            "frames": [
-                                {
-                                    "id": "e5e22054-1fd1-4bdd-a14b-0d8082931341",
-                                    "tiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "0e789aa2-70ff-4d9a-a0d5-820d23ae791e",
-                            "frames": [
-                                {
-                                    "id": "ba8b0a85-f745-46ad-9d50-f7c64b55910d",
-                                    "tiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "894e9667-9742-4685-8efe-e0237e7fb4b9",
-                            "frames": [
-                                {
-                                    "id": "5beab8fd-cfe6-46a9-a0cf-93924922a2e7",
-                                    "tiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "c1538186-fd88-47d8-9bdf-04954d256716",
-                            "frames": [
-                                {
-                                    "id": "0cbba8a8-444c-4280-9836-e9152362f729",
-                                    "tiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "49f0076d-0818-4ed4-ad43-991e84b7fcbb",
-                            "frames": [
-                                {
-                                    "id": "b3dcf429-e6bb-48e4-8175-87ea70e29790",
-                                    "tiles": []
-                                }
-                            ]
-                        },
-                        {
-                            "id": "dd0f33cf-94c1-44c0-85f1-7a8c2b2cf4b0",
-                            "frames": [
-                                {
-                                    "id": "4e058ea7-979d-43e4-9885-a73661925b4f",
-                                    "tiles": []
-                                }
-                            ]
-                        }
-                    ],
-                    "animationType": "fixed",
-                    "flipLeft": true
                 }
             ],
             "numTiles": 14,
@@ -110487,7 +110921,7 @@
             "symbol": "sound_voices_sav",
             "filename": "voices.sav",
             "type": "fxhammer",
-            "inode": "27584547717872738",
+            "inode": "549823",
             "_v": 1679310567138
         }
     ],
@@ -110795,9 +111229,9 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 200,
-        "worldScrollY": 2939,
-        "zoom": 300,
+        "worldScrollX": 0,
+        "worldScrollY": 621,
+        "zoom": 100,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
@@ -110826,8 +111260,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            199,
-            727
+            299,
+            1092
         ],
         "showNavigator": true,
         "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",

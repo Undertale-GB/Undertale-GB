@@ -27,6 +27,13 @@ const fields = [].concat(
       defaultValue: 2,
     },
     {
+      key: "twoRows",
+      label: "Split Menu into 2 Rows?",
+      type: "checkbox",
+      width: "100%",
+      defaultValue: true,
+    },
+    {
       type: "break",
     },
     ...Array(MAX_OPTIONS)
@@ -85,8 +92,19 @@ const compile = (input, helpers) => {
       const idx = i + 1;
       const itemText = input[`option_${idx}_text`];
 
-      const fieldX = ((i % 2) * 7) + 3;
-      const fieldY = (i >> 1) + 1;
+      fieldX = 0;
+      fieldY = 0;
+
+      if (input.twoRows) {
+
+        fieldX = ((i % 2) * 7) + 3;
+        fieldY = (i >> 1) + 1;
+      } else {
+
+        fieldX = 3;
+        fieldY = i + 1;
+      }
+
 
       const x = decOct(2 + fieldX);
       const y = decOct(1 + fieldY);
@@ -119,30 +137,49 @@ const compile = (input, helpers) => {
 
       const idx = i + 1;
       
-      const fieldX = ((i % 2) * 7) + 3;
-      const fieldY = (i >> 1) + 1;
+      fieldX = 0;
+      fieldY = 0;
+
+      if (input.twoRows) {
+
+        fieldX = ((i % 2) * 7) + 3;
+        fieldY = (i >> 1) + 1;
+      } else {
+
+        fieldX = 3;
+        fieldY = i + 1;
+      }
       
       left = 0;
       right = 0;
       up = 0;
       down = 0;
 
-      if (i % 2 == 0) {
-        if (idx < input.items) right = idx + 1;
-        if (idx == input.items && idx != 1) right = idx - 1;
-      } 
+      if (input.twoRows) {
 
-      if (i % 2 && idx - 1 >= 0) {
-        left = idx - 1;
-      }
+        if (i % 2 == 0) {
+          if (idx < input.items) right = idx + 1;
+          if (idx == input.items && idx != 1) right = idx - 1;
+        }
+
+        if (i % 2 && idx - 1 >= 0) {
+          left = idx - 1;
+        }
       
-      if (i - 2 >= 0) {
-        up = idx - 2;
-      }
+        if (i - 2 >= 0) {
+          up = idx - 2;
+        }
       
-      if (i + 2 <= input.items - 1) {
-        down = idx + 2;
+        if (i + 2 <= input.items - 1) {
+          down = idx + 2;
+        }
+      } else {
+
+        up = idx - 1;
+
+        if (idx != input.items) down = idx + 1;
       }
+
 
       _menuItem(fieldX, fieldY, left, right, up, down);
     });
