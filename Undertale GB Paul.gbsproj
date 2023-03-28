@@ -6218,8 +6218,12 @@
             "height": 24,
             "type": "TOPDOWN",
             "paletteIds": [
+                "",
+                "567ea9e8-99db-4455-a703-7d70ed1c64c6",
                 null,
-                "567ea9e8-99db-4455-a703-7d70ed1c64c6"
+                null,
+                "89bdadbd-6b1f-4bc3-8882-93ac6a0fdba5",
+                "5bc08164-161e-4490-9449-c61552b78c74"
             ],
             "spritePaletteIds": [
                 null,
@@ -7042,37 +7046,6 @@
                     "y": 7
                 },
                 {
-                    "name": "FSwitch_1",
-                    "frame": 0,
-                    "animate": false,
-                    "spriteSheetId": "dfbb1b9f-e685-4335-96c3-f201fb1cb1b7",
-                    "direction": "down",
-                    "moveSpeed": 1,
-                    "animSpeed": 255,
-                    "paletteId": "",
-                    "isPinned": false,
-                    "persistent": false,
-                    "collisionGroup": "",
-                    "symbol": "actor_20",
-                    "script": [],
-                    "startScript": [
-                        {
-                            "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
-                            "args": {
-                                "actorId": "$self$"
-                            },
-                            "id": "79b11631-9b7b-4fa8-b5f0-0e4d06fb8c57"
-                        }
-                    ],
-                    "updateScript": [],
-                    "hit1Script": [],
-                    "hit2Script": [],
-                    "hit3Script": [],
-                    "id": "7254dcb4-243d-4ed9-a876-4c6b8fdbc11c",
-                    "x": 20,
-                    "y": 17
-                },
-                {
                     "name": "",
                     "frame": 0,
                     "animate": false,
@@ -7094,161 +7067,6 @@
                     "id": "0b2011d1-118d-4f4a-a0c9-fc797d3443ec",
                     "x": 21,
                     "y": 7
-                },
-                {
-                    "name": "FSwitch_3",
-                    "frame": 0,
-                    "animate": false,
-                    "spriteSheetId": "dfbb1b9f-e685-4335-96c3-f201fb1cb1b7",
-                    "direction": "down",
-                    "moveSpeed": 1,
-                    "animSpeed": 255,
-                    "paletteId": "",
-                    "isPinned": false,
-                    "persistent": false,
-                    "collisionGroup": "",
-                    "symbol": "actor_38",
-                    "script": [],
-                    "startScript": [
-                        {
-                            "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
-                            "args": {
-                                "actorId": "$self$"
-                            },
-                            "id": "f57ae107-8dd2-4a96-99ab-db5111e46640"
-                        }
-                    ],
-                    "updateScript": [],
-                    "hit1Script": [],
-                    "hit2Script": [],
-                    "hit3Script": [],
-                    "id": "7f125056-1408-4f95-94ff-12294dfdcb7e",
-                    "x": 22,
-                    "y": 15
-                },
-                {
-                    "name": "FSwitch_2",
-                    "frame": 0,
-                    "animate": false,
-                    "spriteSheetId": "dfbb1b9f-e685-4335-96c3-f201fb1cb1b7",
-                    "direction": "down",
-                    "moveSpeed": 1,
-                    "animSpeed": 255,
-                    "paletteId": "",
-                    "isPinned": false,
-                    "persistent": false,
-                    "collisionGroup": "",
-                    "symbol": "actor_39",
-                    "script": [],
-                    "startScript": [
-                        {
-                            "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
-                            "args": {
-                                "actorId": "$self$"
-                            },
-                            "id": "c2d2013e-b2df-4657-9bd0-0491a99e6b91"
-                        }
-                    ],
-                    "updateScript": [],
-                    "hit1Script": [],
-                    "hit2Script": [],
-                    "hit3Script": [],
-                    "id": "35432b51-bf8f-4635-a075-b2503924a76a",
-                    "x": 18,
-                    "y": 15
-                },
-                {
-                    "name": "FSwitch_4",
-                    "frame": 0,
-                    "animate": false,
-                    "spriteSheetId": "dfbb1b9f-e685-4335-96c3-f201fb1cb1b7",
-                    "direction": "down",
-                    "moveSpeed": 1,
-                    "animSpeed": 255,
-                    "paletteId": "",
-                    "isPinned": false,
-                    "persistent": false,
-                    "collisionGroup": "",
-                    "symbol": "actor_40",
-                    "script": [],
-                    "startScript": [
-                        {
-                            "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
-                            "args": {
-                                "actorId": "$self$"
-                            },
-                            "id": "3ee909ce-23b9-40dd-8c60-96d0ecf7a356"
-                        }
-                    ],
-                    "updateScript": [],
-                    "hit1Script": [],
-                    "hit2Script": [],
-                    "hit3Script": [],
-                    "id": "44b3bd85-6cf8-4640-a650-bddf252db266",
-                    "x": 20,
-                    "y": 13
-                },
-                {
-                    "name": "FSwitch_5",
-                    "frame": 0,
-                    "animate": false,
-                    "spriteSheetId": "dfbb1b9f-e685-4335-96c3-f201fb1cb1b7",
-                    "direction": "down",
-                    "moveSpeed": 1,
-                    "animSpeed": 255,
-                    "paletteId": "",
-                    "isPinned": false,
-                    "persistent": false,
-                    "collisionGroup": "",
-                    "symbol": "actor_41",
-                    "script": [],
-                    "startScript": [
-                        {
-                            "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
-                            "args": {
-                                "actorId": "$self$"
-                            },
-                            "id": "7c5e8fa5-72ab-44fd-bf03-719e5c8e07cf"
-                        }
-                    ],
-                    "updateScript": [],
-                    "hit1Script": [],
-                    "hit2Script": [],
-                    "hit3Script": [],
-                    "id": "5fb173cc-a4ab-450d-ae6e-0381fd366be5",
-                    "x": 18,
-                    "y": 11
-                },
-                {
-                    "name": "FSwitch_6",
-                    "frame": 0,
-                    "animate": false,
-                    "spriteSheetId": "dfbb1b9f-e685-4335-96c3-f201fb1cb1b7",
-                    "direction": "down",
-                    "moveSpeed": 1,
-                    "animSpeed": 255,
-                    "paletteId": "",
-                    "isPinned": false,
-                    "persistent": false,
-                    "collisionGroup": "",
-                    "symbol": "actor_42",
-                    "script": [],
-                    "startScript": [
-                        {
-                            "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
-                            "args": {
-                                "actorId": "$self$"
-                            },
-                            "id": "efd477b7-f4f0-45d8-97f0-5d67e894233a"
-                        }
-                    ],
-                    "updateScript": [],
-                    "hit1Script": [],
-                    "hit2Script": [],
-                    "hit3Script": [],
-                    "id": "a1cfa5c2-fcc9-40ee-a701-e586e858b0c9",
-                    "x": 22,
-                    "y": 11
                 }
             ],
             "triggers": [
@@ -7297,13 +7115,138 @@
                     ],
                     "leaveScript": [],
                     "symbol": "trigger_7"
+                },
+                {
+                    "name": "",
+                    "id": "b00fedd4-9fd3-492c-9f73-d2923d696bd3",
+                    "x": 22,
+                    "y": 10,
+                    "symbol": "trigger_42",
+                    "width": 2,
+                    "height": 2,
+                    "script": [
+                        {
+                            "command": "EVENT_GBVM_SCRIPT",
+                            "args": {
+                                "script": ";button 6\nVM_PUSH_CONST 14\nVM_PUSH_CONST 13\nVM_PUSH_CONST 16\nVM_PUSH_CONST 15\n\nVM_REPLACE_TILE_XY 22, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+                                "__collapse": false
+                            },
+                            "id": "62c8365d-0be9-4ff8-8663-26580d04d0f9"
+                        }
+                    ],
+                    "leaveScript": []
+                },
+                {
+                    "name": "",
+                    "id": "58e32e30-1ee4-4d68-bc8c-87b2f4fa7c90",
+                    "x": 18,
+                    "y": 10,
+                    "symbol": "trigger_43",
+                    "width": 2,
+                    "height": 2,
+                    "script": [
+                        {
+                            "command": "EVENT_GBVM_SCRIPT",
+                            "args": {
+                                "script": ";button 5\nVM_PUSH_CONST 14\nVM_PUSH_CONST 13\nVM_PUSH_CONST 16\nVM_PUSH_CONST 15\n\nVM_REPLACE_TILE_XY 18, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1"
+                            },
+                            "id": "c507b2bf-8942-4fd0-ab47-37e5a96caa7a"
+                        }
+                    ],
+                    "leaveScript": []
+                },
+                {
+                    "name": "",
+                    "id": "32a5f38e-a9bd-4b2d-936e-3fc4912dbeee",
+                    "x": 20,
+                    "y": 12,
+                    "symbol": "trigger_44",
+                    "width": 2,
+                    "height": 2,
+                    "script": [
+                        {
+                            "command": "EVENT_GBVM_SCRIPT",
+                            "args": {
+                                "script": ";button 4\nVM_PUSH_CONST 14\nVM_PUSH_CONST 13\nVM_PUSH_CONST 16\nVM_PUSH_CONST 15\n\nVM_REPLACE_TILE_XY 20, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1"
+                            },
+                            "id": "d43376a7-3a58-48d3-b552-00740f737c3a"
+                        }
+                    ],
+                    "leaveScript": []
+                },
+                {
+                    "name": "",
+                    "id": "82e559bc-c8d9-49d5-bdef-fb24a8f84574",
+                    "x": 18,
+                    "y": 14,
+                    "symbol": "trigger_45",
+                    "width": 2,
+                    "height": 2,
+                    "script": [
+                        {
+                            "command": "EVENT_GBVM_SCRIPT",
+                            "args": {
+                                "script": "VM_PUSH_CONST 14\nVM_PUSH_CONST 13\nVM_PUSH_CONST 16\nVM_PUSH_CONST 15\n\nVM_REPLACE_TILE_XY 18, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1"
+                            },
+                            "id": "d29cade2-20de-427e-b3e8-79a27aa6f6ca"
+                        }
+                    ],
+                    "leaveScript": []
+                },
+                {
+                    "name": "",
+                    "id": "c3d1efb6-2024-4816-bfac-8bb2174d56a7",
+                    "x": 22,
+                    "y": 14,
+                    "symbol": "trigger_46",
+                    "width": 2,
+                    "height": 2,
+                    "script": [
+                        {
+                            "command": "EVENT_GBVM_SCRIPT",
+                            "args": {
+                                "script": ";button 3\nVM_PUSH_CONST 14\nVM_PUSH_CONST 13\nVM_PUSH_CONST 16\nVM_PUSH_CONST 15\n\nVM_REPLACE_TILE_XY 22, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1"
+                            },
+                            "id": "a6363e9a-21e2-47b6-9599-0be41f471469"
+                        }
+                    ],
+                    "leaveScript": []
+                },
+                {
+                    "name": "",
+                    "id": "7c68b679-79be-4b6c-8d2e-1650e2ed4d2e",
+                    "x": 20,
+                    "y": 16,
+                    "symbol": "trigger_47",
+                    "width": 2,
+                    "height": 2,
+                    "script": [
+                        {
+                            "command": "EVENT_GBVM_SCRIPT",
+                            "args": {
+                                "script": ";button 1\nVM_PUSH_CONST 14\nVM_PUSH_CONST 13\nVM_PUSH_CONST 16\nVM_PUSH_CONST 15\n\nVM_REPLACE_TILE_XY 20, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1"
+                            },
+                            "id": "d0dd00d7-dd7b-44e0-8d19-18ecce612328"
+                        }
+                    ],
+                    "leaveScript": []
                 }
             ],
-            "script": [],
+            "script": [
+                {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": ";button 1\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 2\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 3\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 4\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 5\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 6\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+                        "__collapse": false
+                    },
+                    "id": "584ce230-d74e-456b-9b21-ebcba0889bb3"
+                }
+            ],
             "playerHit1Script": [],
             "playerHit2Script": [],
             "playerHit3Script": [],
-            "symbol": "scene_room_04"
+            "symbol": "scene_room_04",
+            "autoFadeEventCollapse": true
         },
         {
             "name": "Room_05",
@@ -69427,8 +69370,12 @@
                 0,
                 0,
                 0,
+                5,
+                5,
                 0,
                 0,
+                5,
+                5,
                 0,
                 0,
                 0,
@@ -69455,8 +69402,12 @@
                 0,
                 0,
                 0,
+                5,
+                5,
                 0,
                 0,
+                5,
+                5,
                 0,
                 0,
                 0,
@@ -69485,6 +69436,8 @@
                 0,
                 0,
                 0,
+                4,
+                4,
                 0,
                 0,
                 0,
@@ -69515,6 +69468,8 @@
                 0,
                 0,
                 0,
+                4,
+                4,
                 0,
                 0,
                 0,
@@ -69543,8 +69498,12 @@
                 0,
                 0,
                 0,
+                5,
+                5,
                 0,
                 0,
+                5,
+                5,
                 0,
                 0,
                 0,
@@ -69571,8 +69530,12 @@
                 0,
                 0,
                 0,
+                5,
+                5,
                 0,
                 0,
+                5,
+                5,
                 0,
                 0,
                 0,
@@ -69601,6 +69564,8 @@
                 0,
                 0,
                 0,
+                4,
+                4,
                 0,
                 0,
                 0,
@@ -69631,30 +69596,8 @@
                 0,
                 0,
                 0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                4,
+                4,
                 0,
                 0,
                 0,
@@ -109347,6 +109290,26 @@
                 "509878",
                 "000000"
             ]
+        },
+        {
+            "id": "5bc08164-161e-4490-9449-c61552b78c74",
+            "name": "switch 1",
+            "colors": [
+                "B820C0",
+                "B098D8",
+                "484068",
+                "000000"
+            ]
+        },
+        {
+            "id": "89bdadbd-6b1f-4bc3-8882-93ac6a0fdba5",
+            "name": "switch 2",
+            "colors": [
+                "D850E0",
+                "B098D8",
+                "484068",
+                "000000"
+            ]
         }
     ],
     "customEvents": [
@@ -110171,7 +110134,7 @@
             "symbol": "sound_voices_sav",
             "filename": "voices.sav",
             "type": "fxhammer",
-            "inode": "10781634",
+            "inode": "1407374883707820",
             "_v": 1679310567138
         }
     ],
@@ -110396,6 +110359,21 @@
             "symbol": "var_flowey_visible_0"
         },
         {
+            "id": "16",
+            "name": "Have you killed Toriel?",
+            "symbol": "var_have_you_killed_toriel_"
+        },
+        {
+            "id": "17",
+            "name": "Randomize",
+            "symbol": "var_randomize"
+        },
+        {
+            "id": "18",
+            "name": "Have you killed the dummy (r6) ? ",
+            "symbol": "var_have_you_killed_the_dum"
+        },
+        {
             "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
             "name": "Counter",
             "symbol": "var_counter_0"
@@ -110476,24 +110454,9 @@
             "symbol": "var_savemenu"
         },
         {
-            "id": "16",
-            "name": "Have you killed Toriel?",
-            "symbol": "var_have_you_killed_toriel_"
-        },
-        {
-            "id": "17",
-            "name": "Randomize",
-            "symbol": "var_randomize"
-        },
-        {
             "id": "c50cd32e-ad8c-47fe-a59e-28791b63ca16__L0",
             "name": "3",
             "symbol": "var_3"
-        },
-        {
-            "id": "18",
-            "name": "Have you killed the dummy (r6) ? ",
-            "symbol": "var_have_you_killed_the_dum"
         }
     ],
     "engineFieldValues": [
@@ -110503,17 +110466,17 @@
         }
     ],
     "settings": {
-        "startSceneId": "1a420d11-7612-48e3-80f8-515f1f04dcc3",
-        "startX": 3,
-        "startY": 16,
+        "startSceneId": "27697607-24f3-4a08-9706-e372955b1642",
+        "startX": 15,
+        "startY": 21,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
-        "startDirection": "right",
+        "startDirection": "up",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 1023,
-        "worldScrollY": 422,
-        "zoom": 115.99998474121094,
+        "worldScrollX": 1526,
+        "worldScrollY": 2318,
+        "zoom": 274.99998474121094,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
@@ -110543,7 +110506,7 @@
         "navigatorSplitSizes": [
             30,
             198,
-            727
+            728
         ],
         "showNavigator": true,
         "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",
