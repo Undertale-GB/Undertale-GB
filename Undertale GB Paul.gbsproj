@@ -6228,11 +6228,12 @@
             "spritePaletteIds": [
                 null,
                 null,
-                null,
-                null,
+                "8300f034-bfe4-4d65-b8eb-c4009e9c51b3",
+                "74748443-7e95-49c3-8e84-60d8d6f0c24a",
                 "567ea9e8-99db-4455-a703-7d70ed1c64c6",
                 "febb35e6-e85e-4843-a2a4-739d9bd45eb3",
-                "febb35e6-e85e-4843-a2a4-739d9bd45eb3"
+                "febb35e6-e85e-4843-a2a4-739d9bd45eb3",
+                "feefa7dd-b7fa-46fe-8023-452e533e7587"
             ],
             "collisions": [
                 0,
@@ -7067,6 +7068,52 @@
                     "id": "0b2011d1-118d-4f4a-a0c9-fc797d3443ec",
                     "x": 21,
                     "y": 7
+                },
+                {
+                    "name": "",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "4f217269-38f7-417f-a42f-e5b2048e8fc5",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_20",
+                    "script": [],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "cd735758-b118-48c0-acca-603b251aec3f",
+                    "x": 14,
+                    "y": 15
+                },
+                {
+                    "name": "",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "5d20b15e-c4ef-4064-958e-612b2328d355",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_38",
+                    "script": [],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "aebe5f50-9968-4e47-98fb-4e24b17b50c6",
+                    "x": 13,
+                    "y": 7
                 }
             ],
             "triggers": [
@@ -7237,7 +7284,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": ";button 1\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 2\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 3\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 4\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 5\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 6\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "584ce230-d74e-456b-9b21-ebcba0889bb3"
                 }
@@ -7246,7 +7293,7 @@
             "playerHit2Script": [],
             "playerHit3Script": [],
             "symbol": "scene_room_04",
-            "autoFadeEventCollapse": true
+            "autoFadeEventCollapse": false
         },
         {
             "name": "Room_05",
@@ -99119,7 +99166,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99132,7 +99179,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99145,7 +99192,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99158,7 +99205,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99171,7 +99218,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99184,7 +99231,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99197,7 +99244,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99210,7 +99257,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99223,7 +99270,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99236,7 +99283,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99249,7 +99296,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99262,7 +99309,7 @@
                                             "flipX": false,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99275,7 +99322,7 @@
                                             "flipX": true,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99288,7 +99335,7 @@
                                             "flipX": true,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99301,7 +99348,7 @@
                                             "flipX": true,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99314,7 +99361,7 @@
                                             "flipX": true,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99327,7 +99374,7 @@
                                             "flipX": true,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         },
                                         {
@@ -99340,7 +99387,7 @@
                                             "flipX": true,
                                             "flipY": false,
                                             "objPalette": "OBP0",
-                                            "paletteIndex": 0,
+                                            "paletteIndex": 7,
                                             "priority": false
                                         }
                                     ]
@@ -109310,6 +109357,16 @@
                 "484068",
                 "000000"
             ]
+        },
+        {
+            "id": "feefa7dd-b7fa-46fe-8023-452e533e7587",
+            "name": "BigDoor",
+            "colors": [
+                "F8F8F8",
+                "A00098",
+                "A00098",
+                "000000"
+            ]
         }
     ],
     "customEvents": [
@@ -110474,8 +110531,8 @@
         "startDirection": "up",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 1526,
-        "worldScrollY": 2318,
+        "worldScrollX": 1329,
+        "worldScrollY": 2539,
         "zoom": 274.99998474121094,
         "customColorsEnabled": true,
         "sgbEnabled": false,
