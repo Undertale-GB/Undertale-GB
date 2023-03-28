@@ -10047,7 +10047,7 @@
                                 "x": 46,
                                 "y": 16,
                                 "__collapseElse": false,
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "children": {
                                 "true": [
@@ -10302,7 +10302,7 @@
                                                                         {
                                                                             "command": "EVENT_GBVM_SCRIPT",
                                                                             "args": {
-                                                                                "script": "VM_UNLOCK\nVM_PUSH_CONST 0\n        VM_GET_UINT8 .ARG0, _overlay_cut_scanline\n        VM_SET_CONST_UINT8 _overlay_cut_scanline, 47\n\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* You do know which\\n way left is,\\n do you not ?\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_MODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n\n        VM_IDLE\n        VM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\n        VM_POP 1"
+                                                                                "script": "VM_UNLOCK\nVM_PUSH_CONST 0\n        VM_GET_UINT8 .ARG0, _overlay_cut_scanline\n        VM_SET_CONST_UINT8 _overlay_cut_scanline, 47\n\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* You do know which\\n way left is,\\n do you not ?\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n\n        VM_IDLE\n        VM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\n        VM_POP 1"
                                                                             },
                                                                             "id": "7c18da39-99f1-4938-b0fa-df863602fe7d"
                                                                         },
