@@ -325,7 +325,7 @@ const compile = (input, helpers) => {
 
   _loadStructuredText(`${instantTextSpeedCode}${str}`);
 
-  _overlayClear(0, 0, menuWidth, menuHeight, ".UI_COLOR_WHITE", true);
+  _overlayClear(0, 0, menuWidth, menuHeight, ".UI_COLOR_BLACK", true);
 
   _overlayMoveTo(20 - menuWidth, 18 - menuHeight, speedIn);
 

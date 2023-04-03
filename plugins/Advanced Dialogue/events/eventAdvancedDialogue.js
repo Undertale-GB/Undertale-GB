@@ -327,7 +327,7 @@ VM_SET_CONST_UINT8 _overlay_cut_scanline, ${textBoxHeight * 8 - 1}`);
         0,
         20,
         textBoxHeight,
-        ".UI_COLOR_WHITE",
+        ".UI_COLOR_BLACK",
         input.showBorder
       );
     }
@@ -339,7 +339,7 @@ VM_SET_CONST_UINT8 _overlay_cut_scanline, ${textBoxHeight * 8 - 1}`);
     appendRaw(
       `VM_OVERLAY_SET_SCROLL   ${textX + (avatarId ? 3 : 0)}, ${textY}, ${
         (input.showBorder ? 19 : 20) - (avatarId ? 3 : 0) - textX
-      }, ${textHeight}, .UI_COLOR_WHITE`
+      }, ${textHeight}, .UI_COLOR_BLACK`
     );
 
     _displayText();
