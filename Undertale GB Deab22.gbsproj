@@ -868,7 +868,7 @@
                     "command": "EVENT_IF_TRUE",
                     "args": {
                         "variable": "L0",
-                        "__collapseElse": true
+                        "__collapseElse": false
                     },
                     "children": {
                         "true": [
@@ -2590,7 +2590,7 @@
             "playerHit2Script": [],
             "playerHit3Script": [],
             "symbol": "scene_room_01",
-            "autoFadeEventCollapse": false,
+            "autoFadeEventCollapse": true,
             "playerSpriteSheetId": ""
         },
         {
@@ -5646,7 +5646,7 @@
                                                     "command": "EVENT_TEXT",
                                                     "args": {
                                                         "text": [
-                                                            "!F:be4454bf-4583-4683-ae77-0a0bedc5e82d!*File Saved."
+                                                            "!F:65b14082-e495-439d-998b-852e6b72073f!*File Saved."
                                                         ],
                                                         "avatarId": ""
                                                     },
@@ -9088,7 +9088,7 @@
                                         "command": "EVENT_GROUP",
                                         "args": {
                                             "__label": "Frame 1",
-                                            "__collapse": false
+                                            "__collapse": true
                                         },
                                         "children": {
                                             "true": [
@@ -9106,7 +9106,7 @@
                                                             }
                                                         ],
                                                         "script": "VM_PUSH_CONST 1\nVM_REPLACE_TILE_XY 24, 8, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
-                                                        "__collapse": false
+                                                        "__collapse": true
                                                     },
                                                     "id": "1d465125-bc12-43da-b010-78688906a4e6"
                                                 },
@@ -9402,6 +9402,13 @@
                 }
             ],
             "script": [
+                {
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                    "args": {
+                        "customEventId": "39c248ca-b64a-4135-bdf2-a3686154940e"
+                    },
+                    "id": "92bb2d94-21a7-4f58-b990-744b3768cbc5"
+                },
                 {
                     "command": "EVENT_CALL_CUSTOM_EVENT",
                     "args": {
@@ -14456,7 +14463,7 @@
                                 "id": "650ff1c4-0bb2-46ff-8a78-b8c4e9cc6ca4"
                             }
                         ],
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "d5b16580-0088-48e1-a3e9-a8b6b9fae869"
                 },
@@ -14470,7 +14477,7 @@
                                 "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
                             }
                         ],
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "61d36446-60f2-4533-bec4-ace3e0d740df"
                 },
@@ -14484,7 +14491,7 @@
                                 "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
                             }
                         ],
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "9358a952-dbe9-4653-a874-82f7f9a1b1f8"
                 },
@@ -14498,7 +14505,7 @@
                                 "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
                             }
                         ],
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "3325393e-623b-4f42-980f-6d083c15e404"
                 },
@@ -14512,7 +14519,7 @@
                                 "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
                             }
                         ],
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "19a22a7a-c990-4436-bde8-64e00bfb8341"
                 },
@@ -14526,7 +14533,7 @@
                                 "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
                             }
                         ],
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "f9c44118-a157-412d-8469-ed37aef81dd9"
                 },
@@ -14540,7 +14547,7 @@
                                 "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
                             }
                         ],
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "d728d007-6933-42d4-86ab-ae23a7a93753"
                 },
@@ -14554,7 +14561,7 @@
                                 "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
                             }
                         ],
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "67dfbb8a-fa71-40dc-b924-e03dbe822d73"
                 },
@@ -14568,7 +14575,7 @@
                                 "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
                             }
                         ],
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "id": "f139d3c3-5282-4b3d-821b-8add8992e219"
                 }
@@ -56781,7 +56788,7 @@
                     "command": "EVENT_TEXT",
                     "args": {
                         "text": [
-                            "!F:d5ef2a44-056b-4d1b-90eb-f7e0a0c54367!{Test\n!F:af6efb91-51b6-465a-ae62-1dfb644a8665!{Test"
+                            "!F:d5ef2a44-056b-4d1b-90eb-f7e0a0c54367!{Test\n!F:af6efb91-51b6-465a-ae62-1dfb644a8665!{Test\n!F:467fb1e2-7678-49ee-86ec-b41c95ab38c5!TEST!\n$16$ $17$"
                         ],
                         "avatarId": ""
                     },
@@ -57334,7 +57341,7 @@
                                                 {
                                                     "command": "EVENT_SWITCH_SCENE",
                                                     "args": {
-                                                        "sceneId": "60ad4f47-2d42-429c-b7f8-440fd5693287",
+                                                        "sceneId": "d9c04569-abc2-4817-b4f5-a02b5160ba07",
                                                         "x": 0,
                                                         "y": 0,
                                                         "direction": "",
@@ -58700,7 +58707,7 @@
             "autoFadeSpeed": 1,
             "id": "75a3bbe1-811e-4374-bd28-338103c4e97d",
             "symbol": "scene_0",
-            "x": 872.5,
+            "x": 873,
             "y": 1810,
             "actors": [
                 {
@@ -58751,7 +58758,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 6, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001See\\nthat\\nHeart?\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": false
+                                "__collapse": true
                             },
                             "id": "f9648f52-b08a-4e6b-b966-f06760d6bf57"
                         },
@@ -58759,7 +58766,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 6, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 2\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\004{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001That is your\\nSOUL,\\nthe very\\nculmination\\nof your\\nbeing.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "756a38fa-edeb-4e68-8722-129ed30598cc"
                         },
@@ -59195,7 +59202,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 3\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001DIE.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "3f0a98be-5919-4c00-bc2a-21f1c19e0be8"
                 },
@@ -59205,15 +59212,16 @@
                         "actorId": "$self$",
                         "x": {
                             "type": "number",
-                            "value": 9
+                            "value": 75
                         },
                         "y": {
                             "type": "number",
-                            "value": 12
+                            "value": 92
                         },
-                        "moveType": "diagonal",
+                        "moveType": "horizontal",
                         "useCollisions": false,
-                        "__collapse": true
+                        "__collapse": false,
+                        "units": "pixels"
                     },
                     "id": "6a3c0e6b-0d18-4f8d-8c45-b570e47cd693"
                 },
@@ -59406,7 +59414,7 @@
                                             "choices": 4,
                                             "__collapseCase0": true,
                                             "value0": 1,
-                                            "__collapseCase1": false,
+                                            "__collapseCase1": true,
                                             "value1": 2,
                                             "__collapseCase2": true,
                                             "value2": 3,
@@ -59493,7 +59501,7 @@
                                                     "command": "EVENT_LOOP_WHILE",
                                                     "args": {
                                                         "expression": "$15$ == 0",
-                                                        "__collapse": true,
+                                                        "__collapse": false,
                                                         "__label": "While Cursor moving"
                                                     },
                                                     "children": {
@@ -59537,7 +59545,7 @@
                                                                             "args": {
                                                                                 "variable": "L1",
                                                                                 "expression": "$L1$ + 4",
-                                                                                "__collapse": true
+                                                                                "__collapse": false
                                                                             },
                                                                             "id": "38e8b275-c007-4aba-99db-81c3320beece"
                                                                         },
@@ -59561,7 +59569,7 @@
                                                                             "command": "EVENT_SET_TRUE",
                                                                             "args": {
                                                                                 "variable": "15",
-                                                                                "__collapse": true
+                                                                                "__collapse": false
                                                                             },
                                                                             "id": "0d0f015a-83ce-4b1e-b6e5-b1b15bddec13"
                                                                         },
@@ -59573,7 +59581,7 @@
                                                                                     "type": "number",
                                                                                     "value": -1
                                                                                 },
-                                                                                "__collapse": true
+                                                                                "__collapse": false
                                                                             },
                                                                             "id": "50d3ee4b-af8d-4e65-aa6b-9f4b19b034a6"
                                                                         }
@@ -59648,7 +59656,7 @@
                                                                         "value": 1
                                                                     },
                                                                     "__label": "Blinking animation",
-                                                                    "__collapse": true
+                                                                    "__collapse": false
                                                                 },
                                                                 "children": {
                                                                     "true": [
@@ -59661,39 +59669,52 @@
                                                                         },
                                                                         {
                                                                             "command": "EVENT_IDLE",
-                                                                            "args": {},
+                                                                            "args": {
+                                                                                "__collapse": true
+                                                                            },
                                                                             "id": "38e90cfd-532b-46b8-8fae-5e76becafb22"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_IDLE",
-                                                                            "args": {},
+                                                                            "args": {
+                                                                                "__collapse": true
+                                                                            },
                                                                             "id": "18053f0e-a95d-44ca-90c7-c060d25e75dd"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_IDLE",
-                                                                            "args": {},
+                                                                            "args": {
+                                                                                "__collapse": true
+                                                                            },
                                                                             "id": "cd3cf3fb-f95f-4002-bc2f-3f2ceaf62015"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_ACTOR_SHOW",
                                                                             "args": {
-                                                                                "actorId": "$self$"
+                                                                                "actorId": "$self$",
+                                                                                "__collapse": false
                                                                             },
                                                                             "id": "b59c6825-338e-4fcb-b6b5-ebcffef21017"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_IDLE",
-                                                                            "args": {},
+                                                                            "args": {
+                                                                                "__collapse": true
+                                                                            },
                                                                             "id": "833b2d77-630b-42ad-80fb-a614e93f0e70"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_IDLE",
-                                                                            "args": {},
+                                                                            "args": {
+                                                                                "__collapse": true
+                                                                            },
                                                                             "id": "ac454f2a-c420-4f14-a7a4-756bd2939a50"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_IDLE",
-                                                                            "args": {},
+                                                                            "args": {
+                                                                                "__collapse": true
+                                                                            },
                                                                             "id": "04a9f7b9-af8b-4b37-89a8-ab0af2ee936b"
                                                                         }
                                                                     ]
@@ -59803,7 +59824,7 @@
                                                                 "args": {
                                                                     "variable": "8",
                                                                     "choices": 3,
-                                                                    "__collapseCase0": true,
+                                                                    "__collapseCase0": false,
                                                                     "value0": 1,
                                                                     "__collapseCase1": false,
                                                                     "value1": 2,
@@ -59994,7 +60015,8 @@
                                                         "option_5_text": "",
                                                         "option_6_text": "",
                                                         "option_7_text": "",
-                                                        "option_8_text": ""
+                                                        "option_8_text": "",
+                                                        "__collapse": true
                                                     },
                                                     "id": "17020096-6adb-4d3b-ba79-252ee9e8b52e"
                                                 },
@@ -60036,7 +60058,8 @@
                                                         "__collapseCase15": false,
                                                         "value15": 16,
                                                         "__collapseElse": false,
-                                                        "__label": "Select Enemy"
+                                                        "__label": "Select Enemy",
+                                                        "__collapse": false
                                                     },
                                                     "children": {
                                                         "true0": [
@@ -60063,9 +60086,9 @@
                                                                 "args": {
                                                                     "variable": "8",
                                                                     "choices": 2,
-                                                                    "__collapseCase0": false,
+                                                                    "__collapseCase0": true,
                                                                     "value0": 1,
-                                                                    "__collapseCase1": false,
+                                                                    "__collapseCase1": true,
                                                                     "value1": 2,
                                                                     "__collapseCase2": false,
                                                                     "value2": 3,
@@ -60095,8 +60118,9 @@
                                                                     "value14": 15,
                                                                     "__collapseCase15": false,
                                                                     "value15": 16,
-                                                                    "__collapseElse": false,
-                                                                    "__label": "Spare / Save?"
+                                                                    "__collapseElse": true,
+                                                                    "__label": "Spare / Save?",
+                                                                    "__collapse": true
                                                                 },
                                                                 "children": {
                                                                     "true0": [
@@ -60229,7 +60253,8 @@
                                                             {
                                                                 "command": "EVENT_SET_FALSE",
                                                                 "args": {
-                                                                    "variable": "9"
+                                                                    "variable": "9",
+                                                                    "__collapse": false
                                                                 },
                                                                 "id": "3dda8cd7-d7ce-4768-bf74-0721bae217ca"
                                                             }
@@ -60328,7 +60353,7 @@
                         ],
                         "override": true,
                         "__scriptTabs": "press",
-                        "__collapse": true,
+                        "__collapse": false,
                         "__label": "DEBUG Switch scene"
                     },
                     "children": {
@@ -110018,13 +110043,7 @@
             "id": "39c248ca-b64a-4135-bdf2-a3686154940e",
             "name": "Add Menu to Overworld",
             "description": "Adds the start menu to any scene",
-            "variables": {
-                "V0": {
-                    "id": "V0",
-                    "name": "tempVar1",
-                    "passByReference": true
-                }
-            },
+            "variables": {},
             "actors": {},
             "script": [
                 {
@@ -110039,282 +110058,479 @@
                     "children": {
                         "true": [
                             {
-                                "command": "PT_EVENT_ADVANCED_MENU",
+                                "command": "EVENT_SET_VALUE",
                                 "args": {
-                                    "variable": "V0",
-                                    "__scriptTabs": "items",
-                                    "width": 9,
-                                    "height": 5,
-                                    "from": "right",
-                                    "items": 3,
-                                    "option_1_text": "Item",
-                                    "option1_x": 1,
-                                    "option1_y": 1,
-                                    "option1_l": 0,
-                                    "option1_r": 0,
-                                    "option1_u": 3,
-                                    "option1_d": 2,
-                                    "option_2_text": "Stat",
-                                    "option2_x": 1,
-                                    "option2_y": 2,
-                                    "option2_l": 0,
-                                    "option2_r": 0,
-                                    "option2_u": 1,
-                                    "option2_d": 3,
-                                    "option_3_text": "Cell",
-                                    "option3_x": 1,
-                                    "option3_y": 3,
-                                    "option3_l": 0,
-                                    "option3_r": 0,
-                                    "option3_u": 2,
-                                    "option3_d": 1,
-                                    "option_4_text": "",
-                                    "option4_x": 0,
-                                    "option4_y": 0,
-                                    "option4_l": 0,
-                                    "option4_r": 0,
-                                    "option4_u": 0,
-                                    "option4_d": 0,
-                                    "option_5_text": "",
-                                    "option5_x": 0,
-                                    "option5_y": 0,
-                                    "option5_l": 0,
-                                    "option5_r": 0,
-                                    "option5_u": 0,
-                                    "option5_d": 0,
-                                    "option_6_text": "",
-                                    "option6_x": 0,
-                                    "option6_y": 0,
-                                    "option6_l": 0,
-                                    "option6_r": 0,
-                                    "option6_u": 0,
-                                    "option6_d": 0,
-                                    "option_7_text": "",
-                                    "option7_x": 0,
-                                    "option7_y": 0,
-                                    "option7_l": 0,
-                                    "option7_r": 0,
-                                    "option7_u": 0,
-                                    "option7_d": 0,
-                                    "option_8_text": "",
-                                    "option8_x": 0,
-                                    "option8_y": 0,
-                                    "option8_l": 0,
-                                    "option8_r": 0,
-                                    "option8_u": 0,
-                                    "option8_d": 0,
-                                    "option_9_text": "",
-                                    "option9_x": 0,
-                                    "option9_y": 0,
-                                    "option9_l": 0,
-                                    "option9_r": 0,
-                                    "option9_u": 0,
-                                    "option9_d": 0,
-                                    "option_10_text": "",
-                                    "option10_x": 0,
-                                    "option10_y": 0,
-                                    "option10_l": 0,
-                                    "option10_r": 0,
-                                    "option10_u": 0,
-                                    "option10_d": 0,
-                                    "option_11_text": "",
-                                    "option11_x": 0,
-                                    "option11_y": 0,
-                                    "option11_l": 0,
-                                    "option11_r": 0,
-                                    "option11_u": 0,
-                                    "option11_d": 0,
-                                    "option_12_text": "",
-                                    "option12_x": 0,
-                                    "option12_y": 0,
-                                    "option12_l": 0,
-                                    "option12_r": 0,
-                                    "option12_u": 0,
-                                    "option12_d": 0,
-                                    "option_13_text": "",
-                                    "option13_x": 0,
-                                    "option13_y": 0,
-                                    "option13_l": 0,
-                                    "option13_r": 0,
-                                    "option13_u": 0,
-                                    "option13_d": 0,
-                                    "option_14_text": "",
-                                    "option14_x": 0,
-                                    "option14_y": 0,
-                                    "option14_l": 0,
-                                    "option14_r": 0,
-                                    "option14_u": 0,
-                                    "option14_d": 0,
-                                    "option_15_text": "",
-                                    "option15_x": 0,
-                                    "option15_y": 0,
-                                    "option15_l": 0,
-                                    "option15_r": 0,
-                                    "option15_u": 0,
-                                    "option15_d": 0,
-                                    "option_16_text": "",
-                                    "option16_x": 0,
-                                    "option16_y": 0,
-                                    "option16_l": 0,
-                                    "option16_r": 0,
-                                    "option16_u": 0,
-                                    "option16_d": 0
+                                    "variable": "2",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 102
+                                    },
+                                    "__collapse": true
                                 },
-                                "id": "4f2e4549-9e98-41b4-aa2d-6262045e83c6"
+                                "id": "f4ecce1b-1cf4-4ba4-b05a-4b03ad8a14e7"
                             },
                             {
-                                "command": "EVENT_IF_VALUE",
+                                "command": "EVENT_SET_VALUE",
                                 "args": {
-                                    "variable": "V0",
-                                    "operator": "==",
-                                    "comparator": 1,
-                                    "__collapseElse": true
+                                    "variable": "3",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 103
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "85d75f6c-f016-4718-a434-bf66ee7a662f"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "17",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 19
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "ff0091ac-e066-44db-acf9-63929a259c12"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "16",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 420
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "f606db41-14b1-4fef-a581-176c52a174fb"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "19",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 67
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "64e7f3fe-f6af-4d3c-bee8-fa86e31e625c"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "20",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 104
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "b112e6d3-47fe-4c71-8940-e823e0eaa3df"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "21",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 97
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "f42616a3-0cac-48a7-9d22-24e50eb682ca"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "22",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 114
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "41e12781-6d63-4e48-9c9c-993e27f731cf"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "23",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 97
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "b4938aef-94a5-42a2-b36e-5c816879937d"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "24",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 127
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "a52f7488-9e89-45b5-8255-9ee37f3d2fa4"
+                            },
+                            {
+                                "command": "EVENT_SET_TRUE",
+                                "args": {
+                                    "variable": "18",
+                                    "__collapse": true
+                                },
+                                "id": "db94ff01-d637-402e-ad3e-4b43fef46d5f"
+                            },
+                            {
+                                "command": "EVENT_GBVM_SCRIPT",
+                                "args": {
+                                    "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_LOCK\nVM_OVERLAY_SETPOS 20, 3\nVM_SET_CONST_UINT8 _overlay_cut_scanline, 120\nVM_OVERLAY_CLEAR 0, 0, 8, 8, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_OVERLAY_CLEAR 0, 7, 8, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME",
+                                    "__collapse": false
+                                },
+                                "id": "886af74d-54cc-44dd-ba8f-336e3b5ee4af"
+                            },
+                            {
+                                "command": "EVENT_LOOP_WHILE",
+                                "args": {
+                                    "expression": "$18$ != 0"
                                 },
                                 "children": {
                                     "true": [
                                         {
-                                            "command": "EVENT_TEXT",
+                                            "command": "EVENT_SET_TRUE",
                                             "args": {
-                                                "text": [
-                                                    "temp"
-                                                ],
-                                                "avatarId": ""
+                                                "variable": "18",
+                                                "__collapse": true
                                             },
-                                            "id": "e4acc42e-cb33-4d89-b0e0-5582427c7b9f"
+                                            "id": "9ff288c6-f02c-4e2e-b2b6-8be832eee945"
                                         },
                                         {
-                                            "command": "PT_EVENT_ADVANCED_MENU",
+                                            "command": "EVENT_GBVM_SCRIPT",
                                             "args": {
-                                                "variable": "V0",
-                                                "__scriptTabs": "items",
-                                                "width": 20,
-                                                "height": 18,
-                                                "from": "right",
-                                                "items": 11,
-                                                "option_1_text": "",
-                                                "option1_x": 0,
-                                                "option1_y": 0,
-                                                "option1_l": 0,
-                                                "option1_r": 0,
-                                                "option1_u": 0,
-                                                "option1_d": 0,
-                                                "option_2_text": "",
-                                                "option2_x": 0,
-                                                "option2_y": 0,
-                                                "option2_l": 0,
-                                                "option2_r": 0,
-                                                "option2_u": 0,
-                                                "option2_d": 0,
-                                                "option_3_text": "",
-                                                "option3_x": 0,
-                                                "option3_y": 0,
-                                                "option3_l": 0,
-                                                "option3_r": 0,
-                                                "option3_u": 0,
-                                                "option3_d": 0,
-                                                "option_4_text": "",
-                                                "option4_x": 0,
-                                                "option4_y": 0,
-                                                "option4_l": 0,
-                                                "option4_r": 0,
-                                                "option4_u": 0,
-                                                "option4_d": 0,
-                                                "option_5_text": "",
-                                                "option5_x": 0,
-                                                "option5_y": 0,
-                                                "option5_l": 0,
-                                                "option5_r": 0,
-                                                "option5_u": 0,
-                                                "option5_d": 0,
-                                                "option_6_text": "",
-                                                "option6_x": 0,
-                                                "option6_y": 0,
-                                                "option6_l": 0,
-                                                "option6_r": 0,
-                                                "option6_u": 0,
-                                                "option6_d": 0,
-                                                "option_7_text": "",
-                                                "option7_x": 0,
-                                                "option7_y": 0,
-                                                "option7_l": 0,
-                                                "option7_r": 0,
-                                                "option7_u": 0,
-                                                "option7_d": 0,
-                                                "option_8_text": "",
-                                                "option8_x": 0,
-                                                "option8_y": 0,
-                                                "option8_l": 0,
-                                                "option8_r": 0,
-                                                "option8_u": 0,
-                                                "option8_d": 0,
-                                                "option_9_text": "",
-                                                "option9_x": 0,
-                                                "option9_y": 0,
-                                                "option9_l": 0,
-                                                "option9_r": 0,
-                                                "option9_u": 0,
-                                                "option9_d": 0,
-                                                "option_10_text": "",
-                                                "option10_x": 0,
-                                                "option10_y": 0,
-                                                "option10_l": 0,
-                                                "option10_r": 0,
-                                                "option10_u": 0,
-                                                "option10_d": 0,
-                                                "option_11_text": "",
-                                                "option11_x": 0,
-                                                "option11_y": 0,
-                                                "option11_l": 0,
-                                                "option11_r": 0,
-                                                "option11_u": 0,
-                                                "option11_d": 0,
-                                                "option_12_text": "",
-                                                "option12_x": 0,
-                                                "option12_y": 0,
-                                                "option12_l": 0,
-                                                "option12_r": 0,
-                                                "option12_u": 0,
-                                                "option12_d": 0,
-                                                "option_13_text": "",
-                                                "option13_x": 0,
-                                                "option13_y": 0,
-                                                "option13_l": 0,
-                                                "option13_r": 0,
-                                                "option13_u": 0,
-                                                "option13_d": 0,
-                                                "option_14_text": "",
-                                                "option14_x": 0,
-                                                "option14_y": 0,
-                                                "option14_l": 0,
-                                                "option14_r": 0,
-                                                "option14_u": 0,
-                                                "option14_d": 0,
-                                                "option_15_text": "",
-                                                "option15_x": 0,
-                                                "option15_y": 0,
-                                                "option15_l": 0,
-                                                "option15_r": 0,
-                                                "option15_u": 0,
-                                                "option15_d": 0,
-                                                "option_16_text": "",
-                                                "option16_x": 0,
-                                                "option16_y": 0,
-                                                "option16_l": 0,
-                                                "option16_r": 0,
-                                                "option16_u": 0,
-                                                "option16_d": 0,
-                                                "__comment": true
+                                                "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\n\nVM_LOAD_TEXT 10 \n.dw VAR_NAME1, VAR_NAME2, VAR_NAME3, VAR_NAME4, VAR_NAME5, VAR_NAME6, VAR_CURRENT_HP, VAR_MAX_HP, VAR_LEVEL, VAR_GOLD_MONEY_\n.asciz \"\\001\\1\\003\\02\\02%c%c%c%c%c%c\\002\\006\\003\\02\\04HP: %d/%d\\003\\02\\05LV: %d\\003\\02\\06G: %d\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, 0\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\nVM_LOAD_TEXT 0 \n.asciz \"\\001\\1\\003\\03\\11ITEM\\nSTAT\\nCALL\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 104\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\nVM_OVERLAY_MOVE_TO      12, 3, 0\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW"
                                             },
-                                            "id": "10476aa8-2076-4b44-a2c4-6621b4f941e0"
+                                            "id": "989a9ef9-f45e-4a6f-ab0c-1fa3561010e8"
+                                        },
+                                        {
+                                            "command": "EVENT_ACTOR_SHOW",
+                                            "args": {
+                                                "actorId": "$self$",
+                                                "__collapse": true
+                                            },
+                                            "id": "60d7de3e-43ee-489e-86cd-0f22bb8f7dc2"
+                                        },
+                                        {
+                                            "command": "EVENT_GBVM_SCRIPT",
+                                            "args": {
+                                                "script": "VM_OVERLAY_CLEAR 1, 8, 1, 3, .UI_COLOR_BLACK, 0\nVM_CHOICE               VAR_GLOBAL_TEMP_VAR, .UI_MENU_CANCEL_B, 3\n.MENUITEM           1, 8, 1, 3, 0, 2\n.MENUITEM           1, 9, 1, 3, 1, 3\n.MENUITEM           1, 10, 1, 3, 2, 0\n\n;for later: ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/",
+                                                "__collapse": false
+                                            },
+                                            "id": "d087a2a5-048d-4a85-87a5-5c53dd9eacf5"
+                                        },
+                                        {
+                                            "command": "EVENT_SWITCH",
+                                            "args": {
+                                                "variable": "15",
+                                                "choices": 3,
+                                                "__collapseCase0": true,
+                                                "value0": 1,
+                                                "__collapseCase1": true,
+                                                "value1": 2,
+                                                "__collapseCase2": true,
+                                                "value2": 3,
+                                                "__collapseCase3": false,
+                                                "value3": 4,
+                                                "__collapseCase4": false,
+                                                "value4": 5,
+                                                "__collapseCase5": false,
+                                                "value5": 6,
+                                                "__collapseCase6": false,
+                                                "value6": 7,
+                                                "__collapseCase7": false,
+                                                "value7": 8,
+                                                "__collapseCase8": false,
+                                                "value8": 9,
+                                                "__collapseCase9": false,
+                                                "value9": 10,
+                                                "__collapseCase10": false,
+                                                "value10": 11,
+                                                "__collapseCase11": false,
+                                                "value11": 12,
+                                                "__collapseCase12": false,
+                                                "value12": 13,
+                                                "__collapseCase13": false,
+                                                "value13": 14,
+                                                "__collapseCase14": false,
+                                                "value14": 15,
+                                                "__collapseCase15": false,
+                                                "value15": 16,
+                                                "__collapseElse": true
+                                            },
+                                            "children": {
+                                                "true0": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_HIDE",
+                                                        "args": {
+                                                            "actorId": "$self$"
+                                                        },
+                                                        "id": "f3d19801-b9de-411e-b779-0599ca9c9ce1"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_SET_TRUE",
+                                                        "args": {
+                                                            "variable": "18",
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "303e92aa-2b72-428d-9407-ff405baf0082"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_LOOP_WHILE",
+                                                        "args": {
+                                                            "expression": "$18$ != 0"
+                                                        },
+                                                        "children": {
+                                                            "true": [
+                                                                {
+                                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                                    "args": {
+                                                                        "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_OVERLAY_CLEAR 8, 0, 11, 12, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0 \n.asciz \"\\001\\1\\002\\006\\003\\13\\13USE\\003\\16\\13DROP\\003\\21\\13INFO\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, 16\n\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT",
+                                                                        "__collapse": false
+                                                                    },
+                                                                    "id": "0d4d9097-d1b2-4500-8cd6-24bad121100e"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                                    "args": {
+                                                                        "script": "VM_LOAD_TEXT 0 \n.asciz \"\\001\\1\\003\\13\\2Test 1\\nTest 2\\nTest 3\\nTest 4\\nTest 5\\nTest 6\\nTest 7\\nTest 8\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, .TEXT_TILE_CONTINUE"
+                                                                    },
+                                                                    "id": "289c7e95-364a-4c25-a053-5e9faaf147b6"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                                    "args": {
+                                                                        "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\nVM_OVERLAY_MOVE_TO      1, 3, 0\n\nVM_CHOICE VAR_GLOBAL_TEMP_VAR, .UI_MENU_CANCEL_B, 8\n.MENUITEM           9, 1, 1, 8, 0, 2\n.MENUITEM           9, 2, 1, 8, 1, 3\n.MENUITEM           9, 3, 1, 8, 2, 4\n.MENUITEM           9, 4, 1, 8, 3, 5\n.MENUITEM           9, 5, 1, 8, 4, 6\n.MENUITEM           9, 6, 1, 8, 5, 7\n.MENUITEM           9, 7, 1, 8, 6, 8\n.MENUITEM           9, 8, 1, 8, 7, 0\n\n",
+                                                                        "references": [
+                                                                            {
+                                                                                "type": "variable",
+                                                                                "id": "25"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "id": "135bef26-177a-4a4f-9c5e-5fe78031d0f4"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_IF_TRUE",
+                                                                    "args": {
+                                                                        "variable": "15",
+                                                                        "__collapseElse": false
+                                                                    },
+                                                                    "children": {
+                                                                        "true": [
+                                                                            {
+                                                                                "command": "EVENT_GBVM_SCRIPT",
+                                                                                "args": {
+                                                                                    "script": "VM_CHOICE VAR_GLOBAL_TEMP_VAR3, .UI_MENU_CANCEL_B, 3\n.MENUITEM       9,  10, 0, 2, 0, 0\n.MENUITEM       12, 10, 1, 3, 0, 0\n.MENUITEM       15, 10, 2, 0, 0, 0"
+                                                                                },
+                                                                                "id": "03c050e5-a468-4d6b-aafb-615166b73584"
+                                                                            }
+                                                                        ],
+                                                                        "false": [
+                                                                            {
+                                                                                "command": "EVENT_SET_FALSE",
+                                                                                "args": {
+                                                                                    "variable": "18",
+                                                                                    "__collapse": true
+                                                                                },
+                                                                                "id": "3d757d5e-f997-48f8-b64e-b74e4947728f"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "id": "fdb8d524-66e5-4b22-9098-faa1e570cf9b"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_IF_VALUE",
+                                                                    "args": {
+                                                                        "variable": "18",
+                                                                        "operator": "!=",
+                                                                        "comparator": "0",
+                                                                        "__collapseElse": false,
+                                                                        "__comment": true
+                                                                    },
+                                                                    "children": {
+                                                                        "true": [],
+                                                                        "false": []
+                                                                    },
+                                                                    "id": "d3a2bf3d-010e-46ec-973c-bda9ee208055"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "id": "ba3c0876-c8ec-4220-8922-54f85fbe4aa5"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_SET_TRUE",
+                                                        "args": {
+                                                            "variable": "18"
+                                                        },
+                                                        "id": "2b28129f-ea2e-4335-ba19-def69f168281"
+                                                    }
+                                                ],
+                                                "true1": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_HIDE",
+                                                        "args": {
+                                                            "actorId": "$self$"
+                                                        },
+                                                        "id": "b129aec2-0562-47e7-8efe-d5d9a14d01ad"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                        "args": {
+                                                            "variable": "15",
+                                                            "expression": "$26$ - $30$"
+                                                        },
+                                                        "id": "4047e70e-312a-4687-b51c-a78912d8a5d4"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                        "args": {
+                                                            "variable": "18",
+                                                            "expression": "$27$ - $31$"
+                                                        },
+                                                        "id": "fdd3b40e-456a-4dea-b2ee-18be9290c96e"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_OVERLAY_CLEAR 8, 0, 10, 12, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 12\n.dw VAR_NAME1, VAR_NAME2, VAR_NAME3, VAR_NAME4, VAR_NAME5, VAR_NAME6, VAR_ATTACK_BASE_, VAR_ATTACK, VAR_DEFENSE_BASE_, VAR_DEFENSE, VAR_EXP, VAR_EXP_TO_NEXT_LEVEL\n.asciz \"\\001\\1\\003\\12\\02\\042%c%c%c%c%c%c\\042\\n\\n\\002\\006AT: %d(%d)\\nDF: %d(%d)\\n\\nEXP: %d\\nNEXT: %d\\n\\nWPN:\\nAMR:\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, 16\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\nVM_OVERLAY_MOVE_TO      2, 3, 0",
+                                                            "references": [
+                                                                {
+                                                                    "type": "variable",
+                                                                    "id": "26"
+                                                                },
+                                                                {
+                                                                    "type": "variable",
+                                                                    "id": "27"
+                                                                },
+                                                                {
+                                                                    "type": "variable",
+                                                                    "id": "28"
+                                                                },
+                                                                {
+                                                                    "type": "variable",
+                                                                    "id": "29"
+                                                                }
+                                                            ],
+                                                            "__collapse": false
+                                                        },
+                                                        "id": "60e32b4e-e963-4326-841c-fbd0931ad789"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "__label": "TEMP",
+                                                            "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\003\\14\\12\\002\\006Stick\\nBandage\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, .TEXT_TILE_CONTINUE"
+                                                        },
+                                                        "id": "6f93326f-ecc7-461c-a00b-e13a42fedb03"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_AWAIT_INPUT",
+                                                        "args": {
+                                                            "input": [
+                                                                "b"
+                                                            ]
+                                                        },
+                                                        "id": "ba09263d-d4d8-47e9-a96c-6145dd56a3df"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_SET_TRUE",
+                                                        "args": {
+                                                            "variable": "18"
+                                                        },
+                                                        "id": "c22701a3-e934-4c5b-b67a-319c962fa863"
+                                                    }
+                                                ],
+                                                "true2": [
+                                                    {
+                                                        "command": "EVENT_ACTOR_HIDE",
+                                                        "args": {
+                                                            "actorId": "$self$"
+                                                        },
+                                                        "id": "1eae43d9-4dc4-4434-8c6d-efa3b85a4322"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_OVERLAY_CLEAR 8, 0, 10, 12, .UI_COLOR_BLACK, .UI_DRAW_FRAME"
+                                                        },
+                                                        "id": "064a7006-eeaf-4345-bb6d-6237951d5b72"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\003\\13\\02Toriel\\nPapyrus\\nUndyne\\nDim.Box 1\\nDim.Box 2\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, .TEXT_TILE_CONTINUE",
+                                                            "__collapse": false
+                                                        },
+                                                        "id": "84915599-b4ce-4f09-ba44-7eb15dee995a"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\nVM_OVERLAY_MOVE_TO      2, 3, 0\n\nVM_CHOICE VAR_GLOBAL_TEMP_VAR, .UI_MENU_CANCEL_B, 5\n.MENUITEM           9, 1, 1, 5, 0, 2\n.MENUITEM           9, 2, 1, 5, 1, 3\n.MENUITEM           9, 3, 1, 5, 2, 4\n.MENUITEM           9, 4, 1, 5, 3, 5\n.MENUITEM           9, 5, 1, 5, 4, 0"
+                                                        },
+                                                        "id": "d10aac34-5f1f-447a-b372-fa700856d97e"
+                                                    }
+                                                ],
+                                                "true3": [],
+                                                "true4": [],
+                                                "true5": [],
+                                                "true6": [],
+                                                "true7": [],
+                                                "true8": [],
+                                                "true9": [],
+                                                "true10": [],
+                                                "true11": [],
+                                                "true12": [],
+                                                "true13": [],
+                                                "true14": [],
+                                                "true15": [],
+                                                "false": [
+                                                    {
+                                                        "command": "EVENT_SET_FALSE",
+                                                        "args": {
+                                                            "variable": "18"
+                                                        },
+                                                        "id": "1f5b5d29-68e8-483a-ac09-2881642aff63"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_ACTOR_SHOW",
+                                                        "args": {
+                                                            "actorId": "$self$"
+                                                        },
+                                                        "id": "01974b09-092d-41a1-b930-c21dc0b8c841"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_OVERLAY_MOVE_TO 20, 3, 0\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_SET_CONST_UINT8 _overlay_cut_scanline, 150\nVM_OVERLAY_SETPOS 0, 18",
+                                                            "__collapse": false
+                                                        },
+                                                        "id": "dfc2080c-2be2-4de0-b0bf-9681adc12a84"
+                                                    }
+                                                ]
+                                            },
+                                            "id": "bd38051b-905c-4e4f-8b0d-f0cdca6f0e0b"
                                         }
-                                    ],
-                                    "false": []
+                                    ]
                                 },
-                                "id": "83f596c4-fa25-414d-883c-c1af6e8dae29"
+                                "id": "0af48694-df6d-438d-8d1a-74da7f050d06"
                             }
                         ]
                     },
-                    "id": "57f84844-6cbc-4005-949a-130d9f3c4125"
+                    "id": "63a11986-8523-4c13-b2b2-2c526a7ffbe1"
                 }
             ],
             "symbol": "script_add_menu_to_overworl"
@@ -110374,7 +110590,7 @@
         },
         {
             "id": "cf665701-94d7-420f-a95a-43a2bf01e1a0",
-            "name": "Speech Bubble Test",
+            "name": "Speech Bubble Test (Unused)",
             "description": "",
             "variables": {},
             "actors": {},
@@ -110431,7 +110647,7 @@
         },
         {
             "id": "f4702849-bbdc-421e-a719-7aa029d8df24",
-            "name": "Menu Keys",
+            "name": "Menu Keys (WIP)",
             "description": "Attaches scripts to buttons for menuing for battles\n\nMenuMain:\n1: Fight\n2: Act\n3: Item\n4: Mercy\n\nMenuSub",
             "variables": {
                 "V0": {
@@ -110685,6 +110901,14 @@
             "type": "uge"
         },
         {
+            "id": "0a791bd6-5497-4071-9867-225187710a98",
+            "name": "Unneccesary Tension",
+            "symbol": "song_unneccesary_tension",
+            "filename": "Unneccesary Tension.uge",
+            "settings": {},
+            "type": "uge"
+        },
+        {
             "id": "24474660-636c-4085-a1c3-a645a083b04b",
             "name": "Your Best Friend",
             "symbol": "song_your_best_friend",
@@ -110735,12 +110959,30 @@
     ],
     "sounds": [
         {
+            "id": "9ca1cd5d-694c-4ae3-a1d7-e5cdca17ad95",
+            "name": "puzzles.sav",
+            "symbol": "sound_puzzles_sav",
+            "filename": "puzzles.sav",
+            "type": "fxhammer",
+            "inode": "491594",
+            "_v": 1681933561237
+        },
+        {
+            "id": "a0016707-4461-4ef0-86ca-df36fef655c2",
+            "name": "ui.sav",
+            "symbol": "sound_ui_sav",
+            "filename": "ui.sav",
+            "type": "fxhammer",
+            "inode": "215298",
+            "_v": 1681933561237
+        },
+        {
             "id": "55cba9a0-b51a-45d5-a129-4de762b0e7d1",
             "name": "voices.sav",
             "symbol": "sound_voices_sav",
             "filename": "voices.sav",
             "type": "fxhammer",
-            "inode": "27584547717872738",
+            "inode": "228450",
             "_v": 1679310567138
         }
     ],
@@ -110792,6 +111034,14 @@
             "width": 128,
             "height": 112,
             "filename": "Inverted VarWid.png"
+        },
+        {
+            "id": "467fb1e2-7678-49ee-86ec-b41c95ab38c5",
+            "name": "MiniInvert",
+            "symbol": "font_miniinvert",
+            "width": 128,
+            "height": 112,
+            "filename": "MiniInvert.png"
         }
     ],
     "avatars": [
@@ -110808,6 +111058,13 @@
             "width": 16,
             "height": 16,
             "filename": "FloweyIcon2.png"
+        },
+        {
+            "id": "d818f619-a7ba-4727-a973-357d6196aed5",
+            "name": "TorielIcon",
+            "width": 16,
+            "height": 16,
+            "filename": "TorielIcon.png"
         }
     ],
     "emotes": [
@@ -110954,8 +111211,88 @@
         },
         {
             "id": "15",
-            "name": "battle_temp_var",
-            "symbol": "var_battle_temp_var"
+            "name": "global_temp_var",
+            "symbol": "var_global_temp_var"
+        },
+        {
+            "id": "16",
+            "name": "Gold (money)",
+            "symbol": "var_gold_money_"
+        },
+        {
+            "id": "17",
+            "name": "Level",
+            "symbol": "var_level"
+        },
+        {
+            "id": "18",
+            "name": "global_temp_var2",
+            "symbol": "var_global_temp_var2"
+        },
+        {
+            "id": "19",
+            "name": "Name1",
+            "symbol": "var_name1"
+        },
+        {
+            "id": "20",
+            "name": "Name2",
+            "symbol": "var_name2"
+        },
+        {
+            "id": "21",
+            "name": "Name3",
+            "symbol": "var_name3"
+        },
+        {
+            "id": "22",
+            "name": "Name4",
+            "symbol": "var_name4"
+        },
+        {
+            "id": "23",
+            "name": "Name5",
+            "symbol": "var_name5"
+        },
+        {
+            "id": "24",
+            "name": "Name6",
+            "symbol": "var_name6"
+        },
+        {
+            "id": "25",
+            "name": "global_temp_var3",
+            "symbol": "var_global_temp_var3"
+        },
+        {
+            "id": "26",
+            "name": "Attack",
+            "symbol": "var_attack"
+        },
+        {
+            "id": "27",
+            "name": "Defense",
+            "symbol": "var_defense"
+        },
+        {
+            "id": "28",
+            "name": "EXP",
+            "symbol": "var_exp"
+        },
+        {
+            "id": "29",
+            "name": "EXP to next level",
+            "symbol": "var_exp_to_next_level"
+        },
+        {
+            "id": "30",
+            "name": "Attack(Base)",
+            "symbol": "var_attack_base_"
+        },
+        {
+            "id": "31",
+            "name": "Defense(Base)",
+            "symbol": "var_defense_base_"
         },
         {
             "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
@@ -111055,17 +111392,17 @@
         }
     ],
     "settings": {
-        "startSceneId": "d9c04569-abc2-4817-b4f5-a02b5160ba07",
-        "startX": 0,
-        "startY": 0,
+        "startSceneId": "36af1c03-9d6b-404c-9180-0ebcb21ec8f5",
+        "startX": 28,
+        "startY": 15,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 0,
-        "worldScrollY": 1187,
-        "zoom": 200,
+        "worldScrollX": 148,
+        "worldScrollY": 1057,
+        "zoom": 100,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
@@ -111094,8 +111431,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            199,
-            727
+            187,
+            724
         ],
         "showNavigator": true,
         "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",
