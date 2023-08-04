@@ -73,6 +73,7 @@ const fields = [].concat(
 
 const compile = (input, helpers) => {
   const {
+    appendRaw,
     _addComment,
     _overlayMoveTo,
     _loadStructuredText,
@@ -124,7 +125,7 @@ const compile = (input, helpers) => {
 
   _overlayClear(3, 1, 14, 4, ".UI_COLOR_BLACK", false);
 
-  _displayText();
+  appendRaw("VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 5");
 
   _overlayWait(true, [".UI_WAIT_WINDOW", ".UI_WAIT_TEXT"]);
 

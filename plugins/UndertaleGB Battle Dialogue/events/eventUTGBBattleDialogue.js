@@ -23,7 +23,7 @@ const compile = (input, helpers) => {
     _addComment,
     _loadStructuredText,
     _overlayClear,
-    _displayText,
+    //_displayText,
     _overlayWait,
     _addNL,
   } = helpers;
@@ -35,7 +35,8 @@ const compile = (input, helpers) => {
 
   _loadStructuredText(`\\003\\04\\02${input.text}`);
 
-  _displayText();
+  //_displayText();
+  appendRaw("VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 5");
 
   _overlayWait(false, [".UI_WAIT_TEXT"]);
 
