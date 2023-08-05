@@ -77,7 +77,7 @@ jobs:
 
       - name: Upload Release Artifact
         uses: actions/upload-release-asset@v3
-         env:
+        env:
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
