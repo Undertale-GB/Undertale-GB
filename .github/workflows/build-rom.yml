@@ -1,9 +1,7 @@
 name: Build GB Studio ROM and Release
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build:
