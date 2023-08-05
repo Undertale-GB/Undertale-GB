@@ -55,7 +55,9 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
         with:
           tag_name: v${{ github.run_number }}
           release_name: Release v${{ github.run_number }}
@@ -66,13 +68,17 @@ jobs:
           prerelease: false
 
       - name: Download Artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
+         env:
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
         with:
           name: game-rom
           path: game-rom
 
       - name: Upload Release Artifact
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v3
+         env:
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./game-rom/game.gb
