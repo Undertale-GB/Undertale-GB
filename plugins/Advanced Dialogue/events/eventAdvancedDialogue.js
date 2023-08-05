@@ -102,6 +102,19 @@ const fields = [].concat(
           ],
         },
         {
+          key: "locked",
+          label: "vm need lock ?",
+          width: "50%",
+          type: "checkbox",
+          defaultValue: false,
+          conditions: [
+            {
+              key: "__scriptTabs",
+              in: ["layout"],
+            },
+          ],
+        },
+        {
           key: `clearPrevious`,
           label: "Clear Previous Content",
           type: "checkbox",
@@ -292,6 +305,10 @@ const compile = (input, helpers) => {
 
   _addComment("Advanced Text Dialogue");
 
+  if(input.locked) {
+    appendRaw(`VM_LOCK`)
+  }
+
   if (renderOnTop) {
     appendRaw(`; Set overlay scanline cut
 VM_PUSH_CONST 0
@@ -377,6 +394,10 @@ VM_SET_UINT8 _overlay_cut_scanline, .ARG0`);
 
   if (renderOnTop) {
     appendRaw(`VM_POP 1`);
+  }
+
+  if (input.locked) {
+    appendRaw(`VM_UNLOCK`)
   }
 
   _addNL();

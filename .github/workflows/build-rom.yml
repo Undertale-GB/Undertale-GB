@@ -1,0 +1,43 @@
+name: Build GB Studio ROM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
+      - name: Build GB Studio
+        run: |
+          git clone https://github.com/chrismaltby/gb-studio.git
+          cd gb-studio
+          yarn
+          npm run make:cli
+          yarn link
+          chmod 777 /usr/local/bin/gb-studio-cli
+          cd ..
+
+      - name: Export Project and Make ROM
+        run: |
+          cd gb-studio
+          gb-studio-cli make:rom ../"Undertale GB Main.gbsproj" out/game.gb
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: game-rom
+          path: gb-studio/out/game.gb
