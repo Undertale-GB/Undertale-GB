@@ -1,4 +1,4 @@
-name: Build GB Studio ROM
+name: Build GB Studio ROM and Release
 
 on:
   push:
@@ -37,7 +37,44 @@ jobs:
           gb-studio-cli make:rom ../"Undertale GB Main.gbsproj" out/game.gb
 
       - name: Upload Artifact
+        id: upload-artifact
         uses: actions/upload-artifact@v3
         with:
           name: game-rom
           path: gb-studio/out/game.gb
+
+      - name: Get commit info
+        run: echo "::set-output name=commit::$(git log -1 --pretty=format:'%h - %an, %s')"
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: v${{ github.run_number }}
+          release_name: Release v${{ github.run_number }}
+          body: |
+            Commit Info:
+            ${{ needs.build.outputs.commit }}
+          draft: false
+          prerelease: false
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: game-rom
+          path: game-rom
+
+      - name: Upload Release Artifact
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./game-rom/game.gb
+          asset_name: game.gb
+          asset_content_type: application/octet-stream
