@@ -819,7 +819,7 @@
             ],
             "autoFadeSpeed": null,
             "id": "5ded154f-d0ba-4973-b700-d414d871baa3",
-            "x": 270,
+            "x": 249,
             "y": 1620.5,
             "actors": [],
             "triggers": [],
@@ -2796,7 +2796,7 @@
                     "hit2Script": [],
                     "hit3Script": [],
                     "id": "adeea5b8-c6ef-4800-91bc-af69b6a33961",
-                    "x": 18,
+                    "x": 16,
                     "y": 3
                 }
             ],
@@ -40200,8 +40200,8 @@
             "collisions": [],
             "autoFadeSpeed": 1,
             "id": "a5259c84-ba40-43b9-a57f-e91f62c0e4c2",
-            "x": 1507.036585365854,
-            "y": 872.4634146341464,
+            "x": 1485.036585365854,
+            "y": 925.4634146341464,
             "actors": [],
             "triggers": [],
             "script": [],
@@ -53260,7 +53260,7 @@
             "symbol": "scene_debug"
         },
         {
-            "name": "Battle Test 2",
+            "name": "Battle_Froggit_B",
             "backgroundId": "e70ff7ec-f463-491f-bedc-cf3bb270619f",
             "width": 20,
             "height": 18,
@@ -53759,12 +53759,104 @@
                     "startScript": [],
                     "updateScript": [
                         {
-                            "command": "EVENT_GBVM_SCRIPT",
+                            "command": "EVENT_IF_VALUE",
                             "args": {
-                                "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 72\n;Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 6, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 10, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 5 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001Ribbit,\\nRibbit.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 6\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n",
-                                "__collapse": false
+                                "variable": "43",
+                                "operator": "==",
+                                "comparator": "0",
+                                "__collapseElse": false
                             },
-                            "id": "18f48e2e-3304-4e74-95d0-881aeebd4f0f"
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "DEAB22_RANDOM_EVENT",
+                                        "args": {
+                                            "choices": 4,
+                                            "__collapseCase0": false,
+                                            "__collapseCase1": true,
+                                            "__collapseCase2": true,
+                                            "__collapseCase3": true,
+                                            "__collapseCase4": false,
+                                            "__collapseCase5": false,
+                                            "__collapseCase6": false,
+                                            "__collapseCase7": false
+                                        },
+                                        "children": {
+                                            "true0": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 72\n;Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 6, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 10, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 5 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001Ribbit,\\nRibbit.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 6\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n",
+                                                        "__collapse": true
+                                                    },
+                                                    "id": "18f48e2e-3304-4e74-95d0-881aeebd4f0f"
+                                                }
+                                            ],
+                                            "true1": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 72\n;Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 6, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 10, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 5 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001Croak,\\nCroak.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 6\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n",
+                                                        "__collapse": false
+                                                    },
+                                                    "id": "ac3fad15-0173-40ff-bbe4-a7b725296ecb"
+                                                }
+                                            ],
+                                            "true2": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 72\n;Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 6, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 10, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 5 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001Hop,\\nHop.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 6\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n",
+                                                        "__collapse": false
+                                                    },
+                                                    "id": "172e2a76-2b6f-4a3a-add0-b08d5f1ad536"
+                                                }
+                                            ],
+                                            "true3": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 72\n;Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 6, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 10, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 5 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001Meow.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 6\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n",
+                                                        "__collapse": false
+                                                    },
+                                                    "id": "0fce9c60-89cb-404f-afb0-1b8f6678518f"
+                                                }
+                                            ],
+                                            "true4": [],
+                                            "true5": [],
+                                            "true6": [],
+                                            "true7": []
+                                        },
+                                        "id": "25a5d72f-3801-424f-8111-6884d3f4c8e7"
+                                    }
+                                ],
+                                "false": [
+                                    {
+                                        "command": "EVENT_IF_VALUE",
+                                        "args": {
+                                            "variable": "43",
+                                            "operator": "==",
+                                            "comparator": 1,
+                                            "__collapseElse": true
+                                        },
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 72\n;Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 7, 4, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 10, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 5 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001(Blushes\\ndeeply)\\nRibbit..\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 6\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n",
+                                                        "__collapse": false
+                                                    },
+                                                    "id": "4b515efa-5a9e-47cb-a2bc-7274604f5914"
+                                                }
+                                            ],
+                                            "false": []
+                                        },
+                                        "id": "ccc4a269-4f7f-411a-b116-485d257a2d50"
+                                    }
+                                ]
+                            },
+                            "id": "1fc77fd2-349c-45bf-a8b8-101aacc638d9"
                         },
                         {
                             "command": "EVENT_GROUP",
@@ -54300,12 +54392,37 @@
                     "id": "dae2ce3a-b200-4d50-ba74-5dc28a40a692"
                 },
                 {
+                    "command": "EVENT_INC_VALUE",
+                    "args": {
+                        "variable": "6"
+                    },
+                    "id": "d3a58907-002e-4d56-8b55-a0299cee4ccb"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "42",
+                        "value": {
+                            "type": "number",
+                            "value": 0
+                        }
+                    },
+                    "id": "58449c74-5081-4dfa-8d7a-4dc3399f14ac"
+                },
+                {
                     "command": "EVENT_FADE_IN",
                     "args": {
                         "speed": 1,
                         "__collapse": false
                     },
                     "id": "164c81be-a743-4914-b627-05d7580fd85e"
+                },
+                {
+                    "command": "EVENT_SET_FALSE",
+                    "args": {
+                        "variable": "44"
+                    },
+                    "id": "04742eb0-7209-4324-9bf6-5e8c6ac2f462"
                 }
             ],
             "playerHit1Script": [
@@ -54476,6 +54593,13 @@
                         "actorId": "$self$"
                     },
                     "id": "f00fe6d7-9aad-4070-b587-cc89482cf258"
+                },
+                {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "VM_OVERLAY_SETPOS 0, 18\nVM_OVERLAY_CLEAR 0, 0, 1, 1, .UI_COLOR_BLACK, 0"
+                    },
+                    "id": "bf272466-6752-405e-9886-9453c3923dd2"
                 }
             ],
             "playerHit1Script": [],
@@ -56205,7 +56329,7 @@
             "playerSpriteSheetId": "f8206024-75de-41ed-838d-5a8d52fb5b16"
         },
         {
-            "name": "Battle Test (new)",
+            "name": "Battle_Froggit_A",
             "backgroundId": "5126a5ed-c156-4a23-a5cc-76db2b59d4ce",
             "width": 20,
             "height": 25,
@@ -56310,11 +56434,189 @@
                             "children": {
                                 "true": [
                                     {
-                                        "command": "UTGB_EVENT_BATTLE_TEXT",
+                                        "command": "EVENT_IF_VALUE",
                                         "args": {
-                                            "text": "*Froggit hopped\\n|close!"
+                                            "variable": "6",
+                                            "operator": "==",
+                                            "comparator": "0",
+                                            "__collapseElse": false,
+                                            "__collapse": true
                                         },
-                                        "id": "68e7ef14-315f-481d-a5ac-0cf9633ff506"
+                                        "children": {
+                                            "true": [
+                                                {
+                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                    "args": {
+                                                        "text": "*Froggit hopped\n|close!",
+                                                        "__collapse": false
+                                                    },
+                                                    "id": "68e7ef14-315f-481d-a5ac-0cf9633ff506"
+                                                },
+                                                {
+                                                    "command": "EVENT_ACTOR_STOP_UPDATE",
+                                                    "args": {
+                                                        "actorId": "$self$",
+                                                        "__collapse": false
+                                                    },
+                                                    "id": "1051a881-916a-41d1-8f65-461c5e0630ce"
+                                                }
+                                            ],
+                                            "false": [
+                                                {
+                                                    "command": "EVENT_IF_VALUE",
+                                                    "args": {
+                                                        "variable": "43",
+                                                        "operator": "==",
+                                                        "comparator": "0",
+                                                        "__collapseElse": false
+                                                    },
+                                                    "children": {
+                                                        "true": [
+                                                            {
+                                                                "command": "EVENT_IF_FALSE",
+                                                                "args": {
+                                                                    "variable": "44",
+                                                                    "__collapseElse": true,
+                                                                    "__collapse": true,
+                                                                    "__label": "Set Random Dialogue"
+                                                                },
+                                                                "children": {
+                                                                    "true": [
+                                                                        {
+                                                                            "command": "EVENT_RNG_SEED",
+                                                                            "args": {
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "f23bb1dd-2027-4d2b-b41c-c7071fc44f93"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_VARIABLE_MATH",
+                                                                            "args": {
+                                                                                "vectorX": "44",
+                                                                                "operation": "set",
+                                                                                "other": "rnd",
+                                                                                "vectorY": "L0",
+                                                                                "value": "0",
+                                                                                "minValue": 1,
+                                                                                "maxValue": 4,
+                                                                                "clamp": false,
+                                                                                "__collapse": false
+                                                                            },
+                                                                            "id": "f9e05cb3-c368-4009-a80f-7051b2833dab"
+                                                                        }
+                                                                    ],
+                                                                    "false": []
+                                                                },
+                                                                "id": "83ccaf24-b0b5-4cef-b995-92ee04d9a2b9"
+                                                            },
+                                                            {
+                                                                "command": "EVENT_SWITCH",
+                                                                "args": {
+                                                                    "variable": "44",
+                                                                    "choices": 4,
+                                                                    "__collapseCase0": false,
+                                                                    "value0": 1,
+                                                                    "__collapseCase1": false,
+                                                                    "value1": 2,
+                                                                    "__collapseCase2": false,
+                                                                    "value2": 3,
+                                                                    "__collapseCase3": false,
+                                                                    "value3": 4,
+                                                                    "__collapseCase4": false,
+                                                                    "value4": 5,
+                                                                    "__collapseCase5": false,
+                                                                    "value5": 6,
+                                                                    "__collapseCase6": false,
+                                                                    "value6": 7,
+                                                                    "__collapseCase7": false,
+                                                                    "value7": 8,
+                                                                    "__collapseCase8": false,
+                                                                    "value8": 9,
+                                                                    "__collapseCase9": false,
+                                                                    "value9": 10,
+                                                                    "__collapseCase10": false,
+                                                                    "value10": 11,
+                                                                    "__collapseCase11": false,
+                                                                    "value11": 12,
+                                                                    "__collapseCase12": false,
+                                                                    "value12": 13,
+                                                                    "__collapseCase13": false,
+                                                                    "value13": 14,
+                                                                    "__collapseCase14": false,
+                                                                    "value14": 15,
+                                                                    "__collapseCase15": false,
+                                                                    "value15": 16,
+                                                                    "__collapseElse": true
+                                                                },
+                                                                "children": {
+                                                                    "true0": [
+                                                                        {
+                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "args": {
+                                                                                "text": "*Froggit doesn't\n|seem to know\n|why it's here."
+                                                                            },
+                                                                            "id": "f5603484-831d-45df-ba87-86e568991697"
+                                                                        }
+                                                                    ],
+                                                                    "true1": [
+                                                                        {
+                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "args": {
+                                                                                "text": "*Froggit hops to\n|and fro."
+                                                                            },
+                                                                            "id": "9d26b6e0-cfb3-4d64-a52b-c0dc3f7454d0"
+                                                                        }
+                                                                    ],
+                                                                    "true2": [
+                                                                        {
+                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "args": {
+                                                                                "text": "*The battlefield\n|is filled with\n|the smell of\n|mustard seed."
+                                                                            },
+                                                                            "id": "d23edcd7-333f-4407-bd90-14160458b735"
+                                                                        }
+                                                                    ],
+                                                                    "true3": [
+                                                                        {
+                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "args": {
+                                                                                "text": "*You are\n|intimidated by\n|Froggit's raw\n|strength.!S5!..!S2!\\r*Only kidding."
+                                                                            },
+                                                                            "id": "7aa037f2-ef82-4f82-967b-3715df62a2cb"
+                                                                        }
+                                                                    ],
+                                                                    "true4": [],
+                                                                    "true5": [],
+                                                                    "true6": [],
+                                                                    "true7": [],
+                                                                    "true8": [],
+                                                                    "true9": [],
+                                                                    "true10": [],
+                                                                    "true11": [],
+                                                                    "true12": [],
+                                                                    "true13": [],
+                                                                    "true14": [],
+                                                                    "true15": [],
+                                                                    "false": []
+                                                                },
+                                                                "id": "9a579089-5bc8-4de7-b4cf-d5c7e3206f81"
+                                                            }
+                                                        ],
+                                                        "false": [
+                                                            {
+                                                                "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                "args": {
+                                                                    "text": "*Froggit seems\n|reluctant to\n|fight you."
+                                                                },
+                                                                "id": "2160e250-3074-40e1-ad34-b1138ba2d164"
+                                                            }
+                                                        ]
+                                                    },
+                                                    "id": "bac43070-c56c-4feb-a24b-0ca1002241c3"
+                                                }
+                                            ]
+                                        },
+                                        "id": "45bdc19a-2ff1-40c8-97c4-8be64efffa69"
                                     },
                                     {
                                         "command": "EVENT_ACTOR_STOP_UPDATE",
@@ -56322,7 +56624,7 @@
                                             "actorId": "$self$",
                                             "__collapse": false
                                         },
-                                        "id": "1051a881-916a-41d1-8f65-461c5e0630ce"
+                                        "id": "b810140d-b2b1-4a1e-9d45-3198ddc0d4f7"
                                     }
                                 ],
                                 "false": [
@@ -56331,13 +56633,13 @@
                                         "args": {
                                             "variable": "7",
                                             "choices": 4,
-                                            "__collapseCase0": true,
+                                            "__collapseCase0": false,
                                             "value0": 1,
                                             "__collapseCase1": false,
                                             "value1": 2,
                                             "__collapseCase2": true,
                                             "value2": 3,
-                                            "__collapseCase3": true,
+                                            "__collapseCase3": false,
                                             "value3": 4,
                                             "__collapseCase4": false,
                                             "value4": 5,
@@ -56369,6 +56671,22 @@
                                         },
                                         "children": {
                                             "true0": [
+                                                {
+                                                    "command": "UTGB_EVENT_BATTLE_ENEMY_SELECT",
+                                                    "args": {
+                                                        "variable": "8",
+                                                        "items": 1,
+                                                        "option_1_text": "Froggit",
+                                                        "option_1_math": "$43$ != 0",
+                                                        "option_2_text": "",
+                                                        "option_2_math": "",
+                                                        "option_3_text": "",
+                                                        "option_3_math": "",
+                                                        "option_4_text": "",
+                                                        "option_4_math": ""
+                                                    },
+                                                    "id": "721e1998-4f46-4756-88f4-c7b5007a94eb"
+                                                },
                                                 {
                                                     "command": "EVENT_GBVM_SCRIPT",
                                                     "args": {
@@ -56706,9 +57024,26 @@
                                                         "option_6_text": "",
                                                         "option_7_text": "",
                                                         "option_8_text": "",
-                                                        "twoRows": false
+                                                        "twoRows": false,
+                                                        "__comment": true
                                                     },
                                                     "id": "ec4d5bdd-ded0-4c4d-91e4-da284febd51a"
+                                                },
+                                                {
+                                                    "command": "UTGB_EVENT_BATTLE_ENEMY_SELECT",
+                                                    "args": {
+                                                        "variable": "8",
+                                                        "items": 1,
+                                                        "option_1_text": "Froggit",
+                                                        "option_1_math": "$43$ != 0",
+                                                        "option_2_text": "",
+                                                        "option_2_math": "",
+                                                        "option_3_text": "",
+                                                        "option_3_math": "",
+                                                        "option_4_text": "",
+                                                        "option_4_math": ""
+                                                    },
+                                                    "id": "39b7c1bc-8854-4440-be19-49a1d98448d6"
                                                 },
                                                 {
                                                     "command": "EVENT_IF_VALUE",
@@ -56716,7 +57051,7 @@
                                                         "variable": "8",
                                                         "operator": ">",
                                                         "comparator": "0",
-                                                        "__collapseElse": false,
+                                                        "__collapseElse": true,
                                                         "__label": "If Enemy selected",
                                                         "__collapse": false
                                                     },
@@ -56786,7 +57121,7 @@
                                                                         {
                                                                             "command": "UTGB_EVENT_BATTLE_TEXT",
                                                                             "args": {
-                                                                                "text": "*Froggit\\n|4HP 5DF\\n|Life is hard\\n|for this enemy."
+                                                                                "text": "*Froggit\n|4HP 5DF\n*Life is hard\n|for this enemy."
                                                                             },
                                                                             "id": "50f10176-ff16-4ca6-adef-72727b644b3f"
                                                                         },
@@ -56831,9 +57166,20 @@
                                                                         {
                                                                             "command": "UTGB_EVENT_BATTLE_TEXT",
                                                                             "args": {
-                                                                                "text": "*Froggit didn't\\n understand what\\n you said, but was\\n flattered anyway."
+                                                                                "text": "*Froggit didn't\n|understand what\n|you said, but was\n|flattered\\r|anyway."
                                                                             },
                                                                             "id": "0b75a3cf-a131-4b54-89e7-b40cfe5643ab"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SET_VALUE",
+                                                                            "args": {
+                                                                                "variable": "43",
+                                                                                "value": {
+                                                                                    "type": "number",
+                                                                                    "value": 1
+                                                                                }
+                                                                            },
+                                                                            "id": "a093638e-5cb6-4db0-b51f-d47d1c074b52"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_AWAIT_INPUT",
@@ -56861,9 +57207,20 @@
                                                                         {
                                                                             "command": "UTGB_EVENT_BATTLE_TEXT",
                                                                             "args": {
-                                                                                "text": "*Froggit didn't\\n understand what\\n you said, but was\\n scared anyway.a"
+                                                                                "text": "*Froggit didn't\n|understand what\n|you said, but was\n|scared anyway."
                                                                             },
                                                                             "id": "322692dd-1fd3-4d45-8b96-c02ff7a2a857"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SET_VALUE",
+                                                                            "args": {
+                                                                                "variable": "43",
+                                                                                "value": {
+                                                                                    "type": "number",
+                                                                                    "value": -1
+                                                                                }
+                                                                            },
+                                                                            "id": "5d45fecf-2c1b-4ea8-bbf2-a3d0298d8987"
                                                                         },
                                                                         {
                                                                             "command": "EVENT_AWAIT_INPUT",
@@ -56966,16 +57323,33 @@
                                                         "option_6_text": "",
                                                         "option_7_text": "",
                                                         "option_8_text": "",
-                                                        "__collapse": true
+                                                        "__collapse": false,
+                                                        "__comment": true
                                                     },
                                                     "id": "17020096-6adb-4d3b-ba79-252ee9e8b52e"
+                                                },
+                                                {
+                                                    "command": "UTGB_EVENT_BATTLE_ENEMY_SELECT",
+                                                    "args": {
+                                                        "variable": "8",
+                                                        "items": 1,
+                                                        "option_1_text": "Froggit",
+                                                        "option_1_math": "$43$ != 0",
+                                                        "option_2_text": "",
+                                                        "option_2_math": "",
+                                                        "option_3_text": "",
+                                                        "option_3_math": "",
+                                                        "option_4_text": "",
+                                                        "option_4_math": ""
+                                                    },
+                                                    "id": "81243ea5-0292-4326-8467-c683a732346f"
                                                 },
                                                 {
                                                     "command": "EVENT_SWITCH",
                                                     "args": {
                                                         "variable": "8",
                                                         "choices": 1,
-                                                        "__collapseCase0": true,
+                                                        "__collapseCase0": false,
                                                         "value0": 1,
                                                         "__collapseCase1": false,
                                                         "value1": 2,
@@ -57007,12 +57381,28 @@
                                                         "value14": 15,
                                                         "__collapseCase15": false,
                                                         "value15": 16,
-                                                        "__collapseElse": false,
+                                                        "__collapseElse": true,
                                                         "__label": "Select Enemy",
                                                         "__collapse": false
                                                     },
                                                     "children": {
                                                         "true0": [
+                                                            {
+                                                                "command": "UTGB_EVENT_BATTLE_ENEMY_SELECT",
+                                                                "args": {
+                                                                    "variable": "8",
+                                                                    "items": 2,
+                                                                    "option_1_text": "Spare",
+                                                                    "option_1_math": "$43$ != 0",
+                                                                    "option_2_text": "Run",
+                                                                    "option_2_math": "1 == 2",
+                                                                    "option_3_text": "",
+                                                                    "option_3_math": "",
+                                                                    "option_4_text": "",
+                                                                    "option_4_math": ""
+                                                                },
+                                                                "id": "5ac1fd4d-ee41-42e8-b40d-458ecae33351"
+                                                            },
                                                             {
                                                                 "command": "UTGB_EVENT_BATTLE_MENU",
                                                                 "args": {
@@ -57027,7 +57417,8 @@
                                                                     "option_6_text": "",
                                                                     "option_7_text": "",
                                                                     "option_8_text": "",
-                                                                    "__collapse": false
+                                                                    "__collapse": false,
+                                                                    "__comment": true
                                                                 },
                                                                 "id": "3abae0bb-7b8e-46bf-b0e0-18d0390101f2"
                                                             },
@@ -57036,9 +57427,9 @@
                                                                 "args": {
                                                                     "variable": "8",
                                                                     "choices": 2,
-                                                                    "__collapseCase0": true,
+                                                                    "__collapseCase0": false,
                                                                     "value0": 1,
-                                                                    "__collapseCase1": false,
+                                                                    "__collapseCase1": true,
                                                                     "value1": 2,
                                                                     "__collapseCase2": false,
                                                                     "value2": 3,
@@ -57075,67 +57466,134 @@
                                                                 "children": {
                                                                     "true0": [
                                                                         {
-                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                            "command": "EVENT_IF_VALUE",
                                                                             "args": {
-                                                                                "text": "*You tried\\n to spare\\n Debug,"
+                                                                                "variable": "43",
+                                                                                "operator": "!=",
+                                                                                "comparator": "0",
+                                                                                "__collapseElse": false,
+                                                                                "__collapse": false
                                                                             },
-                                                                            "id": "a63f8938-abeb-4e45-a5b8-db1c1cdf898c"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_AWAIT_INPUT",
-                                                                            "args": {
-                                                                                "input": [
-                                                                                    "b",
-                                                                                    "a"
+                                                                            "children": {
+                                                                                "true": [
+                                                                                    {
+                                                                                        "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                        "args": {
+                                                                                            "text": "*Enemy Spared!\n\n\n|(Debug)"
+                                                                                        },
+                                                                                        "id": "30f8d865-b9d5-4b9c-9f85-cfc23c524c65"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_AWAIT_INPUT",
+                                                                                        "args": {
+                                                                                            "input": [
+                                                                                                "b",
+                                                                                                "a"
+                                                                                            ]
+                                                                                        },
+                                                                                        "id": "b688152e-613d-42ff-bc53-29f9836e028a"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                        "args": {
+                                                                                            "text": "*You got x XP and\n|y Gold!"
+                                                                                        },
+                                                                                        "id": "2ec0c78c-cc24-42b1-9e91-02924a6a25b5"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_AWAIT_INPUT",
+                                                                                        "args": {
+                                                                                            "input": [
+                                                                                                "b",
+                                                                                                "a"
+                                                                                            ]
+                                                                                        },
+                                                                                        "id": "17fe41c5-a682-4216-a4f2-02e9b224dbc8"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_COMMENT",
+                                                                                        "args": {
+                                                                                            "text": "TODO: Calculate Rewards",
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "22c41f61-e53b-44a0-9a61-0cd518d07e4b"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                        "args": {
+                                                                                            "customEventId": "dccfd7b4-f89d-4956-abde-0dd1444240e8",
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "845c2b19-4bda-4a83-b24b-3426f475489f"
+                                                                                    }
                                                                                 ],
-                                                                                "__collapse": true
+                                                                                "false": [
+                                                                                    {
+                                                                                        "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                        "args": {
+                                                                                            "text": "*You tried\n|to spare\n|Froggit,"
+                                                                                        },
+                                                                                        "id": "a63f8938-abeb-4e45-a5b8-db1c1cdf898c"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_AWAIT_INPUT",
+                                                                                        "args": {
+                                                                                            "input": [
+                                                                                                "b",
+                                                                                                "a"
+                                                                                            ],
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "03bcd9cc-797f-4c42-a28a-7c857eeaa59a"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                        "args": {
+                                                                                            "text": "*But its name\n|wasn't\n|yellow!"
+                                                                                        },
+                                                                                        "id": "bf533df0-dd39-487d-827c-79f60ef28b67"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_AWAIT_INPUT",
+                                                                                        "args": {
+                                                                                            "input": [
+                                                                                                "b",
+                                                                                                "a"
+                                                                                            ],
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "ce09dfdf-634f-43c0-9e96-51dbcbb81e36"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_SET_FALSE",
+                                                                                        "args": {
+                                                                                            "variable": "9",
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "86c91934-a859-4b10-b433-4e97c2c32f80"
+                                                                                    },
+                                                                                    {
+                                                                                        "command": "EVENT_SWITCH_SCENE",
+                                                                                        "args": {
+                                                                                            "sceneId": "dd6410e0-2cd1-4fc5-87b4-157e82b64387",
+                                                                                            "x": 9,
+                                                                                            "y": 12,
+                                                                                            "direction": "",
+                                                                                            "fadeSpeed": "2",
+                                                                                            "__collapse": true
+                                                                                        },
+                                                                                        "id": "1f67626a-0184-4bda-b36a-003f845d17ab"
+                                                                                    }
+                                                                                ]
                                                                             },
-                                                                            "id": "03bcd9cc-797f-4c42-a28a-7c857eeaa59a"
-                                                                        },
-                                                                        {
-                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
-                                                                            "args": {
-                                                                                "text": "*But its name\\n wasn't\\n yellow!"
-                                                                            },
-                                                                            "id": "bf533df0-dd39-487d-827c-79f60ef28b67"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_AWAIT_INPUT",
-                                                                            "args": {
-                                                                                "input": [
-                                                                                    "b",
-                                                                                    "a"
-                                                                                ],
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "ce09dfdf-634f-43c0-9e96-51dbcbb81e36"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_SET_FALSE",
-                                                                            "args": {
-                                                                                "variable": "9",
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "86c91934-a859-4b10-b433-4e97c2c32f80"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_SWITCH_SCENE",
-                                                                            "args": {
-                                                                                "sceneId": "dd6410e0-2cd1-4fc5-87b4-157e82b64387",
-                                                                                "x": 9,
-                                                                                "y": 12,
-                                                                                "direction": "",
-                                                                                "fadeSpeed": "2",
-                                                                                "__collapse": true
-                                                                            },
-                                                                            "id": "1f67626a-0184-4bda-b36a-003f845d17ab"
+                                                                            "id": "838ef25c-67de-49bf-9660-2e28ca02553a"
                                                                         }
                                                                     ],
                                                                     "true1": [
                                                                         {
                                                                             "command": "UTGB_EVENT_BATTLE_TEXT",
                                                                             "args": {
-                                                                                "text": "*...where to?"
+                                                                                "text": "*Got away safely!"
                                                                             },
                                                                             "id": "77a9432a-a4dd-47d5-b232-ab847e193229"
                                                                         },
@@ -57152,9 +57610,17 @@
                                                                             "command": "EVENT_SET_FALSE",
                                                                             "args": {
                                                                                 "variable": "9",
-                                                                                "__collapse": true
+                                                                                "__collapse": false
                                                                             },
                                                                             "id": "7ce05dd4-0f9f-43d9-8dae-4819b70700b0"
+                                                                        },
+                                                                        {
+                                                                            "command": "EVENT_SCENE_POP_STATE",
+                                                                            "args": {
+                                                                                "fadeSpeed": "2",
+                                                                                "__collapse": true
+                                                                            },
+                                                                            "id": "8f4e60a5-780e-43b8-8759-df48d3785f21"
                                                                         }
                                                                     ],
                                                                     "true2": [],
@@ -57285,7 +57751,7 @@
                         "__scriptTabs": "press",
                         "__collapse": false,
                         "__label": "DEBUG Switch scene",
-                        "__comment": true
+                        "__comment": false
                     },
                     "children": {
                         "true": [
@@ -57361,7 +57827,7 @@
                                                             "variable": "7",
                                                             "operator": "==",
                                                             "comparator": "0",
-                                                            "__collapseElse": false
+                                                            "__collapseElse": true
                                                         },
                                                         "children": {
                                                             "true": [
@@ -63351,7 +63817,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "Dummy.png"
+            "filename": "Dummy.png",
+            "tileColors": []
         },
         {
             "id": "6370a10d-9a3c-4cd4-9871-8284dd18b423",
@@ -65626,7 +66093,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "Intro10.png"
+            "filename": "Intro10.png",
+            "tileColors": []
         },
         {
             "id": "adcd8adb-82fb-443c-b544-57a5793f4007",
@@ -65636,7 +66104,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "Intro11.png"
+            "filename": "Intro11.png",
+            "tileColors": []
         },
         {
             "id": "52eaadc1-6c6a-42f1-bb84-88f032e8e320",
@@ -65646,7 +66115,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "Intro9.png"
+            "filename": "Intro9.png",
+            "tileColors": []
         },
         {
             "id": "231f4ec6-4b02-461a-a4a1-194e39b60ba3",
@@ -121501,6 +121971,52 @@
                     "id": "2369d534-e404-4886-8bd8-925bdec2eb00"
                 }
             ]
+        },
+        {
+            "id": "dccfd7b4-f89d-4956-abde-0dd1444240e8",
+            "name": "Leave Battle",
+            "description": "",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_16",
+            "script": [
+                {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 150\nVM_SET_CONST_UINT8 _show_actors_on_overlay, 0\nVM_OVERLAY_SETPOS 0, 18"
+                    },
+                    "id": "22f22e27-fb68-4d4f-b43e-06cc8ae628d0"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "43",
+                        "value": {
+                            "type": "number",
+                            "value": 0
+                        }
+                    },
+                    "id": "d613cfd5-5ff6-4a11-bc47-592db5f2f471"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "6",
+                        "value": {
+                            "type": "number",
+                            "value": 0
+                        }
+                    },
+                    "id": "f9caf2be-c75d-46bb-bc3e-94f7e4c8c91f"
+                },
+                {
+                    "command": "EVENT_SCENE_POP_STATE",
+                    "args": {
+                        "fadeSpeed": "2"
+                    },
+                    "id": "b32a46b8-2c24-4185-a223-4ce033af836c"
+                }
+            ]
         }
     ],
     "music": [
@@ -122026,6 +122542,16 @@
             "symbol": "var_invincible"
         },
         {
+            "id": "43",
+            "name": "ActState",
+            "symbol": "var_actstate"
+        },
+        {
+            "id": "44",
+            "name": "BattleDialogueID",
+            "symbol": "var_battledialogueid"
+        },
+        {
             "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
             "name": "Counter",
             "symbol": "var_counter_0"
@@ -122129,6 +122655,11 @@
             "id": "fe4c4ea8-86ec-4013-b2f4-ac5ec1b23bbc__L0",
             "name": "Local 0",
             "symbol": "var_local_2"
+        },
+        {
+            "id": "c7dc32e6-aea1-432c-92ee-fb6abd824794__L0",
+            "name": "Local 0",
+            "symbol": "var_local_3"
         }
     ],
     "engineFieldValues": [
@@ -122138,17 +122669,17 @@
         }
     ],
     "settings": {
-        "startSceneId": "d788f270-e41c-4b11-b169-1aba618e8402",
-        "startX": 56,
-        "startY": 11,
+        "startSceneId": "93481461-209a-497c-8304-a54799217280",
+        "startX": 16,
+        "startY": 5,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 10153,
-        "worldScrollY": 3998,
-        "zoom": 400,
+        "worldScrollX": 0,
+        "worldScrollY": 730,
+        "zoom": 100,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
@@ -122180,7 +122711,7 @@
             429,
             482
         ],
-        "showNavigator": false,
+        "showNavigator": true,
         "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",
         "defaultCharacterEncoding": "",
         "defaultPlayerSprites": {
