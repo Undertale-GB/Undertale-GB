@@ -9,7 +9,7 @@ const decOct = (dec) => wrap8Bit(dec).toString(8).padStart(3, "0");
 const fields = [
   {
     key: "text",
-    type: "text",
+    type: "textarea",
     placeholder: "",
     multiple: false,
     defaultValue: "",
@@ -32,6 +32,7 @@ const compile = (input, helpers) => {
   _addComment("Display Dialouge");
 
   _overlayClear(3, 1, 14, 4, ".UI_COLOR_BLACK", false);
+  appendRaw("VM_OVERLAY_SET_SCROLL 3, 1, 14, 4, .UI_COLOR_BLACK");
 
   _loadStructuredText(`\\003\\04\\02${input.text}`);
 
