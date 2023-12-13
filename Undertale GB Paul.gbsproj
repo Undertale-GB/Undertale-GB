@@ -891,7 +891,8 @@
                         "value": {
                             "type": "number",
                             "value": 0
-                        }
+                        },
+                        "__collapse": true
                     },
                     "id": "83fcae0f-a59d-4a7c-b140-4b6545a08780"
                 },
@@ -902,7 +903,8 @@
                         "value": {
                             "type": "number",
                             "value": 20
-                        }
+                        },
+                        "__collapse": true
                     },
                     "id": "5311d8b2-8779-4e83-b691-768b4d4d356b"
                 },
@@ -913,7 +915,8 @@
                         "value": {
                             "type": "number",
                             "value": 20
-                        }
+                        },
+                        "__collapse": true
                     },
                     "id": "5d562eb5-048b-4c4b-9035-057711d8e9af"
                 },
@@ -936,9 +939,21 @@
                         "value": {
                             "type": "number",
                             "value": 0
-                        }
+                        },
+                        "__collapse": true
                     },
                     "id": "54eb2b2e-71c7-40b9-b385-9d042b8232d1"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "0",
+                        "value": {
+                            "type": "number",
+                            "value": 0
+                        }
+                    },
+                    "id": "42a0a3f1-be54-4e67-b42f-4e4f9e8fe1b7"
                 },
                 {
                     "command": "EVENT_SWITCH_SCENE",
@@ -6114,6 +6129,13 @@
                                 "actorId": "007c46f5-33a5-4512-97c0-6a104808f4bf"
                             },
                             "id": "4f2c3ee5-10bb-4138-aecf-dfca518bb0a6"
+                        },
+                        {
+                            "command": "EVENT_GBVM_SCRIPT",
+                            "args": {
+                                "script": "VM_LOCK"
+                            },
+                            "id": "b5c5c820-982a-45af-9c05-8d6da615d85e"
                         }
                     ],
                     "leaveScript": []
@@ -6157,6 +6179,13 @@
                                 "actorId": "007c46f5-33a5-4512-97c0-6a104808f4bf"
                             },
                             "id": "0ba42f4d-64a0-4266-849b-c1e9e895a77b"
+                        },
+                        {
+                            "command": "EVENT_GBVM_SCRIPT",
+                            "args": {
+                                "script": "VM_LOCK"
+                            },
+                            "id": "fbee7e6f-8b63-476f-a3d4-865b6bcd391e"
                         }
                     ],
                     "leaveScript": []
@@ -6170,7 +6199,7 @@
                         "speedOut": 0,
                         "speed": 2,
                         "allowFastForward": true,
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "9a218c12-5de9-4925-b83f-a6cfb0a21d29"
                 },
@@ -7123,8 +7152,8 @@
                                             "closeWhen": "key",
                                             "closeButton": "a",
                                             "text": [
-                                                "\\007\\* Welcome to your\n   new home,\n   innocent one.",
-                                                "\\007\\* Allow me to\n  educate you in the\n  operation of the\n  RUINS."
+                                                "\\002\\4\\007\\* Welcome to your\n   new home,\n   innocent one.",
+                                                "\\002\\4\\007\\* Allow me to\n  educate you in the\n  operation of the\n  RUINS."
                                             ],
                                             "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b"
                                         },
@@ -7358,10 +7387,10 @@
                                             "closeWhen": "key",
                                             "closeButton": "a",
                                             "text": [
-                                                "\\007\\* The RUINS are\n   full of puzzles.",
-                                                "\\007\\* Ancient fusions\nbetween diversions\n   and doorkeys.",
-                                                "\\007\\* One must solve\n   them to move from\n   room to room.",
-                                                "\\007\\* Please adjust\n   yourself to the \n   sight of them."
+                                                "\\002\\4\\007\\* The RUINS are\n   full of puzzles.",
+                                                "\\002\\4\\007\\* Ancient fusions\nbetween diversions\n   and doorkeys.",
+                                                "\\002\\4\\007\\* One must solve\n   them to move from\n   room to room.",
+                                                "\\002\\4\\007\\* Please adjust\n   yourself to the \n   sight of them."
                                             ],
                                             "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b"
                                         },
@@ -7626,10 +7655,20 @@
             ],
             "script": [
                 {
+                    "command": "EVENT_TEXT_SET_ANIMATION_SPEED",
+                    "args": {
+                        "speedIn": 1,
+                        "speedOut": 1,
+                        "speed": 2,
+                        "allowFastForward": false
+                    },
+                    "id": "3f0384e5-3fb1-4710-bd19-b8ca5a8bd264"
+                },
+                {
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
-                        "script": ";button 1\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 2\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 3\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 4\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 5\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 6\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
-                        "__collapse": false
+                        "script": "\n;button 1\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 2\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 3\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 4\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 5\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 6\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+                        "__collapse": true
                     },
                     "id": "584ce230-d74e-456b-9b21-ebcba0889bb3"
                 }
@@ -7638,7 +7677,7 @@
             "playerHit2Script": [],
             "playerHit3Script": [],
             "symbol": "scene_room_04",
-            "autoFadeEventCollapse": false
+            "autoFadeEventCollapse": true
         },
         {
             "name": "Room_05",
@@ -7647,7 +7686,7 @@
             "height": 24,
             "type": "TOPDOWN",
             "paletteIds": [
-                null,
+                "402e15e1-adcc-4bae-ba1b-92a42760ef67",
                 null,
                 "567ea9e8-99db-4455-a703-7d70ed1c64c6",
                 "29a9fc6d-b55f-4f8f-b84d-d4ed59bf3c58",
@@ -9474,14 +9513,14 @@
                             "command": "EVENT_INC_VALUE",
                             "args": {
                                 "variable": "10",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "8e9f0863-ae72-4a30-ac77-c9447c7bd5c8"
                         },
                         {
                             "command": "EVENT_IF_EXPRESSION",
                             "args": {
-                                "expression": "$11$ && $10$ >= 1 && $00$ != 5",
+                                "expression": "$11$ >= 1 && $10$ >= 1 && $00$ != 5",
                                 "__collapseElse": false,
                                 "__collapse": false
                             },
@@ -9522,11 +9561,22 @@
                                         "id": "3f2b9a4d-9e14-43ba-b397-52a1d1e35512"
                                     },
                                     {
-                                        "command": "EVENT_GBVM_SCRIPT",
+                                        "command": "UTGB_EVENT_NON_FREEZING_TEXT",
                                         "args": {
-                                            "script": "VM_UNLOCK\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Splendid!\\n* I am proud of you,\\n   little one.\\001\\007\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Let us move to \\n  the next room.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n"
+                                            "variable": "19"
                                         },
-                                        "id": "3d6974a0-2896-4e62-a582-ac3424884c16"
+                                        "children": {
+                                            "event": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "script": "VM_UNLOCK\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Splendid!\\n* I am proud of you,\\n   little one.\\001\\007\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Let us move to \\n  the next room.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n"
+                                                    },
+                                                    "id": "edadf279-add2-421e-81d3-ed34f1e00581"
+                                                }
+                                            ]
+                                        },
+                                        "id": "dc18656c-d06a-42ed-b807-4a87b5061be1"
                                     },
                                     {
                                         "command": "EVENT_ACTOR_MOVE_TO",
@@ -9551,17 +9601,6 @@
                                             "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04"
                                         },
                                         "id": "0e91e4f9-de00-4f9c-890b-598b521e8114"
-                                    },
-                                    {
-                                        "command": "EVENT_SET_VALUE",
-                                        "args": {
-                                            "variable": "14",
-                                            "value": {
-                                                "type": "number",
-                                                "value": 2
-                                            }
-                                        },
-                                        "id": "2078cb39-ccba-493f-bf6f-e9100df09e35"
                                     }
                                 ],
                                 "false": []
@@ -9575,6 +9614,14 @@
                                 "__collapse": true
                             },
                             "id": "f139c52b-7b34-455d-9e9a-26994abfbc5e"
+                        },
+                        {
+                            "command": "EVENT_ACTOR_DEACTIVATE",
+                            "args": {
+                                "actorId": "f1037b92-7ed6-488f-8312-c668052a9a7e",
+                                "__collapse": true
+                            },
+                            "id": "a162d5d6-5eab-4ba2-ab16-c99e5514ae85"
                         },
                         {
                             "command": "EVENT_ACTOR_MOVE_TO",
@@ -9601,7 +9648,8 @@
                                 "direction": {
                                     "type": "direction",
                                     "value": "left"
-                                }
+                                },
+                                "__collapse": true
                             },
                             "id": "52376620-eafd-494f-8c2b-b0fd197407e4"
                         }
@@ -9647,7 +9695,7 @@
                         {
                             "command": "EVENT_IF_EXPRESSION",
                             "args": {
-                                "expression": "$11$ && $10$ >= 1 && $00$ != 5",
+                                "expression": "$11$ >= 1 && $10$ >= 1 && $00$ != 5",
                                 "__collapseElse": false
                             },
                             "children": {
@@ -9687,11 +9735,22 @@
                                         "id": "6ad482f2-ffcc-46e6-b7bc-9572911ed3c2"
                                     },
                                     {
-                                        "command": "EVENT_GBVM_SCRIPT",
+                                        "command": "UTGB_EVENT_NON_FREEZING_TEXT",
                                         "args": {
-                                            "script": "VM_UNLOCK\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Splendid!\\n* I am proud of you,\\n   little one.\\001\\007\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Let us move to \\n  the next room.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n"
+                                            "variable": "19"
                                         },
-                                        "id": "c4c68b88-9104-490b-a954-524f9770781a"
+                                        "children": {
+                                            "event": [
+                                                {
+                                                    "command": "EVENT_GBVM_SCRIPT",
+                                                    "args": {
+                                                        "script": "VM_UNLOCK\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Splendid!\\n* I am proud of you,\\n   little one.\\001\\007\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Let us move to \\n  the next room.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n"
+                                                    },
+                                                    "id": "5c1501aa-67cc-4891-a0dc-265ced4327bd"
+                                                }
+                                            ]
+                                        },
+                                        "id": "6425eddf-38e5-419b-8cb6-1e6dd39b242f"
                                     },
                                     {
                                         "command": "EVENT_ACTOR_MOVE_TO",
@@ -9781,49 +9840,32 @@
                     "symbol": "actor_15",
                     "script": [
                         {
-                            "command": "EVENT_IF_EXPRESSION",
+                            "command": "EVENT_GBVM_SCRIPT",
                             "args": {
-                                "expression": "$L0$ == 0",
-                                "__collapseElse": true
-                            },
-                            "children": {
-                                "true": [
+                                "script": ";do not modify until your text block\nVM_LOCK\n; If VAR_IS_READING==0\nVM_RPN\n    .R_REF      VAR_IS_READING\n    .R_INT16    0\n    .R_OPERATOR .EQ\n    .R_STOP\nVM_IF_CONST             .GT, .ARG0, 0, 90$, 1\nVM_JUMP                 80$\n90$:\n; Variable Set To True\nVM_SET_CONST            VAR_IS_READING, 1\n\n; Input Script Attach\nVM_CONTEXT_PREPARE      5, ___bank_script_input_1, _script_input_1\nVM_INPUT_ATTACH         15, ^/(5 | .OVERRIDE_DEFAULT)/\n\nVM_UNLOCK\n\n; your text block goes there\nVM_LOAD_TEXT            0\n        .asciz \"\\003\\002\\002\\007\\* \\042Press \\002\\002A \\002\\004to read\\n  signs!\\042\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 14, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 3, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n\n\n;do not modify beyond this poit\n; Variable Set To False\nVM_SET_CONST            VAR_IS_READING, 0\n\n; Input Script Remove\nVM_INPUT_DETACH         15\n\n80$:\n; Stop Script\nVM_STOP\n",
+                                "references": [
                                     {
-                                        "command": "EVENT_SET_VALUE",
-                                        "args": {
-                                            "variable": "L0",
-                                            "value": {
-                                                "type": "number",
-                                                "value": 1
-                                            }
-                                        },
-                                        "id": "1dcdbfeb-f839-438f-93c1-7e3d7ee849fe"
-                                    },
-                                    {
-                                        "command": "EVENT_GBVM_SCRIPT",
-                                        "args": {
-                                            "script": "VM_UNLOCK\nVM_LOAD_TEXT            0\n        .asciz \"\\003\\002\\002\\007\\* \\042Press \\002\\002A \\002\\004to read\\n  signs!\\042\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 14, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 3, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n"
-                                        },
-                                        "id": "33087fe9-0ac9-45ed-8a78-f5178993f3ed"
-                                    },
-                                    {
-                                        "command": "EVENT_SET_VALUE",
-                                        "args": {
-                                            "variable": "L0",
-                                            "value": {
-                                                "type": "number",
-                                                "value": 0
-                                            }
-                                        },
-                                        "id": "368c0d06-795c-4c9f-871e-26a272abe623"
+                                        "type": "variable",
+                                        "id": "19"
                                     }
-                                ],
-                                "false": []
+                                ]
                             },
-                            "id": "bc2e2d8b-be20-443b-832a-46e455692cf1"
+                            "id": "5b3efb23-d2f2-4e91-ba79-96fa553d8e63"
                         }
                     ],
-                    "startScript": [],
+                    "startScript": [
+                        {
+                            "command": "EVENT_SET_VALUE",
+                            "args": {
+                                "variable": "T0",
+                                "value": {
+                                    "type": "number",
+                                    "value": 0
+                                }
+                            },
+                            "id": "2cbd96bd-6af4-456e-8545-b3d1786c7cf2"
+                        }
+                    ],
                     "updateScript": [],
                     "hit1Script": [],
                     "hit2Script": [],
@@ -9868,7 +9910,7 @@
                                     {
                                         "command": "EVENT_GBVM_SCRIPT",
                                         "args": {
-                                            "script": "VM_UNLOCK\nVM_LOAD_TEXT            0\n        .asciz \"\\003\\002\\002\\007\\* Please press\\n   this switch.\\n     - TORIEL\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/"
+                                            "script": "VM_UNLOCK\n\nVM_LOAD_TEXT            0\n        .asciz \"\\003\\002\\002\\007\\* Please press\\n   this switch.\\n     - TORIEL\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n"
                                         },
                                         "id": "81ac613b-d768-447c-892e-19f26c1e9060"
                                     },
@@ -9932,9 +9974,26 @@
                                         "id": "d70b7126-642a-40b9-8774-6061e94ef384"
                                     },
                                     {
+                                        "command": "EVENT_SET_INPUT_SCRIPT",
+                                        "args": {
+                                            "input": [
+                                                "left",
+                                                "up",
+                                                "right",
+                                                "down"
+                                            ],
+                                            "override": true,
+                                            "__scriptTabs": "press"
+                                        },
+                                        "children": {
+                                            "true": []
+                                        },
+                                        "id": "600f1cf0-d73c-4412-bfc3-41d4af4fda72"
+                                    },
+                                    {
                                         "command": "EVENT_GBVM_SCRIPT",
                                         "args": {
-                                            "script": "VM_UNLOCK\nVM_LOAD_TEXT            0\n        .asciz \"\\003\\002\\002\\007\\* Please press\\n   this switch too.\\n     - TORIEL\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/"
+                                            "script": "VM_UNLOCK\n\nVM_LOAD_TEXT            0\n        .asciz \"\\003\\002\\002\\007\\* Please press\\n this switch too.\\n     - TORIEL\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n"
                                         },
                                         "id": "546e96df-7aae-44c5-a248-623e5917c1e8"
                                     },
@@ -9948,6 +10007,18 @@
                                             }
                                         },
                                         "id": "566a16e1-5038-43e5-808e-e48ae59dbdc9"
+                                    },
+                                    {
+                                        "command": "EVENT_REMOVE_INPUT_SCRIPT",
+                                        "args": {
+                                            "input": [
+                                                "left",
+                                                "up",
+                                                "down",
+                                                "right"
+                                            ]
+                                        },
+                                        "id": "d45f80ed-bd05-40de-b029-0193b5fe8e93"
                                     }
                                 ],
                                 "false": []
@@ -9993,7 +10064,7 @@
                                 "closeWhen": "key",
                                 "closeButton": "a",
                                 "text": [
-                                    "\\007\\* Stay on the path."
+                                    "\\002\\4* Stay on the path."
                                 ],
                                 "avatarId": ""
                             },
@@ -10075,7 +10146,7 @@
                             "command": "EVENT_GROUP",
                             "args": {
                                 "__label": "Water Tileswapping",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "children": {
                                 "true": [
@@ -10362,20 +10433,6 @@
                     "symbol": "actor_36",
                     "script": [
                         {
-                            "command": "EVENT_GBVM_SCRIPT",
-                            "args": {
-                                "script": "VM_RAND VAR_RANDOMIZE, 0 , 15",
-                                "references": [
-                                    {
-                                        "type": "variable",
-                                        "id": "17"
-                                    }
-                                ],
-                                "__collapse": true
-                            },
-                            "id": "627d5c0d-419e-4897-a91c-2b0d6d674c89"
-                        },
-                        {
                             "command": "EVENT_IF_ACTOR_AT_POSITION",
                             "args": {
                                 "actorId": "$self$",
@@ -10389,338 +10446,127 @@
                                     {
                                         "command": "EVENT_IF_EXPRESSION",
                                         "args": {
-                                            "expression": "$17$ <= 5",
+                                            "expression": "$L2$ == 1",
                                             "__collapseElse": false
                                         },
                                         "children": {
                                             "true": [
                                                 {
-                                                    "command": "EVENT_IF_EXPRESSION",
+                                                    "command": "UTGB_EVENT_NON_FREEZING_TEXT",
                                                     "args": {
-                                                        "expression": "$L0$ == 0",
-                                                        "__collapseElse": true
+                                                        "variable": "19"
                                                     },
                                                     "children": {
-                                                        "true": [
-                                                            {
-                                                                "command": "EVENT_SET_VALUE",
-                                                                "args": {
-                                                                    "variable": "L0",
-                                                                    "value": {
-                                                                        "type": "number",
-                                                                        "value": 1
-                                                                    }
-                                                                },
-                                                                "id": "f19b1018-777e-44ac-932b-56ec61d0e232"
-                                                            },
+                                                        "event": [
                                                             {
                                                                 "command": "EVENT_GBVM_SCRIPT",
                                                                 "args": {
-                                                                    "script": "VM_UNLOCK\n        VM_PUSH_CONST 0\n        VM_GET_UINT8 .ARG0, _overlay_cut_scanline\n        VM_SET_CONST_UINT8 _overlay_cut_scanline, 31\n\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* The first switch\\n is over on the wall.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 3, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n        ; Reset overlay scanline cut\n        VM_IDLE\n        VM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\n        VM_POP 1"
+                                                                    "script": "VM_UNLOCK\nVM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Do you need some\\n   help..?\\n* Press the switch\\n   on the wall.\\001\\007\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_BLACK\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Come on,\\n   you can do it!\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_BLACK\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/ "
                                                                 },
-                                                                "id": "a2cd3cdb-d693-417d-aacd-87322d4bb3c2"
-                                                            },
-                                                            {
-                                                                "command": "EVENT_SET_VALUE",
-                                                                "args": {
-                                                                    "variable": "L0",
-                                                                    "value": {
-                                                                        "type": "number",
-                                                                        "value": 0
-                                                                    }
-                                                                },
-                                                                "id": "fa10dd56-1f66-44e6-91cf-b3e5e35fb3a0"
+                                                                "id": "7919e802-53ad-4b7d-b811-ed44676b6390"
                                                             }
-                                                        ],
-                                                        "false": []
+                                                        ]
                                                     },
-                                                    "id": "8c82835b-afd1-493f-9f09-df7530bfc883"
+                                                    "id": "a3e1a041-04a0-4139-885e-cef7c4c7ff6f"
                                                 }
                                             ],
                                             "false": [
                                                 {
-                                                    "command": "EVENT_IF_EXPRESSION",
+                                                    "command": "EVENT_SET_VALUE",
                                                     "args": {
-                                                        "expression": "$17$ > 5 && $17$ <= 10",
-                                                        "__collapseElse": false
+                                                        "variable": "L2",
+                                                        "value": {
+                                                            "type": "number",
+                                                            "value": 1
+                                                        }
+                                                    },
+                                                    "id": "e4eefb16-4784-424b-8c48-b3895e85aa8e"
+                                                },
+                                                {
+                                                    "command": "UTGB_EVENT_NON_FREEZING_TEXT",
+                                                    "args": {
+                                                        "variable": "19"
                                                     },
                                                     "children": {
-                                                        "true": [
+                                                        "event": [
                                                             {
-                                                                "command": "EVENT_IF_EXPRESSION",
+                                                                "command": "EVENT_GBVM_SCRIPT",
                                                                 "args": {
-                                                                    "expression": "$L0$ == 0",
-                                                                    "__collapseElse": true
+                                                                    "script": "VM_UNLOCK\nVM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* The first switch\\nis over on the wall.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 14, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 3, .UI_COLOR_BLACK\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/ "
                                                                 },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_VALUE",
-                                                                            "args": {
-                                                                                "variable": "L0",
-                                                                                "value": {
-                                                                                    "type": "number",
-                                                                                    "value": 1
-                                                                                }
-                                                                            },
-                                                                            "id": "be897b2d-05dd-4b83-a789-5af3e10d8ed2"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_GBVM_SCRIPT",
-                                                                            "args": {
-                                                                                "script": "VM_UNLOCK\nVM_PUSH_CONST 0\n        VM_GET_UINT8 .ARG0, _overlay_cut_scanline\n        VM_SET_CONST_UINT8 _overlay_cut_scanline, 47\n\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Do you need\\n   some help...?\\n* Press the switch\\n   on the wall.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n        ; Reset overlay scanline cut\n        VM_IDLE\n        VM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\n        VM_POP 1"
-                                                                            },
-                                                                            "id": "77b973e8-a607-4641-970a-23861f4be2a7"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_SET_VALUE",
-                                                                            "args": {
-                                                                                "variable": "L0",
-                                                                                "value": {
-                                                                                    "type": "number",
-                                                                                    "value": 0
-                                                                                }
-                                                                            },
-                                                                            "id": "ae261407-cd3f-4f1a-86f5-bf1aa8e1d16d"
-                                                                        }
-                                                                    ],
-                                                                    "false": []
-                                                                },
-                                                                "id": "6505a938-9805-48fd-8e69-8be98941ac28"
-                                                            }
-                                                        ],
-                                                        "false": [
-                                                            {
-                                                                "command": "EVENT_IF_EXPRESSION",
-                                                                "args": {
-                                                                    "expression": "$17$ > 10",
-                                                                    "__collapseElse": true
-                                                                },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_IF_EXPRESSION",
-                                                                            "args": {
-                                                                                "expression": "$L0$ == 0",
-                                                                                "__collapseElse": true
-                                                                            },
-                                                                            "children": {
-                                                                                "true": [
-                                                                                    {
-                                                                                        "command": "EVENT_SET_VALUE",
-                                                                                        "args": {
-                                                                                            "variable": "L0",
-                                                                                            "value": {
-                                                                                                "type": "number",
-                                                                                                "value": 1
-                                                                                            }
-                                                                                        },
-                                                                                        "id": "b789ce8b-6678-48ca-b138-1fb5f67f77b2"
-                                                                                    },
-                                                                                    {
-                                                                                        "command": "EVENT_GBVM_SCRIPT",
-                                                                                        "args": {
-                                                                                            "script": " VM_UNLOCK\n VM_PUSH_CONST 0\n        VM_GET_UINT8 .ARG0, _overlay_cut_scanline\n        VM_SET_CONST_UINT8 _overlay_cut_scanline, 31\n\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Come on,\\n   you can do it!\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 3, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n        ; Reset overlay scanline cut\n        VM_IDLE\n        VM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\n        VM_POP 1"
-                                                                                        },
-                                                                                        "id": "bdc740ca-5fc9-4cd4-8814-982a87664232"
-                                                                                    },
-                                                                                    {
-                                                                                        "command": "EVENT_SET_VALUE",
-                                                                                        "args": {
-                                                                                            "variable": "L0",
-                                                                                            "value": {
-                                                                                                "type": "number",
-                                                                                                "value": 0
-                                                                                            }
-                                                                                        },
-                                                                                        "id": "aaca4fb7-8e03-45f6-8006-5f649ff34680"
-                                                                                    }
-                                                                                ],
-                                                                                "false": []
-                                                                            },
-                                                                            "id": "6aef6c4d-b93d-482b-b421-eab4962e34fd"
-                                                                        }
-                                                                    ],
-                                                                    "false": []
-                                                                },
-                                                                "id": "c7778cc7-1a93-4ef6-90e5-e73cddea502c"
+                                                                "id": "67516d8f-27c7-41c3-ad36-6ee1165e38c3"
                                                             }
                                                         ]
                                                     },
-                                                    "id": "cb497af8-53c8-4696-9961-5dcbdfbb3cd6"
+                                                    "id": "bb5a7619-ca5d-437e-a877-784da2f7523c"
                                                 }
                                             ]
                                         },
-                                        "id": "eaa3c8f9-acc2-42ae-aff8-d1e8cf06136e"
+                                        "id": "75224146-f986-485a-8ff2-b12d1e193fc0"
                                     }
                                 ],
                                 "false": [
                                     {
                                         "command": "EVENT_IF_EXPRESSION",
                                         "args": {
-                                            "expression": "$17$ <= 5",
+                                            "expression": "$L3$ == 0",
                                             "__collapseElse": false
                                         },
                                         "children": {
                                             "true": [
                                                 {
-                                                    "command": "EVENT_IF_EXPRESSION",
+                                                    "command": "UTGB_EVENT_NON_FREEZING_TEXT",
                                                     "args": {
-                                                        "expression": "$L0$ == 0",
-                                                        "__collapseElse": true
+                                                        "variable": "19"
                                                     },
                                                     "children": {
-                                                        "true": [
-                                                            {
-                                                                "command": "EVENT_SET_VALUE",
-                                                                "args": {
-                                                                    "variable": "L0",
-                                                                    "value": {
-                                                                        "type": "number",
-                                                                        "value": null
-                                                                    }
-                                                                },
-                                                                "id": "c7099230-d1e5-4dd5-b07b-1e1081ce99e9"
-                                                            },
+                                                        "event": [
                                                             {
                                                                 "command": "EVENT_GBVM_SCRIPT",
                                                                 "args": {
-                                                                    "script": "VM_UNLOCK\nVM_PUSH_CONST 0\n        VM_GET_UINT8 .ARG0, _overlay_cut_scanline\n        VM_SET_CONST_UINT8 _overlay_cut_scanline, 31\n\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Go on, press the\\n switch on the left.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 3, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n        ; Reset overlay scanline cut\n        VM_IDLE\n        VM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\n        VM_POP 1"
+                                                                    "script": "VM_UNLOCK\nVM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4*Go on, press the\\n  switch on the left.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 14, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 3, .UI_COLOR_BLACK\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/"
                                                                 },
-                                                                "id": "6252469f-e1fa-40b7-84a1-77615d4d0f91"
-                                                            },
-                                                            {
-                                                                "command": "EVENT_SET_VALUE",
-                                                                "args": {
-                                                                    "variable": "L0",
-                                                                    "value": {
-                                                                        "type": "number",
-                                                                        "value": 0
-                                                                    }
-                                                                },
-                                                                "id": "770c5425-952e-41d9-a32a-8665ba8b7d7d"
+                                                                "id": "35c8240e-69d9-403b-879e-ebcab3db343a"
                                                             }
-                                                        ],
-                                                        "false": []
+                                                        ]
                                                     },
-                                                    "id": "3b7562ae-7633-4301-bf46-045ab7e37d43"
+                                                    "id": "624c0d01-ce33-49a7-a65d-3012b9af1283"
+                                                },
+                                                {
+                                                    "command": "EVENT_SET_VALUE",
+                                                    "args": {
+                                                        "variable": "L3",
+                                                        "value": {
+                                                            "type": "number",
+                                                            "value": 1
+                                                        }
+                                                    },
+                                                    "id": "cb402eda-5c21-4a6c-be33-f98b1ba9a0ff"
                                                 }
                                             ],
                                             "false": [
                                                 {
-                                                    "command": "EVENT_IF_EXPRESSION",
+                                                    "command": "UTGB_EVENT_NON_FREEZING_TEXT",
                                                     "args": {
-                                                        "expression": "$17$ > 5 && $17$ <= 10",
-                                                        "__collapseElse": false
+                                                        "variable": "19"
                                                     },
                                                     "children": {
-                                                        "true": [
+                                                        "event": [
                                                             {
-                                                                "command": "EVENT_IF_EXPRESSION",
+                                                                "command": "EVENT_GBVM_SCRIPT",
                                                                 "args": {
-                                                                    "expression": "$L0$ == 0",
-                                                                    "__collapseElse": true
+                                                                    "script": "VM_UNLOCK\nVM_PUSH_CONST 0\nVM_GET_UINT8 .ARG0, _overlay_cut_scanline\nVM_SET_CONST_UINT8 _overlay_cut_scanline, 47\n\nVM_LOAD_TEXT            0\n.asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* You do know which\\n   way left is,\\n   do you not?\\001\\007\"\nVM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\nVM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\nVM_OVERLAY_SET_SCROLL   4, 1, 15, 5, .UI_COLOR_BLACK\n\nVM_DISPLAY_TEXT\nVM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\nVM_LOAD_TEXT            0\n.asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Press the switch \\n   that I labelled\\n   for you.\"\nVM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\nVM_OVERLAY_SET_SCROLL   4, 1, 15, 5, .UI_COLOR_BLACK\n\nVM_DISPLAY_TEXT\nVM_OVERLAY_WAIT         .UI_MODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\nVM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\nVM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n; Reset overlay scanline cut\nVM_IDLE\nVM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\nVM_POP 1",
+                                                                    "__collapse": false
                                                                 },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_SET_VALUE",
-                                                                            "args": {
-                                                                                "variable": "L0",
-                                                                                "value": {
-                                                                                    "type": "number",
-                                                                                    "value": 1
-                                                                                }
-                                                                            },
-                                                                            "id": "e0b75250-7be0-44e9-8b18-8feb657dd2d0"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_GBVM_SCRIPT",
-                                                                            "args": {
-                                                                                "script": "VM_UNLOCK\nVM_PUSH_CONST 0\n        VM_GET_UINT8 .ARG0, _overlay_cut_scanline\n        VM_SET_CONST_UINT8 _overlay_cut_scanline, 47\n\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* You do know which\\n way left is,\\n do you not ?\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n\n        VM_IDLE\n        VM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\n        VM_POP 1"
-                                                                            },
-                                                                            "id": "7c18da39-99f1-4938-b0fa-df863602fe7d"
-                                                                        },
-                                                                        {
-                                                                            "command": "EVENT_SET_VALUE",
-                                                                            "args": {
-                                                                                "variable": "L0",
-                                                                                "value": {
-                                                                                    "type": "number",
-                                                                                    "value": 0
-                                                                                }
-                                                                            },
-                                                                            "id": "6c31d6cd-a51b-4859-8299-302de4643859"
-                                                                        }
-                                                                    ],
-                                                                    "false": []
-                                                                },
-                                                                "id": "5d899c30-a570-4ef2-9696-3a06f74b7096"
-                                                            }
-                                                        ],
-                                                        "false": [
-                                                            {
-                                                                "command": "EVENT_IF_EXPRESSION",
-                                                                "args": {
-                                                                    "expression": "$17$ > 10",
-                                                                    "__collapseElse": true
-                                                                },
-                                                                "children": {
-                                                                    "true": [
-                                                                        {
-                                                                            "command": "EVENT_IF_EXPRESSION",
-                                                                            "args": {
-                                                                                "expression": "$L0$ == 0",
-                                                                                "__collapseElse": true
-                                                                            },
-                                                                            "children": {
-                                                                                "true": [
-                                                                                    {
-                                                                                        "command": "EVENT_SET_VALUE",
-                                                                                        "args": {
-                                                                                            "variable": "L0",
-                                                                                            "value": {
-                                                                                                "type": "number",
-                                                                                                "value": 1
-                                                                                            }
-                                                                                        },
-                                                                                        "id": "b53a070c-5600-4818-9d82-b9ea116472dd"
-                                                                                    },
-                                                                                    {
-                                                                                        "command": "EVENT_GBVM_SCRIPT",
-                                                                                        "args": {
-                                                                                            "script": "VM_UNLOCK\nVM_PUSH_CONST 0\n        VM_GET_UINT8 .ARG0, _overlay_cut_scanline\n        VM_SET_CONST_UINT8 _overlay_cut_scanline, 39\n\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\007\\* Press the switch\\n that i labelled\\n for you.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 5, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 5, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n\n        VM_IDLE\n        VM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\n        VM_POP 1"
-                                                                                        },
-                                                                                        "id": "e0c11826-440c-4c28-8e4e-296319d8ab18"
-                                                                                    },
-                                                                                    {
-                                                                                        "command": "EVENT_SET_VALUE",
-                                                                                        "args": {
-                                                                                            "variable": "L0",
-                                                                                            "value": {
-                                                                                                "type": "number",
-                                                                                                "value": 0
-                                                                                            }
-                                                                                        },
-                                                                                        "id": "14f20dc5-246c-40bd-9322-4475d377a86d"
-                                                                                    }
-                                                                                ],
-                                                                                "false": []
-                                                                            },
-                                                                            "id": "facd77ba-4279-4f8e-9d75-9163c55e4758"
-                                                                        }
-                                                                    ],
-                                                                    "false": []
-                                                                },
-                                                                "id": "b05bda38-ac94-430d-b51a-c34ec44c6125"
+                                                                "id": "e0c11826-440c-4c28-8e4e-296319d8ab18"
                                                             }
                                                         ]
                                                     },
-                                                    "id": "3648b814-6b2e-4070-a193-4539e1ec2101"
+                                                    "id": "026b880f-e5b6-4019-a473-e922e284c633"
                                                 }
                                             ]
                                         },
-                                        "id": "0f4aeee3-5d15-49f5-b8e6-732040851910"
+                                        "id": "da6ec32d-1852-449d-981c-e94299f3f673"
                                     }
                                 ]
                             },
@@ -10729,11 +10575,9 @@
                     ],
                     "startScript": [
                         {
-                            "command": "EVENT_IF_VALUE",
+                            "command": "EVENT_IF_EXPRESSION",
                             "args": {
-                                "variable": "0",
-                                "operator": ">=",
-                                "comparator": 5,
+                                "expression": "$00$ == 5 || $16$ == 1",
                                 "__collapseElse": false
                             },
                             "children": {
@@ -10748,92 +10592,31 @@
                                 ],
                                 "false": [
                                     {
-                                        "command": "EVENT_ACTOR_SET_MOVEMENT_SPEED",
+                                        "command": "EVENT_TEXT_SET_ANIMATION_SPEED",
                                         "args": {
-                                            "actorId": "$self$",
-                                            "speed": 1.2,
-                                            "__collapse": true
+                                            "speedIn": 0,
+                                            "speedOut": 1,
+                                            "speed": 2,
+                                            "allowFastForward": true,
+                                            "__collapse": false
                                         },
-                                        "id": "f2ce9315-5ebb-4f76-87fe-fd7036df8644"
+                                        "id": "bf4841bd-794a-4140-892d-c8fa7ddd4f4f"
                                     },
                                     {
-                                        "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                                        "command": "EVENT_SET_VALUE",
                                         "args": {
-                                            "__scriptTabs": "text",
-                                            "minHeight": 6,
-                                            "maxHeight": 7,
-                                            "position": "top",
-                                            "showBorder": "true",
-                                            "clearPrevious": true,
-                                            "textX": 1,
-                                            "textY": 1,
-                                            "textHeight": 6,
-                                            "closeWhen": "key",
-                                            "closeButton": "a",
-                                            "text": [
-                                                "\\007\\* To make progress\n   here, you will \n   need to trigger\n   several switches.",
-                                                "\\007\\* Do not worry,\n   I have labelled\n   the ones that you\n   need to flip."
-                                            ],
-                                            "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b",
-                                            "__collapse": true
-                                        },
-                                        "id": "7360abd0-241c-4119-8cff-af8858c48c05"
-                                    },
-                                    {
-                                        "command": "EVENT_GBVM_SCRIPT",
-                                        "args": {
-                                            "script": "VM_UNLOCK",
-                                            "__collapse": true
-                                        },
-                                        "id": "fd3cced1-dedd-4cf5-aa76-01dd087f3cd1"
-                                    },
-                                    {
-                                        "command": "EVENT_ACTOR_MOVE_TO",
-                                        "args": {
-                                            "actorId": "$self$",
-                                            "x": {
+                                            "variable": "L2",
+                                            "value": {
                                                 "type": "number",
-                                                "value": 46
-                                            },
-                                            "y": {
-                                                "type": "number",
-                                                "value": 16
-                                            },
-                                            "moveType": "horizontal",
-                                            "useCollisions": false,
-                                            "__collapse": true
-                                        },
-                                        "id": "75f8ff56-9878-4e2d-9be1-c7ab779d7895"
-                                    },
-                                    {
-                                        "command": "EVENT_ACTOR_SET_DIRECTION",
-                                        "args": {
-                                            "actorId": "$self$",
-                                            "direction": {
-                                                "type": "direction",
-                                                "value": "left"
+                                                "value": 0
                                             },
                                             "__collapse": true
                                         },
-                                        "id": "e51c579a-3a44-42e7-ac34-c2b77a30f7ec"
-                                    },
-                                    {
-                                        "command": "EVENT_GBVM_SCRIPT",
-                                        "args": {
-                                            "references": [
-                                                {
-                                                    "type": "variable",
-                                                    "id": "14"
-                                                }
-                                            ],
-                                            "script": "VM_SET VAR_ROOM_LOCAL_05, 1",
-                                            "__collapse": true
-                                        },
-                                        "id": "f591275c-78bf-4527-97f9-ece86472f3e5"
+                                        "id": "6ed77b0d-cf2e-4c1c-a6a1-f74bdca525ae"
                                     }
                                 ]
                             },
-                            "id": "a8c885cd-2acb-48f7-b995-e195fd33890d"
+                            "id": "8f3c4353-58a0-4f8f-8cac-ae17e949855c"
                         },
                         {
                             "command": "EVENT_SET_VALUE",
@@ -10842,7 +10625,8 @@
                                 "value": {
                                     "type": "number",
                                     "value": 0
-                                }
+                                },
+                                "__collapse": true
                             },
                             "id": "6cdcd66b-2751-49b4-9f39-51d0fc638d10"
                         }
@@ -10854,6 +10638,58 @@
                     "id": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
                     "x": 16,
                     "y": 16
+                },
+                {
+                    "name": "",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "9485dfd6-daf6-4e90-9f9c-2f354b757f86",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_39",
+                    "script": [],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "f1037b92-7ed6-488f-8312-c668052a9a7e",
+                    "x": 48,
+                    "y": 17
+                },
+                {
+                    "name": "",
+                    "frame": 0,
+                    "animate": false,
+                    "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+                    "direction": "down",
+                    "moveSpeed": 1,
+                    "animSpeed": 15,
+                    "paletteId": "",
+                    "isPinned": false,
+                    "persistent": false,
+                    "collisionGroup": "",
+                    "symbol": "actor_40",
+                    "script": [
+                        {
+                            "command": "EVENT_GBVM_SCRIPT",
+                            "args": {},
+                            "id": "eb0f2754-ad54-4e40-bd27-93c0adbc72d0"
+                        }
+                    ],
+                    "startScript": [],
+                    "updateScript": [],
+                    "hit1Script": [],
+                    "hit2Script": [],
+                    "hit3Script": [],
+                    "id": "089232bc-7e13-474d-a218-1efa2de8d437",
+                    "x": 0,
+                    "y": 2
                 }
             ],
             "triggers": [
@@ -10902,6 +10738,429 @@
                     ],
                     "leaveScript": [],
                     "symbol": "trigger_9"
+                },
+                {
+                    "name": "",
+                    "id": "5e4f1fae-0b6f-469d-8f25-0ad5d6605756",
+                    "x": 12,
+                    "y": 19,
+                    "symbol": "trigger_48",
+                    "width": 4,
+                    "height": 1,
+                    "script": [
+                        {
+                            "command": "EVENT_IF_EXPRESSION",
+                            "args": {
+                                "expression": "$12$ == 0",
+                                "__collapseElse": true
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "Animation_2",
+                                            "__collapse": false
+                                        },
+                                        "id": "b5e86802-c5ae-4fd3-859a-f27664f501c7"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "speed": 255
+                                        },
+                                        "id": "5637b0da-cef6-4595-b46f-09a127eb7787"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_FRAME",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "frame": {
+                                                "type": "number",
+                                                "value": 2
+                                            }
+                                        },
+                                        "id": "015fa4e9-c305-4b28-ab71-b0a6ba8090b1"
+                                    },
+                                    {
+                                        "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                                        "args": {
+                                            "__scriptTabs": "text",
+                                            "minHeight": 6,
+                                            "maxHeight": 7,
+                                            "position": "top",
+                                            "showBorder": "true",
+                                            "clearPrevious": true,
+                                            "textX": 1,
+                                            "textY": 1,
+                                            "textHeight": 6,
+                                            "closeWhen": "key",
+                                            "closeButton": "a",
+                                            "text": [
+                                                "\\002\\4* To make progress\n   here, you will \n   need to trigger\n   several switches.",
+                                                "\\002\\4* Do not worry,\n   I have labelled\n   the ones that you\n   need to flip."
+                                            ],
+                                            "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b",
+                                            "__collapse": false
+                                        },
+                                        "id": "2845fc46-ad8f-442a-857a-a0eceb4b5a94"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "8e38069e-f807-4a1d-bb61-3c836151bf4d"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "speed": 15
+                                        },
+                                        "id": "de657864-7a92-4a6a-8fe4-7213f09d227b"
+                                    },
+                                    {
+                                        "command": "EVENT_SET_VALUE",
+                                        "args": {
+                                            "variable": "12",
+                                            "value": {
+                                                "type": "number",
+                                                "value": 1
+                                            }
+                                        },
+                                        "id": "dc6cb17b-508c-44fe-9bba-2714b9acd2fc"
+                                    },
+                                    {
+                                        "command": "EVENT_GBVM_SCRIPT",
+                                        "args": {
+                                            "script": "VM_UNLOCK",
+                                            "__collapse": true
+                                        },
+                                        "id": "c18e5ad3-1bfa-4495-a3ab-496e701878ab"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_MOVE_TO",
+                                        "args": {
+                                            "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+                                            "x": {
+                                                "type": "number",
+                                                "value": 46
+                                            },
+                                            "y": {
+                                                "type": "number",
+                                                "value": 16
+                                            },
+                                            "moveType": "horizontal",
+                                            "useCollisions": false,
+                                            "__collapse": false
+                                        },
+                                        "id": "16b2558e-57be-40f9-9fff-36067d1ec56f"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_DIRECTION",
+                                        "args": {
+                                            "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+                                            "direction": {
+                                                "type": "direction",
+                                                "value": "left"
+                                            },
+                                            "__collapse": false
+                                        },
+                                        "id": "b5c37190-e1cc-4f69-908f-27b7bbfa509f"
+                                    }
+                                ],
+                                "false": []
+                            },
+                            "id": "8975dc73-4fcd-4bed-ac94-fa3b734695e1"
+                        }
+                    ],
+                    "leaveScript": []
+                },
+                {
+                    "name": "",
+                    "id": "2df4079f-4604-4127-a56c-f131e9f9816b",
+                    "x": 16,
+                    "y": 20,
+                    "symbol": "trigger_49",
+                    "width": 1,
+                    "height": 2,
+                    "script": [
+                        {
+                            "command": "EVENT_IF_EXPRESSION",
+                            "args": {
+                                "expression": "$12$ == 0",
+                                "__collapseElse": true
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "Animation_2",
+                                            "__collapse": false
+                                        },
+                                        "id": "69b93aaf-e28d-4c51-874f-ec3a461fb065"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "speed": 255
+                                        },
+                                        "id": "e18549c8-4f7e-4de9-8b29-ed2d5a0f7f67"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_FRAME",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "frame": {
+                                                "type": "number",
+                                                "value": 1
+                                            }
+                                        },
+                                        "id": "2ef26d71-cb4c-403b-b4ac-ecf2fa818bf2"
+                                    },
+                                    {
+                                        "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                                        "args": {
+                                            "__scriptTabs": "text",
+                                            "minHeight": 6,
+                                            "maxHeight": 7,
+                                            "position": "top",
+                                            "showBorder": "true",
+                                            "clearPrevious": true,
+                                            "textX": 1,
+                                            "textY": 1,
+                                            "textHeight": 6,
+                                            "closeWhen": "key",
+                                            "closeButton": "a",
+                                            "text": [
+                                                "\\002\\4* To make progress\n   here, you will \n   need to trigger\n   several switches.",
+                                                "\\002\\4* Do not worry,\n   I have labelled\n   the ones that you\n   need to flip."
+                                            ],
+                                            "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b",
+                                            "__collapse": false
+                                        },
+                                        "id": "04e76ab3-41b8-48ba-9aa6-89c42e0e05fc"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "2112d5b8-ba8c-4318-9773-85c10f6502e4"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "speed": 15
+                                        },
+                                        "id": "111801ee-f7bf-4846-9999-39f656fea185"
+                                    },
+                                    {
+                                        "command": "EVENT_SET_VALUE",
+                                        "args": {
+                                            "variable": "12",
+                                            "value": {
+                                                "type": "number",
+                                                "value": 1
+                                            }
+                                        },
+                                        "id": "6c70bbf9-9205-44e2-8ade-799af0385e4a"
+                                    },
+                                    {
+                                        "command": "EVENT_GBVM_SCRIPT",
+                                        "args": {
+                                            "script": "VM_UNLOCK",
+                                            "__collapse": true
+                                        },
+                                        "id": "48d3dc24-edaa-4ee0-94f1-9362968fd215"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_MOVE_TO",
+                                        "args": {
+                                            "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+                                            "x": {
+                                                "type": "number",
+                                                "value": 46
+                                            },
+                                            "y": {
+                                                "type": "number",
+                                                "value": 16
+                                            },
+                                            "moveType": "horizontal",
+                                            "useCollisions": false,
+                                            "__collapse": false
+                                        },
+                                        "id": "eab6872f-8a10-4447-aa68-e8d6a613d890"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_DIRECTION",
+                                        "args": {
+                                            "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+                                            "direction": {
+                                                "type": "direction",
+                                                "value": "left"
+                                            },
+                                            "__collapse": false
+                                        },
+                                        "id": "7ea424e3-ca55-4170-9e95-ed5707dcfc86"
+                                    }
+                                ],
+                                "false": []
+                            },
+                            "id": "675a404c-816a-49d4-b067-a0123a2714bf"
+                        }
+                    ],
+                    "leaveScript": []
+                },
+                {
+                    "name": "",
+                    "id": "2648c9b8-d684-4e52-8a50-5c58195466c4",
+                    "x": 11,
+                    "y": 20,
+                    "symbol": "trigger_50",
+                    "width": 1,
+                    "height": 2,
+                    "script": [
+                        {
+                            "command": "EVENT_IF_EXPRESSION",
+                            "args": {
+                                "expression": "$12$ == 0",
+                                "__collapseElse": true
+                            },
+                            "children": {
+                                "true": [
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": "Animation_2",
+                                            "__collapse": false
+                                        },
+                                        "id": "cf174b2f-a3d3-4699-a11d-e3e4837155e1"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "speed": 255
+                                        },
+                                        "id": "aaa5bcf3-49a1-47ff-a126-c5c975bfff26"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_FRAME",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "frame": {
+                                                "type": "number",
+                                                "value": 3
+                                            }
+                                        },
+                                        "id": "c82e3063-c2fa-4a11-8c55-c9e39bc74195"
+                                    },
+                                    {
+                                        "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                                        "args": {
+                                            "__scriptTabs": "text",
+                                            "minHeight": 6,
+                                            "maxHeight": 7,
+                                            "position": "top",
+                                            "showBorder": "true",
+                                            "clearPrevious": true,
+                                            "textX": 1,
+                                            "textY": 1,
+                                            "textHeight": 6,
+                                            "closeWhen": "key",
+                                            "closeButton": "a",
+                                            "text": [
+                                                "\\002\\4* To make progress\n   here, you will \n   need to trigger\n   several switches.",
+                                                "\\002\\4* Do not worry,\n   I have labelled\n   the ones that you\n   need to flip."
+                                            ],
+                                            "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b",
+                                            "__collapse": false
+                                        },
+                                        "id": "cba6483a-e8ee-46c1-b82e-3b1ea5026eed"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_STATE",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "spriteStateId": ""
+                                        },
+                                        "id": "2a39324c-83a4-4848-a990-2b58e5f4e8d7"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                                        "args": {
+                                            "actorId": "$self$",
+                                            "speed": 15
+                                        },
+                                        "id": "d743781b-02fe-4c39-8072-fbc8740b04bf"
+                                    },
+                                    {
+                                        "command": "EVENT_SET_VALUE",
+                                        "args": {
+                                            "variable": "12",
+                                            "value": {
+                                                "type": "number",
+                                                "value": 1
+                                            }
+                                        },
+                                        "id": "ec028f9f-709f-4098-84fc-bb9aabbdea37"
+                                    },
+                                    {
+                                        "command": "EVENT_GBVM_SCRIPT",
+                                        "args": {
+                                            "script": "VM_UNLOCK",
+                                            "__collapse": true
+                                        },
+                                        "id": "cebcc292-d00e-41e1-8402-f2b1910cf76d"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_MOVE_TO",
+                                        "args": {
+                                            "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+                                            "x": {
+                                                "type": "number",
+                                                "value": 46
+                                            },
+                                            "y": {
+                                                "type": "number",
+                                                "value": 16
+                                            },
+                                            "moveType": "horizontal",
+                                            "useCollisions": false,
+                                            "__collapse": false
+                                        },
+                                        "id": "8113949e-f8b8-4dc4-9569-b8895c582c62"
+                                    },
+                                    {
+                                        "command": "EVENT_ACTOR_SET_DIRECTION",
+                                        "args": {
+                                            "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+                                            "direction": {
+                                                "type": "direction",
+                                                "value": "left"
+                                            },
+                                            "__collapse": false
+                                        },
+                                        "id": "1823d677-fbc4-4a69-b770-85e83598e97f"
+                                    }
+                                ],
+                                "false": []
+                            },
+                            "id": "f37b5e2c-63fa-4a2b-aee9-bc1f0ce712c2"
+                        }
+                    ],
+                    "leaveScript": []
                 }
             ],
             "script": [
@@ -10913,13 +11172,25 @@
                     "id": "00098032-df2d-4579-87b7-aa74e9b57106"
                 },
                 {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "21",
+                        "value": {
+                            "type": "number",
+                            "value": 5
+                        },
+                        "__collapse": false
+                    },
+                    "id": "c1b2884d-c595-4c96-a6ea-77b826da82d2"
+                },
+                {
                     "command": "EVENT_IF_VALUE",
                     "args": {
                         "variable": "0",
                         "operator": ">=",
                         "comparator": 5,
                         "__collapseElse": false,
-                        "__collapse": false
+                        "__collapse": true
                     },
                     "children": {
                         "true": [
@@ -10943,33 +11214,18 @@
                                     "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04"
                                 },
                                 "id": "8fd763ee-192c-4088-bd07-f7593ffc25c3"
+                            },
+                            {
+                                "command": "EVENT_ACTOR_DEACTIVATE",
+                                "args": {
+                                    "actorId": "f1037b92-7ed6-488f-8312-c668052a9a7e"
+                                },
+                                "id": "dfbddb84-1aae-4780-a36e-e5760a39fe2c"
                             }
                         ],
                         "false": []
                     },
                     "id": "3366e136-0f1c-40b4-b406-1830d811ec2f"
-                },
-                {
-                    "command": "EVENT_IF_VALUE",
-                    "args": {
-                        "variable": "16",
-                        "operator": "==",
-                        "comparator": 1,
-                        "__collapseElse": false
-                    },
-                    "children": {
-                        "true": [
-                            {
-                                "command": "EVENT_ACTOR_DEACTIVATE",
-                                "args": {
-                                    "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04"
-                                },
-                                "id": "5dfa88e4-a5ff-42cc-8537-e5ac570d8616"
-                            }
-                        ],
-                        "false": []
-                    },
-                    "id": "14d183a3-43b7-4a14-9015-c82291f941c3"
                 }
             ],
             "playerHit1Script": [],
@@ -55668,7 +55924,7 @@
                 {
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
-                        "script": "VM_UNLOCK"
+                        "script": "VM_UNLOCK\n"
                     },
                     "id": "84169001-b426-440c-bb3f-2dce433b0270"
                 },
@@ -61300,7 +61556,7 @@
                                 "speedOut": 0,
                                 "speed": 2,
                                 "allowFastForward": true,
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "481789f1-df68-4403-970f-7671bb5ab021"
                         },
@@ -61317,7 +61573,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 72\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "728ad3ec-543a-492c-be9e-2abe58220bd0"
                         },
@@ -61325,7 +61581,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 6, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001See\\nthat\\nHeart?\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "f9648f52-b08a-4e6b-b966-f06760d6bf57"
                         },
@@ -61333,7 +61589,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 6, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 2\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\004{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001That is your\\nSOUL,\\nthe very\\nculmination\\nof your\\nbeing.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "756a38fa-edeb-4e68-8722-129ed30598cc"
                         },
@@ -61341,7 +61597,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 6, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 2\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\004{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001Your soul\\nstarts off\\nweak, but can\\ngrow strong\\nif you gain a\\nlot of LV.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "b166ab86-2222-4f2b-9368-4c3c7f3a5926"
                         },
@@ -61349,7 +61605,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 9, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001What's LV?\\nWhy, LOVE,\\nof course!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "f93e686e-b7a5-4063-ba48-de39a7a452c4"
                         },
@@ -61357,7 +61613,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 9, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001You want\\nsome LOVE,\\ndon't you?\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "dd3ca2be-e1f4-4641-b49f-f135d16883a7"
                         },
@@ -61365,7 +61621,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 4, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001Don't worry,\\nI'll share\\nsome with\\nyou!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "478e5a7a-7443-4d6e-b445-cbaa89ca5a9e"
                         },
@@ -61374,7 +61630,7 @@
                             "args": {
                                 "actorId": "b10607d3-c311-47d4-bc81-b29ee4d7a75b",
                                 "spriteStateId": "Animation_4",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "f571d365-4243-4be1-89ed-858551311679"
                         },
@@ -61383,7 +61639,7 @@
                             "args": {
                                 "time": 0.7,
                                 "frames": 30,
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "b8656b6d-53f5-4e76-9886-a04a992705eb"
                         },
@@ -61392,7 +61648,7 @@
                             "args": {
                                 "actorId": "b10607d3-c311-47d4-bc81-b29ee4d7a75b",
                                 "spriteStateId": "Animation_2",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "d0900e85-363c-4d84-b406-305351dcc31c"
                         },
@@ -61401,7 +61657,7 @@
                             "args": {
                                 "actorId": "6398471f-5384-42af-a348-9717d8e455f2",
                                 "spriteStateId": "Animation_2",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "95995ba3-c336-43ca-892b-cd3411d2e698"
                         },
@@ -61409,7 +61665,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 4, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001Down here,\\nLOVE is\\nshared\\nthrough...\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "91d475a0-5f07-4e93-97a0-bca8031490e4"
                         },
@@ -61417,7 +61673,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 4, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001little white\\001\\007...\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "2b01ed04-cfb7-4490-a34c-1388f658449c"
                         },
@@ -61426,7 +61682,7 @@
                             "args": {
                                 "actorId": "b10607d3-c311-47d4-bc81-b29ee4d7a75b",
                                 "spriteStateId": "Animation_3",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "2f40219e-b589-4ae7-bb5d-64113a842015"
                         },
@@ -61434,7 +61690,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001\\nfriendliness\\npellets.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, .TEXT_TILE_CONTINUE\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "bc53fcd6-44e2-4fc8-aea7-f27f6e3fdecf"
                         },
@@ -61443,7 +61699,7 @@
                             "args": {
                                 "actorId": "b10607d3-c311-47d4-bc81-b29ee4d7a75b",
                                 "spriteStateId": "",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "1e1555ce-c1ae-488f-8701-6b01ea3c38ed"
                         },
@@ -61451,7 +61707,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 7, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001Are you\\nready?\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "1282fe85-fe97-4f7a-a02b-8b9b63d6aed8"
                         },
@@ -61459,7 +61715,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001Move around!\\001\\007\\n\\001\\004Get as many\\nas you can!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "aa6b587b-2619-4ae2-9320-d4fdfd7bf3b8"
                         },
@@ -61468,7 +61724,7 @@
                             "args": {
                                 "actorId": "6398471f-5384-42af-a348-9717d8e455f2",
                                 "spriteStateId": "Animation_3",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "d529ed16-2e84-4b8d-8673-59dff2c06d10"
                         },
@@ -61495,7 +61751,7 @@
                                 "collisionMask": [
                                     "player"
                                 ],
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "018df5f9-2840-456c-8cbe-67fab5f1544e"
                         },
@@ -61522,7 +61778,7 @@
                                 "collisionMask": [
                                     "player"
                                 ],
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "76bf8c3f-f202-49ae-8cbf-9cfc173cd3bd"
                         },
@@ -61549,7 +61805,7 @@
                                 "collisionMask": [
                                     "player"
                                 ],
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "25809409-bc0f-44df-8458-c2d29f5d5558"
                         },
@@ -61558,7 +61814,7 @@
                             "args": {
                                 "time": 4,
                                 "frames": 30,
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "3bbafd6a-800b-4a68-bb37-88570bfecfb6"
                         },
@@ -61566,7 +61822,7 @@
                             "command": "EVENT_GBVM_SCRIPT",
                             "args": {
                                 "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 150\nVM_OVERLAY_HIDE",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "294455d1-ccd1-4611-aece-836b00f18cb0"
                         },
@@ -61577,7 +61833,7 @@
                                     "test"
                                 ],
                                 "avatarId": "",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "01c2c21e-599c-406c-b706-a5f5e5e3c9dc"
                         },
@@ -61585,7 +61841,7 @@
                             "command": "EVENT_ACTOR_STOP_UPDATE",
                             "args": {
                                 "actorId": "$self$",
-                                "__collapse": true
+                                "__collapse": false
                             },
                             "id": "f830e47e-5529-4492-9c64-de84e01c19b8"
                         }
@@ -61714,14 +61970,14 @@
                     "command": "EVENT_ACTOR_STOP_UPDATE",
                     "args": {
                         "actorId": "9ce83cb9-d91f-402f-93ec-41722283f4bf",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "da2317f4-84f9-4587-8614-a6aa731a7ed4"
                 },
                 {
                     "command": "EVENT_MUSIC_STOP",
                     "args": {
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "a7dac4c0-49e5-40d3-afac-a6f90d475796"
                 },
@@ -61729,7 +61985,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": "VM_SET_TEXT_SOUND ___bank_sound_voices_sav_00, _sound_voices_sav_00, ___mute_mask_sound_voices_sav_00\n\nVM_PUSH_CONST 0\nVM_GET_UINT8 .ARG0, _overlay_priority\nVM_SET_CONST_UINT8 _overlay_priority, 0\n\nVM_SWITCH_TEXT_LAYER .TEXT_LAYER_BKG\n\nVM_LOAD_TEXT            0\n .asciz \"\\001\\001\\003\\005\\0205/20 \"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 48\nVM_OVERLAY_WAIT         .UI_NONMODAL, .UI_WAIT_TEXT\n\nVM_SWITCH_TEXT_LAYER .TEXT_LAYER_WIN\n\nVM_SET_UINT8 _overlay_priority, .ARG0\nVM_POP 1\n\nVM_SET_TEXT_SOUND ___bank_sound_voices_sav_01, _sound_voices_sav_01, ___mute_mask_sound_voices_sav_01",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "77826b4b-ab49-4439-a59b-1de71b913844"
                 },
@@ -61737,7 +61993,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 72\nVM_OVERLAY_SETPOS 20, 0",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "54ec839d-371a-4dcd-abc2-c63d3a8e631e"
                 },
@@ -61745,7 +62001,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001You Idiot.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "936feb31-28a2-4557-974b-640c541f6a75"
                 },
@@ -61753,7 +62009,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 4, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001In this\\nworld, it's\\nkill or\\nBE killed.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "9ef1c146-03ef-4068-9dba-754cdba8963d"
                 },
@@ -61761,7 +62017,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 5, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 3\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\003{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001Why would\\nanybody pass\\nup an\\nopportunity\\nlike this?\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "d75139d0-c06d-4e8f-b7b3-d8622f96ddf3"
                 },
@@ -61769,7 +62025,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 3\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001DIE.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "3f0a98be-5919-4c00-bc2a-21f1c19e0be8"
                 },
@@ -61787,7 +62043,7 @@
                         },
                         "moveType": "diagonal",
                         "useCollisions": false,
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "6a3c0e6b-0d18-4f8d-8c45-b570e47cd693"
                 },
@@ -61795,7 +62051,7 @@
                     "command": "EVENT_ACTOR_ACTIVATE",
                     "args": {
                         "actorId": "fbeff4f1-1072-4e32-8510-4a6c697ddb44",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "c5af68b9-6a90-4561-996e-177fcd88f5d2"
                 },
@@ -61811,7 +62067,7 @@
                         "override": true,
                         "__scriptTabs": "press",
                         "__label": "Lock Player",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "children": {
                         "true": []
@@ -61822,7 +62078,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 3\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001That's it\\nfor now.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "8ec92238-2119-4362-a0e2-e99046349842"
                 },
@@ -61830,7 +62086,7 @@
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
                         "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 150\nVM_OVERLAY_HIDE",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "6e823489-34ee-4f30-979f-cf83f320cab9"
                 },
@@ -61853,7 +62109,7 @@
                         "y": 24,
                         "direction": "up",
                         "fadeSpeed": "2",
-                        "__collapse": true
+                        "__collapse": false
                     },
                     "id": "f1817b7e-3aa4-4e21-a938-4cf0abc06e64"
                 }
@@ -62651,26 +62907,6 @@
             "imageHeight": 144,
             "filename": "BattleMockup.png",
             "tileColors": []
-        },
-        {
-            "id": "b32abb43-9945-45cf-8d10-d440df3f8556",
-            "name": "DummyBattle1",
-            "symbol": "bg_dummybattle1",
-            "width": 20,
-            "height": 25,
-            "imageWidth": 160,
-            "imageHeight": 200,
-            "filename": "DummyBattle1.png"
-        },
-        {
-            "id": "d1045900-9077-4b5e-b812-096f62565287",
-            "name": "DummyBattle2",
-            "symbol": "bg_dummybattle2",
-            "width": 20,
-            "height": 18,
-            "imageWidth": 160,
-            "imageHeight": 144,
-            "filename": "DummyBattle2.png"
         },
         {
             "id": "6370a10d-9a3c-4cd4-9871-8284dd18b423",
@@ -65482,7 +65718,7 @@
                 0,
                 0,
                 0,
-                0,
+                2,
                 0,
                 0,
                 0,
@@ -67836,7 +68072,7 @@
                 0,
                 0,
                 0,
-                0,
+                2,
                 0,
                 0,
                 0,
@@ -69537,7 +69773,7 @@
                 0,
                 0,
                 0,
-                0,
+                2,
                 0,
                 0,
                 0,
@@ -104216,6 +104452,86 @@
                     ],
                     "animationType": "fixed",
                     "flipLeft": true
+                },
+                {
+                    "id": "4fba9039-17b9-4e73-b02d-e0c928cb4dfe",
+                    "name": "New State",
+                    "animations": [
+                        {
+                            "id": "e0ca3740-52ea-45c6-8995-971c564d47a3",
+                            "frames": [
+                                {
+                                    "id": "68c70c27-796b-474b-8d1b-ca03f57cd47b",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5278f8f4-5841-488f-bacf-2172e7f7717f",
+                            "frames": [
+                                {
+                                    "id": "9a0095d0-e888-411f-9a8d-f0f62f39153c",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "430db1cc-3618-4438-a03a-44f598abdad2",
+                            "frames": [
+                                {
+                                    "id": "d93ca6f0-75f2-47c1-b367-3cfbaabe6ad6",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "2e419a23-8624-497a-8b7b-cf49a0dd1a81",
+                            "frames": [
+                                {
+                                    "id": "3f0d5466-6a3e-46f4-9d7a-2aebf9c80da6",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "9be1c6c2-2eb7-4ddf-954a-ef730ca5acf1",
+                            "frames": [
+                                {
+                                    "id": "b95df3ac-ee63-43ab-9610-5f4a07e7a42e",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "99041157-0ccc-45f1-b39c-18cdbf4aea70",
+                            "frames": [
+                                {
+                                    "id": "1f475d91-aef7-42fe-ae4b-289cac7cf4a4",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "031074fc-ea08-4ea2-946b-48fb7f2c4bd6",
+                            "frames": [
+                                {
+                                    "id": "8cf5cb4e-d061-4ad9-9758-cdc44230c9bc",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "9b8753e6-22c6-49cf-8164-5ca4d23a9b54",
+                            "frames": [
+                                {
+                                    "id": "fbbf5fbc-a00f-403c-b961-5615e2fa3aaa",
+                                    "tiles": []
+                                }
+                            ]
+                        }
+                    ],
+                    "animationType": "fixed",
+                    "flipLeft": true
                 }
             ],
             "numTiles": 16,
@@ -108165,6 +108481,134 @@
             "animSpeed": 15
         },
         {
+            "id": "9485dfd6-daf6-4e90-9f9c-2f354b757f86",
+            "name": "dynamic-invisible-wall",
+            "symbol": "sprite_empty_copy",
+            "numFrames": 1,
+            "type": "static",
+            "filename": "dynamic-invisible-wall.png",
+            "checksum": "524f980a5456a600f746f8d8a007d72bc646755c",
+            "width": 16,
+            "height": 16,
+            "states": [
+                {
+                    "id": "8b64b7f8-6b01-46b1-86e8-b0096d20789d",
+                    "name": "",
+                    "animationType": "fixed",
+                    "flipLeft": false,
+                    "animations": [
+                        {
+                            "id": "9282d492-8a92-4bbf-af4b-0578cdb940a4",
+                            "frames": [
+                                {
+                                    "id": "629fdf3d-ceb4-4920-b498-0dd0d659c989",
+                                    "tiles": [
+                                        {
+                                            "id": "409a0975-59e8-49c5-ab0f-1dbf32c48f97",
+                                            "x": 0,
+                                            "y": 0,
+                                            "sliceX": 0,
+                                            "sliceY": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "palette": 0,
+                                            "paletteIndex": 0,
+                                            "objPalette": "OBP0",
+                                            "priority": false
+                                        },
+                                        {
+                                            "id": "284d7d05-7919-451e-a1f0-d77de45e8e7a",
+                                            "x": 8,
+                                            "y": 0,
+                                            "sliceX": 8,
+                                            "sliceY": 0,
+                                            "flipX": false,
+                                            "flipY": false,
+                                            "palette": 0,
+                                            "paletteIndex": 0,
+                                            "objPalette": "OBP0",
+                                            "priority": false
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ccd72a9b-bd6a-4770-9a68-718a707deb4a",
+                            "frames": [
+                                {
+                                    "id": "bd975b73-81e3-4764-92bc-ab3499c7348f",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "5eb61dd7-a375-4eb1-8325-f9034cb0a865",
+                            "frames": [
+                                {
+                                    "id": "292aed51-020c-40e8-8d04-434a8678c6e1",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "c726e3e9-6772-4a6d-b612-7d71cc49646b",
+                            "frames": [
+                                {
+                                    "id": "903f3bfc-3230-4925-ae1b-05a7d11f656d",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "f40cb4d6-b345-4a63-b9d1-3542eb164e91",
+                            "frames": [
+                                {
+                                    "id": "4fe8e84a-376f-4185-8167-0f3c1ed8a76d",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "6f3e6cd5-2305-41d1-916f-69177fc5fd3e",
+                            "frames": [
+                                {
+                                    "id": "d7a45ed0-7a72-4d82-a1eb-5d813a40da15",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "e68b37ad-a017-4657-a78e-0d2fdcac276b",
+                            "frames": [
+                                {
+                                    "id": "244c57a2-e858-45e8-b819-6f6e57a24d64",
+                                    "tiles": []
+                                }
+                            ]
+                        },
+                        {
+                            "id": "f3330751-64c9-4f54-a71b-41b6369147e0",
+                            "frames": [
+                                {
+                                    "id": "ee115f93-3355-4258-ab4e-8c9e04d725fb",
+                                    "tiles": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "numTiles": 0,
+            "canvasWidth": 16,
+            "canvasHeight": 16,
+            "boundsX": 0,
+            "boundsY": 0,
+            "boundsWidth": 16,
+            "boundsHeight": 16,
+            "animSpeed": 15
+        },
+        {
             "id": "bd3937aa-3c54-43e5-8fa8-55bb06662ade",
             "name": "player",
             "symbol": "sprite_player",
@@ -109732,6 +110176,16 @@
                 "A00098",
                 "000000"
             ]
+        },
+        {
+            "id": "402e15e1-adcc-4bae-ba1b-92a42760ef67",
+            "name": "Palette 33",
+            "colors": [
+                "F8F800",
+                "D850E0",
+                "B820C0",
+                "202850"
+            ]
         }
     ],
     "customEvents": [
@@ -110405,11 +110859,20 @@
                                 "id": "14"
                             }
                         ],
-                        "script": "VM_SET VAR_ROOM_LOCAL_01, 0\nVM_SET VAR_ROOM_LOCAL_02, 0\nVM_SET VAR_ROOM_LOCAL_03, 0\nVM_SET VAR_ROOM_LOCAL_04, 0\nVM_SET VAR_ROOM_LOCAL_05, 0"
+                        "script": "VM_SET_CONST VAR_ROOM_LOCAL_01, 0\nVM_SET_CONST VAR_ROOM_LOCAL_02, 0\nVM_SET_CONST VAR_ROOM_LOCAL_03, 0\nVM_SET_CONST VAR_ROOM_LOCAL_04, 0\nVM_SET_CONST VAR_ROOM_LOCAL_05, 0"
                     },
                     "id": "2f9d5575-65d9-45cd-875d-4cb6d4a3a993"
                 }
             ]
+        },
+        {
+            "id": "a8738b77-ffac-4c2e-a230-9b561585dad8",
+            "name": "",
+            "description": "",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_9",
+            "script": []
         }
     ],
     "music": [
@@ -110502,6 +110965,14 @@
             "type": "uge"
         },
         {
+            "id": "568fe8ab-0cc5-401c-a5f6-dc9458104c4a",
+            "name": "Unneccesary Tension",
+            "symbol": "song_unneccesary_tension",
+            "filename": "Unneccesary Tension.uge",
+            "settings": {},
+            "type": "uge"
+        },
+        {
             "id": "24474660-636c-4085-a1c3-a645a083b04b",
             "name": "Your Best Friend",
             "symbol": "song_your_best_friend",
@@ -110552,12 +111023,21 @@
     ],
     "sounds": [
         {
+            "id": "e0c43dd1-c109-498a-bde5-3998578f0ed8",
+            "name": "snd_phone.wav",
+            "symbol": "sound_snd_phone_wav",
+            "filename": "snd_phone.wav",
+            "type": "wav",
+            "inode": "1125899907314518",
+            "_v": 1702475090914
+        },
+        {
             "id": "55cba9a0-b51a-45d5-a129-4de762b0e7d1",
             "name": "voices.sav",
             "symbol": "sound_voices_sav",
             "filename": "voices.sav",
             "type": "fxhammer",
-            "inode": "10781634",
+            "inode": "1407374883707820",
             "_v": 1679310567138
         }
     ],
@@ -110797,6 +111277,21 @@
             "symbol": "var_have_you_killed_the_dum"
         },
         {
+            "id": "19",
+            "name": "is_reading",
+            "symbol": "var_is_reading"
+        },
+        {
+            "id": "20",
+            "name": "local_progress",
+            "symbol": "var_local_progress"
+        },
+        {
+            "id": "21",
+            "name": "room_id",
+            "symbol": "var_room_id"
+        },
+        {
             "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
             "name": "Counter",
             "symbol": "var_counter_0"
@@ -110897,9 +111392,9 @@
         "startDirection": "up",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 2589,
-        "worldScrollY": 3660,
-        "zoom": 396,
+        "worldScrollX": 990,
+        "worldScrollY": 1411,
+        "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
@@ -110927,12 +111422,12 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            30,
-            197,
-            728
+            205,
+            203,
+            548
         ],
         "showNavigator": true,
-        "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",
+        "defaultFontId": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2",
         "defaultCharacterEncoding": "",
         "defaultPlayerSprites": {
             "TOPDOWN": "2d4c8692-c5fa-4c12-ad48-79372dce717f",
@@ -110953,7 +111448,9 @@
             "EVENT_WAIT",
             "PT_EVENT_BACKGROUND_TEXT",
             "EVENT_IF_VALUE",
-            "EVENT_GBVM_SCRIPT"
+            "EVENT_GBVM_SCRIPT",
+            "EVENT_IF_EXPRESSION",
+            "UTGB_EVENT_NON_FREEZING_TEXT"
         ],
         "defaultFadeStyle": "white",
         "playerSpriteSheetId": "581d34d0-9591-4e6e-a609-1d94f203b0cd"
