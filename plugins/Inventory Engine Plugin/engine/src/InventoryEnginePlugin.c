@@ -14,6 +14,8 @@
 #define EquippedItemsPtr 41
 #define VAR_CURRENT_HP 2
 #define VAR_MAX_HP 3
+#define VAR_ATTACK_ITEM_ 26
+#define VAR_DEFENSE_ITEM_ 27
 
 const char textSpeedStr[] = "\001\001";
 const char fontSmallStr[] = "\002\005";
@@ -235,7 +237,7 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
 
     vm_overlay_wait(THIS, 1, 6);
 
-    if(items[item].useMain2[0] != 0 && !inBattle){
+    if(items[item].useMain2[0] != 0 && !inBattle){//if text has 2 parts
         *d = 0;
         strcat(d, startPosString);
         strcat(d, items[item].useMain2);
@@ -282,7 +284,7 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
         case 2://Weapon
         case 3://Armor
 
-            if(1){//to allow variable decalration in switch
+            if(1){//to allow variable declaration in switch
                 uint8_t equipSlot = items[item].useType & 0b1;//0 = Weapon, 1 = Armor
                 uint8_t itemTemp = equipPtr[equipSlot];
                 equipPtr[equipSlot] = item;
@@ -291,6 +293,13 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
                 uint8_t i = 0;
                 while (invPtr[i] != 0) i++;
                 invPtr[i] = itemTemp;
+
+                if(equipSlot == 0){
+                    *(int16_t*)VM_REF_TO_PTR(VAR_ATTACK_ITEM_) = (int16_t)items[item].amount;
+                }else{
+                    *(int16_t*)VM_REF_TO_PTR(VAR_DEFENSE_ITEM_) = (int16_t)items[item].amount;
+                }
+
             }
             
             break;
