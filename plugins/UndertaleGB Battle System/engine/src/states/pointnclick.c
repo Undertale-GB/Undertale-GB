@@ -28,10 +28,10 @@ void pointnclick_init() BANKED {
     // TODO: Add battle loading code
 
     //Debug:
-    bbox_left = 32;
-    bbox_right = 64;
-    bbox_up = 32;
-    bbox_down = 64;
+    bbox_left = 37;
+    bbox_right = 122;
+    bbox_up = 77;
+    bbox_down = 114;
 }
 
 
@@ -70,11 +70,12 @@ void pointnclick_update() BANKED {
         angle = ANGLE_0DEG;
     }
 
+    /*
     if (player_moving) {
         point_translate_angle(&(PLAYER.pos), angle, PLAYER.move_speed);
         // Clamp X
-        if ((PLAYER.pos.x >> 4) - PLAYER.bounds.left < bbox_left) {
-            PLAYER.pos.x = (PLAYER.bounds.left + bbox_left) << 4;
+        if ((PLAYER.pos.x >> 4) + PLAYER.bounds.left < bbox_left) {
+            PLAYER.pos.x = (-PLAYER.bounds.left + bbox_left) << 4;
         } else if ((PLAYER.pos.x >> 4) + PLAYER.bounds.right > bbox_right) {
             PLAYER.pos.x = (bbox_right - PLAYER.bounds.right) << 4;
         }
@@ -83,6 +84,24 @@ void pointnclick_update() BANKED {
             PLAYER.pos.y = -(PLAYER.bounds.top << 4) + (bbox_up << 4);
         } else if ((PLAYER.pos.y >> 4) + PLAYER.bounds.bottom > bbox_down) {
             PLAYER.pos.y = (bbox_down - PLAYER.bounds.bottom) << 4;
+        }    
+               
+    }
+    */
+
+    if (player_moving) {
+        point_translate_angle(&(PLAYER.pos), angle, PLAYER.move_speed);
+        // Clamp X
+        if ((PLAYER.pos.x >> 4) < bbox_left) {
+            PLAYER.pos.x = (bbox_left) << 4;
+        } else if ((PLAYER.pos.x >> 4) + 7 > bbox_right) {
+            PLAYER.pos.x = (bbox_right - 7) << 4;
+        }
+        // Clamp Y
+        if ((PLAYER.pos.y >> 4) < bbox_up) {
+            PLAYER.pos.y = (bbox_up << 4);
+        } else if ((PLAYER.pos.y >> 4) + 7 > bbox_down) {
+            PLAYER.pos.y = (bbox_down - 7) << 4;
         }    
                
     }

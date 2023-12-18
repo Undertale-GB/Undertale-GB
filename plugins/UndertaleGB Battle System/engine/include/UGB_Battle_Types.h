@@ -24,14 +24,14 @@ typedef struct ugb_battle_t {
     far_ptr_t background_enemy, background_ui;
     far_ptr_t actors, sprites;
     far_ptr_t patterns[];
-}ugb_battle;
+}ugb_battle_t;
 
 
 typedef struct ugb_pattern_t {
     far_ptr_t projectiles;
     uint8_t bbox_width, bbox_height;
     uint8_t time;
-}ugb_patterns;
+}ugb_pattern_t;
 
 
 typedef struct ugb_pattern_command_t {
