@@ -9,6 +9,8 @@
 #include <types.h>
 #include "gbs_types.h"
 
+#include "InventoryEnginePlugin.h"
+
 //check "game_globals" in exported data to find values
 #define InvMainPtr 34
 #define EquippedItemsPtr 41
@@ -184,6 +186,54 @@ void inv_load_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
     }
 }
 
+void inv_add_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
+
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    int16_t * itemPtr = (int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    if(invPtr[7] == 0){//if any slot empty
+
+        uint8_t i = 0;
+        while(invPtr[i] != 0) i++;
+        invPtr[i] = *itemPtr;
+        return;
+    }
+    *itemPtr = 0;//if no empty slot
+    
+} //Stack Out: 0 if inventory full, otherwise Item ID
+
+void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
+    
+    unsigned char * d = ui_text_data;
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    
+    int16_t * itemPtr = (int16_t*)VM_REF_TO_PTR(FN_ARG0);
+
+    *d = 0;
+    //strcat(d, menuInvStartPosStr);
+    strcat(d, "*You got the\n|");
+    strcat(d, items[*itemPtr].name);
+    strcat(d, "!");
+
+    vm_overlay_clear(THIS, 0, 0, 20, 5, 0, 1);
+    vm_overlay_move_to(THIS, 0, 13, UI_IN_SPEED);
+    vm_display_text(THIS, 0, 68);
+    vm_overlay_wait(THIS, 1, 6);
+
+    if(invPtr[7] != 0) {
+        *d = 0;
+        strcat(d, "*...but your\n|Inventory was\n|full!");
+
+        vm_overlay_clear(THIS, 0, 0, 20, 5, 0, 1);
+        vm_display_text(THIS, 0, 68);
+        vm_overlay_wait(THIS, 1, 6);
+        vm_overlay_move_to(THIS, 0, 18, UI_OUT_SPEED);
+        return;
+    }
+    vm_overlay_move_to(THIS, 0, 18, UI_OUT_SPEED);
+    inv_add_item(THIS);
+
+} //Stack Out: 0 if inventory full, otherwise Item ID
+
 void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
     uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
     uint8_t rSlot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
@@ -195,8 +245,6 @@ void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Sl
 }
 
 void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, bool isInBattle
-
-    
 
     unsigned char * d = ui_text_data;
     uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
@@ -214,7 +262,7 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
 
     *d = 0;
 
-    strcat(d, startPosString);
+    strcat(d, startPosString); // Set text starting position
     if(inBattle && items[item].useBattle[0] != 0){
 
         strcat(d, items[item].useBattle);
@@ -287,14 +335,14 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
             if(1){//to allow variable declaration in switch
                 uint8_t equipSlot = items[item].useType & 0b1;//0 = Weapon, 1 = Armor
                 uint8_t itemTemp = equipPtr[equipSlot];
-                equipPtr[equipSlot] = item;
-                inv_remove_item(THIS);
+                equipPtr[equipSlot] = item; // store item in equip slot
+                inv_remove_item(THIS); // remove item from inventory
 
                 uint8_t i = 0;
                 while (invPtr[i] != 0) i++;
-                invPtr[i] = itemTemp;
+                invPtr[i] = itemTemp; // store unequipped item in inventory
 
-                if(equipSlot == 0){
+                if(equipSlot == 0){ // set attack / defense stat
                     *(int16_t*)VM_REF_TO_PTR(VAR_ATTACK_ITEM_) = (int16_t)items[item].amount;
                 }else{
                     *(int16_t*)VM_REF_TO_PTR(VAR_DEFENSE_ITEM_) = (int16_t)items[item].amount;
@@ -307,6 +355,27 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
             return;
     }
     
+}
+
+void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
+    
+    unsigned char * d = ui_text_data;
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    
+    uint8_t slot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    uint8_t item = invPtr[slot];
+
+    *d = 0;
+    strcat(d, menuInvStartPosStr);
+    strcat(d, "*You dropped the\n");
+    strcat(d, items[item].name);
+    strcat(d, ".");
+
+    vm_overlay_clear(THIS, 0, 7, 19, 5, 0, 1);
+    vm_display_text(THIS, 0, 68);
+
+    inv_remove_item(THIS);
+
 }
 
 void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
@@ -351,7 +420,7 @@ void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventor
             strcat(d, items[item].amountStr);
             break;
     }
-    vm_overlay_clear(THIS, 0, 7, 19, 5, 0, 1);
+    vm_overlay_clear(THIS, 0, 7, 19, 5, 0, 1); // show text
     vm_display_text(THIS, 0, 68);
     vm_overlay_wait(THIS, 1, 6);
 
@@ -359,22 +428,7 @@ void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventor
     strcat(d, menuInvStartPosStr);
     strcat(d, items[item].desc);
 
-    vm_overlay_clear(THIS, 0, 7, 19, 5, 0, 1);
+    vm_overlay_clear(THIS, 0, 7, 19, 5, 0, 1); // show text
     vm_display_text(THIS, 0, 68);
     vm_overlay_wait(THIS, 1, 6);
 }
-
-void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
-
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
-    int16_t * itemPtr = (int16_t*)VM_REF_TO_PTR(FN_ARG0);
-    if(invPtr[7] == 0){//if any slot empty
-
-        uint8_t i = 0;
-        while(invPtr[i] != 0) i++;
-        invPtr[i] = *itemPtr;
-    }else{
-        *itemPtr = 0;
-    }
-
-}//Stack Out: 0 if inventory full, otherwise Item ID
