@@ -5,7 +5,6 @@
 #include "gbs_types.h"
 
 
-
 /*
 Loads the text string for the list of items
 Stack: None

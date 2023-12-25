@@ -432,3 +432,21 @@ void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventor
     vm_display_text(THIS, 0, 68);
     vm_overlay_wait(THIS, 1, 6);
 }
+
+//untested
+uint8_t inv_get_item_count(SCRIPT_CTX * THIS) OLDCALL BANKED {
+
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+
+    uint8_t i = 0;
+    
+    while(i < 8) {
+
+        if (invPtr[i] == 0) break;
+
+        i++;
+    }
+
+    return i + 1;
+
+}
