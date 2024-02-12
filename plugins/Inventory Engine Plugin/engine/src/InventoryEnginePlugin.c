@@ -11,7 +11,7 @@
 
 #include "InventoryEnginePlugin.h"
 
-//check "game_globals" in exported data to find values
+//check "game_globals.i" in exported data to find values
 #define InvMainPtr 34
 #define EquippedItemsPtr 41
 #define VAR_CURRENT_HP 2

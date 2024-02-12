@@ -9,6 +9,7 @@
 #include "ui.h"
 #include <types.h>
 #include "gbs_types.h"
+#include <stdlib.h>
 
 #include "InventoryEnginePlugin.h"
 
@@ -23,65 +24,20 @@
 
 
 
-// WIP: text loader
-// might not be neccesary
-
 /*
-void ugb_load_text_with_vars(SCRIPT_CTX * THIS, char * target, char * string, UBYTE * vars) {
-
-    INT16 value;
-
-    while (*string) {
-
-        if (*string == '%') {
-            value = *((INT16 *)VM_REF_TO_PTR(*vars));
-            switch (*++string) {
-            // variable value of fixed width, zero padded
-            case 'D':
-                target += itoa_format(value, target, *++string - '0');
-                break;
-            // variable value
-            case 'd':
-                target += itoa_format(value, target, 0);
-                break;
-            // char from variable
-            case 'c':
-                *target++ = (unsigned char)value;
-                break;
-            // text tempo from variable
-            case 't':
-                *target++ = 0x01u;
-                *target++ = (unsigned char)value + 0x02u;
-                break;
-            // font index from variable
-            case 'f':
-                *target++ = 0x02u;
-                *target++ = (unsigned char)value + 0x01u;
-                break;
-            // excape % symbol
-            case '%':
-                string++;
-            default:
-                string--;
-                *target++ = *string++;
-                continue;
-
-            }
-
-        } else {
-            *target++ = *string++;
-            continue;
-        }
-        string++; vars++;
-        
-
-    }
-    *target = 0;
-
-}
-
+concatanates an INT16 number to a string
+use like "strcat()"
 */
+void utgb_cat_var_to_string(INT16 value, UBYTE * string) OLDCALL BANKED {
 
+    //find end of string
+    while (*string) string++;
+
+    //add number to string
+    itoa(value, string, 10);
+
+    return;
+}
 
 
 /*
@@ -99,34 +55,30 @@ void copy_screen_area_to_overlay(SCRIPT_CTX * THIS, UBYTE x, UBYTE y, UBYTE w, U
 
 
 // Shorten ui_run_menu() commands
-#define PM_DEFAULT THIS->bank, MENU_CANCEL_B
+#define PM_DEFAULT THIS->bank, (MENU_CANCEL_B | MENU_SET_START)
+const char pauseMenuInstSpeed[] = "\001\001";
 
 
-// Main pause menu:
-#define PAUSE_MENU_MAIN_SIZE 3
-const struct menu_item_t pauseMenuMain[] = {
-
-    {2, 2, 0, 0, 0, 2}, // ITEM
-    {2, 3, 0, 0, 1, 3}, // STAT
-    {2, 4, 0, 0, 2, 0}  // CALL
-};
-
-/*
-__asm
-
-
-
-
-
-__endasm
-*/
-
-const char menuMainStartPos[] = "\003\003\003";
+const char pauseMenuMainStartPos[] = "\003\003\013";
 
 void pauseMenuMainShow(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     // WIP: render textbox + text
-    vm_overlay_clear(THIS, 2, 2, 8, 8, UI_BKG_COLOR, UI_DRAW_FRAME);
+    vm_overlay_clear(THIS, 0, 9, 7, 5, UI_BKG_COLOR, UI_DRAW_FRAME);
+
+    unsigned char * d = ui_text_data;
+
+    *d = 0;
+
+    strcat(d, pauseMenuInstSpeed);
+    strcat(d, pauseMenuMainStartPos);
+    strcat(d, "ITEM\nSTAT\nCALL");
+    strcat(d, "\n");
+
+    //utgb_cat_var_to_string(30, d);
+
+    vm_display_text(THIS, 0, 0);
+    vm_overlay_wait(THIS, 1, UI_WAIT_TEXT);
 
 }
 
@@ -140,14 +92,30 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
     uint8_t choice1 = 1; // default selected menu item
     uint8_t choice2 = 1;
     uint8_t choice3 = 1;
-
+    
     copy_screen_area_to_overlay(THIS, 0, 0, 20, 18);
+    //copy_screen_area_to_overlay(THIS, 0, 0, 19, 17);
+    vm_overlay_setpos(THIS, 0, 0);
 
+    
     while (menu_level == 1) {
 
+        
         pauseMenuMainShow(THIS);
-        choice1 = ui_run_menu(pauseMenuMain, PM_DEFAULT, PAUSE_MENU_MAIN_SIZE, choice1);
+        //choice1 = ui_run_menu(pauseMenuMain, PM_DEFAULT, PAUSE_MENU_MAIN_SIZE, choice1);
 
+        // Main pause menu:
+        
+        struct menu_item_t pauseMenuMain[] = {
+            {.X=1u, .Y=10u, .iL=0u, .iR=0u, .iU=0u, .iD=2u}, // ITEM
+            {.X=1u, .Y=11u, .iL=0u, .iR=0u, .iU=1u, .iD=3u}, // STAT
+            {.X=1u, .Y=12u, .iL=0u, .iR=0u, .iU=2u, .iD=0u}  // CALL
+        };
+
+        choice1 = ui_run_menu(pauseMenuMain, PM_DEFAULT, 3, choice1);
+        
+
+        
         switch (choice1)
         {
         case 1: // ITEM
@@ -181,11 +149,16 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
             menu_level--; // back by 1 menu
             break;
         }
+        
+
+        //menu_level = 0;
     }
+    
 
+    vm_overlay_setpos(THIS, 0, 18);
 
-
-
+    
 
 
 }
+
