@@ -172,13 +172,13 @@ void inv_load_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
 
     unsigned char * d = ui_text_data;
-    *d = 0;
+    //*d = 0;
 
     uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
 
-    strcat(d, textSpeedStr);
+    //strcat(d, textSpeedStr);
     strcat(d, fontSmallStr);
-    strcat(d, menuMainStartPosStr);
+    //strcat(d, menuMainStartPosStr);
     for(uint8_t i = 0; i < 8; i++){
 
         strcat(d, items[invPtr[i]].name);
