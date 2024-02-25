@@ -1,6 +1,7 @@
 #pragma bank 255
 
 #include <gbdk/platform.h>
+#include "vm_gameboy.h"
 #include "vm.h"
 #include "vm_ui.h"
 #include "scroll.h"
@@ -134,6 +135,7 @@ const struct item_t items[] = {
 const char maxHPStr[] = "*Your HP was\n|maxed out!";
 
 //Unused
+/*
 void inv_load_item_name(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
 
@@ -154,6 +156,35 @@ void inv_load_item_name(SCRIPT_CTX * THIS) OLDCALL BANKED {
     *d = 0;
 
 }
+*/
+
+void inv_load_item_name(SCRIPT_CTX * THIS, uint8_t InvSlot, uint8_t InvType) OLDCALL BANKED {
+    THIS;
+    
+    unsigned char * d = ui_text_data;
+
+    uint8_t* invPtr;
+
+    switch (InvType)
+    {
+    case 0:
+        invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+        break;
+
+    case 1:
+        invPtr = (uint8_t *)VM_REF_TO_PTR(EquippedItemsPtr);
+        break;
+    
+    default:
+        invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr); // default to base inventory
+        break;
+    }
+
+    uint8_t itemID = invPtr[InvSlot];
+
+    strcat(d, items[itemID].name);
+}
+
 
 void inv_read_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, Inventory Type
 
@@ -244,6 +275,106 @@ void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Sl
     invPtr[7] = 0;
 }
 
+bool inv_load_use_main_text(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot, uint8_t textNum) OLDCALL BANKED {
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+
+    uint8_t item = invPtr[invSlot];
+
+    const UBYTE * textPtr;
+
+    switch (textNum)
+    {
+    case 1:
+        textPtr = items[item].useMain;
+        break;
+
+    case 2:
+        textPtr = items[item].useMain2;
+        break;
+    
+    default:
+        return false;
+        break;
+    }
+
+    if(textPtr[0]){
+
+        strcat(string, textPtr);
+        return true;
+    }
+
+    return false;
+}
+
+void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, bool isInBattle
+
+    unsigned char * d = ui_text_data;
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * equipPtr = (uint8_t *)VM_REF_TO_PTR(EquippedItemsPtr);
+    int16_t * currentHP = (int16_t*)VM_REF_TO_PTR(VAR_CURRENT_HP);
+    int16_t * maxHP = (int16_t*)VM_REF_TO_PTR(VAR_MAX_HP);
+    uint8_t slot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    uint8_t inBattle = *(uint8_t*)VM_REF_TO_PTR(FN_ARG1);
+    uint8_t item = invPtr[slot];
+
+    
+
+    switch (items[item].useType){
+
+        case 1://Consumable
+            strcat(d, menuMainStartPosStr);
+            *currentHP += items[item].amount;
+            if(*currentHP >= *maxHP)
+            {
+                *currentHP = *maxHP;
+                strcat(d, maxHPStr);
+            }else{
+                strcat(d, "You Healed ");
+                strcat(d, items[item].amountStr);
+                strcat(d, " HP.");
+            }
+            if(inBattle){
+                vm_overlay_clear(THIS, 3, 1, 14, 4, 0, 0);
+                vm_display_text(THIS, 0, 5);
+            }else{
+                vm_overlay_clear(THIS, 0, 7, 19, 5, 0, 1);
+                vm_display_text(THIS, 0, 68);
+            }
+            
+            vm_overlay_wait(THIS, 1, 6);
+
+            inv_remove_item(THIS);
+            break;
+
+        case 2://Weapon
+        case 3://Armor
+
+            if(1){//to allow variable declaration in switch
+                uint8_t equipSlot = items[item].useType & 0b1;//0 = Weapon, 1 = Armor
+                uint8_t itemTemp = equipPtr[equipSlot];
+                equipPtr[equipSlot] = item; // store item in equip slot
+                inv_remove_item(THIS); // remove item from inventory
+
+                uint8_t i = 0;
+                while (invPtr[i] != 0) i++;
+                invPtr[i] = itemTemp; // store unequipped item in inventory
+
+                if(equipSlot == 0){ // set attack / defense stat
+                    *(int16_t*)VM_REF_TO_PTR(VAR_ATTACK_ITEM_) = (int16_t)items[item].amount;
+                }else{
+                    *(int16_t*)VM_REF_TO_PTR(VAR_DEFENSE_ITEM_) = (int16_t)items[item].amount;
+                }
+
+            }
+            
+            break;
+        default:
+            return;
+    }
+    
+}
+
+/*
 void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, bool isInBattle
 
     unsigned char * d = ui_text_data;
@@ -356,6 +487,7 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
     }
     
 }
+*/
 
 void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
     

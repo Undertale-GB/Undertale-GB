@@ -3213,6 +3213,17 @@
                                     }
                                 },
                                 "id": "f5bbc7c7-96e6-49a7-af5c-ac20ecf05092"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "16",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 1234
+                                    }
+                                },
+                                "id": "0bb605f7-82ac-4f19-8297-88e349436fa7"
                             }
                         ]
                     },
@@ -3245,20 +3256,34 @@
                     "id": "e21a21a3-f688-481b-8dee-86f695037cd6"
                 },
                 {
+                    "command": "EVENT_SET_INPUT_SCRIPT",
+                    "args": {
+                        "input": [
+                            "b"
+                        ],
+                        "override": true,
+                        "__scriptTabs": "press"
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "args": {
+                                    "customEventId": "607f10d6-9c93-4e11-aba3-998a05693a71"
+                                },
+                                "id": "a716a204-ccfc-4c1c-8325-fef93b8bd66b"
+                            }
+                        ]
+                    },
+                    "id": "6d2ee58b-2468-4800-843a-0e6e19915dba"
+                },
+                {
                     "command": "EVENT_FADE_IN",
                     "args": {
                         "speed": "2",
                         "__collapse": false
                     },
                     "id": "c0d6938a-9cae-4303-a13a-d4b1b73e2bb3"
-                },
-                {
-                    "command": "EVENT_WAIT",
-                    "args": {
-                        "time": 2,
-                        "frames": 30
-                    },
-                    "id": "d068d4ab-b8fd-40ca-a6e6-2c1fecdb8a06"
                 }
             ],
             "playerHit1Script": [],
@@ -125833,7 +125858,7 @@
             "symbol": "sound_puzzles_sav",
             "filename": "puzzles.sav",
             "type": "fxhammer",
-            "inode": "6377638",
+            "inode": "557227",
             "_v": 1681933561237
         },
         {
@@ -125842,7 +125867,7 @@
             "symbol": "sound_ui_sav",
             "filename": "ui.sav",
             "type": "fxhammer",
-            "inode": "6377639",
+            "inode": "557228",
             "_v": 1681933561237
         },
         {
@@ -125851,7 +125876,7 @@
             "symbol": "sound_voices_sav",
             "filename": "voices.sav",
             "type": "fxhammer",
-            "inode": "6377641",
+            "inode": "549823",
             "_v": 1679310567138
         }
     ],
@@ -126345,7 +126370,7 @@
         }
     ],
     "settings": {
-        "startSceneId": "df122ad8-530e-4ee0-a44b-ca72aa20b72a",
+        "startSceneId": "93481461-209a-497c-8304-a54799217280",
         "startX": 18,
         "startY": 13,
         "startMoveSpeed": 1,
@@ -126353,8 +126378,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 1075,
-        "worldScrollY": 391,
+        "worldScrollX": 449,
+        "worldScrollY": 2648,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -126384,8 +126409,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            431,
-            491
+            647,
+            737
         ],
         "showNavigator": true,
         "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",

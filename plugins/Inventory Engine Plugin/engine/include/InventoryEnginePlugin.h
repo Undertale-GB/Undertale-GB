@@ -4,6 +4,10 @@
 #include <gb/gb.h>
 #include "gbs_types.h"
 
+/*
+Concatanates the Item name to the end of the loaded text
+*/
+void inv_load_item_name(SCRIPT_CTX * THIS, uint8_t InvSlot, uint8_t InvType) OLDCALL BANKED;
 
 /*
 Loads the text string for the list of items
@@ -34,6 +38,11 @@ Stack:
 - 0:Inventory Slot
 */
 void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED;
+
+/*
+Loads item use text into string
+*/
+bool inv_load_use_main_text(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot, uint8_t textNum) OLDCALL BANKED;
 
 /*
 Uses an Item in the Inventory
