@@ -38,6 +38,7 @@ Stack:
 - 0:Inventory Slot
 */
 void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED;
+void inv_remove_item_new(SCRIPT_CTX * THIS, uint8_t invSlot) OLDCALL BANKED;
 
 /*
 Loads item use text into string
@@ -51,6 +52,7 @@ Stack:
 - 1: Bool inBattle
 */
 void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED;
+bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED;
 
 /*
 Drops an Item, with dialogue

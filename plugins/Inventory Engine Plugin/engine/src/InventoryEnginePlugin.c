@@ -208,7 +208,7 @@ void inv_load_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
     uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
 
     //strcat(d, textSpeedStr);
-    strcat(d, fontSmallStr);
+    //strcat(d, fontSmallStr);
     //strcat(d, menuMainStartPosStr);
     for(uint8_t i = 0; i < 8; i++){
 
@@ -265,6 +265,17 @@ void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
 
 } //Stack Out: 0 if inventory full, otherwise Item ID
 
+void inv_remove_item_new(SCRIPT_CTX * THIS, uint8_t invSlot) OLDCALL BANKED {
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+
+    for (uint8_t i = invSlot; i<7; i++){
+        invPtr[i] = invPtr[i + 1];
+    }
+    invPtr[7] = 0;
+}
+
+//deprecated
+//TODO: Remove all calls to this function
 void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
     uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
     uint8_t rSlot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
@@ -306,44 +317,35 @@ bool inv_load_use_main_text(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot, 
     return false;
 }
 
-void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, bool isInBattle
+bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
 
-    unsigned char * d = ui_text_data;
     uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
     uint8_t * equipPtr = (uint8_t *)VM_REF_TO_PTR(EquippedItemsPtr);
     int16_t * currentHP = (int16_t*)VM_REF_TO_PTR(VAR_CURRENT_HP);
     int16_t * maxHP = (int16_t*)VM_REF_TO_PTR(VAR_MAX_HP);
-    uint8_t slot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
-    uint8_t inBattle = *(uint8_t*)VM_REF_TO_PTR(FN_ARG1);
-    uint8_t item = invPtr[slot];
 
-    
+    uint8_t item = invPtr[invSlot];
+    bool hasText = false;
+
+    while (*string) string++;
 
     switch (items[item].useType){
 
         case 1://Consumable
-            strcat(d, menuMainStartPosStr);
+
+            hasText = true;
             *currentHP += items[item].amount;
             if(*currentHP >= *maxHP)
             {
                 *currentHP = *maxHP;
-                strcat(d, maxHPStr);
+                strcat(string, maxHPStr);
             }else{
-                strcat(d, "You Healed ");
-                strcat(d, items[item].amountStr);
-                strcat(d, " HP.");
+                strcat(string, "You Healed ");
+                strcat(string, items[item].amountStr);
+                strcat(string, " HP.");
             }
-            if(inBattle){
-                vm_overlay_clear(THIS, 3, 1, 14, 4, 0, 0);
-                vm_display_text(THIS, 0, 5);
-            }else{
-                vm_overlay_clear(THIS, 0, 7, 19, 5, 0, 1);
-                vm_display_text(THIS, 0, 68);
-            }
-            
-            vm_overlay_wait(THIS, 1, 6);
 
-            inv_remove_item(THIS);
+            inv_remove_item_new(THIS, invSlot);
             break;
 
         case 2://Weapon
@@ -353,7 +355,7 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
                 uint8_t equipSlot = items[item].useType & 0b1;//0 = Weapon, 1 = Armor
                 uint8_t itemTemp = equipPtr[equipSlot];
                 equipPtr[equipSlot] = item; // store item in equip slot
-                inv_remove_item(THIS); // remove item from inventory
+                inv_remove_item_new(THIS, invSlot); // remove item from inventory
 
                 uint8_t i = 0;
                 while (invPtr[i] != 0) i++;
@@ -369,12 +371,15 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
             
             break;
         default:
-            return;
+            break;
     }
+
+    return hasText;
     
 }
 
-/*
+//deprecated
+//TODO: Remove all calls to this function from GBVM
 void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, bool isInBattle
 
     unsigned char * d = ui_text_data;
@@ -487,7 +492,7 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
     }
     
 }
-*/
+
 
 void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
     

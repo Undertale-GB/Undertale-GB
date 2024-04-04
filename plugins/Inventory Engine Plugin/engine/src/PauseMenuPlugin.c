@@ -215,6 +215,7 @@ const struct menu_item_t PM_Item_Interact[] = {
 
 void PM_Item_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
+    vm_idle(THIS);
     vm_overlay_clear(THIS, PM_Item_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
 
     unsigned char * d = ui_text_data;
@@ -222,15 +223,16 @@ void PM_Item_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
     *d = 0;
 
     strcat(d, PM_InstSpeed);
-    strcat(d, PM_Item_StartPos);
-    //strcat(d, "put\nItems\nhere");
-
-    inv_load_pause_menu(THIS);
-
     strcat(d, PM_SmallFont);
+
     strcat(d, "\003\014\014USE");
     strcat(d, "\003\017\014INFO");
     strcat(d, "\003\022\014DROP");
+
+    strcat(d, PM_Item_StartPos);
+
+    inv_load_pause_menu(THIS);
+
 
     vm_display_text(THIS, 0, 29);
     vm_overlay_wait(THIS, 1, UI_WAIT_TEXT);
@@ -241,31 +243,43 @@ void PM_Item_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
 #define PM_Item_Hide(THIS) copy_screen_area_to_overlay(THIS, PM_Item_BBox)
 
-void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED {
+void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE"
 
     unsigned char * d = ui_text_data;
     *d = 0;
     strcat(d, PM_Item_Dialogue_StartPos);
 
-    if(inv_load_use_main_text(THIS, d, itemSlot, 1)){
+    if(inv_load_use_main_text(THIS, d, itemSlot, 1)){ //is there use text?
+        vm_idle(THIS);
         vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
         vm_display_text(THIS, 0, 52);
         vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
-        *d = 0;
+        *d = 0; //reset text buffer
         strcat(d, PM_Item_Dialogue_StartPos);
     }
 
 
-    if(inv_load_use_main_text(THIS, d, itemSlot, 2)){
+    if(inv_load_use_main_text(THIS, d, itemSlot, 2)){ //is there a second box of use text?
+        vm_idle(THIS);
         vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
         vm_display_text(THIS, 0, 52);
         vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
-        *d = 0;
+        *d = 0; //reset text buffer
         strcat(d, PM_Item_Dialogue_StartPos);
+    }
+
+    bool hasStatText = inv_use_item_new(THIS, d, itemSlot);
+    if(hasStatText){ //does this item show stats on use? (like "Healed 10 HP!")
+        vm_idle(THIS);
+        vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
+        vm_display_text(THIS, 0, 52);
+        vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
     }
 
 
     copy_screen_area_to_overlay(THIS, PM_Item_Dialogue_BBox);
+
+    utgb_move_overlay_content_vram(128, 192, 64, 1);
 }
 
 
@@ -273,8 +287,8 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED {
 
 // ===================== Stat Menu =============================== //
 
-#define PM_Stat_BBox 10, 2, 8, 12
-#define PM_Stat_StartPos "\003\014\004"
+#define PM_Stat_BBox 10, 1, 8, 12
+#define PM_Stat_StartPos "\003\014\003"
 
 void PM_Stat_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 

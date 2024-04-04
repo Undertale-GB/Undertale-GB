@@ -125858,7 +125858,7 @@
             "symbol": "sound_puzzles_sav",
             "filename": "puzzles.sav",
             "type": "fxhammer",
-            "inode": "557227",
+            "inode": "6377638",
             "_v": 1681933561237
         },
         {
@@ -125867,7 +125867,7 @@
             "symbol": "sound_ui_sav",
             "filename": "ui.sav",
             "type": "fxhammer",
-            "inode": "557228",
+            "inode": "6377639",
             "_v": 1681933561237
         },
         {
@@ -125876,7 +125876,7 @@
             "symbol": "sound_voices_sav",
             "filename": "voices.sav",
             "type": "fxhammer",
-            "inode": "549823",
+            "inode": "6377641",
             "_v": 1679310567138
         }
     ],
@@ -126378,8 +126378,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 449,
-        "worldScrollY": 2648,
+        "worldScrollX": 425,
+        "worldScrollY": 3049,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -126409,8 +126409,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            647,
-            737
+            431,
+            491
         ],
         "showNavigator": true,
         "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",
