@@ -125698,7 +125698,7 @@
                 {
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
-                        "script": "VM_CALL_NATIVE b_ugb_show_pause_menu, _ugb_show_pause_menu"
+                        "script": "VM_PUSH_CONST 0\nVM_GET_UINT8 .ARG0, _show_actors_on_overlay\nVM_SET_CONST_UINT8 _show_actors_on_overlay, 1\n\nVM_CALL_NATIVE b_ugb_show_pause_menu, _ugb_show_pause_menu\n\nVM_SET_UINT8 _show_actors_on_overlay, .ARG0\nVM_POP 1"
                     },
                     "id": "5739095f-1117-444d-acd0-7aebe9704694"
                 }
@@ -125858,7 +125858,7 @@
             "symbol": "sound_puzzles_sav",
             "filename": "puzzles.sav",
             "type": "fxhammer",
-            "inode": "6377638",
+            "inode": "557227",
             "_v": 1681933561237
         },
         {
@@ -125867,7 +125867,7 @@
             "symbol": "sound_ui_sav",
             "filename": "ui.sav",
             "type": "fxhammer",
-            "inode": "6377639",
+            "inode": "557228",
             "_v": 1681933561237
         },
         {
@@ -125876,7 +125876,7 @@
             "symbol": "sound_voices_sav",
             "filename": "voices.sav",
             "type": "fxhammer",
-            "inode": "6377641",
+            "inode": "549823",
             "_v": 1679310567138
         }
     ],
@@ -126378,8 +126378,8 @@
         "startDirection": "down",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 425,
-        "worldScrollY": 3049,
+        "worldScrollX": 2073,
+        "worldScrollY": 0,
         "zoom": 200,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -126409,8 +126409,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            431,
-            491
+            647,
+            737
         ],
         "showNavigator": true,
         "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",

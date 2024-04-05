@@ -2,6 +2,7 @@
 
 #include <gbdk/platform.h>
 #include <gb/gb.h>
+#include <gb/cgb.h>
 #include "vm_gameboy.h"
 #include "vm.h"
 #include "vm_ui.h"
@@ -10,11 +11,31 @@
 #include "ui.h"
 #include <types.h>
 #include "gbs_types.h"
+#include "palette.h"
 #include <stdlib.h>
+#include "bankdata.h"
+#include "data/frame_image.h"
 
 #include "InventoryEnginePlugin.h"
 
+#include "data/frame_image_yellow.h"
+
 #define UI_BKG_COLOR 0 // use black background color
+
+#define UTGB_UI_WHITE CGB_COLOR(31, 31, 31)
+#define UTGB_UI_YELLOW CGB_COLOR(31, 31, 4)
+#define UTGB_UI_RED CGB_COLOR(31, 0, 0)
+#define UTGB_UI_BLACK CGB_COLOR(0, 0, 0)
+
+
+const palette_entry_t UTGB_yellow_text = CGB_PALETTE(UTGB_UI_WHITE, UTGB_UI_YELLOW, UTGB_UI_RED, UTGB_UI_BLACK);
+const palette_entry_t UTGB_white_text = CGB_PALETTE(UTGB_UI_WHITE, UTGB_UI_WHITE, UTGB_UI_RED, UTGB_UI_BLACK);
+
+#define UTGB_UI_SET_TEXT_COLOR(newPalette) (set_bkg_palette(7, 1, (void *)&newPalette))
+
+#define ui_frame_tl_tiles 0xC0u
+#define UTGB_Set_Border_Yellow SetBankedBkgData(ui_frame_tl_tiles, 9, frame_image_yellow, BANK(frame_image_yellow))
+#define UTGB_Set_Border_Default SetBankedBkgData(ui_frame_tl_tiles, 9, frame_image, BANK(frame_image))
 
 #define VAR_CURRENT_HP 2
 #define VAR_MAX_HP 3
@@ -108,6 +129,7 @@ void copy_screen_area_to_overlay(SCRIPT_CTX * THIS, UBYTE x, UBYTE y, UBYTE w, U
 #define PM_DEFAULT _current_bank, (MENU_CANCEL_B | MENU_SET_START)
 const char PM_InstSpeed[] = "\001\001";
 const char PM_SmallFont[] = "\002\005";
+const char PM_ColoredFont[] = "\002\002";
 
 
 
@@ -118,7 +140,7 @@ const char PM_SmallFont[] = "\002\005";
 const struct menu_item_t PM_Main[] = {
     {.X=1u, .Y=9u,  .iL=0u, .iR=0u, .iU=0u, .iD=2u}, // ITEM
     {.X=1u, .Y=10u, .iL=0u, .iR=0u, .iU=1u, .iD=3u}, // STAT
-    {.X=1u, .Y=11u, .iL=0u, .iR=0u, .iU=2u, .iD=0u}  // CALL
+    {.X=1u, .Y=11u, .iL=0u, .iR=0u, .iU=2u, .iD=0u}  // CELL
 };
 
 const char PM_Main_StartPos[] = "\003\003\012";
@@ -134,7 +156,8 @@ void PM_Main_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     strcat(d, PM_InstSpeed);
     strcat(d, PM_Main_StartPos);
-    strcat(d, "ITEM\nSTAT\nCALL");
+    strcat(d, PM_ColoredFont);
+    strcat(d, "ITEM\nSTAT\nCELL");
     strcat(d, "\n");
 
     //utgb_cat_var_to_string(30, d);
@@ -156,6 +179,7 @@ void PM_Quick_Overview_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     strcat(d, PM_InstSpeed);
     strcat(d, "\003\002\003");
+    strcat(d, PM_ColoredFont);
     
     INT16* namePtr = (INT16 *)VM_REF_TO_PTR(VAR_NAME1);
     utgb_cat_var_as_char(d, *namePtr++);
@@ -258,11 +282,13 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE
     unsigned char * d = ui_text_data;
     *d = 0;
     strcat(d, PM_Item_Dialogue_StartPos);
+    strcat(d, PM_ColoredFont);
 
     if(inv_load_use_main_text(THIS, d, itemSlot, 1)){ //is there use text?
         PM_Item_Text_Write(THIS);
         *d = 0; //reset text buffer
         strcat(d, PM_Item_Dialogue_StartPos);
+        strcat(d, PM_ColoredFont);
     }
 
 
@@ -270,6 +296,7 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE
         PM_Item_Text_Write(THIS);
         *d = 0; //reset text buffer
         strcat(d, PM_Item_Dialogue_StartPos);
+        strcat(d, PM_ColoredFont);
     }
 
     bool hasStatText = inv_use_item_new(THIS, d, itemSlot); //use Item 
@@ -280,7 +307,6 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE
 
     PM_Item_Text_Hide(THIS); // hide text box
 
-    //utgb_move_overlay_content_vram(128, 192, 64, 1);
 }
 
 void PM_Item_Info(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "INFO"
@@ -289,12 +315,14 @@ void PM_Item_Info(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "IN
     *d = 0;
 
     strcat(d, PM_Item_Dialogue_StartPos);
+    strcat(d, PM_ColoredFont);
     inv_load_info_stats(THIS, d, itemSlot); // Load stat text like "*ItemName\nHeals X HP"
     PM_Item_Text_Write(THIS);
 
     *d = 0; //clear text buffer
 
     strcat(d, PM_Item_Dialogue_StartPos);
+    strcat(d, PM_ColoredFont);
     inv_load_info_desc(THIS, d, itemSlot); // Load item description
     PM_Item_Text_Write(THIS);
 
@@ -306,14 +334,10 @@ void PM_Item_Drop(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "DR
     unsigned char * d = ui_text_data;
     *d = 0;
     strcat(d, PM_Item_Dialogue_StartPos);
+    strcat(d, PM_ColoredFont);
 
     inv_drop_item_new(THIS, d, itemSlot);
-    /*
-    vm_idle(THIS);
-    vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
-    vm_display_text(THIS, 0, 52);
-    vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
-    */
+
     PM_Item_Text_Write(THIS);
 
     PM_Item_Text_Hide(THIS); // hide text box
@@ -337,9 +361,7 @@ void PM_Stat_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     strcat(d, PM_InstSpeed);
     strcat(d, PM_Stat_StartPos);
-    //strcat(d, "put\nItems\nhere");
-
-    //strcat(d, "Put Stats\nhere");
+    strcat(d, PM_ColoredFont);
 
     // Write name:
     strcat(d, "\"");
@@ -393,6 +415,9 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
     uint8_t choice1 = 1; // default selected menu item
     uint8_t choice2 = 1;
     uint8_t choice3 = 1;
+
+    UTGB_UI_SET_TEXT_COLOR(UTGB_white_text);
+    UTGB_Set_Border_Yellow;
     
     copy_screen_area_to_overlay(THIS, 0, 0, 20, 18);
     vm_overlay_setpos(THIS, 0, 0);
@@ -480,15 +505,15 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
             }
             break;
 
-        case 3: // CALL
-            // TODO: Code for Call menu
+        case 3: // CELL
+            // TODO: Code for Cell menu
             menu_level++;
             while (menu_level == 2) {
 
 
-                // TODO: Code for Call menu
+                // TODO: Code for Cell menu
 
-                //PM_Call_Show(THIS);
+                //PM_Cell_Show(THIS);
 
                 vm_overlay_wait(THIS, 1, UI_WAIT_BTN_B);// Wait for B press
                 choice2 = 1; //debug // reset default selected menu item
@@ -507,6 +532,8 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     vm_overlay_setpos(THIS, 0, 18);
 
+    UTGB_UI_SET_TEXT_COLOR(UTGB_yellow_text);
+    UTGB_Set_Border_Default;
     
 
 
