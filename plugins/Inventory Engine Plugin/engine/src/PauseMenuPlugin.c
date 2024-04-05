@@ -242,6 +242,16 @@ void PM_Item_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 
 #define PM_Item_Hide(THIS) copy_screen_area_to_overlay(THIS, PM_Item_BBox)
+#define PM_Item_Text_Hide(THIS) copy_screen_area_to_overlay(THIS, PM_Item_Dialogue_BBox)
+
+void PM_Item_Text_Write(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    vm_idle(THIS);
+    vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
+    vm_display_text(THIS, 0, 52);
+    vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
+}
+
+// =================== Item Submenu Functions ========================= //
 
 void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE"
 
@@ -250,36 +260,63 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE
     strcat(d, PM_Item_Dialogue_StartPos);
 
     if(inv_load_use_main_text(THIS, d, itemSlot, 1)){ //is there use text?
-        vm_idle(THIS);
-        vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
-        vm_display_text(THIS, 0, 52);
-        vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
+        PM_Item_Text_Write(THIS);
         *d = 0; //reset text buffer
         strcat(d, PM_Item_Dialogue_StartPos);
     }
 
 
     if(inv_load_use_main_text(THIS, d, itemSlot, 2)){ //is there a second box of use text?
-        vm_idle(THIS);
-        vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
-        vm_display_text(THIS, 0, 52);
-        vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
+        PM_Item_Text_Write(THIS);
         *d = 0; //reset text buffer
         strcat(d, PM_Item_Dialogue_StartPos);
     }
 
-    bool hasStatText = inv_use_item_new(THIS, d, itemSlot);
+    bool hasStatText = inv_use_item_new(THIS, d, itemSlot); //use Item 
     if(hasStatText){ //does this item show stats on use? (like "Healed 10 HP!")
-        vm_idle(THIS);
-        vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
-        vm_display_text(THIS, 0, 52);
-        vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
+        PM_Item_Text_Write(THIS);
     }
 
 
-    copy_screen_area_to_overlay(THIS, PM_Item_Dialogue_BBox);
+    PM_Item_Text_Hide(THIS); // hide text box
 
-    utgb_move_overlay_content_vram(128, 192, 64, 1);
+    //utgb_move_overlay_content_vram(128, 192, 64, 1);
+}
+
+void PM_Item_Info(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "INFO"
+
+    unsigned char * d = ui_text_data;
+    *d = 0;
+
+    strcat(d, PM_Item_Dialogue_StartPos);
+    inv_load_info_stats(THIS, d, itemSlot); // Load stat text like "*ItemName\nHeals X HP"
+    PM_Item_Text_Write(THIS);
+
+    *d = 0; //clear text buffer
+
+    strcat(d, PM_Item_Dialogue_StartPos);
+    inv_load_info_desc(THIS, d, itemSlot); // Load item description
+    PM_Item_Text_Write(THIS);
+
+    PM_Item_Text_Hide(THIS); // hide text box
+}
+
+void PM_Item_Drop(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "DROP"
+
+    unsigned char * d = ui_text_data;
+    *d = 0;
+    strcat(d, PM_Item_Dialogue_StartPos);
+
+    inv_drop_item_new(THIS, d, itemSlot);
+    /*
+    vm_idle(THIS);
+    vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
+    vm_display_text(THIS, 0, 52);
+    vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
+    */
+    PM_Item_Text_Write(THIS);
+
+    PM_Item_Text_Hide(THIS); // hide text box
 }
 
 
@@ -348,7 +385,7 @@ void PM_Stat_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
 
 
-
+// ===================== Run Menu System =============================== //
 
 void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
@@ -391,6 +428,9 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
                     menu_level--; // back 1 menu
                     continue;
                 }
+
+                if(!inv_get_item(THIS, choice2 - 1)) continue; // skip if slot has no item
+
                 // If Item Selected:
                 choice3 = 1;
                 choice3 = ui_run_menu(PM_Item_Interact, PM_DEFAULT, 3, choice3);
@@ -404,13 +444,15 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
                 case 2: // INFO
                     
+                    PM_Item_Info(THIS, choice2 - 1);
                     break;
 
                 case 3: // DROP
                     
+                    PM_Item_Drop(THIS, choice2 - 1);
                     break;
                 
-                default:
+                default: // B pressed
                     break;
                 }
 
@@ -425,7 +467,7 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
             while (menu_level == 2) {
 
 
-                // TODO: Code for Item menu
+                // TODO: Code for Stat menu
 
                 PM_Stat_Show(THIS);
 
@@ -444,7 +486,7 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
             while (menu_level == 2) {
 
 
-                // TODO: Code for Item menu
+                // TODO: Code for Call menu
 
                 //PM_Call_Show(THIS);
 

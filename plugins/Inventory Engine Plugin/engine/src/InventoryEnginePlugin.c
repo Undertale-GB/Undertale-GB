@@ -199,6 +199,13 @@ void inv_read_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
 
 }
 
+uint8_t inv_get_item(SCRIPT_CTX * THIS, uint8_t InvSlot) OLDCALL BANKED {
+
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+
+    return invPtr[InvSlot];
+}
+
 void inv_load_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
     THIS;
 
@@ -327,7 +334,7 @@ bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCAL
     uint8_t item = invPtr[invSlot];
     bool hasText = false;
 
-    while (*string) string++;
+    //while (*string) string++;
 
     switch (items[item].useType){
 
@@ -493,7 +500,22 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
     
 }
 
+void inv_drop_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
+    
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    
+    uint8_t item = invPtr[invSlot];
 
+    strcat(string, "*You dropped the\n|");
+    strcat(string, items[item].name);
+    strcat(string, ".");
+
+    inv_remove_item(THIS);
+
+}
+
+//deprecated
+//TODO: Remove all calls to this function from GBVM
 void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
     
     unsigned char * d = ui_text_data;
@@ -504,7 +526,7 @@ void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
 
     *d = 0;
     strcat(d, menuInvStartPosStr);
-    strcat(d, "*You dropped the\n");
+    strcat(d, "*You dropped the\n|");
     strcat(d, items[item].name);
     strcat(d, ".");
 
@@ -515,6 +537,56 @@ void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
 
 }
 
+void inv_load_info_stats(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
+
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t item = invPtr[invSlot];
+
+    if(item == 0) return; // shouldn't happen, but just in case
+
+    strcat(string, "*");
+    strcat(string, items[item].name);
+    strcat(string, "\n\n");
+
+    switch (items[item].useType){
+
+        case 1://Consumable
+
+            strcat(string, "|Heals ");
+            strcat(string, items[item].amountStr);
+            strcat(string, " HP");
+            break;
+
+        case 2://Weapon
+
+            strcat(string, "|Weapon AT ");
+            strcat(string, items[item].amountStr);
+            break;
+
+        case 3://Armor
+
+            strcat(string, "|Armor DF ");
+            strcat(string, items[item].amountStr);
+            break;
+
+        default://special cases
+
+            strcat(string, items[item].amountStr);
+            break;
+    }
+
+}
+
+void inv_load_info_desc(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
+
+    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t item = invPtr[invSlot];
+
+    strcat(string, items[item].desc);
+}
+
+//deprecated
+//TODO: Remove all calls to this function from GBVM
 void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
 
     unsigned char * d = ui_text_data;

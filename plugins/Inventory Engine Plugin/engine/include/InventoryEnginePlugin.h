@@ -33,11 +33,16 @@ Use during dialogue
 void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED;
 
 /*
+Check if inventory slot has any item
+*/
+uint8_t inv_get_item(SCRIPT_CTX * THIS, uint8_t InvSlot) OLDCALL BANKED;
+
+/*
 Removes Item from specified Slot
 Stack: 
 - 0:Inventory Slot
 */
-void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED;
+void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED; //deprecated
 void inv_remove_item_new(SCRIPT_CTX * THIS, uint8_t invSlot) OLDCALL BANKED;
 
 /*
@@ -51,7 +56,7 @@ Stack:
 - 0: Inventory Slot 
 - 1: Bool inBattle
 */
-void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED;
+void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED; //deprecated
 bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED;
 
 /*
@@ -59,7 +64,24 @@ Drops an Item, with dialogue
 Stack: 
 - 0:Inventory Slot
 */
-void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED;
+void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED; //deprecated
+void inv_drop_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED;
+
+/*
+loads the item's stat text
+For example:
+*Monster Candy
+ Heals 10 HP
+*/
+void inv_load_info_stats(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED;
+
+/*
+loads the item's description text
+For example:
+*Has a distinct,
+ non-licorice flavour.
+*/
+void inv_load_info_desc(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED;
 
 /*
 Writes the Item's description
