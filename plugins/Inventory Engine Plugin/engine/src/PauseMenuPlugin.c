@@ -73,7 +73,7 @@ void utgb_move_overlay_content_vram(uint8_t source_tile, uint8_t target_tile, ui
 
     VBK_REG = vram_reg;
 
-    for(uint8_t i = 0; i < nb_tiles; i++) {
+    for(uint8_t i = 0; i < nb_tiles; i++) { // copy VRAM area
 
         get_bkg_data(source_tile + i, 1, TempTileStorage);
 
@@ -84,9 +84,8 @@ void utgb_move_overlay_content_vram(uint8_t source_tile, uint8_t target_tile, ui
     VBK_REG = 0;
 
     for(uint8_t y = 0; y < 18; y++) {
-        for(uint8_t x = 0; x < 20; x++) {
-            //uint8_t get_win_tile_xy(uint8_t x, uint8_t y) OLDCALL PRESERVES_REGS(b, c);
-            //uint8_t * set_win_tile_xy(uint8_t x, uint8_t y, uint8_t t) OLDCALL PRESERVES_REGS(b, c);
+        for(uint8_t x = 0; x < 20; x++) { // change tile IDs on overlay to point to new location
+            
             VBK_REG = 1;
 
             uint8_t tile_vram_banked = (get_win_tile_xy(x, y) & 0b00001000) >> 3; //get VRAM bank of tile
@@ -373,11 +372,28 @@ void PM_Stat_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     strcat(d, PM_SmallFont);
 
-    strcat(d, "AT: 0(0)\n");
-    strcat(d, "DF: 0(0)\n\n");
+    INT16 attack = VAR_VAL(VAR_ATTACK_BASE_) + VAR_VAL(VAR_ATTACK_ITEM_);
+    INT16 defense = VAR_VAL(VAR_DEFENSE_BASE_) + VAR_VAL(VAR_DEFENSE_ITEM_);
 
-    strcat(d, "EXP: 0(0)\n");
-    strcat(d, "NEXT: 0(0)\n\n");
+    strcat(d, "AT: ");
+    utgb_cat_var_to_string(d, attack);
+    strcat(d, "(");
+    utgb_cat_var_to_string(d, VAR_VAL(VAR_ATTACK_BASE_));
+    strcat(d, ")\n");
+
+    strcat(d, "DF: ");
+    utgb_cat_var_to_string(d, defense);
+    strcat(d, "(");
+    utgb_cat_var_to_string(d, VAR_VAL(VAR_DEFENSE_BASE_));
+    strcat(d, ")\n");
+
+    strcat(d, "EXP: ");
+    utgb_cat_var_to_string(d, VAR_VAL(VAR_EXP));
+    strcat(d, "\n");
+
+    strcat(d, "NEXT: ");
+    utgb_cat_var_to_string(d, VAR_VAL(VAR_EXP_TO_NEXT_LEVEL));
+    strcat(d, "\n\n");
 
     strcat(d, "WPN: ");
     inv_load_item_name(THIS, 0, 1);

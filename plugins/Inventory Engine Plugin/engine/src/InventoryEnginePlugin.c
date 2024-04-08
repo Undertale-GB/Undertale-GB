@@ -10,15 +10,9 @@
 #include <types.h>
 #include "gbs_types.h"
 
+#include "UTGBVariables.h"
 #include "InventoryEnginePlugin.h"
 
-//check "game_globals.i" in exported data to find values
-#define InvMainPtr 34
-#define EquippedItemsPtr 41
-#define VAR_CURRENT_HP 2
-#define VAR_MAX_HP 3
-#define VAR_ATTACK_ITEM_ 26
-#define VAR_DEFENSE_ITEM_ 27
 
 const char textSpeedStr[] = "\001\001";
 const char fontSmallStr[] = "\002\005";
@@ -141,7 +135,7 @@ void inv_load_item_name(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     unsigned char * d = ui_text_data;
 
-    int16_t itemID = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    int16_t itemID = VAR_VAL(FN_ARG0);
     uint8_t i = 0;
     while (textSpeedStr[i] != '\0')
     {
@@ -168,15 +162,15 @@ void inv_load_item_name(SCRIPT_CTX * THIS, uint8_t InvSlot, uint8_t InvType) OLD
     switch (InvType)
     {
     case 0:
-        invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+        invPtr = VAR_PTR_8(InvMainPtr);
         break;
 
     case 1:
-        invPtr = (uint8_t *)VM_REF_TO_PTR(EquippedItemsPtr);
+        invPtr = VAR_PTR_8(EquippedItemsPtr);
         break;
     
     default:
-        invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr); // default to base inventory
+        invPtr = VAR_PTR_8(InvMainPtr); // default to base inventory
         break;
     }
 
@@ -188,20 +182,20 @@ void inv_load_item_name(SCRIPT_CTX * THIS, uint8_t InvSlot, uint8_t InvType) OLD
 //TODO: remove function
 void inv_read_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, Inventory Type
 
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
-    if (*(int16_t*)VM_REF_TO_PTR(FN_ARG1) == 1){
-        invPtr = (uint8_t *)VM_REF_TO_PTR(EquippedItemsPtr);//This function is for basically everything i haven't remade yet.
+    if (VAR_VAL(FN_ARG1) == 1){
+        invPtr = VAR_PTR_8(EquippedItemsPtr);//This function is for basically everything i haven't remade yet.
     }                                                       //I'm remaking it for legacy code, but not putting too much work into it.
-    uint8_t slot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    uint8_t slot = VAR_VAL(FN_ARG0);
 
-    *(int16_t*)VM_REF_TO_PTR(FN_ARG0) = invPtr[slot];
+    VAR_VAL(FN_ARG0) = invPtr[slot];
 
 }
 
 uint8_t inv_get_item(SCRIPT_CTX * THIS, uint8_t InvSlot) OLDCALL BANKED {
 
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
     return invPtr[InvSlot];
 }
@@ -212,7 +206,7 @@ void inv_load_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
     unsigned char * d = ui_text_data;
     //*d = 0;
 
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
     //strcat(d, textSpeedStr);
     //strcat(d, fontSmallStr);
@@ -226,8 +220,8 @@ void inv_load_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
 void inv_add_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
 
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
-    int16_t * itemPtr = (int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
+    int16_t * itemPtr = VAR_PTR_16(FN_ARG0);
     if(invPtr[7] == 0){//if any slot empty
 
         uint8_t i = 0;
@@ -242,9 +236,9 @@ void inv_add_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
 void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
     
     unsigned char * d = ui_text_data;
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     
-    int16_t * itemPtr = (int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    int16_t * itemPtr = VAR_PTR_16(FN_ARG0);
 
     *d = 0;
     //strcat(d, menuInvStartPosStr);
@@ -273,7 +267,7 @@ void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
 } //Stack Out: 0 if inventory full, otherwise Item ID
 
 void inv_remove_item_new(SCRIPT_CTX * THIS, uint8_t invSlot) OLDCALL BANKED {
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
     for (uint8_t i = invSlot; i<7; i++){
         invPtr[i] = invPtr[i + 1];
@@ -284,8 +278,8 @@ void inv_remove_item_new(SCRIPT_CTX * THIS, uint8_t invSlot) OLDCALL BANKED {
 //deprecated
 //TODO: Remove all calls to this function
 void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
-    uint8_t rSlot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
+    uint8_t rSlot = VAR_VAL(FN_ARG0);
 
     for (uint8_t i = rSlot; i<7; i++){
         invPtr[i] = invPtr[i + 1];
@@ -294,7 +288,7 @@ void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Sl
 }
 
 bool inv_load_use_main_text(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot, uint8_t textNum) OLDCALL BANKED {
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
     uint8_t item = invPtr[invSlot];
 
@@ -324,17 +318,25 @@ bool inv_load_use_main_text(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot, 
     return false;
 }
 
+void inv_update_stats(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    uint8_t * equipPtr = VAR_PTR_8(EquippedItemsPtr);
+
+    uint8_t weaponID = equipPtr[0];
+    uint8_t armorID = equipPtr[1];
+
+    VAR_VAL(VAR_ATTACK_ITEM_) = (int16_t)items[weaponID].amount;
+    VAR_VAL(VAR_DEFENSE_ITEM_) = (int16_t)items[armorID].amount;
+}
+
 bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
 
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
-    uint8_t * equipPtr = (uint8_t *)VM_REF_TO_PTR(EquippedItemsPtr);
-    int16_t * currentHP = (int16_t*)VM_REF_TO_PTR(VAR_CURRENT_HP);
-    int16_t * maxHP = (int16_t*)VM_REF_TO_PTR(VAR_MAX_HP);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
+    uint8_t * equipPtr = VAR_PTR_8(EquippedItemsPtr);
+    int16_t * currentHP = VAR_PTR_16(VAR_CURRENT_HP);
+    int16_t * maxHP = VAR_PTR_16(VAR_MAX_HP);
 
     uint8_t item = invPtr[invSlot];
     bool hasText = false;
-
-    //while (*string) string++;
 
     switch (items[item].useType){
 
@@ -368,11 +370,7 @@ bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCAL
                 while (invPtr[i] != 0) i++;
                 invPtr[i] = itemTemp; // store unequipped item in inventory
 
-                if(equipSlot == 0){ // set attack / defense stat
-                    *(int16_t*)VM_REF_TO_PTR(VAR_ATTACK_ITEM_) = (int16_t)items[item].amount;
-                }else{
-                    *(int16_t*)VM_REF_TO_PTR(VAR_DEFENSE_ITEM_) = (int16_t)items[item].amount;
-                }
+                inv_update_stats(THIS);
 
             }
             
@@ -390,11 +388,11 @@ bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCAL
 void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, bool isInBattle
 
     unsigned char * d = ui_text_data;
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
-    uint8_t * equipPtr = (uint8_t *)VM_REF_TO_PTR(EquippedItemsPtr);
-    int16_t * currentHP = (int16_t*)VM_REF_TO_PTR(VAR_CURRENT_HP);
-    int16_t * maxHP = (int16_t*)VM_REF_TO_PTR(VAR_MAX_HP);
-    uint8_t slot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
+    uint8_t * equipPtr = VAR_PTR_8(EquippedItemsPtr);
+    int16_t * currentHP = VAR_PTR_16(VAR_CURRENT_HP);
+    int16_t * maxHP = VAR_PTR_16(VAR_MAX_HP);
+    uint8_t slot = VAR_VAL(FN_ARG0);
     uint8_t inBattle = *(uint8_t*)VM_REF_TO_PTR(FN_ARG1);
     uint8_t item = invPtr[slot];
 
@@ -486,9 +484,9 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
                 invPtr[i] = itemTemp; // store unequipped item in inventory
 
                 if(equipSlot == 0){ // set attack / defense stat
-                    *(int16_t*)VM_REF_TO_PTR(VAR_ATTACK_ITEM_) = (int16_t)items[item].amount;
+                    VAR_VAL(VAR_ATTACK_ITEM_) = (int16_t)items[item].amount;
                 }else{
-                    *(int16_t*)VM_REF_TO_PTR(VAR_DEFENSE_ITEM_) = (int16_t)items[item].amount;
+                    VAR_VAL(VAR_DEFENSE_ITEM_) = (int16_t)items[item].amount;
                 }
 
             }
@@ -502,7 +500,7 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
 
 void inv_drop_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
     
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     
     uint8_t item = invPtr[invSlot];
 
@@ -519,9 +517,9 @@ void inv_drop_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCA
 void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
     
     unsigned char * d = ui_text_data;
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     
-    uint8_t slot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    uint8_t slot = VAR_VAL(FN_ARG0);
     uint8_t item = invPtr[slot];
 
     *d = 0;
@@ -539,7 +537,7 @@ void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
 
 void inv_load_info_stats(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
 
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     uint8_t item = invPtr[invSlot];
 
     if(item == 0) return; // shouldn't happen, but just in case
@@ -579,7 +577,7 @@ void inv_load_info_stats(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLD
 
 void inv_load_info_desc(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
 
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     uint8_t item = invPtr[invSlot];
 
     strcat(string, items[item].desc);
@@ -590,9 +588,9 @@ void inv_load_info_desc(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDC
 void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
 
     unsigned char * d = ui_text_data;
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     
-    uint8_t slot = *(int16_t*)VM_REF_TO_PTR(FN_ARG0);
+    uint8_t slot = VAR_VAL(FN_ARG0);
     uint8_t item = invPtr[slot];
 
     if(item == 0) return;
@@ -646,7 +644,7 @@ void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventor
 //is this used anywhere?
 uint8_t inv_get_item_count(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
-    uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
+    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
     uint8_t i = 0;
     
