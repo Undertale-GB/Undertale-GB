@@ -16,6 +16,7 @@
 #include "bankdata.h"
 #include "data/frame_image.h"
 
+#include "UTGBVariables.h"
 #include "InventoryEnginePlugin.h"
 
 #include "data/frame_image_yellow.h"
@@ -37,14 +38,6 @@ const palette_entry_t UTGB_white_text = CGB_PALETTE(UTGB_UI_WHITE, UTGB_UI_WHITE
 #define UTGB_Set_Border_Yellow SetBankedBkgData(ui_frame_tl_tiles, 9, frame_image_yellow, BANK(frame_image_yellow))
 #define UTGB_Set_Border_Default SetBankedBkgData(ui_frame_tl_tiles, 9, frame_image, BANK(frame_image))
 
-#define VAR_CURRENT_HP 2
-#define VAR_MAX_HP 3
-#define VAR_GOLD_MONEY_ 16
-#define VAR_LEVEL 17
-#define VAR_NAME1 19
-
-
-#define VAR_VAL(ID) (*(INT16 *)VM_REF_TO_PTR(ID))
 
 
 
@@ -76,7 +69,7 @@ void utgb_cat_var_as_char(UBYTE * string, INT16 value) OLDCALL BANKED {
 
 void utgb_move_overlay_content_vram(uint8_t source_tile, uint8_t target_tile, uint8_t nb_tiles, uint8_t vram_reg) OLDCALL BANKED {
 
-    uint8_t TempTileStorage[16];
+    uint8_t TempTileStorage[16]; // stores 1 tile
 
     VBK_REG = vram_reg;
 
@@ -132,6 +125,19 @@ const char PM_SmallFont[] = "\002\005";
 const char PM_ColoredFont[] = "\002\002";
 
 
+
+
+#define PM_Dialogue_BBox 0, 13, 20, 5
+#define PM_Dialogue_StartPos "\003\002\017"
+
+void PM_Dialogue_Write(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    vm_idle(THIS);
+    vm_overlay_clear(THIS, PM_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
+    vm_display_text(THIS, 0, 52);
+    vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
+}
+
+#define PM_Dialogue_Hide(THIS) copy_screen_area_to_overlay(THIS, PM_Dialogue_BBox)
 
 
 
@@ -233,9 +239,7 @@ const struct menu_item_t PM_Item_Interact[] = {
 };
 
 #define PM_Item_BBox 9, 1, 11, 12
-#define PM_Item_Dialogue_BBox 0, 13, 20, 5
 #define PM_Item_StartPos "\003\014\003"
-#define PM_Item_Dialogue_StartPos "\003\002\017"
 
 void PM_Item_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
@@ -266,14 +270,7 @@ void PM_Item_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 
 #define PM_Item_Hide(THIS) copy_screen_area_to_overlay(THIS, PM_Item_BBox)
-#define PM_Item_Text_Hide(THIS) copy_screen_area_to_overlay(THIS, PM_Item_Dialogue_BBox)
 
-void PM_Item_Text_Write(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    vm_idle(THIS);
-    vm_overlay_clear(THIS, PM_Item_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
-    vm_display_text(THIS, 0, 52);
-    vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
-}
 
 // =================== Item Submenu Functions ========================= //
 
@@ -281,31 +278,31 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE
 
     unsigned char * d = ui_text_data;
     *d = 0;
-    strcat(d, PM_Item_Dialogue_StartPos);
+    strcat(d, PM_Dialogue_StartPos);
     strcat(d, PM_ColoredFont);
 
     if(inv_load_use_main_text(THIS, d, itemSlot, 1)){ //is there use text?
-        PM_Item_Text_Write(THIS);
+        PM_Dialogue_Write(THIS);
         *d = 0; //reset text buffer
-        strcat(d, PM_Item_Dialogue_StartPos);
+        strcat(d, PM_Dialogue_StartPos);
         strcat(d, PM_ColoredFont);
     }
 
 
     if(inv_load_use_main_text(THIS, d, itemSlot, 2)){ //is there a second box of use text?
-        PM_Item_Text_Write(THIS);
+        PM_Dialogue_Write(THIS);
         *d = 0; //reset text buffer
-        strcat(d, PM_Item_Dialogue_StartPos);
+        strcat(d, PM_Dialogue_StartPos);
         strcat(d, PM_ColoredFont);
     }
 
     bool hasStatText = inv_use_item_new(THIS, d, itemSlot); //use Item 
     if(hasStatText){ //does this item show stats on use? (like "Healed 10 HP!")
-        PM_Item_Text_Write(THIS);
+        PM_Dialogue_Write(THIS);
     }
 
 
-    PM_Item_Text_Hide(THIS); // hide text box
+    PM_Dialogue_Hide(THIS); // hide text box
 
 }
 
@@ -314,33 +311,33 @@ void PM_Item_Info(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "IN
     unsigned char * d = ui_text_data;
     *d = 0;
 
-    strcat(d, PM_Item_Dialogue_StartPos);
+    strcat(d, PM_Dialogue_StartPos);
     strcat(d, PM_ColoredFont);
     inv_load_info_stats(THIS, d, itemSlot); // Load stat text like "*ItemName\nHeals X HP"
-    PM_Item_Text_Write(THIS);
+    PM_Dialogue_Write(THIS);
 
     *d = 0; //clear text buffer
 
-    strcat(d, PM_Item_Dialogue_StartPos);
+    strcat(d, PM_Dialogue_StartPos);
     strcat(d, PM_ColoredFont);
     inv_load_info_desc(THIS, d, itemSlot); // Load item description
-    PM_Item_Text_Write(THIS);
+    PM_Dialogue_Write(THIS);
 
-    PM_Item_Text_Hide(THIS); // hide text box
+    PM_Dialogue_Hide(THIS); // hide text box
 }
 
 void PM_Item_Drop(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "DROP"
 
     unsigned char * d = ui_text_data;
     *d = 0;
-    strcat(d, PM_Item_Dialogue_StartPos);
+    strcat(d, PM_Dialogue_StartPos);
     strcat(d, PM_ColoredFont);
 
     inv_drop_item_new(THIS, d, itemSlot);
 
-    PM_Item_Text_Write(THIS);
+    PM_Dialogue_Write(THIS);
 
-    PM_Item_Text_Hide(THIS); // hide text box
+    PM_Dialogue_Hide(THIS); // hide text box
 }
 
 
@@ -348,7 +345,7 @@ void PM_Item_Drop(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "DR
 
 // ===================== Stat Menu =============================== //
 
-#define PM_Stat_BBox 10, 1, 8, 12
+#define PM_Stat_BBox 10, 1, 10, 12
 #define PM_Stat_StartPos "\003\014\003"
 
 void PM_Stat_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {

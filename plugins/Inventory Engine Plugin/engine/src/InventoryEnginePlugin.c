@@ -185,7 +185,7 @@ void inv_load_item_name(SCRIPT_CTX * THIS, uint8_t InvSlot, uint8_t InvType) OLD
     strcat(d, items[itemID].name);
 }
 
-
+//TODO: remove function
 void inv_read_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, Inventory Type
 
     uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);
@@ -643,6 +643,7 @@ void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventor
 }
 
 //untested
+//is this used anywhere?
 uint8_t inv_get_item_count(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     uint8_t * invPtr = (uint8_t *)VM_REF_TO_PTR(InvMainPtr);

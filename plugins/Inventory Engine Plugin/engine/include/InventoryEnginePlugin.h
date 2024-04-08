@@ -33,7 +33,7 @@ Use during dialogue
 void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED;
 
 /*
-Check if inventory slot has any item
+Get Item ID at inventory slot
 */
 uint8_t inv_get_item(SCRIPT_CTX * THIS, uint8_t InvSlot) OLDCALL BANKED;
 
