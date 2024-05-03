@@ -417,6 +417,28 @@ void PM_Stat_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
 
 
+// ===================== Cell Menu =============================== //
+
+#define PM_Cell_BBox 8, 9, 11, 4
+#define PM_Cell_StartPos "\003\012\013"
+
+void PM_Cell_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
+    vm_overlay_clear(THIS, PM_Cell_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
+
+    unsigned char * d = ui_text_data;
+    *d = 0;
+
+    strcat(d, PM_InstSpeed);
+    strcat(d, PM_Cell_StartPos);
+    strcat(d, PM_ColoredFont);
+
+    strcat(d, "Cell Menu\nplaceholder");
+
+    vm_display_text(THIS, 0, 29);
+    vm_overlay_wait(THIS, 1, UI_WAIT_TEXT);
+}
+
+#define PM_Cell_Hide(THIS) copy_screen_area_to_overlay(THIS, PM_Cell_BBox)
 
 
 
@@ -493,8 +515,6 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
                 default: // B pressed
                     break;
                 }
-
-                // TODO: Code for Item menu
                 
             }
             break;
@@ -526,9 +546,12 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
                 // TODO: Code for Cell menu
 
-                //PM_Cell_Show(THIS);
+                PM_Cell_Show(THIS);
 
                 vm_overlay_wait(THIS, 1, UI_WAIT_BTN_B);// Wait for B press
+
+                PM_Cell_Hide(THIS);
+
                 choice2 = 1; //debug // reset default selected menu item
                 menu_level--; //debug
             }
