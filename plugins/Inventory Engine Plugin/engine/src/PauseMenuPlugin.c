@@ -57,6 +57,10 @@ void utgb_cat_var_to_string(UBYTE * string, INT16 value) OLDCALL BANKED {
     return;
 }
 
+/*
+concatanates an INT16 number to a string as a char
+use like "strcat()"
+*/
 void utgb_cat_var_as_char(UBYTE * string, INT16 value) OLDCALL BANKED {
 
     while (*string) string++;
@@ -67,6 +71,11 @@ void utgb_cat_var_as_char(UBYTE * string, INT16 value) OLDCALL BANKED {
 
 }
 
+/*
+Moves a section of VRAM, updating IDs on tilemap to new position
+New VRAM position can only be on Bank 2
+Updating tile IDs only works on overlay
+*/
 void utgb_move_overlay_content_vram(uint8_t source_tile, uint8_t target_tile, uint8_t nb_tiles, uint8_t vram_reg) OLDCALL BANKED {
 
     uint8_t TempTileStorage[16]; // stores 1 tile
@@ -473,7 +482,6 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
         case 1: // ITEM
 
             menu_level++;
-            //PM_Item_Show(THIS);
             
             while (menu_level == 2) {
 
@@ -520,12 +528,9 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
             break;
 
         case 2: // STAT
-            // TODO: Code for Stat menu
+
             menu_level++;
             while (menu_level == 2) {
-
-
-                // TODO: Code for Stat menu
 
                 PM_Stat_Show(THIS);
 
@@ -533,8 +538,8 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
                 PM_Stat_Hide(THIS);
 
-                choice2 = 1; //debug // reset default selected menu item
-                menu_level--; //debug
+                choice2 = 1; // reset default selected menu item
+                menu_level--; // back 1 menu
             }
             break;
 
@@ -552,8 +557,8 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
                 PM_Cell_Hide(THIS);
 
-                choice2 = 1; //debug // reset default selected menu item
-                menu_level--; //debug
+                choice2 = 1; // reset default selected menu item
+                menu_level--; // back 1 menu
             }
             break;
 
