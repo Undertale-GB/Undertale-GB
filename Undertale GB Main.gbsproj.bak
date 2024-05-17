@@ -110653,7 +110653,7 @@
             "symbol": "sound_puzzles_sav",
             "filename": "puzzles.sav",
             "type": "fxhammer",
-            "inode": "281474977048947",
+            "inode": "47850746041095721",
             "_v": 1687182357805
         },
         {
@@ -110662,7 +110662,7 @@
             "symbol": "sound_ui_sav",
             "filename": "ui.sav",
             "type": "fxhammer",
-            "inode": "281474977048948",
+            "inode": "8162774324893246",
             "_v": 1687182357805
         },
         {
@@ -110671,7 +110671,7 @@
             "symbol": "sound_voices_sav",
             "filename": "voices.sav",
             "type": "fxhammer",
-            "inode": "281474977048950",
+            "inode": "43347146413725296",
             "_v": 1679310567138
         }
     ],
@@ -111115,17 +111115,17 @@
         }
     ],
     "settings": {
-        "startSceneId": "27697607-24f3-4a08-9706-e372955b1642",
-        "startX": 15,
-        "startY": 21,
+        "startSceneId": "b4887780-0a45-45e6-b7af-d171ae0018ff",
+        "startX": 0,
+        "startY": 0,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "up",
         "showCollisions": true,
         "showConnections": "selected",
-        "worldScrollX": 1347,
-        "worldScrollY": 2143,
-        "zoom": 225,
+        "worldScrollX": 0,
+        "worldScrollY": 0,
+        "zoom": 75,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
