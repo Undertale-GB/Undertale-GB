@@ -259,6 +259,8 @@ void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
         vm_display_text(THIS, 0, 68);
         vm_overlay_wait(THIS, 1, 6);
         vm_overlay_move_to(THIS, 0, 18, UI_OUT_SPEED);
+
+        *itemPtr = 0;
         return;
     }
     vm_overlay_move_to(THIS, 0, 18, UI_OUT_SPEED);
@@ -326,6 +328,12 @@ void inv_update_stats(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
     VAR_VAL(VAR_ATTACK_ITEM_) = (int16_t)items[weaponID].amount;
     VAR_VAL(VAR_DEFENSE_ITEM_) = (int16_t)items[armorID].amount;
+
+    //exceptions:
+    //Bandage provides 0 DEF:
+    if(armorID == 1) VAR_VAL(VAR_DEFENSE_ITEM_) = 0;
+
+    return;
 }
 
 bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
@@ -514,6 +522,7 @@ void inv_drop_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCA
 
 //deprecated
 //TODO: Remove all calls to this function from GBVM
+//confirmed unused on personal file
 void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
     
     unsigned char * d = ui_text_data;
@@ -585,6 +594,7 @@ void inv_load_info_desc(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDC
 
 //deprecated
 //TODO: Remove all calls to this function from GBVM
+//confirmed unused on personal file
 void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
 
     unsigned char * d = ui_text_data;
@@ -638,23 +648,4 @@ void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventor
     vm_overlay_clear(THIS, 0, 7, 19, 5, 0, 1); // show text
     vm_display_text(THIS, 0, 68);
     vm_overlay_wait(THIS, 1, 6);
-}
-
-//untested
-//is this used anywhere?
-uint8_t inv_get_item_count(SCRIPT_CTX * THIS) OLDCALL BANKED {
-
-    uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
-
-    uint8_t i = 0;
-    
-    while(i < 8) {
-
-        if (invPtr[i] == 0) break;
-
-        i++;
-    }
-
-    return i + 1;
-
 }
