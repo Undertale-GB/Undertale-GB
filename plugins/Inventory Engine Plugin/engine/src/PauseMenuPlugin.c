@@ -307,6 +307,8 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE
     bool hasStatText = inv_use_item_new(THIS, d, itemSlot); //use Item 
     if(hasStatText){ //does this item show stats on use? (like "Healed 10 HP!")
         PM_Dialogue_Write(THIS);
+
+        PM_Quick_Overview_Show(THIS); //Update stats (left panel)
     }
 
 
