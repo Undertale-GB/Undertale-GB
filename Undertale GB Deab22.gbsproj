@@ -881,11 +881,24 @@
                     "children": {
                         "true": [
                             {
-                                "command": "EVENT_LOAD_DATA",
+                                "command": "EVENT_IF_SAVED_DATA",
                                 "args": {
-                                    "saveSlot": 0
+                                    "saveSlot": 0,
+                                    "__collapseElse": true
                                 },
-                                "id": "db3eac6f-a3da-483a-9fe0-39687a001e2e"
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_LOAD_DATA",
+                                            "args": {
+                                                "saveSlot": 0
+                                            },
+                                            "id": "db3eac6f-a3da-483a-9fe0-39687a001e2e"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "5fe1630c-191a-418b-82f1-94eef84dbe73"
                             }
                         ],
                         "false": []
@@ -3072,6 +3085,31 @@
                         "__collapse": false
                     },
                     "id": "c0d6938a-9cae-4303-a13a-d4b1b73e2bb3"
+                },
+                {
+                    "command": "EVENT_IF_SAVED_DATA",
+                    "args": {
+                        "saveSlot": 0,
+                        "__collapseElse": false,
+                        "__comment": false
+                    },
+                    "children": {
+                        "true": [],
+                        "false": [
+                            {
+                                "command": "EVENT_SAVE_DATA",
+                                "args": {
+                                    "saveSlot": 0,
+                                    "__scriptTabs": "save"
+                                },
+                                "children": {
+                                    "true": []
+                                },
+                                "id": "a74ec395-a276-4670-b7c3-8ff565f6013c"
+                            }
+                        ]
+                    },
+                    "id": "5bba37c2-964d-4302-8f98-a5efad5e696c"
                 }
             ],
             "playerHit1Script": [],
@@ -56722,9 +56760,9 @@
                                             "value0": 1,
                                             "__collapseCase1": true,
                                             "value1": 2,
-                                            "__collapseCase2": true,
+                                            "__collapseCase2": false,
                                             "value2": 3,
-                                            "__collapseCase3": false,
+                                            "__collapseCase3": true,
                                             "value3": 4,
                                             "__collapseCase4": false,
                                             "value4": 5,
@@ -124095,7 +124133,7 @@
         {
             "id": "d26ffea5-7e12-4535-a12e-69698502911b",
             "name": "Write Item Name",
-            "description": "Writes the name of the item specified by the Item ID onto the overlay at a specific position\nInput Variables:\n\nItemID\nText_X, Text_Y\n\nFont switching is possible, but not currently neccesary",
+            "description": "TO BE REMOVED\n\nWrites the name of the item specified by the Item ID onto the overlay at a specific position\nInput Variables:\n\nItemID\nText_X, Text_Y\n\nFont switching is possible, but not currently neccesary",
             "variables": {},
             "actors": {},
             "symbol": "script_10",
@@ -126762,7 +126800,7 @@
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
         "worldScrollX": 0,
-        "worldScrollY": 612,
+        "worldScrollY": 607,
         "zoom": 100,
         "customColorsEnabled": true,
         "sgbEnabled": false,
@@ -126792,8 +126830,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            439,
-            921
+            440,
+            925
         ],
         "showNavigator": true,
         "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",

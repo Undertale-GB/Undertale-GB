@@ -1,6 +1,8 @@
 
 Undertale GB Deab22.gbsproj.bak
+*.gbsproj.bak
 *.bak
 /build/*
 .vscode
 build/rom
+Undertale GB Main.gbsproj.bak
