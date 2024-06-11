@@ -52449,11 +52449,11 @@
                                         "args": {
                                             "variable": "7",
                                             "choices": 4,
-                                            "__collapseCase0": true,
+                                            "__collapseCase0": false,
                                             "value0": 1,
                                             "__collapseCase1": true,
                                             "value1": 2,
-                                            "__collapseCase2": false,
+                                            "__collapseCase2": true,
                                             "value2": 3,
                                             "__collapseCase3": false,
                                             "value3": 4,
@@ -109435,7 +109435,7 @@
                 {
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
-                        "script": "VM_SET_CONST_UINT8 _show_actors_on_overlay, 0",
+                        "script": "VM_SET_CONST_UINT8 _show_actors_on_overlay, 0\nVM_SET_CONST_UINT8 _overlay_priority 0x80",
                         "__comment": false
                     },
                     "id": "8f36cb8a-18bc-439d-af03-e35283c67c16"
@@ -112298,9 +112298,9 @@
         }
     ],
     "settings": {
-        "startSceneId": "b4887780-0a45-45e6-b7af-d171ae0018ff",
-        "startX": 0,
-        "startY": 0,
+        "startSceneId": "93481461-209a-497c-8304-a54799217280",
+        "startX": 19,
+        "startY": 12,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "up",
