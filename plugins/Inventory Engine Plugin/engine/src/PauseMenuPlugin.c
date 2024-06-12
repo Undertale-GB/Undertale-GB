@@ -40,8 +40,6 @@ const palette_entry_t UTGB_white_text = CGB_PALETTE(UTGB_UI_WHITE, UTGB_UI_WHITE
 
 
 
-
-
 /*
 concatanates an INT16 number to a string
 use like "strcat()"
@@ -118,8 +116,8 @@ Useful for erasing parts of a fullscreen interface
 */
 void copy_screen_area_to_overlay(SCRIPT_CTX * THIS, UBYTE x, UBYTE y, UBYTE w, UBYTE h) OLDCALL BANKED {
     
-    UBYTE scene_x = (scroll_x >> 3) + x;
-    UBYTE scene_y = (scroll_y >> 3) + y;
+    UBYTE scene_x = ((scroll_x - 1) >> 3) + 1 + x;
+    UBYTE scene_y = ((scroll_y - 1) >> 3) + 1 + y;
 
     vm_overlay_set_submap(THIS, x, y, w, h, scene_x, scene_y);
 }
@@ -468,6 +466,12 @@ void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
     copy_screen_area_to_overlay(THIS, 0, 0, 20, 18);
     vm_overlay_setpos(THIS, 0, 0);
 
+    //fix overlay position on moving camera
+    //neccesary for adventure mode conversion
+    win_pos_x = 8 - scroll_x & 0b0111;
+    win_dest_pos_x = 8 - scroll_x & 0b0111;
+    win_pos_y = 8 - scroll_y & 0b0111;
+    win_dest_pos_y = 8 - scroll_y & 0b0111;
 
     //Show main menu
     PM_Quick_Overview_Show(THIS);
