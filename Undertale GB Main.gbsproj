@@ -873,11 +873,24 @@
                     "children": {
                         "true": [
                             {
-                                "command": "EVENT_LOAD_DATA",
+                                "command": "EVENT_IF_SAVED_DATA",
                                 "args": {
-                                    "saveSlot": 0
+                                    "saveSlot": 0,
+                                    "__collapseElse": true
                                 },
-                                "id": "db3eac6f-a3da-483a-9fe0-39687a001e2e"
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_LOAD_DATA",
+                                            "args": {
+                                                "saveSlot": 0
+                                            },
+                                            "id": "db3eac6f-a3da-483a-9fe0-39687a001e2e"
+                                        }
+                                    ],
+                                    "false": []
+                                },
+                                "id": "7e6cc3cc-c2ae-4f59-b634-5e9702c5db61"
                             }
                         ],
                         "false": []
@@ -2542,6 +2555,13 @@
             ],
             "script": [
                 {
+                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                    "args": {
+                        "customEventId": "678c23ac-af19-4d6d-92ce-7c26f79aba89"
+                    },
+                    "id": "29611703-a69e-41a8-822f-224dca0d18a1"
+                },
+                {
                     "command": "EVENT_MUSIC_STOP",
                     "args": {},
                     "id": "651aef9c-94b5-4024-a4f4-60841fe2c8b8"
@@ -2567,7 +2587,8 @@
                 {
                     "command": "EVENT_GROUP",
                     "args": {
-                        "__collapse": false
+                        "__collapse": false,
+                        "__comment": true
                     },
                     "children": {
                         "true": [
@@ -2606,6 +2627,30 @@
                         "allowFastForward": true
                     },
                     "id": "f8df5114-4460-4540-ac98-8f4d59b7f64f"
+                },
+                {
+                    "command": "EVENT_IF_SAVED_DATA",
+                    "args": {
+                        "saveSlot": 0,
+                        "__collapseElse": false
+                    },
+                    "children": {
+                        "true": [],
+                        "false": [
+                            {
+                                "command": "EVENT_SAVE_DATA",
+                                "args": {
+                                    "saveSlot": 0,
+                                    "__scriptTabs": "save"
+                                },
+                                "children": {
+                                    "true": []
+                                },
+                                "id": "90fc0d85-8a9e-4cbe-b334-4dc409f35b24"
+                            }
+                        ]
+                    },
+                    "id": "e9e0acdf-c7f1-41e9-85c4-c750c6b97df8"
                 }
             ],
             "playerHit1Script": [],
@@ -52404,11 +52449,11 @@
                                         "args": {
                                             "variable": "7",
                                             "choices": 4,
-                                            "__collapseCase0": true,
+                                            "__collapseCase0": false,
                                             "value0": 1,
-                                            "__collapseCase1": false,
+                                            "__collapseCase1": true,
                                             "value1": 2,
-                                            "__collapseCase2": false,
+                                            "__collapseCase2": true,
                                             "value2": 3,
                                             "__collapseCase3": false,
                                             "value3": 4,
@@ -53022,6 +53067,13 @@
                                                         "variable": "9"
                                                     },
                                                     "id": "71d7eb27-89d5-430b-a6db-479cebdfc69b"
+                                                },
+                                                {
+                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                    "args": {
+                                                        "customEventId": "08951e2d-d963-4cad-aa92-f6e823489286"
+                                                    },
+                                                    "id": "4ef88507-90d3-4049-bc59-854cbb563972"
                                                 }
                                             ],
                                             "true3": [
@@ -58466,7 +58518,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "BattleNumbers.png"
+            "filename": "BattleNumbers.png",
+            "tileColors": []
         },
         {
             "id": "952baa32-2635-4fb6-b881-08b289bbdc6e",
@@ -60752,7 +60805,8 @@
             "height": 18,
             "imageWidth": 160,
             "imageHeight": 144,
-            "filename": "Intro08WIP.png"
+            "filename": "Intro08WIP.png",
+            "tileColors": []
         },
         {
             "id": "39429724-e531-4a8e-80e6-d4ea06fb0c55",
@@ -93916,7 +93970,8 @@
             "height": 51,
             "imageWidth": 256,
             "imageHeight": 408,
-            "filename": "Room28.png"
+            "filename": "Room28.png",
+            "tileColors": []
         },
         {
             "id": "d7815ff3-52cc-48d5-8c92-f7ad7ff98032",
@@ -107698,7 +107753,7 @@
                     "args": {
                         "__label": "Debug Statements",
                         "__collapse": true,
-                        "__comment": false
+                        "__comment": true
                     },
                     "children": {
                         "true": [
@@ -108028,7 +108083,8 @@
                         ],
                         "override": true,
                         "__scriptTabs": "press",
-                        "__collapse": false
+                        "__collapse": true,
+                        "__comment": true
                     },
                     "children": {
                         "true": [
@@ -109375,6 +109431,36 @@
                         ]
                     },
                     "id": "ff4213c2-6ba7-408f-ac5a-6b3349907290"
+                },
+                {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "VM_SET_CONST_UINT8 _show_actors_on_overlay, 0\nVM_SET_CONST_UINT8 _overlay_priority 0x80",
+                        "__comment": false
+                    },
+                    "id": "8f36cb8a-18bc-439d-af03-e35283c67c16"
+                },
+                {
+                    "command": "EVENT_SET_INPUT_SCRIPT",
+                    "args": {
+                        "input": [
+                            "start"
+                        ],
+                        "override": true,
+                        "__scriptTabs": "press"
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_GBVM_SCRIPT",
+                                "args": {
+                                    "script": "VM_PUSH_CONST 0\nVM_GET_UINT8 .ARG0, _show_actors_on_overlay\nVM_SET_CONST_UINT8 _show_actors_on_overlay, 1\n\nVM_CALL_NATIVE b_ugb_show_pause_menu, _ugb_show_pause_menu\n\nVM_SET_UINT8 _show_actors_on_overlay, .ARG0\nVM_POP 1"
+                                },
+                                "id": "5b54a4d3-7351-4a06-9239-7d5f31515e6c"
+                            }
+                        ]
+                    },
+                    "id": "631818d2-df0f-46c3-b0cd-f467e1ea2d88"
                 }
             ],
             "symbol": "script_add_menu_to_overworl"
@@ -109709,7 +109795,7 @@
         {
             "id": "fe54657d-fe5b-438e-9241-c96f7f567f31",
             "name": "Write Item Name",
-            "description": "Writes the name of the item specified by the Item ID onto the overlay at a specific position\nInput Variables:\n\nItemID\nText_X, Text_Y\n\nFont switching is possible, but not currently neccesary or implemented",
+            "description": "TO BE REMOVED\n\nWrites the name of the item specified by the Item ID onto the overlay at a specific position\nInput Variables:\n\nItemID\nText_X, Text_Y\n\nFont switching is possible, but not currently neccesary or implemented",
             "variables": {},
             "actors": {},
             "symbol": "script_10",
@@ -109879,252 +109965,162 @@
             ]
         },
         {
-            "id": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
-            "name": "Set Item ID for Slot to zero (Unused)",
-            "description": "Sets the item in the specified inventory slot to zero\nVariables used:\n\nInventory Type: \n0 = Inventory, \n1 = Equipped Items (0 = Weapon, 1 = Armor),\n2 = Dimensional Box 1 / Regular Box,\n3 = Dimensional Box 2\n\nInventory Slot:\n0-indexed",
-            "variables": {},
-            "actors": {},
-            "symbol": "script_11",
-            "script": [
-                {
-                    "command": "EVENT_GBVM_SCRIPT",
-                    "args": {
-                        "script": "        ; Switch Variable\n        VM_SWITCH   VAR_INVENTORY_TYPE_TEMP_, 2, 0\n        .dw 0, 1$\n        .dw 1, 2$\n\n        VM_JUMP                 3$\n        ; case 0:\n1$:\n        ; (VAR_INVENTORY_SLOT_TEMP_/2)+33\n        VM_RPN\n            .R_REF      VAR_INVENTORY_SLOT_TEMP_\n            .R_INT16    2\n            .R_OPERATOR .DIV\n            .R_INT16    34\n            .R_OPERATOR .ADD\n            .R_STOP\n\n        VM_JUMP                 3$\n        ; case 1:\n2$:\n        ; (VAR_INVENTORY_SLOT_TEMP_/2)+100\n        VM_RPN\n            .R_REF      VAR_INVENTORY_SLOT_TEMP_\n            .R_INT16    2\n            .R_OPERATOR .DIV\n            .R_INT16    41\n            .R_OPERATOR .ADD\n            .R_STOP\n\n        VM_JUMP                 3$\n3$:\n\n        ; Indirect variable ARG0 into ARG0\n        VM_PUSH_VALUE .ARG0\n        VM_GET_INDIRECT .ARG0, .ARG1\n\n        ; If VAR_INVENTORY_SLOT_TEMP_%2\n        VM_RPN\n            .R_REF      VAR_INVENTORY_SLOT_TEMP_\n            .R_INT16    2\n            .R_OPERATOR .MOD\n            .R_STOP\n        VM_IF_CONST             .GT, .ARG0, 0, 4$, 1\n        \n        ; ARG0 = ARG0&0b0000000011111111\n        VM_RPN\n            .R_INT16    255\n            .R_OPERATOR .B_AND\n            .R_STOP\n\n        VM_JUMP                 5$\n4$:\n        ; ARG0 = ARG0&0b1111111100000000\n        VM_RPN\n            .R_INT16    65280\n            .R_OPERATOR .B_AND\n            .R_STOP\n5$:\n\n        VM_SET_INDIRECT .ARG1, .ARG0\n        VM_POP 2"
-                    },
-                    "id": "c5585d39-5cd4-456f-a8da-484a99c74615"
-                }
-            ]
-        },
-        {
-            "id": "11de989c-1c1a-4d29-81d1-b405f1663586",
-            "name": "Set Item ID for Inventory Slot",
-            "description": "Set the Item ID for the specified inventory slot\nVariables used:\n\nInventory Type: \n0 = Inventory, \n1 = Equipped Items (0 = Weapon, 1 = Armor),\n2 = Dimensional Box 1 / Regular Box,\n3 = Dimensional Box 2\n\nInventory Slot:\n0-indexed\n\nItemID",
-            "variables": {},
-            "actors": {},
-            "symbol": "script_12",
-            "script": [
-                {
-                    "command": "EVENT_GBVM_SCRIPT",
-                    "args": {
-                        "script": "        ; Switch Variable\n        VM_SWITCH   VAR_INVENTORY_TYPE_TEMP_, 2, 0\n        .dw 0, 1$\n        .dw 1, 2$\n\n        VM_JUMP                 3$\n        ; case 0:\n1$:\n        ; (VAR_INVENTORY_SLOT_TEMP_/2)+34\n        VM_RPN\n            .R_REF      VAR_INVENTORY_SLOT_TEMP_\n            .R_INT16    2\n            .R_OPERATOR .DIV\n            .R_INT16    34\n            .R_OPERATOR .ADD\n            .R_STOP\n\n        VM_JUMP                 3$\n        ; case 1:\n2$:\n        ; (VAR_INVENTORY_SLOT_TEMP_/2)+41\n        VM_RPN\n            .R_REF      VAR_INVENTORY_SLOT_TEMP_\n            .R_INT16    2\n            .R_OPERATOR .DIV\n            .R_INT16    41\n            .R_OPERATOR .ADD\n            .R_STOP\n\n        VM_JUMP                 3$\n3$:\n\n        ; Indirect variable ARG0 into ARG0\n        VM_PUSH_VALUE .ARG0\n        VM_GET_INDIRECT .ARG0, .ARG1\n\n        ; If VAR_INVENTORY_SLOT_TEMP_%2\n        VM_RPN\n            .R_REF      VAR_INVENTORY_SLOT_TEMP_\n            .R_INT16    2\n            .R_OPERATOR .MOD\n            .R_STOP\n        VM_IF_CONST             .GT, .ARG0, 0, 4$, 1\n        \n        ; ARG0 = ARG0&0b0000000011111111\n        VM_RPN\n            .R_INT16    255\n            .R_OPERATOR .B_AND\n            .R_REF      VAR_ITEMID\n            .R_INT16    256\n            .R_OPERATOR .MUL\n            .R_OPERATOR .B_OR\n            .R_STOP\n\n        VM_JUMP                 5$\n4$:\n        ; ARG0 = ARG0&0b1111111100000000\n        VM_RPN\n            .R_INT16    65280\n            .R_OPERATOR .B_AND\n            .R_REF      VAR_ITEMID\n            .R_OPERATOR .B_OR\n            .R_STOP\n5$:\n\n        VM_SET_INDIRECT .ARG1, .ARG0\n        VM_POP 2"
-                    },
-                    "id": "6f8260b8-0df6-4a15-9bf9-5f63d0dff3f7"
-                }
-            ]
-        },
-        {
-            "id": "aa0b97e0-fc8b-4e41-bfc3-51b691feb438",
-            "name": "Remove Item from inventory",
-            "description": "removes the item in the specified inventory slot and moves all items after it to fill the gap\nVariables used:\n\nInventory Type: \n0 = Inventory, \n1 = Equipped Items (0 = Weapon, 1 = Armor),\n2 = Dimensional Box 1 / Regular Box,\n3 = Dimensional Box 2\n\nInventory Slot:\n0-indexed",
-            "variables": {},
-            "actors": {},
-            "symbol": "script_13",
-            "script": [
-                {
-                    "command": "EVENT_GBVM_SCRIPT",
-                    "args": {
-                        "script": "VM_PUSH_VALUE VAR_INVENTORY_SLOT_TEMP_"
-                    },
-                    "id": "ed2504ed-eac2-44ac-85eb-e612f0cb745d"
-                },
-                {
-                    "command": "EVENT_SET_VALUE",
-                    "args": {
-                        "variable": "38",
-                        "value": {
-                            "type": "number",
-                            "value": 127
-                        },
-                        "__collapse": true
-                    },
-                    "id": "daf366e6-c7c9-4d8c-88ab-32763abca77e"
-                },
-                {
-                    "command": "EVENT_LOOP_WHILE",
-                    "args": {
-                        "expression": "$38$ != 0",
-                        "__collapse": false
-                    },
-                    "children": {
-                        "true": [
-                            {
-                                "command": "EVENT_INC_VALUE",
-                                "args": {
-                                    "variable": "32",
-                                    "__collapse": false
-                                },
-                                "id": "b38fdddf-2ded-4d50-9fd8-7ab74f9a0dc3"
-                            },
-                            {
-                                "command": "EVENT_CALL_CUSTOM_EVENT",
-                                "args": {
-                                    "customEventId": "d66f889f-302a-436b-b378-b32e0b74d760",
-                                    "__collapse": true
-                                },
-                                "id": "54b92665-4271-4dde-9b5f-9f67ffc8cfb1"
-                            },
-                            {
-                                "command": "EVENT_DEC_VALUE",
-                                "args": {
-                                    "variable": "32",
-                                    "__collapse": false
-                                },
-                                "id": "039f5314-aea9-4afd-85e8-d8f848f971bc"
-                            },
-                            {
-                                "command": "EVENT_CALL_CUSTOM_EVENT",
-                                "args": {
-                                    "customEventId": "11de989c-1c1a-4d29-81d1-b405f1663586",
-                                    "__collapse": true
-                                },
-                                "id": "75ef059a-26c9-427a-b17f-e72abb009e47"
-                            },
-                            {
-                                "command": "EVENT_INC_VALUE",
-                                "args": {
-                                    "variable": "32",
-                                    "__collapse": false
-                                },
-                                "id": "fb05dcfb-c029-4227-bcfd-c2596fb435f5"
-                            }
-                        ]
-                    },
-                    "id": "361d737c-4547-4c7a-91ab-8862be1bf935"
-                },
-                {
-                    "command": "EVENT_GBVM_SCRIPT",
-                    "args": {
-                        "script": "VM_SET VAR_INVENTORY_SLOT_TEMP_, .ARG0\nVM_POP 1"
-                    },
-                    "id": "d0fa467e-d444-4a81-9398-0a2349440ae6"
-                }
-            ]
-        },
-        {
             "id": "c161350d-ed50-4985-becd-6c532d0a6e64",
             "name": "Add Item to Inventory",
-            "description": "Adds an Item to the inventory in the first empty slot\n\nVariables:\n\nInventory Type: \n0 = Inventory, \n2 = Dimensional Box 1 / Regular Box,\n3 = Dimensional Box 2\n\nItemID",
+            "description": "Adds an Item to the inventory in the first empty slot\n\nVariables:\n\nItemID",
             "variables": {},
             "actors": {},
             "symbol": "script_14",
             "script": [
                 {
-                    "command": "EVENT_GBVM_SCRIPT",
+                    "command": "EVENT_GROUP",
                     "args": {
-                        "script": "VM_PUSH_VALUE VAR_ITEMID",
-                        "__collapse": false
-                    },
-                    "id": "5e511f83-f989-49ca-999a-5aa983c4248e"
-                },
-                {
-                    "command": "EVENT_SET_VALUE",
-                    "args": {
-                        "variable": "32",
-                        "value": {
-                            "type": "number",
-                            "value": -1
-                        }
-                    },
-                    "id": "a45b9285-b243-459c-9c9d-3d7131c3b86e"
-                },
-                {
-                    "command": "EVENT_SET_FALSE",
-                    "args": {
-                        "variable": "18"
-                    },
-                    "id": "86d3b078-b6a8-405c-8e07-b60dbc739c0c"
-                },
-                {
-                    "command": "EVENT_LOOP_WHILE",
-                    "args": {
-                        "expression": "$18$ == false"
+                        "__comment": true,
+                        "__label": "Deprecated code"
                     },
                     "children": {
                         "true": [
                             {
-                                "command": "EVENT_INC_VALUE",
+                                "command": "EVENT_COMMENT",
                                 "args": {
-                                    "variable": "32"
+                                    "text": "Old deprecated code"
                                 },
-                                "id": "edb40c2a-f10d-4d50-b8de-1c38ffb70df7"
+                                "id": "9a5af078-db61-4c70-9040-3a6b81a91b50"
                             },
                             {
-                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                "command": "EVENT_GBVM_SCRIPT",
                                 "args": {
-                                    "customEventId": "d66f889f-302a-436b-b378-b32e0b74d760",
+                                    "script": "VM_PUSH_VALUE VAR_ITEMID",
                                     "__collapse": false
                                 },
-                                "id": "c2374ebf-6680-4592-8287-344830b14324"
+                                "id": "5ea61387-5116-4137-9c7e-5680eb564d87"
                             },
                             {
-                                "command": "EVENT_IF_EXPRESSION",
+                                "command": "EVENT_SET_VALUE",
                                 "args": {
-                                    "expression": "$38$ == 0 || $32$ == 8",
-                                    "__collapseElse": true,
-                                    "__collapse": false
+                                    "variable": "32",
+                                    "value": {
+                                        "type": "number",
+                                        "value": -1
+                                    }
+                                },
+                                "id": "25928007-d603-4747-9935-6fa8a054281f"
+                            },
+                            {
+                                "command": "EVENT_SET_FALSE",
+                                "args": {
+                                    "variable": "18"
+                                },
+                                "id": "88022a23-360a-426d-95fb-39f807c93a13"
+                            },
+                            {
+                                "command": "EVENT_LOOP_WHILE",
+                                "args": {
+                                    "expression": "$18$ == false"
                                 },
                                 "children": {
                                     "true": [
                                         {
-                                            "command": "EVENT_SET_TRUE",
+                                            "command": "EVENT_INC_VALUE",
+                                            "args": {
+                                                "variable": "32"
+                                            },
+                                            "id": "5867ac75-4a24-4e35-bd89-50daca982c06"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
+                                                "__collapse": false
+                                            },
+                                            "id": "0ffeb1a6-9a77-47d2-957a-4cf0a9c7724d"
+                                        },
+                                        {
+                                            "command": "EVENT_IF_EXPRESSION",
+                                            "args": {
+                                                "expression": "$38$ == 0 || $32$ == 8",
+                                                "__collapseElse": true,
+                                                "__collapse": false
+                                            },
+                                            "children": {
+                                                "true": [
+                                                    {
+                                                        "command": "EVENT_SET_TRUE",
+                                                        "args": {
+                                                            "variable": "18",
+                                                            "__collapse": true
+                                                        },
+                                                        "id": "450adf54-7e18-4a1b-9174-3fc0c703b197"
+                                                    }
+                                                ],
+                                                "false": []
+                                            },
+                                            "id": "50d6b351-bafe-4a13-9750-a437f90e720f"
+                                        }
+                                    ]
+                                },
+                                "id": "248c8659-aa36-483e-83f5-6bbc76ef959a"
+                            },
+                            {
+                                "command": "EVENT_GBVM_SCRIPT",
+                                "args": {
+                                    "script": "VM_SET VAR_ITEMID, .ARG0\nVM_POP 1",
+                                    "__collapse": false
+                                },
+                                "id": "6c39cf24-bb46-461c-8bd5-4c1f48e5d464"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "32",
+                                    "operator": "==",
+                                    "comparator": 8,
+                                    "__collapseElse": false
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_SET_VALUE",
                                             "args": {
                                                 "variable": "18",
-                                                "__collapse": true
+                                                "value": {
+                                                    "type": "number",
+                                                    "value": -1
+                                                },
+                                                "__collapse": false
                                             },
-                                            "id": "2130a4c7-1667-4742-8c8d-b4ca186a5b7a"
+                                            "id": "37003a54-303a-4412-98ae-44c0c8e54796"
                                         }
                                     ],
-                                    "false": []
+                                    "false": [
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "ca5fbe21-30a0-4bac-9b53-1eb27389dce9",
+                                                "__collapse": false
+                                            },
+                                            "id": "e68f2657-1110-4cbf-a664-77b05e2a6e33"
+                                        }
+                                    ]
                                 },
-                                "id": "a4fa9b7c-8f46-4bae-9b70-35fdaf470d1f"
+                                "id": "79d91813-44c6-40a9-823f-4782de446d98"
                             }
                         ]
                     },
-                    "id": "bb2a4171-b14b-44e3-9537-98ac8215375a"
+                    "id": "3294f84f-9361-4ba4-9e5e-bba912eb303f"
                 },
                 {
                     "command": "EVENT_GBVM_SCRIPT",
                     "args": {
-                        "script": "VM_SET VAR_ITEMID, .ARG0\nVM_POP 1",
-                        "__collapse": false
-                    },
-                    "id": "a627b480-ae59-4f53-a75c-5895e7cce60e"
-                },
-                {
-                    "command": "EVENT_IF_VALUE",
-                    "args": {
-                        "variable": "32",
-                        "operator": "==",
-                        "comparator": 8,
-                        "__collapseElse": false
-                    },
-                    "children": {
-                        "true": [
+                        "references": [
                             {
-                                "command": "EVENT_SET_VALUE",
-                                "args": {
-                                    "variable": "18",
-                                    "value": {
-                                        "type": "number",
-                                        "value": -1
-                                    },
-                                    "__collapse": false
-                                },
-                                "id": "c8edaab8-6aa2-48d1-a3fe-6effde8ba60e"
+                                "type": "variable",
+                                "id": "38"
                             }
                         ],
-                        "false": [
-                            {
-                                "command": "EVENT_CALL_CUSTOM_EVENT",
-                                "args": {
-                                    "customEventId": "11de989c-1c1a-4d29-81d1-b405f1663586",
-                                    "__collapse": false
-                                },
-                                "id": "8b0b5483-4fdf-488e-a0df-1f1ae6a506c4"
-                            }
-                        ]
+                        "script": "VM_PUSH_VALUE VAR_ITEMID\nVM_CALL_NATIVE b_inv_add_item, _inv_add_item\nVM_POP 1"
                     },
-                    "id": "10ff30ee-5d2f-46f5-a79a-ea0bde76785d"
+                    "id": "4e6f5aa6-2f37-42e6-8591-c24910add58e"
                 }
             ]
         },
@@ -110241,6 +110237,1438 @@
                         "__collapse": false
                     },
                     "id": "0bb0f689-b4d1-4efe-8482-20cc60f10cfb"
+                }
+            ]
+        },
+        {
+            "id": "678c23ac-af19-4d6d-92ce-7c26f79aba89",
+            "name": "Load Debug Stats",
+            "description": "sets Stats to specific values for debugging purposes:\n\nName: \"Chara\"\nLevel: 1\nAtk/Def: Default for level 1\nHP/MaxHP: 20\nGold: 1234\nInventory: one of every item\nEquipped items: Stick + Bandage",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_16",
+            "script": [
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__label": "Debug Statements",
+                        "__collapse": false,
+                        "__comment": false
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "17",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 1
+                                    },
+                                    "__collapse": false
+                                },
+                                "id": "8a70aa45-0185-4383-b753-52c1897cb3e2"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "16",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 0
+                                    },
+                                    "__collapse": false
+                                },
+                                "id": "c675b143-5f78-4a9f-b9ba-b2265b7aaca1"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "19",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 67
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "7e0b6f6f-8dec-4258-b52d-b80aa51d0870"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "20",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 104
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "1dc86a52-fccc-4203-9b7d-fb85c7106f4c"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "21",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 97
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "ab31b866-ce4a-40a9-bb0f-332d9af0df8c"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "22",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 114
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "3eddf2bc-8be4-47e8-a0ea-1735e5d01bb6"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "23",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 97
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "767fd968-c4a3-47e8-932e-9354fb21a988"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "24",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 127
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "fad555be-b008-4c64-b144-89387d1ddd12"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "34",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 513
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "8d45dd44-992a-44dd-8f7e-283a9c7e01b6"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "35",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 1027
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "3bfcd6e9-f0dc-49f4-84e9-cd9496b906a8"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "36",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 1541
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "c54a750e-c832-4d09-8316-4941b0640436"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "37",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 2055
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "ccd56dc9-ae37-447f-a3ac-0f20be318663"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "41",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 262
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "d6bef273-ac30-4572-844f-25492b52a7cf"
+                            }
+                        ]
+                    },
+                    "id": "a8a31d7f-f415-42af-872a-9fc59435a7ab"
+                },
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__collapse": false
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "2",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 20
+                                    }
+                                },
+                                "id": "8e477649-ebb6-4596-8660-99f8a31a6f58"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "3",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 20
+                                    }
+                                },
+                                "id": "bf8e3728-4e90-40dc-9267-42d6c23881f4"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "16",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 1234
+                                    }
+                                },
+                                "id": "9afb3445-0ace-43c9-b460-3cd9339789f2"
+                            }
+                        ]
+                    },
+                    "id": "ef7c4d2e-959e-4aea-b596-12c92c6ea41b"
+                },
+                {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "VM_CALL_NATIVE b_inv_update_stats, _inv_update_stats"
+                    },
+                    "id": "6f03dacd-84cb-49bf-b474-7591ee5fe351"
+                }
+            ]
+        },
+        {
+            "id": "ca5fbe21-30a0-4bac-9b53-1eb27389dce9",
+            "name": "Set Item ID for Inventory Slot",
+            "description": "Set the Item ID for the specified inventory slot\nVariables used:\n\nInventory Type: \n0 = Inventory, \n1 = Equipped Items (0 = Weapon, 1 = Armor),\n2 = Dimensional Box 1 / Regular Box,\n3 = Dimensional Box 2\n\nInventory Slot:\n0-indexed\n\nItemID",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_12",
+            "script": [
+                {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "        ; Switch Variable\n        VM_SWITCH   VAR_INVENTORY_TYPE_TEMP_, 2, 0\n        .dw 0, 1$\n        .dw 1, 2$\n\n        VM_JUMP                 3$\n        ; case 0:\n1$:\n        ; (VAR_INVENTORY_SLOT_TEMP_/2)+34\n        VM_RPN\n            .R_REF      VAR_INVENTORY_SLOT_TEMP_\n            .R_INT16    2\n            .R_OPERATOR .DIV\n            .R_INT16    34\n            .R_OPERATOR .ADD\n            .R_STOP\n\n        VM_JUMP                 3$\n        ; case 1:\n2$:\n        ; (VAR_INVENTORY_SLOT_TEMP_/2)+41\n        VM_RPN\n            .R_REF      VAR_INVENTORY_SLOT_TEMP_\n            .R_INT16    2\n            .R_OPERATOR .DIV\n            .R_INT16    41\n            .R_OPERATOR .ADD\n            .R_STOP\n\n        VM_JUMP                 3$\n3$:\n\n        ; Indirect variable ARG0 into ARG0\n        VM_PUSH_VALUE .ARG0\n        VM_GET_INDIRECT .ARG0, .ARG1\n\n        ; If VAR_INVENTORY_SLOT_TEMP_%2\n        VM_RPN\n            .R_REF      VAR_INVENTORY_SLOT_TEMP_\n            .R_INT16    2\n            .R_OPERATOR .MOD\n            .R_STOP\n        VM_IF_CONST             .GT, .ARG0, 0, 4$, 1\n        \n        ; ARG0 = ARG0&0b0000000011111111\n        VM_RPN\n            .R_INT16    255\n            .R_OPERATOR .B_AND\n            .R_REF      VAR_ITEMID\n            .R_INT16    256\n            .R_OPERATOR .MUL\n            .R_OPERATOR .B_OR\n            .R_STOP\n\n        VM_JUMP                 5$\n4$:\n        ; ARG0 = ARG0&0b1111111100000000\n        VM_RPN\n            .R_INT16    65280\n            .R_OPERATOR .B_AND\n            .R_REF      VAR_ITEMID\n            .R_OPERATOR .B_OR\n            .R_STOP\n5$:\n\n        VM_SET_INDIRECT .ARG1, .ARG0\n        VM_POP 2"
+                    },
+                    "id": "68b7643d-3fb3-4cf5-ba54-67784ffa7629"
+                }
+            ]
+        },
+        {
+            "id": "08951e2d-d963-4cad-aa92-f6e823489286",
+            "name": "Battle Inventory",
+            "description": "",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_18",
+            "script": [
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "8",
+                        "value": {
+                            "type": "number",
+                            "value": 5
+                        }
+                    },
+                    "id": "16aad556-d5b1-45a7-a6cc-e4111b906a89"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "18",
+                        "value": {
+                            "type": "number",
+                            "value": 0
+                        }
+                    },
+                    "id": "12a91751-aecf-4fde-96ea-bc5f5033085b"
+                },
+                {
+                    "command": "EVENT_SET_VALUE",
+                    "args": {
+                        "variable": "33",
+                        "value": {
+                            "type": "number",
+                            "value": 0
+                        },
+                        "__collapse": false
+                    },
+                    "id": "56a81cb4-a0e9-48c2-a5c7-98de60f14c89"
+                },
+                {
+                    "command": "EVENT_LOOP_WHILE",
+                    "args": {
+                        "expression": "$08$ == 5"
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_GBVM_SCRIPT",
+                                "args": {
+                                    "script": "VM_OVERLAY_CLEAR 3, 1, 14, 4, .UI_COLOR_BLACK, 0\nVM_LOAD_TEXT 0\n.asciz \"\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, 5",
+                                    "__comment": false
+                                },
+                                "id": "ecc0197b-4055-4b7e-993c-edad98c42752"
+                            },
+                            {
+                                "command": "EVENT_LOOP_FOR",
+                                "args": {
+                                    "variable": "25",
+                                    "from": {
+                                        "type": "number",
+                                        "value": 0
+                                    },
+                                    "comparison": "<=",
+                                    "to": {
+                                        "type": "number",
+                                        "value": 3
+                                    },
+                                    "operation": "+=",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 1
+                                    }
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                            "args": {
+                                                "variable": "39",
+                                                "expression": "(($25$ % 2) * 7) + 5"
+                                            },
+                                            "id": "2778ed24-5b32-490b-a91a-db3007c50493"
+                                        },
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                            "args": {
+                                                "variable": "40",
+                                                "expression": "(($25$ / 2) * 2) + 2"
+                                            },
+                                            "id": "1465d4bf-b789-4a88-81d7-ad143f8be7d3"
+                                        },
+                                        {
+                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                            "args": {
+                                                "variable": "32",
+                                                "expression": "$25$ + ($18$ * 4)"
+                                            },
+                                            "id": "5598ca52-d62d-4f33-ab6b-02b54a423412"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd"
+                                            },
+                                            "id": "06cf1945-1c3f-408f-a6a7-ad2ac246c303"
+                                        },
+                                        {
+                                            "command": "EVENT_SWITCH",
+                                            "args": {
+                                                "variable": "38",
+                                                "choices": 9,
+                                                "__collapseCase0": true,
+                                                "value0": 0,
+                                                "__collapseCase1": true,
+                                                "value1": 1,
+                                                "__collapseCase2": true,
+                                                "value2": 2,
+                                                "__collapseCase3": true,
+                                                "value3": 3,
+                                                "__collapseCase4": true,
+                                                "value4": 4,
+                                                "__collapseCase5": true,
+                                                "value5": 5,
+                                                "__collapseCase6": true,
+                                                "value6": 6,
+                                                "__collapseCase7": true,
+                                                "value7": 7,
+                                                "__collapseCase8": true,
+                                                "value8": 8,
+                                                "__collapseCase9": false,
+                                                "value9": 10,
+                                                "__collapseCase10": false,
+                                                "value10": 11,
+                                                "__collapseCase11": false,
+                                                "value11": 12,
+                                                "__collapseCase12": false,
+                                                "value12": 13,
+                                                "__collapseCase13": false,
+                                                "value13": 14,
+                                                "__collapseCase14": false,
+                                                "value14": 15,
+                                                "__collapseCase15": false,
+                                                "value15": 16,
+                                                "__collapseElse": true
+                                            },
+                                            "children": {
+                                                "true0": [],
+                                                "true1": [
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cBandage\"",
+                                                            "__collapse": false
+                                                        },
+                                                        "id": "246f5c55-b250-4a63-8a0e-52c6b7be4c70"
+                                                    }
+                                                ],
+                                                "true2": [
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cMnstrCndy\"",
+                                                            "__collapse": false
+                                                        },
+                                                        "id": "0be644d2-df60-480d-8d93-6b661bef7090"
+                                                    }
+                                                ],
+                                                "true3": [
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cSpidrDont\""
+                                                        },
+                                                        "id": "ca2e8507-6442-4fcd-8dae-dc976e2be184"
+                                                    }
+                                                ],
+                                                "true4": [
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cSpidrCidr\""
+                                                        },
+                                                        "id": "47daf0f6-d678-4588-bde6-374a3c84a84d"
+                                                    }
+                                                ],
+                                                "true5": [
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cButtsPie\""
+                                                        },
+                                                        "id": "fc1b32a1-7120-4cff-9b2d-3dbf4540837b"
+                                                    }
+                                                ],
+                                                "true6": [
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cStick\""
+                                                        },
+                                                        "id": "8333622f-09b7-4be3-b1ee-196b328ab618"
+                                                    }
+                                                ],
+                                                "true7": [
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cToy Knife\""
+                                                        },
+                                                        "id": "c1c2b59c-93fe-453f-9aa7-db541457d0b7"
+                                                    }
+                                                ],
+                                                "true8": [
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cRibbon\""
+                                                        },
+                                                        "id": "99e09a11-b4b6-4532-b1ee-08918f0de7c1"
+                                                    }
+                                                ],
+                                                "true9": [],
+                                                "true10": [],
+                                                "true11": [],
+                                                "true12": [],
+                                                "true13": [],
+                                                "true14": [],
+                                                "true15": [],
+                                                "false": [
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cUnknownItem\""
+                                                        },
+                                                        "id": "e5315790-c5a2-4dfb-9456-bc8e7c816c35"
+                                                    }
+                                                ]
+                                            },
+                                            "id": "2ca075a6-f6ab-4215-928d-be24a2c0bee8"
+                                        },
+                                        {
+                                            "command": "EVENT_GBVM_SCRIPT",
+                                            "args": {
+                                                "script": "VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, .TEXT_TILE_CONTINUE\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT"
+                                            },
+                                            "id": "b3f0a759-be7d-484f-85a6-eb892620a87b"
+                                        }
+                                    ]
+                                },
+                                "id": "0b9ee36e-c237-4d84-9d26-26239cf3ac1d"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "18",
+                                    "operator": "==",
+                                    "comparator": "0",
+                                    "__collapseElse": false,
+                                    "__collapse": true
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_GBVM_SCRIPT",
+                                            "args": {
+                                                "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\002\\005\\003\\012\\05Next\""
+                                            },
+                                            "id": "95f51420-348f-475d-a96b-60678a3b4925"
+                                        }
+                                    ],
+                                    "false": [
+                                        {
+                                            "command": "EVENT_GBVM_SCRIPT",
+                                            "args": {
+                                                "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\002\\005\\003\\012\\05Prev\""
+                                            },
+                                            "id": "042aeec6-45e1-4e5f-a351-d04fb61ffff1"
+                                        }
+                                    ]
+                                },
+                                "id": "3569f7e5-c9c2-40bf-8278-9808b6b76435"
+                            },
+                            {
+                                "command": "EVENT_GBVM_SCRIPT",
+                                "args": {
+                                    "script": "VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, .TEXT_TILE_CONTINUE\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\n\nVM_CHOICE VAR_MENUSUB, .UI_MENU_CANCEL_B, 5\n  .MENUITEM           3,  1, 0, 2, 0, 3\n  .MENUITEM           10, 1, 1, 0, 0, 4\n  .MENUITEM           3,  3, 0, 4, 1, 5\n  .MENUITEM           10, 3, 3, 0, 2, 5\n  .MENUITEM           8,  4, 0, 0, 3, 0"
+                                },
+                                "id": "81705358-cb41-49d5-b74b-e37434b1b4a4"
+                            },
+                            {
+                                "command": "EVENT_IF_VALUE",
+                                "args": {
+                                    "variable": "8",
+                                    "operator": "!=",
+                                    "comparator": 5,
+                                    "__collapseElse": false
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_IF_VALUE",
+                                            "args": {
+                                                "variable": "8",
+                                                "operator": "!=",
+                                                "comparator": "0",
+                                                "__collapseElse": true
+                                            },
+                                            "children": {
+                                                "true": [
+                                                    {
+                                                        "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                        "args": {
+                                                            "variable": "32",
+                                                            "expression": "($08$ - 1) + ($18$ * 4)"
+                                                        },
+                                                        "id": "e3b9e0e7-1494-42cc-aa6e-ba8060692216"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                        "args": {
+                                                            "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
+                                                            "__comment": true
+                                                        },
+                                                        "id": "01f5523c-b59a-47e4-a100-ccf4097b33ca"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_SWITCH",
+                                                        "args": {
+                                                            "variable": "38",
+                                                            "choices": 8,
+                                                            "__collapseCase0": true,
+                                                            "value0": 1,
+                                                            "__collapseCase1": true,
+                                                            "value1": 2,
+                                                            "__collapseCase2": true,
+                                                            "value2": 3,
+                                                            "__collapseCase3": true,
+                                                            "value3": 4,
+                                                            "__collapseCase4": true,
+                                                            "value4": 5,
+                                                            "__collapseCase5": true,
+                                                            "value5": 6,
+                                                            "__collapseCase6": true,
+                                                            "value6": 7,
+                                                            "__collapseCase7": true,
+                                                            "value7": 8,
+                                                            "__collapseCase8": false,
+                                                            "value8": 9,
+                                                            "__collapseCase9": false,
+                                                            "value9": 10,
+                                                            "__collapseCase10": false,
+                                                            "value10": 11,
+                                                            "__collapseCase11": false,
+                                                            "value11": 12,
+                                                            "__collapseCase12": false,
+                                                            "value12": 13,
+                                                            "__collapseCase13": false,
+                                                            "value13": 14,
+                                                            "__collapseCase14": false,
+                                                            "value14": 15,
+                                                            "__collapseCase15": false,
+                                                            "value15": 16,
+                                                            "__collapseElse": true,
+                                                            "__comment": true
+                                                        },
+                                                        "children": {
+                                                            "true0": [
+                                                                {
+                                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                    "args": {
+                                                                        "text": "*You re-applied\n|the bandage.\n*Still kind of\n|gooey."
+                                                                    },
+                                                                    "id": "3e801e83-d760-41d4-80f4-6634bbbcc93c"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_AWAIT_INPUT",
+                                                                    "args": {
+                                                                        "input": [
+                                                                            "b",
+                                                                            "a"
+                                                                        ]
+                                                                    },
+                                                                    "id": "18e6e588-f5f9-4ab0-8f8d-581afc728580"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_GROUP",
+                                                                    "args": {
+                                                                        "__label": "Heal HP",
+                                                                        "__collapse": true
+                                                                    },
+                                                                    "children": {
+                                                                        "true": [
+                                                                            {
+                                                                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                                                "args": {
+                                                                                    "variable": "2",
+                                                                                    "expression": "$02$ + 10",
+                                                                                    "__collapse": false
+                                                                                },
+                                                                                "id": "8f0b4805-c017-40b8-a56c-91f465e19242"
+                                                                            },
+                                                                            {
+                                                                                "command": "EVENT_IF_EXPRESSION",
+                                                                                "args": {
+                                                                                    "expression": "$02$ >= $03$",
+                                                                                    "__collapseElse": false,
+                                                                                    "__collapse": false
+                                                                                },
+                                                                                "children": {
+                                                                                    "true": [
+                                                                                        {
+                                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                            "args": {
+                                                                                                "text": "*Your HP was\n|maxed out!"
+                                                                                            },
+                                                                                            "id": "9663fd01-844e-4d7b-b011-143b3035786d"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                                            "args": {
+                                                                                                "input": [
+                                                                                                    "b",
+                                                                                                    "a"
+                                                                                                ]
+                                                                                            },
+                                                                                            "id": "f94ae8bb-5bea-420c-9626-22b72a868a4a"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_SET_VALUE",
+                                                                                            "args": {
+                                                                                                "variable": "2",
+                                                                                                "value": {
+                                                                                                    "type": "variable",
+                                                                                                    "value": "3"
+                                                                                                }
+                                                                                            },
+                                                                                            "id": "8fcf83f5-cb20-44eb-904a-6ed254c6f124"
+                                                                                        }
+                                                                                    ],
+                                                                                    "false": [
+                                                                                        {
+                                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                            "args": {
+                                                                                                "text": "*You healed 10 HP."
+                                                                                            },
+                                                                                            "id": "51e405fc-0f2b-4e72-8ca7-5fcf98a64721"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                                            "args": {
+                                                                                                "input": [
+                                                                                                    "b",
+                                                                                                    "a"
+                                                                                                ]
+                                                                                            },
+                                                                                            "id": "1dc3d4d3-5cc9-4300-8c17-a49becd03db9"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                "id": "fc97a585-6843-4c87-bedd-227c1452fc3e"
+                                                                            },
+                                                                            {
+                                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                "args": {
+                                                                                    "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                                                    "__collapse": false
+                                                                                },
+                                                                                "id": "4215776f-fbb0-4974-9fc9-0cf0afc9bbd2"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "id": "d8974c2f-b41a-41fb-8aae-3602dc397839"
+                                                                }
+                                                            ],
+                                                            "true1": [
+                                                                {
+                                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                    "args": {
+                                                                        "text": "*You ate the\n|Monster Candy.\n*Very\n|un-licorice-like"
+                                                                    },
+                                                                    "id": "a9a4ae04-e39f-4ddc-9697-f40c5d7cf588"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_AWAIT_INPUT",
+                                                                    "args": {
+                                                                        "input": [
+                                                                            "b",
+                                                                            "a"
+                                                                        ]
+                                                                    },
+                                                                    "id": "208091de-ade4-4d7e-92be-d9fbc39f2674"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_GROUP",
+                                                                    "args": {
+                                                                        "__label": "Heal HP",
+                                                                        "__collapse": false
+                                                                    },
+                                                                    "children": {
+                                                                        "true": [
+                                                                            {
+                                                                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                                                "args": {
+                                                                                    "variable": "2",
+                                                                                    "expression": "$02$ + 10",
+                                                                                    "__collapse": true
+                                                                                },
+                                                                                "id": "852f77dc-5252-44e8-ba0e-d60b47335311"
+                                                                            },
+                                                                            {
+                                                                                "command": "EVENT_IF_EXPRESSION",
+                                                                                "args": {
+                                                                                    "expression": "$02$ >= $03$",
+                                                                                    "__collapseElse": false,
+                                                                                    "__collapse": false
+                                                                                },
+                                                                                "children": {
+                                                                                    "true": [
+                                                                                        {
+                                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                            "args": {
+                                                                                                "text": "*Your HP was\\n|maxed out!"
+                                                                                            },
+                                                                                            "id": "189730f2-b61e-4566-b348-8cb3fa1cbea3"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_SET_VALUE",
+                                                                                            "args": {
+                                                                                                "variable": "2",
+                                                                                                "value": {
+                                                                                                    "type": "variable",
+                                                                                                    "value": "3"
+                                                                                                }
+                                                                                            },
+                                                                                            "id": "65b58ba7-bbf2-4e04-9d88-5a8b39c33d83"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                                            "args": {
+                                                                                                "input": [
+                                                                                                    "b",
+                                                                                                    "a"
+                                                                                                ]
+                                                                                            },
+                                                                                            "id": "e459fcd4-56c3-4cf2-8ce2-3cf78b5e5875"
+                                                                                        }
+                                                                                    ],
+                                                                                    "false": [
+                                                                                        {
+                                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                            "args": {
+                                                                                                "text": "*You healed 10 HP."
+                                                                                            },
+                                                                                            "id": "85851000-4522-49bf-8063-c13ce08746c7"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                                            "args": {
+                                                                                                "input": [
+                                                                                                    "b",
+                                                                                                    "a"
+                                                                                                ]
+                                                                                            },
+                                                                                            "id": "8a8a9157-e874-45bd-9600-fb27b00e56b8"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                "id": "18ab4300-baab-48d3-83eb-8e50a55a27f3"
+                                                                            },
+                                                                            {
+                                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                "args": {
+                                                                                    "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                                                    "__collapse": true
+                                                                                },
+                                                                                "id": "afeb5d62-666a-4af8-829a-c00f937804e7"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "id": "9c174621-8013-4547-9b56-39f8e4c68b0d"
+                                                                }
+                                                            ],
+                                                            "true2": [
+                                                                {
+                                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                    "args": {
+                                                                        "text": "*You ate the\\n|Spider Donut."
+                                                                    },
+                                                                    "id": "d3ba61e2-e07f-4085-a1b1-f230b3d7b72d"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_AWAIT_INPUT",
+                                                                    "args": {
+                                                                        "input": [
+                                                                            "b",
+                                                                            "a"
+                                                                        ]
+                                                                    },
+                                                                    "id": "fa66ddf5-af52-4d32-817e-f03e5ea79ee8"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_GROUP",
+                                                                    "args": {
+                                                                        "__label": "Heal HP",
+                                                                        "__collapse": false
+                                                                    },
+                                                                    "children": {
+                                                                        "true": [
+                                                                            {
+                                                                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                                                "args": {
+                                                                                    "variable": "2",
+                                                                                    "expression": "$02$ + 12",
+                                                                                    "__collapse": true
+                                                                                },
+                                                                                "id": "4a09b2eb-4881-478e-bc9c-4c21d274cfda"
+                                                                            },
+                                                                            {
+                                                                                "command": "EVENT_IF_EXPRESSION",
+                                                                                "args": {
+                                                                                    "expression": "$02$ >= $03$",
+                                                                                    "__collapseElse": false,
+                                                                                    "__collapse": false
+                                                                                },
+                                                                                "children": {
+                                                                                    "true": [
+                                                                                        {
+                                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                            "args": {
+                                                                                                "text": "*Your HP was\\n|maxed out!"
+                                                                                            },
+                                                                                            "id": "6c1a1a8b-6d8a-4a12-858f-968f244a7628"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_SET_VALUE",
+                                                                                            "args": {
+                                                                                                "variable": "2",
+                                                                                                "value": {
+                                                                                                    "type": "variable",
+                                                                                                    "value": "3"
+                                                                                                },
+                                                                                                "__collapse": false
+                                                                                            },
+                                                                                            "id": "1d4d0bba-b62b-4b8b-af09-1b76c7a3a9b3"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                                            "args": {
+                                                                                                "input": [
+                                                                                                    "b",
+                                                                                                    "a"
+                                                                                                ]
+                                                                                            },
+                                                                                            "id": "f0674401-8e24-4380-af40-eb76c604eef1"
+                                                                                        }
+                                                                                    ],
+                                                                                    "false": [
+                                                                                        {
+                                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                            "args": {
+                                                                                                "text": "*You healed 12 HP."
+                                                                                            },
+                                                                                            "id": "c1e9b5ef-5b0d-4939-9e53-bcb9e9333e62"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                                            "args": {
+                                                                                                "input": [
+                                                                                                    "b",
+                                                                                                    "a"
+                                                                                                ]
+                                                                                            },
+                                                                                            "id": "ea58ee65-705b-4a9d-aa21-971006e35e32"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                "id": "e6421a88-a926-453a-9336-c6853fd49c34"
+                                                                            },
+                                                                            {
+                                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                "args": {
+                                                                                    "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                                                    "__collapse": true
+                                                                                },
+                                                                                "id": "c8bfbf9e-0764-424b-bf9c-475a17dbe6c0"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "id": "f1cda771-0cf3-4c61-ba3b-aafa47a1fd8c"
+                                                                }
+                                                            ],
+                                                            "true3": [
+                                                                {
+                                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                    "args": {
+                                                                        "text": "*You drank the\\n|Spider Cider."
+                                                                    },
+                                                                    "id": "5fde3605-3a3f-4c80-8c83-e903d2955522"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_AWAIT_INPUT",
+                                                                    "args": {
+                                                                        "input": [
+                                                                            "b",
+                                                                            "a"
+                                                                        ]
+                                                                    },
+                                                                    "id": "32c84752-2503-452a-8177-8c38ae1b39b3"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_GROUP",
+                                                                    "args": {
+                                                                        "__label": "Heal HP",
+                                                                        "__collapse": false
+                                                                    },
+                                                                    "children": {
+                                                                        "true": [
+                                                                            {
+                                                                                "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                                                "args": {
+                                                                                    "variable": "2",
+                                                                                    "expression": "$02$ + 24",
+                                                                                    "__collapse": false
+                                                                                },
+                                                                                "id": "8b13fcf7-ffcd-4384-9c02-313c566fbee9"
+                                                                            },
+                                                                            {
+                                                                                "command": "EVENT_IF_EXPRESSION",
+                                                                                "args": {
+                                                                                    "expression": "$02$ >= $03$",
+                                                                                    "__collapseElse": false,
+                                                                                    "__collapse": false
+                                                                                },
+                                                                                "children": {
+                                                                                    "true": [
+                                                                                        {
+                                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                            "args": {
+                                                                                                "text": "*Your HP was\\n|maxed out!"
+                                                                                            },
+                                                                                            "id": "a4dd41e5-8b14-4b44-b46f-bcced9e6f0e3"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_SET_VALUE",
+                                                                                            "args": {
+                                                                                                "variable": "2",
+                                                                                                "value": {
+                                                                                                    "type": "variable",
+                                                                                                    "value": "3"
+                                                                                                }
+                                                                                            },
+                                                                                            "id": "0eda7c2d-f7e3-45e1-9b9e-ddad49ecf55c"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                                            "args": {
+                                                                                                "input": [
+                                                                                                    "b",
+                                                                                                    "a"
+                                                                                                ]
+                                                                                            },
+                                                                                            "id": "6bb2f18e-28a1-40d1-b07d-d3809b84196c"
+                                                                                        }
+                                                                                    ],
+                                                                                    "false": [
+                                                                                        {
+                                                                                            "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                                            "args": {
+                                                                                                "text": "*You healed 24 HP."
+                                                                                            },
+                                                                                            "id": "1008b9e6-8b09-4b94-9768-88f17f1aa233"
+                                                                                        },
+                                                                                        {
+                                                                                            "command": "EVENT_AWAIT_INPUT",
+                                                                                            "args": {
+                                                                                                "input": [
+                                                                                                    "b",
+                                                                                                    "a"
+                                                                                                ]
+                                                                                            },
+                                                                                            "id": "68ba9ce0-e99c-4659-a5c7-8e322ff57c70"
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                "id": "eb6855b2-1bd7-4e54-ab68-fc60b1f784a6"
+                                                                            },
+                                                                            {
+                                                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                                "args": {
+                                                                                    "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                                                    "__collapse": true
+                                                                                },
+                                                                                "id": "8b2ed38f-8005-4098-bbae-d158be1a75e5"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "id": "5f02c8d7-ea96-460e-b721-97ad96a77dde"
+                                                                }
+                                                            ],
+                                                            "true4": [
+                                                                {
+                                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                    "args": {
+                                                                        "text": "*You ate the\n|Butterscotch\n|Pie."
+                                                                    },
+                                                                    "id": "78189fd7-7596-453c-8a09-13bfeac547e1"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_AWAIT_INPUT",
+                                                                    "args": {
+                                                                        "input": [
+                                                                            "b",
+                                                                            "a"
+                                                                        ]
+                                                                    },
+                                                                    "id": "53c4e90b-7228-42b8-98a8-e1c4562c84f2"
+                                                                },
+                                                                {
+                                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                    "args": {
+                                                                        "text": "*Your HP was\n|maxed out!"
+                                                                    },
+                                                                    "id": "993a9771-30f4-4e00-8220-a98fd40a5951"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_SET_VALUE",
+                                                                    "args": {
+                                                                        "variable": "2",
+                                                                        "value": {
+                                                                            "type": "variable",
+                                                                            "value": "3"
+                                                                        }
+                                                                    },
+                                                                    "id": "5e711433-be6e-43db-a5f5-b062225a7c39"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_AWAIT_INPUT",
+                                                                    "args": {
+                                                                        "input": [
+                                                                            "b",
+                                                                            "a"
+                                                                        ]
+                                                                    },
+                                                                    "id": "d1282e02-ca3d-4f59-9d37-c2e4296bb32e"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                    "args": {
+                                                                        "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                                        "__collapse": true
+                                                                    },
+                                                                    "id": "9b392a52-baa6-4dd4-9957-149296d38e3f"
+                                                                }
+                                                            ],
+                                                            "true5": [
+                                                                {
+                                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                    "args": {
+                                                                        "text": "*You threw the\\n|stick away.\n*Then picked it\\n|back up."
+                                                                    },
+                                                                    "id": "fc79cc28-b3c4-4019-b483-198779506944"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_AWAIT_INPUT",
+                                                                    "args": {
+                                                                        "input": [
+                                                                            "b",
+                                                                            "a"
+                                                                        ]
+                                                                    },
+                                                                    "id": "f819ffc9-3e98-4005-aeae-1d483f190eb6"
+                                                                }
+                                                            ],
+                                                            "true6": [
+                                                                {
+                                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                    "args": {
+                                                                        "text": "*You equipped the\\n|Toy Knife."
+                                                                    },
+                                                                    "id": "8645bde5-5eb6-4894-9b2b-6fb05ce89e20"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_AWAIT_INPUT",
+                                                                    "args": {
+                                                                        "input": [
+                                                                            "b",
+                                                                            "a"
+                                                                        ]
+                                                                    },
+                                                                    "id": "0c38ec5d-dafb-4e19-ba50-ca19fd1133ab"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_SET_VALUE",
+                                                                    "args": {
+                                                                        "variable": "33",
+                                                                        "value": {
+                                                                            "type": "number",
+                                                                            "value": 0
+                                                                        },
+                                                                        "__collapse": true
+                                                                    },
+                                                                    "id": "15077aeb-6e62-4f18-9c36-b7efcd75f8b4"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                    "args": {
+                                                                        "customEventId": "be4b9d54-0415-4667-9a95-719ea35c51bc",
+                                                                        "__collapse": true
+                                                                    },
+                                                                    "id": "b2cefde6-dbcd-4a7a-8c4a-df7c34ed5926"
+                                                                }
+                                                            ],
+                                                            "true7": [
+                                                                {
+                                                                    "command": "UTGB_EVENT_BATTLE_TEXT",
+                                                                    "args": {
+                                                                        "text": "*You equipped the\\n|Faded Ribbon."
+                                                                    },
+                                                                    "id": "d5a6559b-78a6-4736-a1d3-745c911e8ca2"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_AWAIT_INPUT",
+                                                                    "args": {
+                                                                        "input": [
+                                                                            "b",
+                                                                            "a"
+                                                                        ]
+                                                                    },
+                                                                    "id": "913c4d32-080c-41cc-9d36-6f33072f00f6"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_SET_VALUE",
+                                                                    "args": {
+                                                                        "variable": "33",
+                                                                        "value": {
+                                                                            "type": "number",
+                                                                            "value": 1
+                                                                        },
+                                                                        "__collapse": true
+                                                                    },
+                                                                    "id": "d3d99ae0-bf6b-4d42-b549-df9617f11733"
+                                                                },
+                                                                {
+                                                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                                    "args": {
+                                                                        "customEventId": "be4b9d54-0415-4667-9a95-719ea35c51bc",
+                                                                        "__collapse": true
+                                                                    },
+                                                                    "id": "9856b898-e425-4fed-8852-05f7260555a9"
+                                                                }
+                                                            ],
+                                                            "true8": [],
+                                                            "true9": [],
+                                                            "true10": [],
+                                                            "true11": [],
+                                                            "true12": [],
+                                                            "true13": [],
+                                                            "true14": [],
+                                                            "true15": [],
+                                                            "false": [
+                                                                {
+                                                                    "command": "EVENT_SET_VALUE",
+                                                                    "args": {
+                                                                        "variable": "8",
+                                                                        "value": {
+                                                                            "type": "number",
+                                                                            "value": 5
+                                                                        }
+                                                                    },
+                                                                    "id": "3eda2e53-2e86-4ff5-8956-3d45338333dc"
+                                                                }
+                                                            ]
+                                                        },
+                                                        "id": "0c4330f3-30d5-4b9f-bbe5-42bbdcb74867"
+                                                    },
+                                                    {
+                                                        "command": "EVENT_GBVM_SCRIPT",
+                                                        "args": {
+                                                            "script": "VM_PUSH_CONST 1\nVM_PUSH_VALUE VAR_INVENTORY_SLOT_TEMP_\nVM_CALL_NATIVE b_inv_use_item, _inv_use_item\nVM_POP 2"
+                                                        },
+                                                        "id": "c5ad7cf7-43fd-4e50-8486-066aa9505262"
+                                                    }
+                                                ],
+                                                "false": []
+                                            },
+                                            "id": "9388a5aa-904d-43c0-9255-a867418b47c8"
+                                        }
+                                    ],
+                                    "false": [
+                                        {
+                                            "command": "EVENT_IF_VALUE",
+                                            "args": {
+                                                "variable": "18",
+                                                "operator": "==",
+                                                "comparator": "0",
+                                                "__collapseElse": true,
+                                                "__collapse": true,
+                                                "__label": "Invert global_temp_var2"
+                                            },
+                                            "children": {
+                                                "true": [
+                                                    {
+                                                        "command": "EVENT_SET_VALUE",
+                                                        "args": {
+                                                            "variable": "18",
+                                                            "value": {
+                                                                "type": "number",
+                                                                "value": 1
+                                                            }
+                                                        },
+                                                        "id": "c036c176-ae95-4035-998a-09fc1e4c90aa"
+                                                    }
+                                                ],
+                                                "false": [
+                                                    {
+                                                        "command": "EVENT_SET_VALUE",
+                                                        "args": {
+                                                            "variable": "18",
+                                                            "value": {
+                                                                "type": "number",
+                                                                "value": 0
+                                                            }
+                                                        },
+                                                        "id": "3f56671f-45da-4788-9f55-ee08300b4e3f"
+                                                    }
+                                                ]
+                                            },
+                                            "id": "13477818-99bf-4dc5-9c50-3842b7e8f05c"
+                                        }
+                                    ]
+                                },
+                                "id": "19920609-934e-4e3e-a61f-f8611870b982"
+                            }
+                        ]
+                    },
+                    "id": "7c906566-b171-48b4-9d11-29fcdff51a24"
+                }
+            ]
+        },
+        {
+            "id": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+            "name": "Remove Item from inventory",
+            "description": "removes the item in the specified inventory slot and moves all items after it to fill the gap\nVariables used:\n\nInventory Type: \n0 = Inventory, \n1 = Equipped Items (0 = Weapon, 1 = Armor),\n2 = Dimensional Box 1 / Regular Box,\n3 = Dimensional Box 2\n\nInventory Slot:\n0-indexed",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_19",
+            "script": [
+                {
+                    "command": "EVENT_GROUP",
+                    "args": {
+                        "__comment": true
+                    },
+                    "children": {
+                        "true": [
+                            {
+                                "command": "EVENT_GBVM_SCRIPT",
+                                "args": {
+                                    "script": "VM_PUSH_VALUE VAR_INVENTORY_SLOT_TEMP_"
+                                },
+                                "id": "6f97c239-850c-4235-bb48-9d4ecb0aa7e7"
+                            },
+                            {
+                                "command": "EVENT_SET_VALUE",
+                                "args": {
+                                    "variable": "38",
+                                    "value": {
+                                        "type": "number",
+                                        "value": 127
+                                    },
+                                    "__collapse": true
+                                },
+                                "id": "5f6e255f-867d-4b26-ab89-667b0fad9244"
+                            },
+                            {
+                                "command": "EVENT_LOOP_WHILE",
+                                "args": {
+                                    "expression": "$38$ != 0",
+                                    "__collapse": false
+                                },
+                                "children": {
+                                    "true": [
+                                        {
+                                            "command": "EVENT_INC_VALUE",
+                                            "args": {
+                                                "variable": "32",
+                                                "__collapse": false
+                                            },
+                                            "id": "87629803-8791-42dc-aa04-32ca3fbe1cbb"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
+                                                "__collapse": true
+                                            },
+                                            "id": "d71a6679-f57d-42fe-82a2-2574612278a3"
+                                        },
+                                        {
+                                            "command": "EVENT_DEC_VALUE",
+                                            "args": {
+                                                "variable": "32",
+                                                "__collapse": false
+                                            },
+                                            "id": "c3f717c1-9197-4bb6-9b3e-abe5d229e75e"
+                                        },
+                                        {
+                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                            "args": {
+                                                "customEventId": "ca5fbe21-30a0-4bac-9b53-1eb27389dce9",
+                                                "__collapse": true
+                                            },
+                                            "id": "424d6c51-34f0-47d1-b7e4-b12146e58225"
+                                        },
+                                        {
+                                            "command": "EVENT_INC_VALUE",
+                                            "args": {
+                                                "variable": "32",
+                                                "__collapse": false
+                                            },
+                                            "id": "78c746ad-cec7-4598-941e-f33724872865"
+                                        }
+                                    ]
+                                },
+                                "id": "4aea0da6-473e-4043-943a-57a2bc7479c2"
+                            },
+                            {
+                                "command": "EVENT_GBVM_SCRIPT",
+                                "args": {
+                                    "script": "VM_SET VAR_INVENTORY_SLOT_TEMP_, .ARG0\nVM_POP 1"
+                                },
+                                "id": "d482597c-274e-4d55-a5f6-2d063af56b21"
+                            }
+                        ]
+                    },
+                    "id": "9f7594e1-0f53-4d0b-bad4-18708ecaf7be"
+                },
+                {
+                    "command": "EVENT_GBVM_SCRIPT",
+                    "args": {
+                        "script": "VM_PUSH_VALUE VAR_INVENTORY_SLOT_TEMP_\nVM_CALL_NATIVE b_inv_remove_item, _inv_remove_item\nVM_POP 1"
+                    },
+                    "id": "f58429d5-f92b-4c83-82e1-16019442961d"
+                }
+            ]
+        },
+        {
+            "id": "c64eba51-96ee-4d1f-b0c8-8758f8debca1",
+            "name": "Update Stats",
+            "description": "",
+            "variables": {},
+            "actors": {},
+            "symbol": "script_17",
+            "script": [
+                {
+                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                    "args": {
+                        "variable": "3",
+                        "expression": "16 + (4 * $17$)",
+                        "__collapse": false
+                    },
+                    "id": "ffc8fb23-8382-4fee-87b3-305b12000878"
+                },
+                {
+                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                    "args": {
+                        "variable": "30",
+                        "expression": "-2 + (2 * $17$)",
+                        "__collapse": false
+                    },
+                    "id": "62d71516-5295-4569-bf33-10144ac4d93c"
+                },
+                {
+                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                    "args": {
+                        "variable": "31",
+                        "expression": "($17$ - 1) / 4",
+                        "__collapse": false
+                    },
+                    "id": "3488e210-04c7-4f2f-9c83-195fe550233c"
                 }
             ]
         }
@@ -110398,7 +111826,7 @@
             "symbol": "sound_puzzles_sav",
             "filename": "puzzles.sav",
             "type": "fxhammer",
-            "inode": "47850746041095721",
+            "inode": "557227",
             "_v": 1687182357805
         },
         {
@@ -110407,7 +111835,7 @@
             "symbol": "sound_ui_sav",
             "filename": "ui.sav",
             "type": "fxhammer",
-            "inode": "8162774324893246",
+            "inode": "557228",
             "_v": 1687182357805
         },
         {
@@ -110416,7 +111844,7 @@
             "symbol": "sound_voices_sav",
             "filename": "voices.sav",
             "type": "fxhammer",
-            "inode": "43347146413725296",
+            "inode": "549823",
             "_v": 1679310567138
         }
     ],
@@ -110763,6 +112191,16 @@
             "symbol": "var_equippeditems"
         },
         {
+            "id": "42",
+            "name": "flowey_visible (r2)",
+            "symbol": "var_flowey_visible_r2_"
+        },
+        {
+            "id": "43",
+            "name": "Have you killed toriel",
+            "symbol": "var_have_you_killed_toriel"
+        },
+        {
             "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
             "name": "Counter",
             "symbol": "var_counter_0"
@@ -110851,16 +112289,6 @@
             "id": "d0a3cdfd-d3c8-4694-89b9-3268359c5af3__L0",
             "name": "Local 0",
             "symbol": "var_local_2"
-        },
-        {
-            "id": "42",
-            "name": "flowey_visible (r2)",
-            "symbol": "var_flowey_visible_r2_"
-        },
-        {
-            "id": "43",
-            "name": "Have you killed toriel",
-            "symbol": "var_have_you_killed_toriel"
         }
     ],
     "engineFieldValues": [
@@ -110870,9 +112298,9 @@
         }
     ],
     "settings": {
-        "startSceneId": "b4887780-0a45-45e6-b7af-d171ae0018ff",
-        "startX": 0,
-        "startY": 0,
+        "startSceneId": "93481461-209a-497c-8304-a54799217280",
+        "startX": 19,
+        "startY": 12,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "up",
@@ -110880,9 +112308,9 @@
         "showConnections": "selected",
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 301,
-        "worldScrollY": 978,
-        "zoom": 125,
+        "worldScrollX": 0,
+        "worldScrollY": 647,
+        "zoom": 100,
         "customColorsEnabled": true,
         "sgbEnabled": false,
         "customHead": "",
@@ -110911,8 +112339,8 @@
         "playerPaletteId": "",
         "navigatorSplitSizes": [
             30,
-            438,
-            488
+            646,
+            719
         ],
         "showNavigator": true,
         "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",
