@@ -115,6 +115,20 @@ const fields = [].concat(
             },
           ],
         },
+
+        {
+          key: `haveChoices`,
+          label: "Have Choices ?",
+          type: "checkbox",
+          defaultValue: true,
+          width: "50%",
+          conditions: [
+            {
+              key: "__scriptTabs",
+              in: ["layout"],
+            },
+          ],
+        },
       ],
     },
     {
