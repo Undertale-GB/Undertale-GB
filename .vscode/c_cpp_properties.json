@@ -4,13 +4,15 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/finns/Downloads/GBDK-2020/gbdk/include"
+                "/home/finns/Dokumente/AUR/gb-studio-fork/buildTools/linux-x64/gbdk/include/**"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/clang",
-            "cStandard": "c17",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "linux-clang-x64"
+            "defines": ["__PORT_sm83", "__TARGET_gb" , "CGB"],
+            "compilerPath": "",
+            "cStandard": "c11",
+            "intelliSenseMode": "${default}",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            }
         }
     ],
     "version": 4

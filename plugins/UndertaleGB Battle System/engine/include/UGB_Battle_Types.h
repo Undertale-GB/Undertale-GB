@@ -18,14 +18,30 @@ typedef enum {
 
 }ugb_pattern_command_e;
 
-
+/*
 typedef struct ugb_battle_t {
     uint8_t n_actors, n_projectiles, n_sprites;
     far_ptr_t background_enemy, background_ui;
     far_ptr_t actors, sprites;
     far_ptr_t patterns[];
 }ugb_battle_t;
+*/
 
+typedef struct ugb_battle_t {
+    far_ptr_t func_init;
+    uint8_t n_enemies;
+    far_ptr_t enemies[2];
+    uint8_t n_attacks;
+    far_ptr_t attacks[];
+} ugb_battle_t;
+
+typedef struct ugb_enemy_t {
+    char* name;
+    int8_t atk, def;
+    BOOLEAN run_possible;
+    char* act_text;
+    far_ptr_t func_act_evaluate;
+} ugb_enemy_t;
 
 typedef struct ugb_pattern_t {
     far_ptr_t projectiles;

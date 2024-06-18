@@ -11,10 +11,61 @@
 #include "trigger.h"
 #include "vm.h"
 
-
+//debug only!
+#include "data/sprite_toriel.h"
 
 UBYTE bbox_left, bbox_right;
 UBYTE bbox_up, bbox_down;
+
+
+metasprite_t attack_metasprite[20] = {
+    { -8, 8, 14, 11 }, { 8, 0, 16, 10 }, { -16, 0, 18, 10 }, { 8, -8, 14, 43 }, { 8, 0, 16, 42 }, { -16, 0, 18, 42 },
+    {metasprite_end}
+};
+
+
+inline UBYTE load_sprite_tileset(UBYTE base_tile, const tileset_t * tileset, UBYTE bank) {
+    UBYTE n_tiles = ReadBankedUBYTE(&(tileset->n_tiles), bank);
+    if (n_tiles) SetBankedSpriteData(base_tile, n_tiles, tileset->tiles, bank);
+    return n_tiles;
+}
+
+//loads metasprite from banked code
+//Debug for now, might clean up later
+uint8_t ugb_load_banked_metasprite(far_ptr_t spritesheet_ptr, UINT8 base_tile, UINT8 base_sprite, UINT8 x, UINT8 y) NONBANKED {
+    
+    UBYTE _save = CURRENT_BANK;
+    SWITCH_ROM(spritesheet_ptr.bank);
+
+    spritesheet_t* current_spritesheet = spritesheet_ptr.ptr;
+    metasprite_t* current_metasprite = current_spritesheet->metasprites[0];
+    
+    UBYTE metasprite_size = move_metasprite(
+        current_metasprite,
+        base_tile,
+        base_sprite,
+        x,
+        y
+    );
+
+    SWITCH_ROM(_save);
+
+    return metasprite_size;
+}
+
+// run late in main game loop
+// called in core.c during shadow_oam
+void ugb_draw_attack(void) NONBANKED {
+
+    allocated_hardware_sprites += move_metasprite(
+        attack_metasprite,
+        0,
+        allocated_hardware_sprites,
+        64,
+        64
+    );
+}
+
 
 
 void pointnclick_init() BANKED {
@@ -25,17 +76,63 @@ void pointnclick_init() BANKED {
     //PLAYER.dir = DIR_RIGHT;
     //actor_set_anim(&PLAYER, ANIM_CURSOR);
 
-    // TODO: Add battle loading code
-
-    //Debug:
+    //========================== Debug Start ==========================//
     bbox_left = 37;
     bbox_right = 122;
     bbox_up = 77;
     bbox_down = 114;
+
+
+    //load sprites
+    far_ptr_t spritesheet_FarPtr = TO_FAR_PTR_T(sprite_toriel);
+
+    //ReadBankedFarPtr(&spritesheet_ptr, sprite.ptr, sprite.bank); // FarPtr to Spritesheet data 
+
+    spritesheet_t* spritesheetPtr = spritesheet_FarPtr.ptr;
+
+    far_ptr_t data;
+    ReadBankedFarPtr(&data, (void *)&spritesheetPtr->tileset, spritesheet_FarPtr.bank);
+    
+    VBK_REG = 1;
+    UBYTE n_tiles = load_sprite_tileset(0, data.ptr, data.bank);
+    VBK_REG = 0;
+
+
+    //========================== Debug End ==========================//
+}
+
+void UTGB_battle_data_init(SCRIPT_CTX * THIS) {
+    
+    // TODO: Add battle loading code
 }
 
 
 void pointnclick_update() BANKED {
+
+
+    //========================== Debug Start ==========================//
+
+    /*
+
+    //load sprites
+    far_ptr_t spritesheet_FarPtr = TO_FAR_PTR_T(sprite_toriel);
+
+    //ReadBankedFarPtr(&spritesheet_ptr, sprite.ptr, sprite.bank); // FarPtr to Spritesheet data 
+
+    spritesheet_t* spritesheetPtr = spritesheet_FarPtr.ptr;
+    
+    //draw sprites
+    allocated_hardware_sprites += ugb_load_banked_metasprite(
+        spritesheet_FarPtr,
+        0,
+        allocated_hardware_sprites,
+        64,
+        64
+    );
+
+    */
+
+    //========================== Debug End ==========================//
 
     player_moving = FALSE;
 

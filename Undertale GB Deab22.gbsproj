@@ -128504,14 +128504,6 @@
             "type": "uge"
         },
         {
-            "id": "f13ffe23-479d-41e6-92b8-034cce7f07e2",
-            "name": "Intro_Boom(WIP)",
-            "symbol": "song_intro_boom_wip_",
-            "filename": "Intro_Boom(WIP).uge",
-            "settings": {},
-            "type": "uge"
-        },
-        {
             "id": "da2056c7-842d-4ac5-9104-0337383f66fb",
             "name": "Once Upon A Time",
             "symbol": "song_once_upon_a_time",
@@ -129127,9 +129119,9 @@
         }
     ],
     "settings": {
-        "startSceneId": "93481461-209a-497c-8304-a54799217280",
-        "startX": 21,
-        "startY": 7,
+        "startSceneId": "2785d933-c9a1-4293-80db-5e6b53e25699",
+        "startX": 9,
+        "startY": 12,
         "startMoveSpeed": 1,
         "startAnimSpeed": 15,
         "startDirection": "down",
@@ -129138,7 +129130,7 @@
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
         "worldScrollX": 0,
-        "worldScrollY": 607,
+        "worldScrollY": 0,
         "zoom": 100,
         "customColorsEnabled": true,
         "sgbEnabled": false,
