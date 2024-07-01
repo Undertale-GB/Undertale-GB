@@ -16,12 +16,32 @@
 
 UBYTE bbox_left, bbox_right;
 UBYTE bbox_up, bbox_down;
+uint16_t attackTimer = 0;
 
 
-metasprite_t attack_metasprite[20] = {
-    { -8, 8, 14, 11 }, { 8, 0, 16, 10 }, { -16, 0, 18, 10 }, { 8, -8, 14, 43 }, { 8, 0, 16, 42 }, { -16, 0, 18, 42 },
-    {metasprite_end}
+
+const metasprite_t var_metasprite_end = {metasprite_end};
+
+metasprite_t attack_metasprite[10][10] = {
+    {
+        { -8, 8, 14, 11 }, { 8, 0, 16, 10 }, { -16, 0, 18, 10 }, { 8, -8, 14, 43 }, { 8, 0, 16, 42 }, { -16, 0, 18, 42 },
+        {metasprite_end}
+    }
 };
+UBYTE num_attack_metasprites = 1;
+
+
+inline void add_attack_metasprite(metasprite_t* sprite, UBYTE spriteNum) {
+    UBYTE i;
+    for(i = 0; i < spriteNum; i++) {
+        attack_metasprite[num_attack_metasprites][i] = sprite[i];
+    }
+    attack_metasprite[num_attack_metasprites][i] = var_metasprite_end;
+    
+    num_attack_metasprites++;
+}
+
+
 
 
 inline UBYTE load_sprite_tileset(UBYTE base_tile, const tileset_t * tileset, UBYTE bank) {
@@ -29,7 +49,7 @@ inline UBYTE load_sprite_tileset(UBYTE base_tile, const tileset_t * tileset, UBY
     if (n_tiles) SetBankedSpriteData(base_tile, n_tiles, tileset->tiles, bank);
     return n_tiles;
 }
-
+/*
 //loads metasprite from banked code
 //Debug for now, might clean up later
 uint8_t ugb_load_banked_metasprite(far_ptr_t spritesheet_ptr, UINT8 base_tile, UINT8 base_sprite, UINT8 x, UINT8 y) NONBANKED {
@@ -52,23 +72,27 @@ uint8_t ugb_load_banked_metasprite(far_ptr_t spritesheet_ptr, UINT8 base_tile, U
 
     return metasprite_size;
 }
+*/
 
 // run late in main game loop
 // called in core.c during shadow_oam
 void ugb_draw_attack(void) NONBANKED {
 
-    allocated_hardware_sprites += move_metasprite(
-        attack_metasprite,
-        0,
-        allocated_hardware_sprites,
-        64,
-        64
-    );
+    for (UBYTE i = 0; i < num_attack_metasprites; i++) {
+
+        allocated_hardware_sprites += move_metasprite(
+            attack_metasprite[i],
+            0,
+            allocated_hardware_sprites,
+            0,
+            0
+        );
+    }
 }
 
 
 
-void pointnclick_init() BANKED {
+void pointnclick_init(void) BANKED {
     camera_offset_x = 0;
     camera_offset_y = 0;
     camera_deadzone_x = 0;
@@ -107,7 +131,7 @@ void UTGB_battle_data_init(SCRIPT_CTX * THIS) {
 }
 
 
-void pointnclick_update() BANKED {
+void pointnclick_update(void) BANKED {
 
 
     //========================== Debug Start ==========================//
@@ -131,6 +155,20 @@ void pointnclick_update() BANKED {
     );
 
     */
+
+
+    attackTimer++;
+    num_attack_metasprites = 1;
+
+    for (int8_t i = 0; i < 6; i++) {
+
+        metasprite_t tmp = { .dy = 77 + 16, .dx = 37 + 8 - 2 + ((i << 4) + attackTimer) % (64 + 16), .dtile = 16, .props = 11 };
+        if(tmp.dx < (122 + 6)) {
+            add_attack_metasprite(&tmp, 1);
+        }
+        
+    }
+
 
     //========================== Debug End ==========================//
 
