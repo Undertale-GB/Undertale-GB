@@ -34,6 +34,9 @@
 #include "shadow.h"
 #include "data/data_bootstrap.h"
 
+//custom sprite handler for UTGB Battle System
+#include "states/pointnclick.h"
+
 extern void __bank_bootstrap_script;
 extern const UBYTE bootstrap_script[];
 
@@ -82,7 +85,7 @@ void process_VM(void) {
                 scroll_update();
                 actors_update();
                 projectiles_update();                                   // update and render projectiles
-                ugb_draw_attack();
+                //ugb_draw_attack();
 
                 ui_update();
                 actors_handle_player_collision();
@@ -207,7 +210,7 @@ void core_run(void) BANKED {
 
     LCDC_REG = LCDCF_OFF | LCDCF_WIN9C00 | LCDCF_WINON | LCDCF_BG8800 | LCDCF_BG9800 | LCDCF_OBJ16 | LCDCF_OBJON | LCDCF_BGON;
 
-    WX_REG = MINWNDPOSX;
+    WX_REG = DEVICE_WINDOW_PX_OFFSET_X;
     WY_REG = MENU_CLOSED_Y;
 
     initrand(DIV_REG);

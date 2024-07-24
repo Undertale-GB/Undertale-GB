@@ -6,6 +6,6 @@
 void pointnclick_init(void) BANKED;
 void pointnclick_update(void) BANKED;
 
-void ugb_draw_attack(void) NONBANKED;
+void ugb_draw_attack(void) BANKED;
 
 #endif

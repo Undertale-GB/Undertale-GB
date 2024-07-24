@@ -22,7 +22,7 @@ uint16_t attackTimer = 0;
 
 const metasprite_t var_metasprite_end = {metasprite_end};
 
-metasprite_t attack_metasprite[10][10] = {
+metasprite_t attack_metasprite[3][10] = {
     {
         { -8, 8, 14, 11 }, { 8, 0, 16, 10 }, { -16, 0, 18, 10 }, { 8, -8, 14, 43 }, { 8, 0, 16, 42 }, { -16, 0, 18, 42 },
         {metasprite_end}
@@ -76,7 +76,7 @@ uint8_t ugb_load_banked_metasprite(far_ptr_t spritesheet_ptr, UINT8 base_tile, U
 
 // run late in main game loop
 // called in core.c during shadow_oam
-void ugb_draw_attack(void) NONBANKED {
+void ugb_draw_attack(void) BANKED {
 
     for (UBYTE i = 0; i < num_attack_metasprites; i++) {
 
@@ -125,7 +125,7 @@ void pointnclick_init(void) BANKED {
     //========================== Debug End ==========================//
 }
 
-void UTGB_battle_data_init(SCRIPT_CTX * THIS) {
+void UTGB_battle_data_init(SCRIPT_CTX * THIS) BANKED {
     
     // TODO: Add battle loading code
 }

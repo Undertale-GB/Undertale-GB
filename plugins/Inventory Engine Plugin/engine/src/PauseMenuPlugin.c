@@ -44,7 +44,7 @@ const palette_entry_t UTGB_white_text = CGB_PALETTE(UTGB_UI_WHITE, UTGB_UI_WHITE
 concatanates an INT16 number to a string
 use like "strcat()"
 */
-void utgb_cat_var_to_string(UBYTE * string, INT16 value) OLDCALL BANKED {
+void utgb_cat_var_to_string(UBYTE * string, INT16 value) BANKED {
 
     //find end of string
     while (*string) string++;
@@ -59,7 +59,7 @@ void utgb_cat_var_to_string(UBYTE * string, INT16 value) OLDCALL BANKED {
 concatanates an INT16 number to a string as a char
 use like "strcat()"
 */
-void utgb_cat_var_as_char(UBYTE * string, INT16 value) OLDCALL BANKED {
+void utgb_cat_var_as_char(UBYTE * string, INT16 value) BANKED {
 
     while (*string) string++;
 
@@ -74,7 +74,7 @@ Moves a section of VRAM, updating IDs on tilemap to new position
 New VRAM position can only be on Bank 2
 Updating tile IDs only works on overlay
 */
-void utgb_move_overlay_content_vram(uint8_t source_tile, uint8_t target_tile, uint8_t nb_tiles, uint8_t vram_reg) OLDCALL BANKED {
+void utgb_move_overlay_content_vram(uint8_t source_tile, uint8_t target_tile, uint8_t nb_tiles, uint8_t vram_reg) BANKED {
 
     uint8_t TempTileStorage[16]; // stores 1 tile
 
@@ -114,7 +114,7 @@ void utgb_move_overlay_content_vram(uint8_t source_tile, uint8_t target_tile, ui
 Copies the specified area of the screen to the overlay
 Useful for erasing parts of a fullscreen interface
 */
-void copy_screen_area_to_overlay(SCRIPT_CTX * THIS, UBYTE x, UBYTE y, UBYTE w, UBYTE h) OLDCALL BANKED {
+void copy_screen_area_to_overlay(SCRIPT_CTX * THIS, UBYTE x, UBYTE y, UBYTE w, UBYTE h) BANKED {
     
     UBYTE scene_x = ((scroll_x - 1) >> 3) + 1 + x;
     UBYTE scene_y = ((scroll_y - 1) >> 3) + 1 + y;
@@ -136,7 +136,7 @@ const char PM_ColoredFont[] = "\002\002";
 #define PM_Dialogue_BBox 0, 13, 20, 5
 #define PM_Dialogue_StartPos "\003\002\017"
 
-void PM_Dialogue_Write(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void PM_Dialogue_Write(SCRIPT_CTX * THIS) BANKED {
     vm_idle(THIS);
     vm_overlay_clear(THIS, PM_Dialogue_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
     vm_display_text(THIS, 0, 52);
@@ -157,7 +157,7 @@ const struct menu_item_t PM_Main[] = {
 
 const char PM_Main_StartPos[] = "\003\003\012";
 
-void PM_Main_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void PM_Main_Show(SCRIPT_CTX * THIS) BANKED {
 
     // WIP: render textbox + text
     vm_overlay_clear(THIS, 0, 8, 7, 5, UI_BKG_COLOR, UI_DRAW_FRAME);
@@ -180,7 +180,7 @@ void PM_Main_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 
 
-void PM_Quick_Overview_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void PM_Quick_Overview_Show(SCRIPT_CTX * THIS) BANKED {
 
     // WIP: render textbox + text
     vm_overlay_clear(THIS, 0, 1, 8, 7, UI_BKG_COLOR, UI_DRAW_FRAME);
@@ -247,7 +247,7 @@ const struct menu_item_t PM_Item_Interact[] = {
 #define PM_Item_BBox 9, 1, 11, 12
 #define PM_Item_StartPos "\003\014\003"
 
-void PM_Item_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void PM_Item_Show(SCRIPT_CTX * THIS) BANKED {
 
     vm_idle(THIS);
     vm_overlay_clear(THIS, PM_Item_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
@@ -280,7 +280,7 @@ void PM_Item_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
 // =================== Item Submenu Functions ========================= //
 
-void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE"
+void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) BANKED { //on "USE"
 
     unsigned char * d = ui_text_data;
     *d = 0;
@@ -314,7 +314,7 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "USE
 
 }
 
-void PM_Item_Info(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "INFO"
+void PM_Item_Info(SCRIPT_CTX * THIS, uint8_t itemSlot) BANKED { //on "INFO"
 
     unsigned char * d = ui_text_data;
     *d = 0;
@@ -334,7 +334,7 @@ void PM_Item_Info(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "IN
     PM_Dialogue_Hide(THIS); // hide text box
 }
 
-void PM_Item_Drop(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "DROP"
+void PM_Item_Drop(SCRIPT_CTX * THIS, uint8_t itemSlot) BANKED { //on "DROP"
 
     unsigned char * d = ui_text_data;
     *d = 0;
@@ -356,7 +356,7 @@ void PM_Item_Drop(SCRIPT_CTX * THIS, uint8_t itemSlot) OLDCALL BANKED { //on "DR
 #define PM_Stat_BBox 10, 1, 10, 12
 #define PM_Stat_StartPos "\003\014\003"
 
-void PM_Stat_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void PM_Stat_Show(SCRIPT_CTX * THIS) BANKED {
 
     vm_overlay_clear(THIS, PM_Stat_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
 
@@ -431,7 +431,7 @@ void PM_Stat_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 #define PM_Cell_BBox 8, 9, 11, 4
 #define PM_Cell_StartPos "\003\012\013"
 
-void PM_Cell_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void PM_Cell_Show(SCRIPT_CTX * THIS) BANKED {
     vm_overlay_clear(THIS, PM_Cell_BBox, UI_BKG_COLOR, UI_DRAW_FRAME);
 
     unsigned char * d = ui_text_data;
@@ -453,7 +453,7 @@ void PM_Cell_Show(SCRIPT_CTX * THIS) OLDCALL BANKED {
 
 // ===================== Run Menu System =============================== //
 
-void ugb_show_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void ugb_show_pause_menu(SCRIPT_CTX * THIS) BANKED {
 
     uint8_t menu_level = 1; //stacked menu level
     uint8_t choice1 = 1; // default selected menu item
