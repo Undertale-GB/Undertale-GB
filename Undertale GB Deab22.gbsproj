@@ -125661,13 +125661,7 @@
             "id": "ce284bcd-494f-46aa-856e-529c9cb95871",
             "name": "Refresh Battle UI (Outdated)",
             "description": "",
-            "variables": {
-                "V6": {
-                    "id": "V6",
-                    "name": "Round No.",
-                    "passByReference": true
-                }
-            },
+            "variables": {},
             "actors": {},
             "script": [
                 {
@@ -130397,7 +130391,7 @@
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
         "worldScrollX": 0,
-        "worldScrollY": 630,
+        "worldScrollY": 106,
         "zoom": 100,
         "sgbEnabled": false,
         "customHead": "",
@@ -130425,9 +130419,9 @@
         "defaultUIPaletteId": "default-ui",
         "playerPaletteId": "",
         "navigatorSplitSizes": [
-            205,
-            297,
-            450
+            187,
+            223,
+            542
         ],
         "showNavigator": true,
         "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",

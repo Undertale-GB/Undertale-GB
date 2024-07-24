@@ -12,6 +12,7 @@
 
 #include "UTGBVariables.h"
 #include "InventoryEnginePlugin.h"
+#include "InventoryEngine_Types.h"
 
 
 const char textSpeedStr[] = "\001\001";
@@ -21,19 +22,6 @@ const char menuInvStartPosStr[] = "\003\002\011";
 const char battleInvStartPosStr[] = "\003\004\002";
 
 
-typedef struct item_t {
-    unsigned char name[32];
-    unsigned char nameShort[10];
-    unsigned char nameSerious[10];
-    uint8_t       useType; //1 = Heal, 2 = Weapon, 3 = Armor
-    uint8_t       amount;
-    unsigned char amountStr[16];
-
-    unsigned char desc[64];
-    unsigned char useBattle[64];
-    unsigned char useMain[64];
-    unsigned char useMain2[64];
-} item_t;
 
 
 const struct item_t items[] = {
