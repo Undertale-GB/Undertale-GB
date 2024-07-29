@@ -35,7 +35,7 @@
 #include "data/data_bootstrap.h"
 
 //custom sprite handler for UTGB Battle System
-#include "states/pointnclick.h"
+//#include "states/pointnclick.h"
 
 extern void __bank_bootstrap_script;
 extern const UBYTE bootstrap_script[];

@@ -64052,7 +64052,7 @@
             "backgroundId": "737f2739-e829-43d1-a680-3476dfbeb9f8",
             "width": 20,
             "height": 18,
-            "type": "POINTNCLICK",
+            "type": "utgb_battle",
             "paletteIds": [
                 "default-ui",
                 "6dad24ea-cdfb-4752-8027-735e96e81d53"
@@ -130390,8 +130390,8 @@
         "showConnections": "selected",
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 0,
-        "worldScrollY": 106,
+        "worldScrollX": 249,
+        "worldScrollY": 288,
         "zoom": 100,
         "sgbEnabled": false,
         "customHead": "",

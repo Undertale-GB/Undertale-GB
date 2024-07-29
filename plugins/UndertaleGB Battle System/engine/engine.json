@@ -1,0 +1,9 @@
+{
+    "version": "4.0.1-e0",
+    "sceneTypes": [
+    {
+      "key": "utgb_battle",
+      "label": "Battle"
+    }
+  ]
+}

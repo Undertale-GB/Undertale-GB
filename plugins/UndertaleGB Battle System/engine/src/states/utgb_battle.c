@@ -1,7 +1,7 @@
 #pragma bank 255
 
 #include "data/states_defines.h"
-#include "states/pointnclick.h"
+#include "states/utgb_battle.h"
 
 #include "actor.h"
 #include "camera.h"
@@ -76,7 +76,8 @@ uint8_t ugb_load_banked_metasprite(far_ptr_t spritesheet_ptr, UINT8 base_tile, U
 
 // run late in main game loop
 // called in core.c during shadow_oam
-void ugb_draw_attack(void) BANKED {
+/* temp
+void utgb_draw_attack(void) BANKED {
 
     for (UBYTE i = 0; i < num_attack_metasprites; i++) {
 
@@ -89,10 +90,10 @@ void ugb_draw_attack(void) BANKED {
         );
     }
 }
+*/ //temp
 
 
-
-void pointnclick_init(void) BANKED {
+void utgb_battle_init(void) BANKED {
     camera_offset_x = 0;
     camera_offset_y = 0;
     camera_deadzone_x = 0;
@@ -131,7 +132,7 @@ void UTGB_battle_data_init(SCRIPT_CTX * THIS) BANKED {
 }
 
 
-void pointnclick_update(void) BANKED {
+void utgb_battle_update(void) BANKED {
 
 
     //========================== Debug Start ==========================//

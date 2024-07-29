@@ -15,6 +15,8 @@
 #include "InventoryEnginePlugin.h"
 #include "InventoryEngine_Types.h"
 
+#define InvMainPtr VAR_INVENTORY_1
+#define EquippedItemsPtr VAR_EQUIPPEDITEMS
 
 const char textSpeedStr[] = "\001\001";
 const char fontSmallStr[] = "\002\005";
