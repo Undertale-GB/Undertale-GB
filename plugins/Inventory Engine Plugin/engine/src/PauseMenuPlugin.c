@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include "bankdata.h"
 #include "data/frame_image.h"
+#include "data/game_globals.h"
 
 #include "UTGBVariables.h"
 #include "InventoryEnginePlugin.h"

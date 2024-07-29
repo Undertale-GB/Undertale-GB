@@ -10,6 +10,7 @@
 #include <types.h>
 #include "gbs_types.h"
 
+#include "data/game_globals.h"
 #include "UTGBVariables.h"
 #include "InventoryEnginePlugin.h"
 #include "InventoryEngine_Types.h"
