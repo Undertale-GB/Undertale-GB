@@ -35,7 +35,7 @@
 #include "data/data_bootstrap.h"
 
 //custom sprite handler for UTGB Battle System
-//#include "states/pointnclick.h"
+#include "states/utgb_battle.h"
 
 extern void __bank_bootstrap_script;
 extern const UBYTE bootstrap_script[];
@@ -85,7 +85,7 @@ void process_VM(void) {
                 scroll_update();
                 actors_update();
                 projectiles_update();                                   // update and render projectiles
-                //ugb_draw_attack();
+                utgb_draw_attack();
 
                 ui_update();
                 actors_handle_player_collision();

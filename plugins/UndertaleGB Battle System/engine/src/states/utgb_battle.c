@@ -16,19 +16,14 @@
 
 UBYTE bbox_left, bbox_right;
 UBYTE bbox_up, bbox_down;
-uint16_t attackTimer = 0;
+uint16_t attackTimer;
 
 
 
 const metasprite_t var_metasprite_end = {metasprite_end};
 
-metasprite_t attack_metasprite[3][10] = {
-    {
-        { -8, 8, 14, 11 }, { 8, 0, 16, 10 }, { -16, 0, 18, 10 }, { 8, -8, 14, 43 }, { 8, 0, 16, 42 }, { -16, 0, 18, 42 },
-        {metasprite_end}
-    }
-};
-UBYTE num_attack_metasprites = 1;
+metasprite_t attack_metasprite[10][10];
+UBYTE num_attack_metasprites;
 
 
 inline void add_attack_metasprite(metasprite_t* sprite, UBYTE spriteNum) {
@@ -76,7 +71,6 @@ uint8_t ugb_load_banked_metasprite(far_ptr_t spritesheet_ptr, UINT8 base_tile, U
 
 // run late in main game loop
 // called in core.c during shadow_oam
-/* temp
 void utgb_draw_attack(void) BANKED {
 
     for (UBYTE i = 0; i < num_attack_metasprites; i++) {
@@ -90,7 +84,6 @@ void utgb_draw_attack(void) BANKED {
         );
     }
 }
-*/ //temp
 
 
 void utgb_battle_init(void) BANKED {
@@ -107,6 +100,8 @@ void utgb_battle_init(void) BANKED {
     bbox_up = 77;
     bbox_down = 114;
 
+    attackTimer = 0;
+    num_attack_metasprites = 0;
 
     //load sprites
     far_ptr_t spritesheet_FarPtr = TO_FAR_PTR_T(sprite_toriel);

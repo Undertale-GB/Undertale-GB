@@ -6486,7 +6486,8 @@
             "playerHit1Script": [],
             "playerHit2Script": [],
             "playerHit3Script": [],
-            "symbol": "scene_room_03"
+            "symbol": "scene_room_03",
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_04",
@@ -7672,7 +7673,8 @@
             "playerHit1Script": [],
             "playerHit2Script": [],
             "playerHit3Script": [],
-            "symbol": "scene_room_04"
+            "symbol": "scene_room_04",
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_05",
@@ -10292,7 +10294,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_06 (dummy)",
@@ -11183,7 +11186,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_07",
@@ -15452,7 +15456,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_08",
@@ -21545,7 +21550,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_09 (candy)",
@@ -22695,7 +22701,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_10",
@@ -24594,7 +24601,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_11",
@@ -26953,7 +26961,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_12",
@@ -28643,7 +28652,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_13",
@@ -33673,7 +33683,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_14",
@@ -36251,7 +36262,8 @@
             ],
             "playerHit1Script": [],
             "playerHit2Script": [],
-            "playerHit3Script": []
+            "playerHit3Script": [],
+            "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103"
         },
         {
             "name": "Room_15 (cheese)",
@@ -64423,8 +64435,8 @@
             "autoFadeSpeed": 1,
             "id": "2785d933-c9a1-4293-80db-5e6b53e25699",
             "symbol": "scene_48",
-            "x": 639.5044150110374,
-            "y": 225.12362030905075,
+            "x": 640,
+            "y": 224,
             "actors": [],
             "triggers": [],
             "script": [],
@@ -130020,7 +130032,18 @@
             "filename": "sweat.png"
         }
     ],
-    "tilesets": [],
+    "tilesets": [
+        {
+            "id": "8e9133c8-d49a-4fff-a75a-81460c67f103",
+            "name": "ruins tileset",
+            "symbol": "tileset_ruins_tileset",
+            "width": 16,
+            "height": 5,
+            "imageWidth": 128,
+            "imageHeight": 40,
+            "filename": "ruins tileset.png"
+        }
+    ],
     "variables": [
         {
             "id": "0",
@@ -130390,8 +130413,8 @@
         "showConnections": "selected",
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 249,
-        "worldScrollY": 288,
+        "worldScrollX": 0,
+        "worldScrollY": 1077,
         "zoom": 100,
         "sgbEnabled": false,
         "customHead": "",
@@ -130497,7 +130520,7 @@
         "colorMode": "mixed",
         "previewAsMono": false,
         "openBuildLogOnWarnings": true,
-        "generateDebugFilesEnabled": true,
+        "generateDebugFilesEnabled": false,
         "customColorsEnabled": true,
         "defaultFadeStyle": "white",
         "playerSpriteSheetId": "581d34d0-9591-4e6e-a609-1d94f203b0cd"

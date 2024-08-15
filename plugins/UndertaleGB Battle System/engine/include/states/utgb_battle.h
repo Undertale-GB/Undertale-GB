@@ -6,6 +6,6 @@
 void utgb_battle_init(void) BANKED;
 void utgb_battle_update(void) BANKED;
 
-//void utgb_draw_attack(void) BANKED;
+void utgb_draw_attack(void) BANKED;
 
 #endif
