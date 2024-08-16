@@ -1,0 +1,38 @@
+{
+  "_resourceType": "script",
+  "id": "fd2cddfe-3b8f-4ba9-b535-d240e7d6761f",
+  "name": "Update Stats",
+  "symbol": "script_18",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_VARIABLE_MATH_EVALUATE",
+      "args": {
+        "variable": "3",
+        "expression": "16 + (4 * $17$)",
+        "__collapse": false
+      },
+      "id": "85a929bf-1667-4726-b2c5-29ff35289e55"
+    },
+    {
+      "command": "EVENT_VARIABLE_MATH_EVALUATE",
+      "args": {
+        "variable": "30",
+        "expression": "-2 + (2 * $17$)",
+        "__collapse": false
+      },
+      "id": "800ebf07-13bb-4873-a58d-527a4dbde66f"
+    },
+    {
+      "command": "EVENT_VARIABLE_MATH_EVALUATE",
+      "args": {
+        "variable": "31",
+        "expression": "($17$ - 1) / 4",
+        "__collapse": false
+      },
+      "id": "60185585-13ab-45d8-abe6-a56425b420cd"
+    }
+  ]
+}

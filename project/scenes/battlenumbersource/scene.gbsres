@@ -1,0 +1,21 @@
+{
+  "_resourceType": "scene",
+  "id": "36a9766e-9569-44cc-b8e9-c947eb9b55f7",
+  "type": "TOPDOWN",
+  "name": "BattleNumberSource",
+  "symbol": "scene_47",
+  "x": 1408,
+  "y": 112,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "bb6e5d4f-6d38-4980-a672-f0866ada7721",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}

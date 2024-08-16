@@ -1,0 +1,294 @@
+{
+  "_resourceType": "actor",
+  "id": "51861686-ac71-4b68-8425-0f9946766b52",
+  "_index": 9,
+  "symbol": "actor_33",
+  "name": "",
+  "x": 0,
+  "y": 0,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": true,
+  "collisionGroup": "",
+  "script": [],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_GROUP",
+      "args": {
+        "__label": "Water Tileswapping",
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GROUP",
+            "args": {
+              "__label": "Frame 1",
+              "__collapse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      },
+                      {
+                        "type": "background",
+                        "id": "b4ee2ff6-458f-4472-a976-c8a0bf088217"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 1\nVM_REPLACE_TILE_XY 24, 8, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": true
+                  },
+                  "id": "1d465125-bc12-43da-b010-78688906a4e6"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 3\nVM_REPLACE_TILE_XY 27, 8, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "e5246751-df52-42c4-b9fe-1372ff022348"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 5\nVM_REPLACE_TILE_XY 24, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "adee8e05-3e0c-4a4c-b26d-e258dd0dcf4d"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 9\nVM_REPLACE_TILE_XY 27, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "90d56a49-7633-4313-ae1d-fba1a22c232e"
+                }
+              ]
+            },
+            "id": "6a88bf4e-a72d-4cd3-b9a3-9a431e8f9b0a"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.3,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "9ae1e0aa-098e-466c-b4c2-353025917c8a"
+          },
+          {
+            "command": "EVENT_GROUP",
+            "args": {
+              "__collapse": false,
+              "__label": "Frame 2"
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 6\nVM_REPLACE_TILE_XY 24, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "b696d0a2-853e-4f76-98c3-76fdc308ca89"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 10\nVM_REPLACE_TILE_XY 27, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "52a8dffd-b64a-48ba-a074-a24d498fa6d1"
+                }
+              ]
+            },
+            "id": "e9d8dadc-12ef-47a9-9cb4-ca2a9ba23a6c"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.3,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "c6591c61-79d9-4e91-b11e-6adbc68b3c43"
+          },
+          {
+            "command": "EVENT_GROUP",
+            "args": {
+              "__label": "Frame 3",
+              "__collapse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 24, 8, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "8b745ab4-39cd-4b62-a993-10483542f921"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 2\nVM_REPLACE_TILE_XY 27, 8, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "f8e6deaa-f319-4160-af35-9428785ae423"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 7\nVM_REPLACE_TILE_XY 24, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "83d5f290-a7eb-4912-b368-61ce7c23b303"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 27, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "a94a5d11-831d-4b73-8084-1af41b1dbbb4"
+                }
+              ]
+            },
+            "id": "24430899-db91-4b8e-87e5-52307da078ed"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.3,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "c1f3af55-e786-4824-b2fa-1ac3378e6510"
+          },
+          {
+            "command": "EVENT_GROUP",
+            "args": {
+              "__collapse": false,
+              "__label": "Frame 4"
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 4\nVM_REPLACE_TILE_XY 24, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "d9066791-6ca6-497e-b72c-e16a97caa4f6"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 8\nVM_REPLACE_TILE_XY 27, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "6e103b77-08ba-4109-bdf0-b7fcd84ac697"
+                }
+              ]
+            },
+            "id": "307e824e-c077-4141-8e8a-20467af185a2"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.3,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "4670cd0d-f991-4b88-b7bb-a518ec7e013e"
+          }
+        ]
+      },
+      "id": "cc58b221-c6d2-4938-8b2c-bdb151560f82"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

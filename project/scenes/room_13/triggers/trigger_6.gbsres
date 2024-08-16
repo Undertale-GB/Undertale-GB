@@ -1,0 +1,80 @@
+{
+  "_resourceType": "trigger",
+  "id": "45b9901a-3e16-440c-ab1f-592cc0c368c6",
+  "_index": 5,
+  "symbol": "trigger_86",
+  "name": "",
+  "x": 48,
+  "y": 18,
+  "width": 4,
+  "height": 10,
+  "script": [
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "Animation_2"
+      },
+      "id": "efd321cb-de91-4b84-8c33-70dfee1fb40a"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_MOVEMENT_SPEED",
+      "args": {
+        "actorId": "$self$",
+        "speed": 2
+      },
+      "id": "251e3f42-b4d9-4e18-9b01-2310d8f01634"
+    },
+    {
+      "command": "EVENT_ACTOR_MOVE_RELATIVE",
+      "args": {
+        "actorId": "$self$",
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 20
+        },
+        "moveType": "vertical",
+        "useCollisions": false
+      },
+      "id": "5f57cea7-667c-466a-a2d2-e38aeba9d738"
+    },
+    {
+      "command": "EVENT_ACTOR_MOVE_RELATIVE",
+      "args": {
+        "actorId": "$self$",
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 20
+        },
+        "moveType": "vertical",
+        "useCollisions": false
+      },
+      "id": "12ed71ec-7922-4377-8682-288b164d127a"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_MOVEMENT_SPEED",
+      "args": {
+        "actorId": "$self$",
+        "speed": 1
+      },
+      "id": "1efd0aed-d3df-46c7-a460-ccc39a3025b0"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": ""
+      },
+      "id": "cc4d4531-95a7-44be-b85a-ed9ff6f148dd"
+    }
+  ],
+  "leaveScript": []
+}

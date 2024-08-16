@@ -1,0 +1,31 @@
+{
+  "_resourceType": "trigger",
+  "id": "867574e6-a293-4bd9-8766-075756ad391a",
+  "_index": 11,
+  "symbol": "trigger_68",
+  "name": "",
+  "x": 83,
+  "y": 14,
+  "width": 1,
+  "height": 4,
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_CONST 3\nVM_PUSH_CONST 2\nVM_PUSH_CONST 1\nVM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 84, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 85, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 84, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 85, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "references": [
+          {
+            "type": "background",
+            "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
+          },
+          {
+            "type": "background",
+            "id": "650ff1c4-0bb2-46ff-8a78-b8c4e9cc6ca4"
+          }
+        ]
+      },
+      "id": "60591e99-0c4a-412d-9926-d8a080218b54"
+    }
+  ],
+  "leaveScript": []
+}

@@ -1,0 +1,50 @@
+{
+  "_resourceType": "actor",
+  "id": "321902d5-89c6-4e2a-b2cf-253064187689",
+  "_index": 2,
+  "symbol": "actor_3",
+  "name": "",
+  "x": 9,
+  "y": 17,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "5e032fce-1aaa-413e-a212-f0f079c51b35",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 255,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "script": [],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_VARIABLE_MATH_EVALUATE",
+      "args": {
+        "variable": "L0",
+        "expression": "($07$ - 1) + ($09$ * 4)"
+      },
+      "id": "4ddfbc34-1a99-493b-a620-d166fcb28725"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_FRAME",
+      "args": {
+        "actorId": "$self$",
+        "frame": {
+          "type": "variable",
+          "value": "L0"
+        }
+      },
+      "id": "aefa7c21-5953-4e2b-b018-a1b0dcf7fff5"
+    },
+    {
+      "command": "EVENT_IDLE",
+      "args": {},
+      "id": "ba4b22a2-2bad-43b6-b850-fcd461fa1130"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

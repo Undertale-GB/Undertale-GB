@@ -1,0 +1,92 @@
+{
+  "_resourceType": "actor",
+  "id": "82c94b40-49da-4b3b-a23c-1be00a0445e3",
+  "_index": 1,
+  "symbol": "actor_10",
+  "name": "",
+  "x": 59,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "a35e7ae5-5425-48e5-a353-137609a5808d",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "script": [
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "Flipped"
+      },
+      "id": "811f5cd2-4331-4f33-83ab-ddabdef05ed1"
+    },
+    {
+      "command": "EVENT_INC_VALUE",
+      "args": {
+        "variable": "11"
+      },
+      "id": "470cc87b-f1c1-4281-ad4c-e6f4895098e2"
+    },
+    {
+      "command": "EVENT_IF_EXPRESSION",
+      "args": {
+        "expression": "$11$ && $10$ >= 1",
+        "__collapseElse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "4906e455-ab9d-417b-afdb-30683891587e"
+            },
+            "id": "08f2759d-e5a2-4bda-9133-75ce9a806001"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "4e2482a5-c9ec-4b58-b7b3-256e71d48687"
+            },
+            "id": "0c439d5b-7d72-414e-afce-f40105db9167"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "0",
+              "value": {
+                "type": "number",
+                "value": 5
+              }
+            },
+            "id": "6e2ef8cc-5983-40ef-9b34-9f8e501c1105"
+          },
+          {
+            "command": "EVENT_CAMERA_SHAKE",
+            "args": {
+              "time": 0.2,
+              "frames": 30,
+              "shakeDirection": "horizontal",
+              "magnitude": {
+                "type": "number",
+                "value": 5
+              }
+            },
+            "id": "6ad482f2-ffcc-46e6-b7bc-9572911ed3c2"
+          }
+        ],
+        "false": []
+      },
+      "id": "9580f924-dd65-4164-9d0d-56d2d2b52a72"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

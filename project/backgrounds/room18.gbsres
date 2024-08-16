@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "42f309d7-28af-4f2a-a076-fd50d338bb76",
+  "name": "Room18",
+  "symbol": "bg_room18",
+  "width": 64,
+  "height": 30,
+  "imageWidth": 512,
+  "imageHeight": 240,
+  "filename": "Room18.png",
+  "tileColors": "",
+  "autoColor": false
+}

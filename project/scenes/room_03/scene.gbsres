@@ -1,0 +1,69 @@
+{
+  "_resourceType": "scene",
+  "id": "fcfd0e97-ba43-4871-b2f5-010f0c192b4c",
+  "type": "TOPDOWN",
+  "name": "Room_03",
+  "symbol": "scene_room_03",
+  "x": 616,
+  "y": 1152,
+  "width": 32,
+  "height": 46,
+  "backgroundId": "b90395f2-cebe-4eb9-88e8-1cb1328443c6",
+  "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103",
+  "paletteIds": [
+    "",
+    "",
+    "567ea9e8-99db-4455-a703-7d70ed1c64c6",
+    "ec2562ec-4462-496b-81b4-e6062b7bceed",
+    "63a3e2f2-2a6d-4b91-8914-c58011a6672b",
+    "77094775-035b-41c3-8de3-c2d8af10a5a6"
+  ],
+  "spritePaletteIds": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "default-ui"
+  ],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "607f10d6-9c93-4e11-aba3-998a05693a71"
+      },
+      "id": "2c3915b4-40d0-49e4-9c90-6e7176d55f8f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "d4980a59-5bc0-46ab-9d44-0ee71240049a"
+      },
+      "id": "53ecc4fc-d0f9-480d-b5d5-747cbd826fb5"
+    },
+    {
+      "command": "EVENT_MUSIC_PLAY",
+      "args": {
+        "musicId": "f2705afb-63fb-4f4e-a4bb-a3af7184ddaf"
+      },
+      "id": "661219e3-ac41-48e5-a0f9-8e9f0f9a9582"
+    },
+    {
+      "command": "EVENT_TEXT_SET_ANIMATION_SPEED",
+      "args": {
+        "speedIn": 0,
+        "speedOut": 0,
+        "speed": 2,
+        "allowFastForward": true
+      },
+      "id": "9a218c12-5de9-4925-b83f-a6cfb0a21d29"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "0010e+0f4+0011+0fc+002+0fc+006+0f!0018+0f!006+0f!0018+0f!006+0f!006+0fc+006+0f!006+0f!005+0fe+005+0f!006+0f!005+0f3+008+0f3+005+0f!006+0f!006+0f2+008+0f2+006+0f!006+0f!007+0f!008+0f!007+0f!006+0f2+0016+0f2+007+0f2+0014+0f2+009+0f2+0012+0f2+00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!00a+0f!0014+0f!009+0f2+0014+0f2+008+0f!0016+0f!008+0f2+0014+0f2+009+0f2+0012+0f2+00b+0f2+0010+0f2+00d+0f6+006+0f6+0012+0f3+004+0f3+0017+0f2+004+0f2+0019+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!00d+"
+}

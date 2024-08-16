@@ -1,0 +1,79 @@
+{
+  "_resourceType": "scene",
+  "id": "dc31ea4a-b384-41d5-b1ac-6bfb4e808996",
+  "type": "TOPDOWN",
+  "name": "Intro_04",
+  "symbol": "scene_intro_04",
+  "x": 104,
+  "y": 528,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "d28d3479-88ef-4609-a0ba-df87831c484c",
+  "tilesetId": "",
+  "paletteIds": [
+    "default-ui",
+    "6dad24ea-cdfb-4752-8027-735e96e81d53"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a"
+      },
+      "id": "3ffe83b7-63fb-4bd4-b547-842162da7f54"
+    },
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "6b208ad1-466d-4ad9-8d0d-8195ee59b9aa"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1
+      },
+      "id": "3d298e14-16ee-4f50-ac6c-77a897d614cc"
+    },
+    {
+      "command": "PT_EVENT_BACKGROUND_TEXT",
+      "args": {
+        "text": "\\001\\4They sealed\\nthe monsters\\nunderground with\\na magic spell.",
+        "x": 1,
+        "y": 12
+      },
+      "id": "5ac20009-411b-434f-8cd8-4d5997bf31b4"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1
+      },
+      "id": "e3d13e1f-3f27-4e84-94ae-71ffe1bd5ae9"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "4842437b-8fcb-458b-8028-1ef4b2aac012",
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        },
+        "direction": "down",
+        "fadeSpeed": "2"
+      },
+      "id": "83508968-d24f-4957-bad0-cbdf82ba9613"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}

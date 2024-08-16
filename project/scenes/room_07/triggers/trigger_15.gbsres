@@ -1,0 +1,70 @@
+{
+  "_resourceType": "trigger",
+  "id": "30b598a7-b8b4-4334-aed6-4402ca94d839",
+  "_index": 14,
+  "symbol": "trigger_75",
+  "name": "",
+  "x": 91,
+  "y": 10,
+  "width": 2,
+  "height": 4,
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_CONST 7\nVM_PUSH_CONST 6\nVM_PUSH_CONST 5\nVM_PUSH_CONST 4\nVM_REPLACE_TILE_XY 88, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 89, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 88, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 89, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "references": [
+          {
+            "type": "background",
+            "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
+          }
+        ],
+        "__collapse": false
+      },
+      "id": "ef1ad399-feab-4983-b84e-bf7f5681e7d1"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_CONST 7\nVM_PUSH_CONST 6\nVM_PUSH_CONST 5\nVM_PUSH_CONST 4\nVM_REPLACE_TILE_XY 92, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 93, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 92, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 93, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "references": [
+          {
+            "type": "background",
+            "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
+          }
+        ],
+        "__collapse": false
+      },
+      "id": "4abf6043-e3f9-4401-805d-bcfeaae84005"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_CONST 3\nVM_PUSH_CONST 2\nVM_PUSH_CONST 1\nVM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 88, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 89, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 88, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 89, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "references": [
+          {
+            "type": "background",
+            "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
+          }
+        ],
+        "__collapse": false
+      },
+      "id": "9b9a2759-7c9e-4730-a153-888eab4d2558"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_CONST 3\nVM_PUSH_CONST 2\nVM_PUSH_CONST 1\nVM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 94, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 95, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 94, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 95, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "references": [
+          {
+            "type": "background",
+            "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
+          }
+        ],
+        "__collapse": false
+      },
+      "id": "3e16c32e-3b00-4a57-bec7-572197eb5c15"
+    }
+  ],
+  "leaveScript": []
+}

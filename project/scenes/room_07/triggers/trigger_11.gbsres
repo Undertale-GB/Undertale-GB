@@ -1,0 +1,40 @@
+{
+  "_resourceType": "trigger",
+  "id": "6fde687d-f5f2-464c-867f-5956d03c7d4b",
+  "_index": 10,
+  "symbol": "trigger_66",
+  "name": "",
+  "x": 109,
+  "y": 10,
+  "width": 3,
+  "height": 4,
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_CONST 3\nVM_PUSH_CONST 2\nVM_PUSH_CONST 1\nVM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 104, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 105, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 104, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 105, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "references": [
+          {
+            "type": "background",
+            "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
+          }
+        ]
+      },
+      "id": "f885e008-daca-4c32-8166-9d0532a4d628"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_CONST 7\nVM_PUSH_CONST 6\nVM_PUSH_CONST 5\nVM_PUSH_CONST 4\nVM_REPLACE_TILE_XY 108, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 109, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 108, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 109, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "references": [
+          {
+            "type": "background",
+            "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
+          }
+        ]
+      },
+      "id": "58651604-fc03-4515-af74-214a6287085c"
+    }
+  ],
+  "leaveScript": []
+}

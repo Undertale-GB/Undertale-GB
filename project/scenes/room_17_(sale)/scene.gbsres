@@ -1,0 +1,21 @@
+{
+  "_resourceType": "scene",
+  "id": "be6463aa-d1b7-42df-a015-8792f38dace9",
+  "type": "TOPDOWN",
+  "name": "Room_17 (sale)",
+  "symbol": "scene_room_17",
+  "x": 6488,
+  "y": 848,
+  "width": 32,
+  "height": 24,
+  "backgroundId": "f26fd7b9-136e-495d-8edc-a3bb4ef4b7cc",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00127+0f12+00e+0f!0010+0f!007+0f8+0010+0f!001f+0f!001f+0f!001f+0f!001f+0f!007+0f8+0010+0f!00e+0f!0010+0f!00e+0f12+00a7+"
+}

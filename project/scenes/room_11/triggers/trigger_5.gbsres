@@ -1,0 +1,72 @@
+{
+  "_resourceType": "trigger",
+  "id": "19844267-ea37-4f2d-a525-86f8c8920d34",
+  "_index": 4,
+  "symbol": "trigger_82",
+  "name": "",
+  "x": 22,
+  "y": 49,
+  "width": 4,
+  "height": 1,
+  "script": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "e5fecc06-4cc7-4019-8baa-30f81af80fd9"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_MOVEMENT_SPEED",
+      "args": {
+        "actorId": "$self$",
+        "speed": 4
+      },
+      "id": "7a0a0d7a-6793-4ed1-b604-6852201ead25"
+    },
+    {
+      "command": "EVENT_ACTOR_MOVE_TO",
+      "args": {
+        "actorId": "$self$",
+        "x": {
+          "type": "number",
+          "value": 23
+        },
+        "y": {
+          "type": "number",
+          "value": 10
+        },
+        "moveType": "horizontal",
+        "useCollisions": false
+      },
+      "id": "eb410dc5-3ff3-4431-abdf-b4f627d6e6f9"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_MOVEMENT_SPEED",
+      "args": {
+        "actorId": "$self$",
+        "speed": 1
+      },
+      "id": "62632922-f783-46c1-a33b-09164e0fd6b5"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "$self$",
+        "direction": {
+          "type": "direction",
+          "value": "down"
+        }
+      },
+      "id": "41fb963e-684b-4da2-99a7-4321d2005213"
+    },
+    {
+      "command": "EVENT_ACTOR_SHOW",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "e8732834-3977-4c8a-bb91-3053509c509c"
+    }
+  ],
+  "leaveScript": []
+}

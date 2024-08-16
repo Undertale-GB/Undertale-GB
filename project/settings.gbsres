@@ -1,0 +1,120 @@
+{
+  "_resourceType": "settings",
+  "startSceneId": "2785d933-c9a1-4293-80db-5e6b53e25699",
+  "startX": 9,
+  "startY": 12,
+  "startMoveSpeed": 1,
+  "startAnimSpeed": 15,
+  "startDirection": "down",
+  "showCollisions": true,
+  "showConnections": "selected",
+  "showCollisionSlopeTiles": false,
+  "showCollisionExtraTiles": false,
+  "sgbEnabled": false,
+  "customHead": "",
+  "defaultBackgroundPaletteIds": [
+    "default-bg-1",
+    "default-bg-2",
+    "default-bg-3",
+    "default-bg-4",
+    "default-bg-5",
+    "default-bg-6",
+    "dmg",
+    "default-ui"
+  ],
+  "defaultSpritePaletteIds": [
+    "b4bacc5d-9f41-4890-b587-3882453ef05b",
+    "843aa411-dbbd-4e4d-b778-5efaed322eb6",
+    "default-sprite",
+    "default-sprite",
+    "default-sprite",
+    "default-sprite",
+    "default-sprite",
+    "default-sprite"
+  ],
+  "defaultSpritePaletteId": "default-sprite",
+  "defaultUIPaletteId": "default-ui",
+  "playerPaletteId": "",
+  "navigatorSplitSizes": [
+    187,
+    223,
+    542
+  ],
+  "showNavigator": true,
+  "defaultFontId": "af6efb91-51b6-465a-ae62-1dfb644a8665",
+  "defaultCharacterEncoding": "",
+  "defaultPlayerSprites": {
+    "TOPDOWN": "2d4c8692-c5fa-4c12-ad48-79372dce717f",
+    "PLATFORM": "bd3937aa-3c54-43e5-8fa8-55bb06662ade",
+    "ADVENTURE": "f8206024-75de-41ed-838d-5a8d52fb5b16",
+    "SHMUP": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+    "POINTNCLICK": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+    "LOGO": "581d34d0-9591-4e6e-a609-1d94f203b0cd"
+  },
+  "musicDriver": "huge",
+  "cartType": "mbc5",
+  "batterylessEnabled": false,
+  "favoriteEvents": [
+    "EVENT_SWITCH_SCENE",
+    "EVENT_CALL_CUSTOM_EVENT",
+    "EVENT_WAIT",
+    "EVENT_IF_VALUE",
+    "UTGB_EVENT_BATTLE_TEXT",
+    "UTGB_EVENT_BATTLE_MENU",
+    "EVENT_ACTOR_START_UPDATE",
+    "EVENT_VARIABLE_MATH_EVALUATE",
+    "EVENT_GBVM_SCRIPT",
+    "EVENT_SET_TRUE",
+    "EVENT_INC_VALUE"
+  ],
+  "customColorsWhite": "E8F8E0",
+  "customColorsLight": "B0F088",
+  "customColorsDark": "509878",
+  "customColorsBlack": "202850",
+  "customControlsUp": [
+    "ArrowUp",
+    "w"
+  ],
+  "customControlsDown": [
+    "ArrowDown",
+    "s"
+  ],
+  "customControlsLeft": [
+    "ArrowLeft",
+    "a"
+  ],
+  "customControlsRight": [
+    "ArrowRight",
+    "d"
+  ],
+  "customControlsA": [
+    "Alt",
+    "z",
+    "j"
+  ],
+  "customControlsB": [
+    "Control",
+    "k",
+    "x"
+  ],
+  "customControlsStart": [
+    "Enter"
+  ],
+  "customControlsSelect": [
+    "Shift"
+  ],
+  "debuggerEnabled": false,
+  "debuggerScriptType": "editor",
+  "debuggerVariablesFilter": "all",
+  "debuggerCollapsedPanes": [],
+  "debuggerPauseOnScriptChanged": false,
+  "debuggerPauseOnWatchedVariableChanged": false,
+  "debuggerBreakpoints": [],
+  "debuggerWatchedVariables": [],
+  "colorMode": "mixed",
+  "previewAsMono": false,
+  "openBuildLogOnWarnings": true,
+  "generateDebugFilesEnabled": false,
+  "compilerOptimisation": "none",
+  "compilerPreset": 3000
+}

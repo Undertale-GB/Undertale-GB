@@ -1,0 +1,25 @@
+{
+  "_resourceType": "scene",
+  "id": "2785d933-c9a1-4293-80db-5e6b53e25699",
+  "type": "utgb_battle",
+  "name": "BattleDebug",
+  "symbol": "scene_48",
+  "x": 640,
+  "y": 224,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "737f2739-e829-43d1-a680-3476dfbeb9f8",
+  "tilesetId": "",
+  "paletteIds": [
+    "default-ui",
+    "6dad24ea-cdfb-4752-8027-735e96e81d53"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "playerSpriteSheetId": "f8206024-75de-41ed-838d-5a8d52fb5b16",
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}
