@@ -52869,6 +52869,14 @@
                             {
                                 "type": "font",
                                 "id": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2"
+                            },
+                            {
+                                "type": "variable",
+                                "id": "44"
+                            },
+                            {
+                                "type": "variable",
+                                "id": "45"
                             }
                         ]
                     },
@@ -113287,6 +113295,16 @@
             "id": "d0a3cdfd-d3c8-4694-89b9-3268359c5af3__L0",
             "name": "Local 0",
             "symbol": "var_local_2"
+        },
+        {
+            "id": "44",
+            "name": "Attack(Item)",
+            "symbol": "var_attack_item_"
+        },
+        {
+            "id": "45",
+            "name": "Defense(Item)",
+            "symbol": "var_defense_item_"
         }
     ],
     "engineFieldValues": [
@@ -113306,8 +113324,8 @@
         "showConnections": "selected",
         "showCollisionSlopeTiles": false,
         "showCollisionExtraTiles": false,
-        "worldScrollX": 306,
-        "worldScrollY": 792,
+        "worldScrollX": 49,
+        "worldScrollY": 0,
         "zoom": 100,
         "sgbEnabled": false,
         "customHead": "",
