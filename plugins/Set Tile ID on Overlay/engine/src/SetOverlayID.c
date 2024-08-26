@@ -4,7 +4,7 @@
 #include "vm.h"
 #include "scroll.h"
 
-void deab_overlay_tile_set(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void deab_overlay_tile_set(SCRIPT_CTX * THIS) BANKED {
 
     uint8_t x = *(int16_t*)VM_REF_TO_PTR(FN_ARG2);
     uint8_t y = *(int16_t*)VM_REF_TO_PTR(FN_ARG1);

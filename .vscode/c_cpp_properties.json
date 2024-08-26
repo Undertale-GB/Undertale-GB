@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/finns/Dokumente/AUR/gb-studio-fork/buildTools/linux-x64/gbdk/include/**"
+            ],
+            "defines": ["__PORT_sm83", "__TARGET_gb" , "CGB"],
+            "compilerPath": "",
+            "cStandard": "c11",
+            "intelliSenseMode": "${default}",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

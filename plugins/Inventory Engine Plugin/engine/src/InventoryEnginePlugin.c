@@ -10,9 +10,13 @@
 #include <types.h>
 #include "gbs_types.h"
 
+#include "data/game_globals.h"
 #include "UTGBVariables.h"
 #include "InventoryEnginePlugin.h"
+#include "InventoryEngine_Types.h"
 
+#define InvMainPtr VAR_INVENTORY_1
+#define EquippedItemsPtr VAR_EQUIPPEDITEMS
 
 const char textSpeedStr[] = "\001\001";
 const char fontSmallStr[] = "\002\005";
@@ -21,19 +25,6 @@ const char menuInvStartPosStr[] = "\003\002\011";
 const char battleInvStartPosStr[] = "\003\004\002";
 
 
-typedef struct item_t {
-    unsigned char name[32];
-    unsigned char nameShort[10];
-    unsigned char nameSerious[10];
-    uint8_t       useType; //1 = Heal, 2 = Weapon, 3 = Armor
-    uint8_t       amount;
-    unsigned char amountStr[16];
-
-    unsigned char desc[64];
-    unsigned char useBattle[64];
-    unsigned char useMain[64];
-    unsigned char useMain2[64];
-} item_t;
 
 
 const struct item_t items[] = {
@@ -130,7 +121,7 @@ const char maxHPStr[] = "*Your HP was\n|maxed out!";
 
 //Unused
 /*
-void inv_load_item_name(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void inv_load_item_name(SCRIPT_CTX * THIS) BANKED {
     THIS;
 
     unsigned char * d = ui_text_data;
@@ -152,7 +143,7 @@ void inv_load_item_name(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 */
 
-void inv_load_item_name(SCRIPT_CTX * THIS, uint8_t InvSlot, uint8_t InvType) OLDCALL BANKED {
+void inv_load_item_name(SCRIPT_CTX * THIS, uint8_t InvSlot, uint8_t InvType) BANKED {
     THIS;
     
     unsigned char * d = ui_text_data;
@@ -180,7 +171,7 @@ void inv_load_item_name(SCRIPT_CTX * THIS, uint8_t InvSlot, uint8_t InvType) OLD
 }
 
 //TODO: remove function
-void inv_read_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, Inventory Type
+void inv_read_item(SCRIPT_CTX * THIS) BANKED {//On Stack: Inventory Slot, Inventory Type
 
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
@@ -193,14 +184,14 @@ void inv_read_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
 
 }
 
-uint8_t inv_get_item(SCRIPT_CTX * THIS, uint8_t InvSlot) OLDCALL BANKED {
+uint8_t inv_get_item(SCRIPT_CTX * THIS, uint8_t InvSlot) BANKED {
 
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
     return invPtr[InvSlot];
 }
 
-void inv_load_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void inv_load_pause_menu(SCRIPT_CTX * THIS) BANKED {
     THIS;
 
     unsigned char * d = ui_text_data;
@@ -218,7 +209,7 @@ void inv_load_pause_menu(SCRIPT_CTX * THIS) OLDCALL BANKED {
     }
 }
 
-void inv_add_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
+void inv_add_item(SCRIPT_CTX * THIS) BANKED {//On Stack: Item ID
 
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     int16_t * itemPtr = VAR_PTR_16(FN_ARG0);
@@ -233,7 +224,7 @@ void inv_add_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
     
 } //Stack Out: 0 if inventory full, otherwise Item ID
 
-void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
+void inv_obtain_item(SCRIPT_CTX * THIS) BANKED {//On Stack: Item ID
     
     unsigned char * d = ui_text_data;
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
@@ -268,7 +259,7 @@ void inv_obtain_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Item ID
 
 } //Stack Out: 0 if inventory full, otherwise Item ID
 
-void inv_remove_item_new(SCRIPT_CTX * THIS, uint8_t invSlot) OLDCALL BANKED {
+void inv_remove_item_new(SCRIPT_CTX * THIS, uint8_t invSlot) BANKED {
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
     for (uint8_t i = invSlot; i<7; i++){
@@ -279,7 +270,7 @@ void inv_remove_item_new(SCRIPT_CTX * THIS, uint8_t invSlot) OLDCALL BANKED {
 
 //deprecated
 //TODO: Remove all calls to this function
-void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
+void inv_remove_item(SCRIPT_CTX * THIS) BANKED {//On Stack: Inventory Slot
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     uint8_t rSlot = VAR_VAL(FN_ARG0);
 
@@ -289,7 +280,7 @@ void inv_remove_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Sl
     invPtr[7] = 0;
 }
 
-bool inv_load_use_main_text(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot, uint8_t textNum) OLDCALL BANKED {
+bool inv_load_use_main_text(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot, uint8_t textNum) BANKED {
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
 
     uint8_t item = invPtr[invSlot];
@@ -320,7 +311,7 @@ bool inv_load_use_main_text(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot, 
     return false;
 }
 
-void inv_update_stats(SCRIPT_CTX * THIS) OLDCALL BANKED {
+void inv_update_stats(SCRIPT_CTX * THIS) BANKED {
     uint8_t * equipPtr = VAR_PTR_8(EquippedItemsPtr);
 
     uint8_t weaponID = equipPtr[0];
@@ -336,7 +327,7 @@ void inv_update_stats(SCRIPT_CTX * THIS) OLDCALL BANKED {
     return;
 }
 
-bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
+bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) BANKED {
 
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     uint8_t * equipPtr = VAR_PTR_8(EquippedItemsPtr);
@@ -393,7 +384,7 @@ bool inv_use_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCAL
 
 //deprecated
 //TODO: Remove all calls to this function from GBVM
-void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot, bool isInBattle
+void inv_use_item(SCRIPT_CTX * THIS) BANKED {//On Stack: Inventory Slot, bool isInBattle
 
     unsigned char * d = ui_text_data;
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
@@ -506,7 +497,7 @@ void inv_use_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot,
     
 }
 
-void inv_drop_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
+void inv_drop_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) BANKED {
     
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     
@@ -523,7 +514,7 @@ void inv_drop_item_new(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCA
 //deprecated
 //TODO: Remove all calls to this function from GBVM
 //confirmed unused on personal file
-void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
+void inv_drop_item(SCRIPT_CTX * THIS) BANKED {//On Stack: Inventory Slot
     
     unsigned char * d = ui_text_data;
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
@@ -544,7 +535,7 @@ void inv_drop_item(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
 
 }
 
-void inv_load_info_stats(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
+void inv_load_info_stats(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) BANKED {
 
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     uint8_t item = invPtr[invSlot];
@@ -584,7 +575,7 @@ void inv_load_info_stats(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLD
 
 }
 
-void inv_load_info_desc(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDCALL BANKED {
+void inv_load_info_desc(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) BANKED {
 
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
     uint8_t item = invPtr[invSlot];
@@ -595,7 +586,7 @@ void inv_load_info_desc(SCRIPT_CTX * THIS, UBYTE * string, uint8_t invSlot) OLDC
 //deprecated
 //TODO: Remove all calls to this function from GBVM
 //confirmed unused on personal file
-void inv_write_item_desc(SCRIPT_CTX * THIS) OLDCALL BANKED {//On Stack: Inventory Slot
+void inv_write_item_desc(SCRIPT_CTX * THIS) BANKED {//On Stack: Inventory Slot
 
     unsigned char * d = ui_text_data;
     uint8_t * invPtr = VAR_PTR_8(InvMainPtr);
