@@ -1,0 +1,86 @@
+{
+  "_resourceType": "trigger",
+  "id": "72a1f3d4-eb25-4be8-80cc-e0a03c8f69ca",
+  "_index": 2,
+  "symbol": "trigger_37",
+  "prefabId": "",
+  "name": "",
+  "x": 6,
+  "y": 28,
+  "width": 20,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* Howdy!\n* I'm !F:be4454bf-4583-4683-ae77-0a0bedc5e82d!FLOWEY!F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!.\n* !F:be4454bf-4583-4683-ae77-0a0bedc5e82d!FLOWEY !F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!the \n  !F:be4454bf-4583-4683-ae77-0a0bedc5e82d!FLOWER!F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!!"
+        ],
+        "avatarId": "3893cd51-c445-4c7c-8c2a-3b9683fe8b94"
+      },
+      "id": "5ac8961d-bf7f-42b1-a9a9-500ffdfbf4c0"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* Hmm..."
+        ],
+        "avatarId": "3893cd51-c445-4c7c-8c2a-3b9683fe8b94"
+      },
+      "id": "5bc13aed-7715-4ac4-9a7b-9c3a833a0626"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* You're new\n  to the\n  underground,\n  aren'tcha?"
+        ],
+        "avatarId": "3893cd51-c445-4c7c-8c2a-3b9683fe8b94"
+      },
+      "id": "9338b22d-776d-410e-b8de-966be2c6d961"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* Golly,\n  you must be\n  so confused."
+        ],
+        "avatarId": "3893cd51-c445-4c7c-8c2a-3b9683fe8b94"
+      },
+      "id": "7b584131-73ad-4788-a314-b9b6928f010a"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* Someone ought\n  to teach you\n  how things\n  work around\n  here!"
+        ],
+        "avatarId": "3893cd51-c445-4c7c-8c2a-3b9683fe8b94"
+      },
+      "id": "f4a97b85-da3b-406f-b85f-5a0619605bcf"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* I guess little\n  old me will\n  have to do."
+        ],
+        "avatarId": "3893cd51-c445-4c7c-8c2a-3b9683fe8b94"
+      },
+      "id": "515a323d-3e84-418a-8d1c-82ca970c57e7"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* Ready?\n* Here we go!"
+        ],
+        "avatarId": "3893cd51-c445-4c7c-8c2a-3b9683fe8b94"
+      },
+      "id": "4a16f44a-ea6b-4689-b4c2-5220523e4cf1"
+    }
+  ],
+  "leaveScript": []
+}

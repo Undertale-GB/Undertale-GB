@@ -1,0 +1,25 @@
+{
+  "_resourceType": "scene",
+  "id": "2e2720ba-11aa-41cc-9cde-ffe2a7179b49",
+  "_index": 17,
+  "type": "TOPDOWN",
+  "name": "Room_16",
+  "symbol": "scene_room_16",
+  "x": 6243.5,
+  "y": 842.5,
+  "width": 32,
+  "height": 24,
+  "backgroundId": "cd7f38d2-04a3-4526-93b9-1d977f886af2",
+  "tilesetId": "",
+  "paletteIds": [
+    "",
+    "63a3e2f2-2a6d-4b91-8914-c58011a6672b"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00d3+0f6+00c+0fa+002+0f3+004+0f3+00a+0f!008+0f!002+0f!008+0f!00a+0f!008+0f!002+0f!008+0f!00a+0f!008+0f!002+0f!008+0f!005+0f6+008+0f4+008+0f6+0080+0f6+008+0f4+008+0f6+005+0f!008+0f!002+0f!008+0f!00a+0f!008+0f!002+0f!008+0f!00a+0f!008+0f!002+0f!008+0f!00a+0fa+002+0fa+0065+"
+}

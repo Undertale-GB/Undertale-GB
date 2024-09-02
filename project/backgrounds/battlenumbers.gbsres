@@ -1,0 +1,12 @@
+{
+  "_resourceType": "background",
+  "id": "1beae85d-0bbd-4011-827b-c4308127fe43",
+  "name": "BattleNumbers",
+  "symbol": "bg_battlenumbers",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "BattleNumbers.png",
+  "tileColors": ""
+}

@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "aaddd70f-1f1a-4683-b5b0-7f8c7097bfa4",
+  "name": "Intro05",
+  "symbol": "bg_intro05",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "Intro05.png",
+  "tileColors": "",
+  "autoColor": false
+}

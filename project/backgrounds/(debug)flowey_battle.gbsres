@@ -1,0 +1,12 @@
+{
+  "_resourceType": "background",
+  "id": "7dab4207-c5d2-4c94-be9a-13e53da884e4",
+  "name": "(Debug)Flowey Battle",
+  "symbol": "bg_debug_flowey_battle",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "(Debug)Flowey Battle.png",
+  "tileColors": ""
+}

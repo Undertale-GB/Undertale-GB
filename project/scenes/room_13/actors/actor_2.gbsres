@@ -1,0 +1,38 @@
+{
+  "_resourceType": "actor",
+  "id": "319b3e1e-0dbc-4561-a59e-d6cd61c2dd60",
+  "_index": 1,
+  "symbol": "actor_29",
+  "prefabId": "",
+  "name": "",
+  "x": 46,
+  "y": 57,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* Please don't\n  step on the\n  leaves."
+        ],
+        "avatarId": ""
+      },
+      "id": "2e4857ec-afb1-4794-a9de-6e3e14152798"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

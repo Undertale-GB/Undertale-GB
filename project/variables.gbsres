@@ -1,0 +1,85 @@
+{
+  "_resourceType": "variables",
+  "variables": [
+    {
+      "id": "0",
+      "name": "Progress",
+      "symbol": "var_progress"
+    },
+    {
+      "id": "1",
+      "name": "GameState",
+      "symbol": "var_gamestate"
+    },
+    {
+      "id": "2",
+      "name": "Current HP",
+      "symbol": "var_current_hp"
+    },
+    {
+      "id": "3",
+      "name": "Max HP",
+      "symbol": "var_max_hp"
+    },
+    {
+      "id": "4",
+      "name": "Counter",
+      "symbol": "var_counter"
+    },
+    {
+      "id": "5",
+      "name": "NextLine",
+      "symbol": "var_nextline"
+    },
+    {
+      "id": "6",
+      "name": "Round No.",
+      "symbol": "var_round_no_"
+    },
+    {
+      "id": "7",
+      "name": "MenuMain",
+      "symbol": "var_menumain"
+    },
+    {
+      "id": "8",
+      "name": "MenuSub",
+      "symbol": "var_menusub"
+    },
+    {
+      "id": "9",
+      "name": "InSubMenu",
+      "symbol": "var_insubmenu"
+    },
+    {
+      "id": "10",
+      "name": "room_local_01",
+      "symbol": "var_room_local_01"
+    },
+    {
+      "id": "11",
+      "name": "room_local_02",
+      "symbol": "var_room_local_02"
+    },
+    {
+      "id": "12",
+      "name": "room_local_03",
+      "symbol": "var_room_local_03"
+    },
+    {
+      "id": "13",
+      "name": "room_local_04",
+      "symbol": "var_room_local_04"
+    },
+    {
+      "id": "14",
+      "name": "room_local_05",
+      "symbol": "var_room_local_05"
+    },
+    {
+      "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
+      "name": "Counter",
+      "symbol": "var_counter_0"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "_resourceType": "scene",
+  "id": "4842437b-8fcb-458b-8028-1ef4b2aac012",
+  "_index": 31,
+  "type": "TOPDOWN",
+  "name": "Intro_05",
+  "symbol": "scene_intro_05",
+  "x": 109,
+  "y": 404.25,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "aaddd70f-1f1a-4683-b5b0-7f8c7097bfa4",
+  "tilesetId": "",
+  "paletteIds": [
+    "default-ui"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "autoFadeEventCollapse": false,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a"
+      },
+      "id": "8ede22f6-d38a-432a-8c58-7a1bb9b419b0"
+    },
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "2f212028-c875-4c9c-a164-b80fb4f551d2"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1
+      },
+      "id": "e588ab10-5b28-41b3-8d4c-764a70584649"
+    },
+    {
+      "command": "PT_EVENT_BACKGROUND_TEXT",
+      "args": {
+        "text": "\\001\\4Many years later\\001\\7...",
+        "x": 1,
+        "y": 12
+      },
+      "id": "10c037a3-45c8-4ae7-b9af-58e86832a877"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1
+      },
+      "id": "288c6aee-8de3-4faf-997b-802958fa8ede"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "06888521-fb62-4f8a-96db-4961bdd0d6f4",
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        },
+        "direction": "down",
+        "fadeSpeed": "2"
+      },
+      "id": "e8d8f392-9c51-468d-91b8-9f838200482c"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}

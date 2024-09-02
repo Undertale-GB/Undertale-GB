@@ -1,0 +1,12 @@
+{
+  "_resourceType": "background",
+  "id": "051abd25-4731-4b4f-873b-f2ed9896bd2f",
+  "name": "!misc",
+  "symbol": "bg_misc",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "!misc.png",
+  "tileColors": ""
+}

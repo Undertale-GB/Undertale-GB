@@ -1,0 +1,12 @@
+{
+  "_resourceType": "background",
+  "id": "a8c6b4a4-d340-43fc-9014-ea70ecde4d40",
+  "name": "Room32",
+  "symbol": "bg_room32",
+  "width": 74,
+  "height": 18,
+  "imageWidth": 592,
+  "imageHeight": 144,
+  "filename": "Room32.png",
+  "tileColors": ""
+}

@@ -1,0 +1,41 @@
+{
+  "_resourceType": "actor",
+  "id": "51d898d7-8d1f-4040-b8e7-85bc4db8f450",
+  "_index": 2,
+  "symbol": "actor_32",
+  "prefabId": "",
+  "name": "",
+  "x": 22,
+  "y": 19,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "fb5a1642-de37-40f2-a387-7e38bbf5aab0",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* WHOA there,\n  pardner!",
+          "* Who said\n  you could push \n  me around?",
+          "* HMM?\n* So you're ASKIN'\n  me to move over?",
+          "* Okay, just for\n  you, pumpkin."
+        ],
+        "avatarId": ""
+      },
+      "id": "f51c4cc9-350e-4b1a-ad6f-7fe5fc11dd42"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

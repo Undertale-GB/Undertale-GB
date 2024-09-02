@@ -1,0 +1,25 @@
+{
+  "_resourceType": "scene",
+  "id": "147ca1ef-aa1b-4cf9-a79d-b1d95d5896de",
+  "_index": 3,
+  "type": "TOPDOWN",
+  "name": "Room_02 (flowey)",
+  "symbol": "scene_room_02",
+  "x": 618.6666666666669,
+  "y": 1518.6666666666665,
+  "width": 32,
+  "height": 34,
+  "backgroundId": "f1761914-39a7-48fd-b398-fd598966071b",
+  "tilesetId": "",
+  "paletteIds": [
+    "",
+    "96ed06b5-ae33-4829-aebe-336481d6d229"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00ed+0f6+0016+0f5+004+0f5+0010+0f3+00c+0f3+00c+0f3+0010+0f3+008+0f3+0014+0f3+005+0f2+0018+0f2+004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f2+0018+0f2+005+0f3+0014+0f3+008+0f3+0010+0f3+00c+0f7+004+0f7+0014+0f!004+0f!001a+0f!004+0f!00d+"
+}

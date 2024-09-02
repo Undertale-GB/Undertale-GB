@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "870af115-9150-4971-9d6b-88c3a2ae1538",
+  "name": "Room15",
+  "symbol": "bg_room15",
+  "width": 32,
+  "height": 24,
+  "imageWidth": 256,
+  "imageHeight": 192,
+  "filename": "Room15.png",
+  "tileColors": "",
+  "autoColor": false
+}

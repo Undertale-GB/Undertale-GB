@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "925ac76c-ef04-49bc-be7b-69eca2cdfbdd",
+  "name": "LoadMenu",
+  "symbol": "bg_loadmenu",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "LoadMenu.png",
+  "tileColors": "001d+023+0012+023+00d+022+004+022+00d+02!005+02!00d+02!005+02!00d+02!005+02!00d+02!005+023+00b+02!002+022+00!023+00b8+",
+  "autoColor": false
+}

@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "e70ff7ec-f463-491f-bedc-cf3bb270619f",
+  "name": "Battle2 Test",
+  "symbol": "bg_battle2_test",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "Battle2 Test.png",
+  "tileColors": "",
+  "autoColor": false
+}

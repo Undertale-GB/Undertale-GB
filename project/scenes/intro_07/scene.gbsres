@@ -1,0 +1,82 @@
+{
+  "_resourceType": "scene",
+  "id": "4ebadf6f-6e7b-4ce9-b695-f44c0796df9d",
+  "_index": 33,
+  "type": "TOPDOWN",
+  "name": "Intro_07",
+  "symbol": "scene_intro_07",
+  "x": 109,
+  "y": 549,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "2773aa06-f5a7-41eb-9437-4732ba2bd67c",
+  "tilesetId": "",
+  "paletteIds": [
+    "default-ui",
+    "6dad24ea-cdfb-4752-8027-735e96e81d53"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "autoFadeEventCollapse": false,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a"
+      },
+      "id": "91e0bf6d-4f29-42bf-b97b-4bd30007b2d1"
+    },
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "54737480-612e-4140-bbd7-cea3f6031f4e"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1
+      },
+      "id": "369f13c4-119b-405c-b7a3-d42551776d15"
+    },
+    {
+      "command": "PT_EVENT_BACKGROUND_TEXT",
+      "args": {
+        "text": "Legends say that\\nthose who climb\\nthe mountain\\nnever return.",
+        "x": 1,
+        "y": 12
+      },
+      "id": "08b34da6-8a89-4f8a-a38a-7d1e084aadd3"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1,
+        "frames": 30
+      },
+      "id": "4538c320-8ee1-4ea0-9112-87d8304989f5"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "f3f186e3-9f9a-4f8e-9867-390c7247ee78",
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        },
+        "direction": "down",
+        "fadeSpeed": "2"
+      },
+      "id": "11554cfd-47e0-425e-828d-dc174f3c0929"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}

@@ -1,0 +1,22 @@
+{
+  "_resourceType": "scene",
+  "id": "aaa41701-3538-43a7-ace3-08032df3632d",
+  "_index": 16,
+  "type": "TOPDOWN",
+  "name": "Room_15 (cheese)",
+  "symbol": "scene_room_15",
+  "x": 5986.5,
+  "y": 842.75,
+  "width": 32,
+  "height": 24,
+  "backgroundId": "870af115-9150-4971-9d6b-88c3a2ae1538",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00160+0f20+0080+0f8+0010+0f8+007+0f!0010+0f!00e+0f!0010+0f!00e+0f!0010+0f!00e+0f12+0067+"
+}

@@ -1,0 +1,80 @@
+{
+  "_resourceType": "scene",
+  "id": "70d2a3b2-4242-4a5d-a352-f8bc0052201a",
+  "_index": 29,
+  "type": "TOPDOWN",
+  "name": "Intro_03",
+  "symbol": "scene_intro_03",
+  "x": 108.94444444444446,
+  "y": 259.19444444444446,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "d9d23b90-9a3c-443e-bbe5-2082e529517e",
+  "tilesetId": "",
+  "paletteIds": [
+    "default-ui",
+    "6dad24ea-cdfb-4752-8027-735e96e81d53"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a"
+      },
+      "id": "6c342966-245f-48bb-a192-cc7816e06574"
+    },
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "4283b265-fdb9-435f-b222-56669dde262f"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1
+      },
+      "id": "2bfdac39-5ca9-448e-a597-05b66f14d81f"
+    },
+    {
+      "command": "PT_EVENT_BACKGROUND_TEXT",
+      "args": {
+        "text": "\\001\\4After a long\\nbattle, the humans\\nwere victorious.",
+        "x": 1,
+        "y": 12
+      },
+      "id": "19a012e0-c68e-4a49-a8cb-fd951e9f113d"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1
+      },
+      "id": "888dbbd8-a02a-4806-b791-6a5593b6031c"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "dc31ea4a-b384-41d5-b1ac-6bfb4e808996",
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        },
+        "direction": "down",
+        "fadeSpeed": "2"
+      },
+      "id": "bf8d1550-16a5-4af6-9b9c-bc13d160b502"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}

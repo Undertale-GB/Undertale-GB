@@ -1,0 +1,58 @@
+{
+  "_resourceType": "script",
+  "id": "cf665701-94d7-420f-a95a-43a2bf01e1a0",
+  "name": "Speech Bubble Test",
+  "symbol": "script_speech_bubble_test",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT_SET_ANIMATION_SPEED",
+      "args": {
+        "speedIn": 0,
+        "speedOut": 1,
+        "speed": 0,
+        "allowFastForward": true
+      },
+      "id": "c9629a5a-8fe9-48a7-bfd0-612136894b80"
+    },
+    {
+      "command": "PT_EVENT_BACKGROUND_TEXT",
+      "args": {
+        "text": "\\002\\002TEST  ",
+        "x": 12,
+        "y": 3
+      },
+      "id": "d5792003-53a0-4042-8810-d0bd3b9eef9a"
+    },
+    {
+      "command": "PT_EVENT_BACKGROUND_TEXT",
+      "args": {
+        "text": "\\002\\002{Bubble",
+        "x": 11,
+        "y": 4
+      },
+      "id": "eafa7f5f-f41a-4853-8fda-dbb13eca84ca"
+    },
+    {
+      "command": "PT_EVENT_BACKGROUND_TEXT",
+      "args": {
+        "text": "\\002\\002hehehe",
+        "x": 12,
+        "y": 5
+      },
+      "id": "92350fa4-5cf3-4296-8628-e53e4ea37883"
+    },
+    {
+      "command": "EVENT_TEXT_SET_ANIMATION_SPEED",
+      "args": {
+        "speedIn": 1,
+        "speedOut": 1,
+        "speed": 1,
+        "allowFastForward": true
+      },
+      "id": "93892e0f-9099-4258-b3b2-e52dbd87a4ed"
+    }
+  ]
+}

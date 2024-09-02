@@ -1,0 +1,66 @@
+{
+  "_resourceType": "script",
+  "id": "755356f7-e01a-47da-bd29-9df73125397d",
+  "name": "room locals reset",
+  "symbol": "script_8",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "10",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "24d31123-1067-431e-98e5-9b3543100a07"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "11",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "0323396d-8928-4809-ac85-95548ec4a795"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "12",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "65fffb8a-49ec-4542-ac75-28cbfad16847"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "13",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "db42a635-6370-4ab0-a77c-698212f6477c"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "14",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "58ec7aff-76ba-46ea-a84a-194e219cf881"
+    }
+  ]
+}

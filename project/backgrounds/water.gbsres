@@ -1,0 +1,12 @@
+{
+  "_resourceType": "background",
+  "id": "56f13dd7-1874-40da-b5fb-be3af903aee2",
+  "name": "!water",
+  "symbol": "bg_water",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "!water.png",
+  "tileColors": ""
+}
