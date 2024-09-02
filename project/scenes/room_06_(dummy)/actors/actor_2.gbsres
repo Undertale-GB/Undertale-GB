@@ -1,0 +1,290 @@
+{
+  "_resourceType": "actor",
+  "id": "e5634f23-6364-4508-ab22-0729f8b09f6c",
+  "_index": 1,
+  "symbol": "actor_37",
+  "prefabId": "",
+  "name": "",
+  "x": 6,
+  "y": 14,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "4f217269-38f7-417f-a42f-e5b2048e8fc5",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_IF_ACTOR_AT_POSITION",
+      "args": {
+        "actorId": "$self$",
+        "x": {
+          "type": "number",
+          "value": 15
+        },
+        "y": {
+          "type": "number",
+          "value": 8
+        },
+        "__collapseElse": true,
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_RAND VAR_RANDOMIZE, 0, 15",
+              "references": [
+                {
+                  "type": "variable",
+                  "id": "17"
+                }
+              ]
+            },
+            "id": "8cb5b222-433c-4f2a-b9cd-46c2e3a12470"
+          },
+          {
+            "command": "EVENT_IF_EXPRESSION",
+            "args": {
+              "expression": "$17$ <= 5",
+              "__collapseElse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                  "args": {
+                    "__scriptTabs": "text",
+                    "minHeight": 6,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "showBorder": "true",
+                    "clearPrevious": true,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 6,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "text": [
+                      "\\007\\ * Do you need some\n   ideas for\n   conversation\n   topics?",
+                      "\\007\\* Well, i often \n   start with\n   simple 'how do you\n   do..'",
+                      "\\007\\* You could ask \n   them about their\n   favorite books..."
+                    ],
+                    "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b"
+                  },
+                  "id": "3fc9aea0-788f-4269-b47b-803241fd201b"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_IF_EXPRESSION",
+                  "args": {
+                    "expression": "$17$ > 5 && $17$ <= 10",
+                    "__collapseElse": false
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                        "args": {
+                          "__scriptTabs": "text",
+                          "minHeight": 6,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "showBorder": "true",
+                          "clearPrevious": true,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 6,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "text": [
+                            "\\007\\* Jokes can be\n   useful for\n  'breaking the ice.'",
+                            "\\007\\* Listen to \n   this one...",
+                            "\\007\\* What did the\n   skeleton tile his\n   roof with?",
+                            "\\007\\* ... SHIN-gles!",
+                            "\\007\\* ...",
+                            "\\007\\* Well, I thought\n   it was amusing."
+                          ],
+                          "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b"
+                        },
+                        "id": "8a9f3cde-8fb0-4b37-85f4-ec9bf55d9f4a"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "EVENT_IF_EXPRESSION",
+                        "args": {
+                          "expression": "$17$ > 10",
+                          "__collapseElse": true
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "command": "PT_EVENT_ADVANCED_DIALOGUE",
+                              "args": {
+                                "__scriptTabs": "text",
+                                "minHeight": 6,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "showBorder": "true",
+                                "clearPrevious": true,
+                                "textX": 1,
+                                "textY": 1,
+                                "textHeight": 6,
+                                "closeWhen": "key",
+                                "closeButton": "a",
+                                "text": [
+                                  "\\007\\* You can say\n   anything...\n* The dummy will\n   not be bothered."
+                                ],
+                                "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b"
+                              },
+                              "id": "03324ba0-680b-499e-be47-2ca7e2455c7d"
+                            }
+                          ],
+                          "false": []
+                        },
+                        "id": "7ae1f016-0a8c-4a21-b78f-313d4b2cb453"
+                      }
+                    ]
+                  },
+                  "id": "df02b5f3-1c31-4b5d-8085-2fe9d40023b1"
+                }
+              ]
+            },
+            "id": "595e11d8-da6a-4d0d-be36-26a10ce09550"
+          }
+        ],
+        "false": []
+      },
+      "id": "cfa4dc5f-930f-45a7-8c67-3a9586dd6efc"
+    }
+  ],
+  "startScript": [
+    {
+      "command": "EVENT_IF_EXPRESSION",
+      "args": {
+        "expression": "$00$ != 6",
+        "__collapseElse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_CAMERA_MOVE_TO",
+            "args": {
+              "x": {
+                "type": "number",
+                "value": 0
+              },
+              "y": {
+                "type": "number",
+                "value": 1
+              },
+              "speed": 1,
+              "__collapse": true
+            },
+            "id": "e6587579-ebd7-408f-894b-45f739c18356"
+          },
+          {
+            "command": "PT_EVENT_ADVANCED_DIALOGUE",
+            "args": {
+              "__scriptTabs": "text",
+              "minHeight": 7,
+              "maxHeight": 7,
+              "position": "top",
+              "showBorder": "true",
+              "clearPrevious": true,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 7,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "text": [
+                "\\007\\* As a human living\nin the UNDERGROUND\nmonsters may\nattack you.",
+                "\\007\\* You will need \n   to be prepared \n   for this situation",
+                "\\007\\* However, \n   worry not!\n\n* The process \n   is simple.",
+                "\\007\\* When\n   you encounter a\n   monster, you will\n   enter a FIGHT.",
+                "\\007\\* While you are\n   in a FIGHT, strike\n   up a friendly\n   conversation.",
+                "\\007\\* Stall for time.\n   I will come to\n   resoleve the \n   conflict",
+                "\\007\\* Practice talking\n   to the dummy."
+              ],
+              "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b",
+              "__collapse": true
+            },
+            "id": "30bc2832-cac8-4bd6-8a2d-0a886bb17056"
+          },
+          {
+            "command": "EVENT_CAMERA_LOCK",
+            "args": {
+              "speed": 1,
+              "axis": [
+                "x",
+                "y"
+              ],
+              "__collapse": true
+            },
+            "id": "2dd476fe-541f-41ed-b69a-b86ec65c0c26"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_UNLOCK",
+              "__collapse": true
+            },
+            "id": "4d2c2a58-b8dd-4a89-a321-f3b48275e32d"
+          },
+          {
+            "command": "EVENT_ACTOR_MOVE_TO",
+            "args": {
+              "actorId": "$self$",
+              "x": {
+                "type": "number",
+                "value": 15
+              },
+              "y": {
+                "type": "number",
+                "value": 8
+              },
+              "moveType": "horizontal",
+              "useCollisions": false,
+              "__collapse": true
+            },
+            "id": "9d5a892b-588a-4f14-ac35-d8d1a6e12552"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_DIRECTION",
+            "args": {
+              "actorId": "$self$",
+              "direction": {
+                "type": "direction",
+                "value": "down"
+              },
+              "__collapse": true
+            },
+            "id": "a5fc484c-1212-4f30-adca-bfb263958051"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "$self$"
+            },
+            "id": "502788ce-78b3-4fdc-9d96-8e80e6e376ab"
+          }
+        ]
+      },
+      "id": "c95f0e43-7d68-4257-9005-605dd8fc51ac"
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

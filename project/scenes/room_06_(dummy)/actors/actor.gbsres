@@ -1,0 +1,119 @@
+{
+  "_resourceType": "actor",
+  "id": "936ade1c-2a8b-4181-8be8-9c06b4f0dfb1",
+  "_index": 0,
+  "symbol": "actor_6",
+  "prefabId": "",
+  "name": "",
+  "x": 20,
+  "y": 12,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "c8cac458-241a-4dde-8fdc-752b957ff1e1",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_IF_EXPRESSION",
+      "args": {
+        "expression": "$00$ != 6",
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "0",
+              "value": {
+                "type": "number",
+                "value": 6
+              }
+            },
+            "id": "4a69c197-5b8f-4292-8024-51c9ee1e0cdf"
+          },
+          {
+            "command": "PT_EVENT_ADVANCED_DIALOGUE",
+            "args": {
+              "__scriptTabs": "text",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "showBorder": "true",
+              "clearPrevious": true,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 3,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "text": [
+                "\\007\\* you talked to\n   the dummy.",
+                "\\007\\* Toriel seems\n   happy with you."
+              ],
+              "avatarId": ""
+            },
+            "id": "2cd17156-2581-4f80-afb7-b6eb435d258f"
+          },
+          {
+            "command": "PT_EVENT_ADVANCED_DIALOGUE",
+            "args": {
+              "__scriptTabs": "text",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "showBorder": "true",
+              "clearPrevious": true,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 3,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "text": [
+                "\\007\\* Ah, very good!\n* you are very good"
+              ],
+              "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b"
+            },
+            "id": "0be0a5a5-3c56-4d8d-a931-a0f3835a2ec0"
+          },
+          {
+            "command": "EVENT_ACTOR_MOVE_TO",
+            "args": {
+              "actorId": "e5634f23-6364-4508-ab22-0729f8b09f6c",
+              "x": {
+                "type": "number",
+                "value": 15
+              },
+              "y": {
+                "type": "number",
+                "value": 5
+              },
+              "moveType": "vertical",
+              "useCollisions": false
+            },
+            "id": "c20eafc3-25ab-403d-8384-f0458924bda3"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "e5634f23-6364-4508-ab22-0729f8b09f6c"
+            },
+            "id": "aff16206-aef9-48ff-9836-bc78688234a8"
+          }
+        ],
+        "false": []
+      },
+      "id": "4df0f17f-5800-4aec-a461-ee31b9302991"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

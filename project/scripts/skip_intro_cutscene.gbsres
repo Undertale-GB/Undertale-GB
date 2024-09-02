@@ -1,0 +1,70 @@
+{
+  "_resourceType": "script",
+  "id": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a",
+  "name": "Skip Intro Cutscene",
+  "symbol": "script_7",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "b",
+          "start",
+          "select",
+          "a"
+        ],
+        "override": true,
+        "__scriptTabs": "press"
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_SWITCH_TEXT_LAYER .TEXT_LAYER_WIN\nVM_LOCK"
+            },
+            "id": "efd0e1bd-7a9c-4b5d-929e-4eab6f9cc1ab"
+          },
+          {
+            "command": "EVENT_MUSIC_STOP",
+            "args": {},
+            "id": "22c885d8-c53b-4f65-9810-ae06434b5e02"
+          },
+          {
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "f3f186e3-9f9a-4f8e-9867-390c7247ee78",
+              "x": {
+                "type": "number",
+                "value": 0
+              },
+              "y": {
+                "type": "number",
+                "value": 0
+              },
+              "direction": "down",
+              "fadeSpeed": 2
+            },
+            "id": "eb334b5f-cbe5-48f3-b248-4c4c3fdb5233"
+          },
+          {
+            "command": "EVENT_REMOVE_INPUT_SCRIPT",
+            "args": {
+              "input": [
+                "b",
+                "a",
+                "start",
+                "select"
+              ]
+            },
+            "id": "5a11d11b-9c25-4260-bcbe-362581d4e4a5"
+          }
+        ]
+      },
+      "id": "cf8c5de1-033d-4dc5-a565-ba99c339a0f8"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "_resourceType": "tileset",
+  "id": "6e494de2-e372-499c-99c8-57000d682436",
+  "name": "ruins tileset",
+  "symbol": "tileset_ruins_tileset",
+  "width": 16,
+  "height": 5,
+  "imageWidth": 128,
+  "imageHeight": 40,
+  "filename": "ruins tileset.png"
+}

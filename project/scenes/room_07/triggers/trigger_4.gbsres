@@ -1,0 +1,42 @@
+{
+  "_resourceType": "trigger",
+  "id": "b196c2e2-b0a6-4170-a14a-31ca2a994eca",
+  "_index": 3,
+  "symbol": "trigger_69",
+  "prefabId": "",
+  "name": "",
+  "x": 89,
+  "y": 14,
+  "width": 3,
+  "height": 4,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_CONST 3\nVM_PUSH_CONST 2\nVM_PUSH_CONST 1\nVM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 84, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 85, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 84, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 85, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "references": [
+          {
+            "type": "background",
+            "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
+          }
+        ]
+      },
+      "id": "55d4a6fc-0258-4727-b406-5a43dabd6ff7"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_CONST 3\nVM_PUSH_CONST 2\nVM_PUSH_CONST 1\nVM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 88, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 89, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 88, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 89, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "references": [
+          {
+            "type": "background",
+            "id": "5ee34e5d-1798-4ab0-919e-3ff7c0cd1e09"
+          }
+        ]
+      },
+      "id": "bcab30e5-3883-4121-b3c6-2f355a409f40"
+    }
+  ],
+  "leaveScript": []
+}

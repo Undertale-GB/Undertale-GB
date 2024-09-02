@@ -1,0 +1,200 @@
+{
+  "_resourceType": "variables",
+  "variables": [
+    {
+      "id": "0",
+      "name": "Progress",
+      "symbol": "var_progress"
+    },
+    {
+      "id": "1",
+      "name": "GameState",
+      "symbol": "var_gamestate"
+    },
+    {
+      "id": "2",
+      "name": "Current HP",
+      "symbol": "var_current_hp"
+    },
+    {
+      "id": "3",
+      "name": "Max HP",
+      "symbol": "var_max_hp"
+    },
+    {
+      "id": "4",
+      "name": "Counter",
+      "symbol": "var_counter"
+    },
+    {
+      "id": "5",
+      "name": "NextLine",
+      "symbol": "var_nextline"
+    },
+    {
+      "id": "6",
+      "name": "Round No.",
+      "symbol": "var_round_no_"
+    },
+    {
+      "id": "7",
+      "name": "MenuMain",
+      "symbol": "var_menumain"
+    },
+    {
+      "id": "8",
+      "name": "MenuSub",
+      "symbol": "var_menusub"
+    },
+    {
+      "id": "9",
+      "name": "InSubMenu",
+      "symbol": "var_insubmenu"
+    },
+    {
+      "id": "10",
+      "name": "room_local_01",
+      "symbol": "var_room_local_01"
+    },
+    {
+      "id": "11",
+      "name": "room_local_02",
+      "symbol": "var_room_local_02"
+    },
+    {
+      "id": "12",
+      "name": "room_local_03",
+      "symbol": "var_room_local_03"
+    },
+    {
+      "id": "13",
+      "name": "room_local_04",
+      "symbol": "var_room_local_04"
+    },
+    {
+      "id": "14",
+      "name": "room_local_05",
+      "symbol": "var_room_local_05"
+    },
+    {
+      "id": "15",
+      "name": "Flowey visible ?",
+      "symbol": "var_flowey_visible_0"
+    },
+    {
+      "id": "16",
+      "name": "Have you killed Toriel?",
+      "symbol": "var_have_you_killed_toriel_"
+    },
+    {
+      "id": "17",
+      "name": "Randomize",
+      "symbol": "var_randomize"
+    },
+    {
+      "id": "18",
+      "name": "Have you killed the dummy (r6) ? ",
+      "symbol": "var_have_you_killed_the_dum"
+    },
+    {
+      "id": "19",
+      "name": "is_reading",
+      "symbol": "var_is_reading"
+    },
+    {
+      "id": "20",
+      "name": "local_progress",
+      "symbol": "var_local_progress"
+    },
+    {
+      "id": "21",
+      "name": "room_id",
+      "symbol": "var_room_id"
+    },
+    {
+      "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
+      "name": "Counter",
+      "symbol": "var_counter_0"
+    },
+    {
+      "id": "f3f44a89-7c32-4404-9f2d-1011e4895462__L0",
+      "name": "Local 0",
+      "symbol": "var_local_0"
+    },
+    {
+      "id": "a3fc7b16-398c-4c6b-88ad-2d93d248581c__L0",
+      "name": "rockX",
+      "symbol": "var_rockx"
+    },
+    {
+      "id": "a3fc7b16-398c-4c6b-88ad-2d93d248581c__L1",
+      "name": "rockY",
+      "symbol": "var_rocky"
+    },
+    {
+      "id": "a3fc7b16-398c-4c6b-88ad-2d93d248581c__L2",
+      "name": "playerX",
+      "symbol": "var_playerx"
+    },
+    {
+      "id": "a3fc7b16-398c-4c6b-88ad-2d93d248581c__L3",
+      "name": "playerY",
+      "symbol": "var_playery"
+    },
+    {
+      "id": "bce585d1-f723-436d-aaf1-04db96a5a8c9__L0",
+      "name": "rockX",
+      "symbol": "var_rockx_0"
+    },
+    {
+      "id": "bce585d1-f723-436d-aaf1-04db96a5a8c9__L1",
+      "name": "rockY",
+      "symbol": "var_rocky_0"
+    },
+    {
+      "id": "bce585d1-f723-436d-aaf1-04db96a5a8c9__L2",
+      "name": "playerX",
+      "symbol": "var_playerx_0"
+    },
+    {
+      "id": "bce585d1-f723-436d-aaf1-04db96a5a8c9__L3",
+      "name": "playerY",
+      "symbol": "var_playery_0"
+    },
+    {
+      "id": "96e0b18d-cbf4-4e69-a4a4-b3494bc25fd6__L0",
+      "name": "rockX",
+      "symbol": "var_rockx_1"
+    },
+    {
+      "id": "96e0b18d-cbf4-4e69-a4a4-b3494bc25fd6__L1",
+      "name": "rockY",
+      "symbol": "var_rocky_1"
+    },
+    {
+      "id": "96e0b18d-cbf4-4e69-a4a4-b3494bc25fd6__L2",
+      "name": "playerX",
+      "symbol": "var_playerx_1"
+    },
+    {
+      "id": "96e0b18d-cbf4-4e69-a4a4-b3494bc25fd6__L3",
+      "name": "playerY",
+      "symbol": "var_playery_1"
+    },
+    {
+      "id": "9ce83cb9-d91f-402f-93ec-41722283f4bf__L0",
+      "name": "Local 0",
+      "symbol": "var_local_1"
+    },
+    {
+      "id": "c542e06b-a704-4373-862f-dc89097790d9__L0",
+      "name": "SaveMenu",
+      "symbol": "var_savemenu"
+    },
+    {
+      "id": "c50cd32e-ad8c-47fe-a59e-28791b63ca16__L0",
+      "name": "3",
+      "symbol": "var_3"
+    }
+  ]
+}

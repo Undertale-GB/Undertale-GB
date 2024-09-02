@@ -1,0 +1,145 @@
+{
+  "_resourceType": "trigger",
+  "id": "2df4079f-4604-4127-a56c-f131e9f9816b",
+  "_index": 3,
+  "symbol": "trigger_49",
+  "prefabId": "",
+  "name": "",
+  "x": 16,
+  "y": 20,
+  "width": 1,
+  "height": 2,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_IF_EXPRESSION",
+      "args": {
+        "expression": "$12$ == 0",
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_SET_STATE",
+            "args": {
+              "actorId": "$self$",
+              "spriteStateId": "Animation_2",
+              "__collapse": false
+            },
+            "id": "69b93aaf-e28d-4c51-874f-ec3a461fb065"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+            "args": {
+              "actorId": "$self$",
+              "speed": 255
+            },
+            "id": "e18549c8-4f7e-4de9-8b29-ed2d5a0f7f67"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_FRAME",
+            "args": {
+              "actorId": "$self$",
+              "frame": {
+                "type": "number",
+                "value": 1
+              }
+            },
+            "id": "2ef26d71-cb4c-403b-b4ac-ecf2fa818bf2"
+          },
+          {
+            "command": "PT_EVENT_ADVANCED_DIALOGUE",
+            "args": {
+              "__scriptTabs": "text",
+              "minHeight": 6,
+              "maxHeight": 7,
+              "position": "top",
+              "showBorder": "true",
+              "clearPrevious": true,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 6,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "text": [
+                "\\002\\4* To make progress\n   here, you will \n   need to trigger\n   several switches.",
+                "\\002\\4* Do not worry,\n   I have labelled\n   the ones that you\n   need to flip."
+              ],
+              "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b",
+              "__collapse": false
+            },
+            "id": "04e76ab3-41b8-48ba-9aa6-89c42e0e05fc"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_STATE",
+            "args": {
+              "actorId": "$self$",
+              "spriteStateId": ""
+            },
+            "id": "2112d5b8-ba8c-4318-9773-85c10f6502e4"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+            "args": {
+              "actorId": "$self$",
+              "speed": 15
+            },
+            "id": "111801ee-f7bf-4846-9999-39f656fea185"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "12",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            },
+            "id": "6c70bbf9-9205-44e2-8ade-799af0385e4a"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_UNLOCK",
+              "__collapse": true
+            },
+            "id": "48d3dc24-edaa-4ee0-94f1-9362968fd215"
+          },
+          {
+            "command": "EVENT_ACTOR_MOVE_TO",
+            "args": {
+              "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+              "x": {
+                "type": "number",
+                "value": 46
+              },
+              "y": {
+                "type": "number",
+                "value": 16
+              },
+              "moveType": "horizontal",
+              "useCollisions": false,
+              "__collapse": false
+            },
+            "id": "eab6872f-8a10-4447-aa68-e8d6a613d890"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_DIRECTION",
+            "args": {
+              "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+              "direction": {
+                "type": "direction",
+                "value": "left"
+              },
+              "__collapse": false
+            },
+            "id": "7ea424e3-ca55-4170-9e95-ed5707dcfc86"
+          }
+        ],
+        "false": []
+      },
+      "id": "675a404c-816a-49d4-b067-a0123a2714bf"
+    }
+  ],
+  "leaveScript": []
+}

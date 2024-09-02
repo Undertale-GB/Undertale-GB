@@ -1,0 +1,53 @@
+{
+  "_resourceType": "actor",
+  "id": "41baa876-276f-4486-adab-14e1d8f6fecf",
+  "_index": 3,
+  "symbol": "actor_15",
+  "prefabId": "",
+  "name": "",
+  "x": 13,
+  "y": 13,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "d451ec63-0389-4f2b-9c21-ac25366fb001",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";do not modify until your text block\nVM_LOCK\n; If VAR_IS_READING==0\nVM_RPN\n    .R_REF      VAR_IS_READING\n    .R_INT16    0\n    .R_OPERATOR .EQ\n    .R_STOP\nVM_IF_CONST             .GT, .ARG0, 0, 90$, 1\nVM_JUMP                 80$\n90$:\n; Variable Set To True\nVM_SET_CONST            VAR_IS_READING, 1\n\n; Input Script Attach\nVM_CONTEXT_PREPARE      5, ___bank_script_input_1, _script_input_1\nVM_INPUT_ATTACH         15, ^/(5 | .OVERRIDE_DEFAULT)/\n\nVM_UNLOCK\n\n; your text block goes there\nVM_LOAD_TEXT            0\n        .asciz \"\\003\\002\\002\\007\\* \\042Press \\002\\002A \\002\\004to read\\n  signs!\\042\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 14, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 3, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n\n\n;do not modify beyond this poit\n; Variable Set To False\nVM_SET_CONST            VAR_IS_READING, 0\n\n; Input Script Remove\nVM_INPUT_DETACH         15\n\n80$:\n; Stop Script\nVM_STOP\n",
+        "references": [
+          {
+            "type": "variable",
+            "id": "19"
+          }
+        ]
+      },
+      "id": "5b3efb23-d2f2-4e91-ba79-96fa553d8e63"
+    }
+  ],
+  "startScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "T0",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "2cbd96bd-6af4-456e-8545-b3d1786c7cf2"
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

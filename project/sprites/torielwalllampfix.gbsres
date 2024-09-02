@@ -1,0 +1,128 @@
+{
+  "_resourceType": "sprite",
+  "id": "1ddce11f-77de-4cbf-9a5a-32827672c8f9",
+  "name": "TorielWallLampFix",
+  "symbol": "sprite_torielwalllampfix",
+  "numFrames": 1,
+  "filename": "TorielWallLampFix.png",
+  "checksum": "f81004107064eabd2417c4837dd9a42cea66edcf",
+  "width": 16,
+  "height": 16,
+  "states": [
+    {
+      "id": "1a1e4de6-fd78-46df-80c2-006b7e904037",
+      "name": "",
+      "animationType": "fixed",
+      "flipLeft": false,
+      "animations": [
+        {
+          "id": "469a7d03-71ff-4515-8200-c01bc6fbcf3d",
+          "frames": [
+            {
+              "id": "098409ad-b0eb-4d78-8caf-a9b06aedd8fa",
+              "tiles": [
+                {
+                  "id": "a66e02d7-1e3f-4c24-b045-1c6473a00c46",
+                  "x": 0,
+                  "y": 0,
+                  "sliceX": 0,
+                  "sliceY": 0,
+                  "flipX": false,
+                  "flipY": false,
+                  "palette": 0,
+                  "paletteIndex": 0,
+                  "objPalette": "OBP0",
+                  "priority": false
+                },
+                {
+                  "id": "766e241e-ce96-4774-b35a-b2fb59f98a0e",
+                  "x": 8,
+                  "y": 0,
+                  "sliceX": 8,
+                  "sliceY": 0,
+                  "flipX": false,
+                  "flipY": false,
+                  "palette": 0,
+                  "paletteIndex": 0,
+                  "objPalette": "OBP0",
+                  "priority": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "357534d7-2ff2-4c8b-8b2d-76990317e8aa",
+          "frames": [
+            {
+              "id": "e726f5d6-b5dc-4b13-8de1-4803e7656ebe",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "d427d0ea-e500-4178-8067-9f83708691ff",
+          "frames": [
+            {
+              "id": "72b4fd91-9fe1-4936-a5f8-994648bfc021",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "69adcd59-c0ae-426a-9adb-7e1e71e89de3",
+          "frames": [
+            {
+              "id": "5cf8716a-8e1f-4735-89bd-8f2e170ad914",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "1dfd71a5-5f8f-4715-89a4-5812c36e121c",
+          "frames": [
+            {
+              "id": "cafd6971-71f1-4898-bb7d-cc9a0bda49aa",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "2e1be109-a21c-4ad8-a42e-c1ae614bb524",
+          "frames": [
+            {
+              "id": "08596d60-3f53-4148-8e2e-7c02789797df",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "48b9c4b1-bc15-4af5-b578-fde738494b38",
+          "frames": [
+            {
+              "id": "1b953c97-9864-43b6-8cc2-b153696093e6",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "6bc9ea22-37da-484d-a417-2421ea064e96",
+          "frames": [
+            {
+              "id": "7ce1b5dc-eaa5-4eb7-ad1d-712162411318",
+              "tiles": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "numTiles": 1,
+  "canvasWidth": 16,
+  "canvasHeight": 16,
+  "boundsX": 0,
+  "boundsY": 0,
+  "boundsWidth": 16,
+  "boundsHeight": 16,
+  "animSpeed": 15
+}

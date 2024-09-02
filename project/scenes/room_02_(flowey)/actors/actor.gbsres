@@ -1,0 +1,77 @@
+{
+  "_resourceType": "actor",
+  "id": "ec9b869d-cf4e-48d1-b0cd-0da465faf1df",
+  "_index": 0,
+  "symbol": "actor_0",
+  "prefabId": "",
+  "name": "",
+  "x": 15,
+  "y": 22,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "8e03b73a-b14e-43b0-8be9-b7c771348b0e",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "5170cfc3-b523-4f9e-8cb4-44d7a6ff9f50"
+    }
+  ],
+  "startScript": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "variable": "15",
+        "operator": "==",
+        "comparator": 1,
+        "__collapseElse": false,
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "15"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_ACTIVATE",
+            "args": {
+              "actorId": "$self$"
+            },
+            "id": "f61ed139-6491-4091-8e84-edea49b97396"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "$self$"
+            },
+            "id": "0e81afe0-a82f-404d-adbc-85ac9de9d826"
+          }
+        ]
+      },
+      "id": "275a3818-a208-4e36-a95b-205689b80f4f"
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

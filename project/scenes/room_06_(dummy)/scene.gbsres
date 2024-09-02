@@ -1,0 +1,73 @@
+{
+  "_resourceType": "scene",
+  "id": "1a420d11-7612-48e3-80f8-515f1f04dcc3",
+  "_index": 7,
+  "type": "TOPDOWN",
+  "name": "Room_06 (dummy)",
+  "symbol": "scene_room_06",
+  "x": 1212.3000000000009,
+  "y": 764.0499999999992,
+  "width": 32,
+  "height": 24,
+  "backgroundId": "a9d50f87-2a71-41bb-8e03-00e0d42cc3db",
+  "tilesetId": "",
+  "paletteIds": [
+    "",
+    "77094775-035b-41c3-8de3-c2d8af10a5a6",
+    "469ea28d-cddd-4969-8b2c-fed5c3aeacf0"
+  ],
+  "spritePaletteIds": [
+    "",
+    "",
+    "8300f034-bfe4-4d65-b8eb-c4009e9c51b3",
+    "74748443-7e95-49c3-8e84-60d8d6f0c24a",
+    "a1566361-db8a-4828-bf68-c11b6cbfe78c"
+  ],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_IF_EXPRESSION",
+      "args": {
+        "expression": "$16$ == 1 || $00$ == 6",
+        "__collapseElse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "e5634f23-6364-4508-ab22-0729f8b09f6c"
+            },
+            "id": "97a03ffe-f429-47e1-9bf8-637d2d467539"
+          }
+        ],
+        "false": []
+      },
+      "id": "8da239b8-efa6-454c-b957-7094d2855544"
+    },
+    {
+      "command": "EVENT_IF_EXPRESSION",
+      "args": {
+        "expression": "$18$ == 1",
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "936ade1c-2a8b-4181-8be8-9c06b4f0dfb1"
+            },
+            "id": "0e10bae0-8b97-4a2c-96bc-680e75792728"
+          }
+        ],
+        "false": []
+      },
+      "id": "4eb14cb1-fc0d-4535-8338-ce8545554f2c"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00cd+0f6+0014+0f7+004+0f7+00e+0f!0010+0f!00c+0f3+0010+0f3+00a+0f!0014+0f!008+0f3+0014+0f3+006+0f!0018+0f!003+0f4+0018+0f!001f+0f!001f+0f!001f+0f!001f+0f!003+0f6+0014+0f3+008+0f!0014+0f!00a+0f3+0010+0f3+00c+0f!0010+0f!00e+0f12+0027+"
+}

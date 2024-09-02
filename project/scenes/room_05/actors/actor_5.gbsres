@@ -1,0 +1,70 @@
+{
+  "_resourceType": "actor",
+  "id": "8253b99f-8c5b-4cc4-87b2-e52b774c93c3",
+  "_index": 4,
+  "symbol": "actor_16",
+  "prefabId": "",
+  "name": "",
+  "x": 37,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_IF_EXPRESSION",
+      "args": {
+        "expression": "$L0$ == 0",
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "L0",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            },
+            "id": "14413182-216f-4f42-a11d-1e62733a6eab"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_UNLOCK\n\nVM_LOAD_TEXT            0\n        .asciz \"\\003\\002\\002\\007\\* Please press\\n   this switch.\\n     - TORIEL\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n"
+            },
+            "id": "81ac613b-d768-447c-892e-19f26c1e9060"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "L0",
+              "value": {
+                "type": "number",
+                "value": 0
+              }
+            },
+            "id": "68bc098e-ff57-4493-9866-018262917540"
+          }
+        ],
+        "false": []
+      },
+      "id": "26f932c9-5a86-4472-8922-22f7300be5bc"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

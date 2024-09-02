@@ -1,0 +1,191 @@
+{
+  "_resourceType": "actor",
+  "id": "f5b54d96-dd99-46da-82da-e6f178ac6f23",
+  "_index": 1,
+  "symbol": "actor_5",
+  "prefabId": "",
+  "name": "UI Controller",
+  "x": 18,
+  "y": 0,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 255,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [
+    {
+      "command": "EVENT_ACTOR_STOP_UPDATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "12e90cba-a40a-4cda-a3eb-73d33c118039"
+    }
+  ],
+  "updateScript": [
+    {
+      "command": "EVENT_GROUP",
+      "args": {
+        "__label": "Dialouge",
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "variable": "5",
+              "operator": "==",
+              "comparator": "0",
+              "__collapseElse": false,
+              "__collapse": true,
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "5"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "PT_EVENT_BACKGROUND_TEXT",
+                  "args": {
+                    "text": "*The Debug",
+                    "x": 3,
+                    "y": 10
+                  },
+                  "id": "31fa4329-da91-499b-b351-16ab5cc4a776"
+                },
+                {
+                  "command": "PT_EVENT_BACKGROUND_TEXT",
+                  "args": {
+                    "text": " enemy",
+                    "x": 3,
+                    "y": 11
+                  },
+                  "id": "73b9bf86-8ebe-46d9-8710-f74e70bc82d6"
+                },
+                {
+                  "command": "PT_EVENT_BACKGROUND_TEXT",
+                  "args": {
+                    "text": " attacks!",
+                    "x": 3,
+                    "y": 12
+                  },
+                  "id": "e7e33b2f-5630-4751-b66f-ed8e1c28778e"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_IF",
+                  "args": {
+                    "variable": "5",
+                    "operator": "==",
+                    "comparator": 1,
+                    "__collapseElse": false,
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "5"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "PT_EVENT_BACKGROUND_TEXT",
+                        "args": {
+                          "text": "*The enemy",
+                          "x": 3,
+                          "y": 10
+                        },
+                        "id": "05146771-930c-48de-bdc1-036afd11f577"
+                      },
+                      {
+                        "command": "PT_EVENT_BACKGROUND_TEXT",
+                        "args": {
+                          "text": " seems",
+                          "x": 3,
+                          "y": 11
+                        },
+                        "id": "762e8aa3-1a5c-4293-afac-3555f34af973"
+                      },
+                      {
+                        "command": "PT_EVENT_BACKGROUND_TEXT",
+                        "args": {
+                          "text": " confused...",
+                          "x": 3,
+                          "y": 12
+                        },
+                        "id": "453322fd-403c-47f4-8d3e-7163d133ffa6"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "PT_EVENT_BACKGROUND_TEXT",
+                        "args": {
+                          "text": "*The enemy",
+                          "x": 3,
+                          "y": 10
+                        },
+                        "id": "0716dfb5-86ba-43f5-b3bb-c59e4ae5962b"
+                      },
+                      {
+                        "command": "PT_EVENT_BACKGROUND_TEXT",
+                        "args": {
+                          "text": " is out of",
+                          "x": 3,
+                          "y": 11
+                        },
+                        "id": "8442b468-aaec-4308-bb29-c8a0cac8211e"
+                      },
+                      {
+                        "command": "PT_EVENT_BACKGROUND_TEXT",
+                        "args": {
+                          "text": " lines...",
+                          "x": 3,
+                          "y": 12
+                        },
+                        "id": "bcbeb988-28ff-4798-b191-759e3f4e88eb"
+                      }
+                    ]
+                  },
+                  "id": "2fa93a80-d021-4c19-9a5c-553662d295d2"
+                }
+              ]
+            },
+            "id": "a82b84bb-3c49-4408-908a-b362e1dc3aee"
+          }
+        ]
+      },
+      "id": "f33b2308-6a9f-4328-965a-637438f53dba"
+    },
+    {
+      "command": "EVENT_ACTOR_STOP_UPDATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "f85c5256-657c-4650-9254-8daf150bfd7d"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

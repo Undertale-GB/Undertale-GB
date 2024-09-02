@@ -1,0 +1,180 @@
+{
+  "_resourceType": "actor",
+  "id": "d822d357-80da-4b60-9200-1163e9cfe961",
+  "_index": 1,
+  "symbol": "actor_3",
+  "prefabId": "",
+  "name": "",
+  "x": 15,
+  "y": 22,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "4f217269-38f7-417f-a42f-e5b2048e8fc5",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "variable": "15",
+        "operator": "==",
+        "comparator": 0,
+        "__collapseElse": false,
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "15"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_ACTIVATE",
+            "args": {
+              "actorId": "$self$"
+            },
+            "id": "d97efe1c-5993-4968-b389-239062ca73fd"
+          },
+          {
+            "command": "EVENT_CAMERA_MOVE_TO",
+            "args": {
+              "x": {
+                "type": "number",
+                "value": 6
+              },
+              "y": {
+                "type": "number",
+                "value": 15
+              },
+              "speed": 0.5
+            },
+            "id": "9ad2095e-b474-4782-9924-d27140f610d3"
+          },
+          {
+            "command": "PT_EVENT_ADVANCED_DIALOGUE",
+            "args": {
+              "__scriptTabs": "text",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "top",
+              "showBorder": "true",
+              "clearPrevious": true,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 3,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "text": [
+                "\\001\\004 *This way."
+              ],
+              "avatarId": "d1ae48a4-e6d7-4edd-b095-e6dda6a5e36b"
+            },
+            "id": "4f05cd5a-674e-4d22-a51b-e094e2f91395"
+          },
+          {
+            "command": "EVENT_CAMERA_LOCK",
+            "args": {
+              "speed": 0.5,
+              "axis": [
+                "x",
+                "y"
+              ]
+            },
+            "id": "33c9fb52-0cad-4729-a9ab-ca43aaf45a19"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_UNLOCK"
+            },
+            "id": "2731cc0d-4099-4f0b-9362-861baf91b171"
+          },
+          {
+            "command": "EVENT_ACTOR_MOVE_TO",
+            "args": {
+              "actorId": "$self$",
+              "x": {
+                "type": "number",
+                "value": 15
+              },
+              "y": {
+                "type": "number",
+                "value": 8
+              },
+              "moveType": "vertical",
+              "useCollisions": false
+            },
+            "id": "56a5a7b6-40b1-4b6f-8d55-8449c3d6f412"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "$self$"
+            },
+            "id": "86e2d6f0-cd97-4333-b5d3-9bb44be92c04"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "$self$"
+            },
+            "id": "b162492f-0ceb-4be1-ab63-91e8ab9b4cf4"
+          }
+        ]
+      },
+      "id": "457b13b9-e233-44f2-91dd-5971d577f5a0"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "variable": "16",
+        "operator": "==",
+        "comparator": 1,
+        "__collapseElse": true,
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "16"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "$self$"
+            },
+            "id": "d0b842d7-ae94-43ba-b6a8-2d85f09904c7"
+          }
+        ],
+        "false": []
+      },
+      "id": "26e01ffe-76c5-4eaf-8932-e7e676a3ffe2"
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

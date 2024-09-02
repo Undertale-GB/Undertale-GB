@@ -1,0 +1,22 @@
+{
+  "_resourceType": "scene",
+  "id": "7352f2da-dd49-4609-a44e-1011f5084db2",
+  "_index": 38,
+  "type": "TOPDOWN",
+  "name": "!tilebank-water",
+  "symbol": "scene_40",
+  "x": 772,
+  "y": 123.75,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "b4ee2ff6-458f-4472-a976-c8a0bf088217",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}

@@ -1,0 +1,38 @@
+{
+  "_resourceType": "actor",
+  "id": "6dc3fc20-548f-4958-b6fb-bf245464154f",
+  "_index": 0,
+  "symbol": "actor_27",
+  "prefabId": "",
+  "name": "",
+  "x": 16,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "* Three out of\n  four grey rocks\n  recommend you\n  push them."
+        ],
+        "avatarId": ""
+      },
+      "id": "8da39655-c4fe-4c96-83ac-bd2d74d519bf"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

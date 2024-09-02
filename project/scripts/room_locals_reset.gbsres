@@ -1,0 +1,40 @@
+{
+  "_resourceType": "script",
+  "id": "755356f7-e01a-47da-bd29-9df73125397d",
+  "name": "room locals reset",
+  "symbol": "script_8",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "references": [
+          {
+            "type": "variable",
+            "id": "10"
+          },
+          {
+            "type": "variable",
+            "id": "11"
+          },
+          {
+            "type": "variable",
+            "id": "12"
+          },
+          {
+            "type": "variable",
+            "id": "13"
+          },
+          {
+            "type": "variable",
+            "id": "14"
+          }
+        ],
+        "script": "VM_SET_CONST VAR_ROOM_LOCAL_01, 0\nVM_SET_CONST VAR_ROOM_LOCAL_02, 0\nVM_SET_CONST VAR_ROOM_LOCAL_03, 0\nVM_SET_CONST VAR_ROOM_LOCAL_04, 0\nVM_SET_CONST VAR_ROOM_LOCAL_05, 0"
+      },
+      "id": "2f9d5575-65d9-45cd-875d-4cb6d4a3a993"
+    }
+  ]
+}

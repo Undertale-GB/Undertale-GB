@@ -1,0 +1,231 @@
+{
+  "_resourceType": "actor",
+  "id": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+  "_index": 10,
+  "symbol": "actor_36",
+  "prefabId": "",
+  "name": "",
+  "x": 16,
+  "y": 16,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "4f217269-38f7-417f-a42f-e5b2048e8fc5",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_IF_ACTOR_AT_POSITION",
+      "args": {
+        "actorId": "$self$",
+        "x": {
+          "type": "number",
+          "value": 46
+        },
+        "y": {
+          "type": "number",
+          "value": 16
+        },
+        "__collapseElse": false,
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_IF_EXPRESSION",
+            "args": {
+              "expression": "$L2$ == 1",
+              "__collapseElse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "UTGB_EVENT_NON_FREEZING_TEXT",
+                  "args": {
+                    "variable": "19"
+                  },
+                  "children": {
+                    "event": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_UNLOCK\nVM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Do you need some\\n   help..?\\n* Press the switch\\n   on the wall.\\001\\007\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_BLACK\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Come on,\\n   you can do it!\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_BLACK\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/ "
+                        },
+                        "id": "7919e802-53ad-4b7d-b811-ed44676b6390"
+                      }
+                    ]
+                  },
+                  "id": "a3e1a041-04a0-4139-885e-cef7c4c7ff6f"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "L2",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  },
+                  "id": "e4eefb16-4784-424b-8c48-b3895e85aa8e"
+                },
+                {
+                  "command": "UTGB_EVENT_NON_FREEZING_TEXT",
+                  "args": {
+                    "variable": "19"
+                  },
+                  "children": {
+                    "event": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_UNLOCK\nVM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* The first switch\\nis over on the wall.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 14, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   1, 1, 18, 3, .UI_COLOR_BLACK\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/ "
+                        },
+                        "id": "67516d8f-27c7-41c3-ad36-6ee1165e38c3"
+                      }
+                    ]
+                  },
+                  "id": "bb5a7619-ca5d-437e-a877-784da2f7523c"
+                }
+              ]
+            },
+            "id": "75224146-f986-485a-8ff2-b12d1e193fc0"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_IF_EXPRESSION",
+            "args": {
+              "expression": "$L3$ == 0",
+              "__collapseElse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "UTGB_EVENT_NON_FREEZING_TEXT",
+                  "args": {
+                    "variable": "19"
+                  },
+                  "children": {
+                    "event": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_UNLOCK\nVM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4*Go on, press the\\n  switch on the left.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 4, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 14, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 3, .UI_COLOR_BLACK\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/"
+                        },
+                        "id": "35c8240e-69d9-403b-879e-ebcab3db343a"
+                      }
+                    ]
+                  },
+                  "id": "624c0d01-ce33-49a7-a65d-3012b9af1283"
+                },
+                {
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "L3",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  },
+                  "id": "cb402eda-5c21-4a6c-be33-f98b1ba9a0ff"
+                }
+              ],
+              "false": [
+                {
+                  "command": "UTGB_EVENT_NON_FREEZING_TEXT",
+                  "args": {
+                    "variable": "19"
+                  },
+                  "children": {
+                    "event": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_UNLOCK\nVM_PUSH_CONST 0\nVM_GET_UINT8 .ARG0, _overlay_cut_scanline\nVM_SET_CONST_UINT8 _overlay_cut_scanline, 47\n\nVM_LOAD_TEXT            0\n.asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* You do know which\\n   way left is,\\n   do you not?\\001\\007\"\nVM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\nVM_OVERLAY_MOVE_TO      0, 0, .OVERLAY_IN_SPEED\nVM_OVERLAY_SET_SCROLL   4, 1, 15, 5, .UI_COLOR_BLACK\n\nVM_DISPLAY_TEXT\nVM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\nVM_LOAD_TEXT            0\n.asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Press the switch \\n   that I labelled\\n   for you.\"\nVM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_BLACK, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\nVM_OVERLAY_SET_SCROLL   4, 1, 15, 5, .UI_COLOR_BLACK\n\nVM_DISPLAY_TEXT\nVM_OVERLAY_WAIT         .UI_MODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\nVM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\nVM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n; Reset overlay scanline cut\nVM_IDLE\nVM_SET_UINT8 _overlay_cut_scanline, .ARG0\n\nVM_POP 1",
+                          "__collapse": false
+                        },
+                        "id": "e0c11826-440c-4c28-8e4e-296319d8ab18"
+                      }
+                    ]
+                  },
+                  "id": "026b880f-e5b6-4019-a473-e922e284c633"
+                }
+              ]
+            },
+            "id": "da6ec32d-1852-449d-981c-e94299f3f673"
+          }
+        ]
+      },
+      "id": "9557dcb1-415f-4238-a82f-5c8e537c74f9"
+    }
+  ],
+  "startScript": [
+    {
+      "command": "EVENT_IF_EXPRESSION",
+      "args": {
+        "expression": "$00$ == 5 || $16$ == 1",
+        "__collapseElse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "$self$"
+            },
+            "id": "582dcf0d-a5c9-4148-8650-3dbf5ef23ec7"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_TEXT_SET_ANIMATION_SPEED",
+            "args": {
+              "speedIn": 0,
+              "speedOut": 1,
+              "speed": 2,
+              "allowFastForward": true,
+              "__collapse": false
+            },
+            "id": "bf4841bd-794a-4140-892d-c8fa7ddd4f4f"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "L2",
+              "value": {
+                "type": "number",
+                "value": 0
+              },
+              "__collapse": true
+            },
+            "id": "6ed77b0d-cf2e-4c1c-a6a1-f74bdca525ae"
+          }
+        ]
+      },
+      "id": "8f3c4353-58a0-4f8f-8cac-ae17e949855c"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "L4",
+        "value": {
+          "type": "number",
+          "value": 0
+        },
+        "__collapse": true
+      },
+      "id": "6cdcd66b-2751-49b4-9f39-51d0fc638d10"
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,49 @@
+{
+  "_resourceType": "actor",
+  "id": "c50cd32e-ad8c-47fe-a59e-28791b63ca16",
+  "_index": 6,
+  "symbol": "actor_18",
+  "prefabId": "",
+  "name": "",
+  "x": 10,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "PT_EVENT_ADVANCED_DIALOGUE",
+      "args": {
+        "__scriptTabs": "text",
+        "minHeight": 5,
+        "maxHeight": 7,
+        "position": "bottom",
+        "showBorder": "true",
+        "clearPrevious": true,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "text": [
+          "\\002\\4* Stay on the path."
+        ],
+        "avatarId": ""
+      },
+      "id": "aa48de98-deb4-4922-b35f-753846eaaefe"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

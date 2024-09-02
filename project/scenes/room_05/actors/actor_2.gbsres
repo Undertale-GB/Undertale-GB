@@ -1,0 +1,147 @@
+{
+  "_resourceType": "actor",
+  "id": "82c94b40-49da-4b3b-a23c-1be00a0445e3",
+  "_index": 1,
+  "symbol": "actor_10",
+  "prefabId": "",
+  "name": "",
+  "x": 59,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "a35e7ae5-5425-48e5-a353-137609a5808d",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "Flipped"
+      },
+      "id": "811f5cd2-4331-4f33-83ab-ddabdef05ed1"
+    },
+    {
+      "command": "EVENT_INC_VALUE",
+      "args": {
+        "variable": "11"
+      },
+      "id": "470cc87b-f1c1-4281-ad4c-e6f4895098e2"
+    },
+    {
+      "command": "EVENT_IF_EXPRESSION",
+      "args": {
+        "expression": "$11$ >= 1 && $10$ >= 1 && $00$ != 5",
+        "__collapseElse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "0",
+              "value": {
+                "type": "number",
+                "value": 5
+              }
+            },
+            "id": "6e2ef8cc-5983-40ef-9b34-9f8e501c1105"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "4906e455-ab9d-417b-afdb-30683891587e"
+            },
+            "id": "08f2759d-e5a2-4bda-9133-75ce9a806001"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "4e2482a5-c9ec-4b58-b7b3-256e71d48687"
+            },
+            "id": "0c439d5b-7d72-414e-afce-f40105db9167"
+          },
+          {
+            "command": "EVENT_CAMERA_SHAKE",
+            "args": {
+              "time": 0.2,
+              "frames": 30,
+              "shakeDirection": "horizontal",
+              "magnitude": {
+                "type": "number",
+                "value": 5
+              }
+            },
+            "id": "6ad482f2-ffcc-46e6-b7bc-9572911ed3c2"
+          },
+          {
+            "command": "UTGB_EVENT_NON_FREEZING_TEXT",
+            "args": {
+              "variable": "19"
+            },
+            "children": {
+              "event": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "script": "VM_UNLOCK\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Splendid!\\n* I am proud of you,\\n   little one.\\001\\007\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_MOVE_TO      0, 12, .OVERLAY_IN_SPEED\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_LOAD_TEXT            0\n        .asciz \"\\001\\001\\002\\005@A\\nBC\\001\\003\\004\\001\\377\\002\\001\\003\\005\\002\\002\\4* Let us move to \\n  the next room.\"\n        VM_OVERLAY_CLEAR        0, 0, 20, 6, .UI_COLOR_WHITE, ^/(.UI_AUTO_SCROLL | .UI_DRAW_FRAME)/\n        VM_OVERLAY_SET_SCROLL   4, 1, 15, 6, .UI_COLOR_WHITE\n\n        VM_DISPLAY_TEXT\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT | .UI_WAIT_BTN_A)/\n        VM_OVERLAY_MOVE_TO      0, 18, .OVERLAY_OUT_SPEED\n        VM_OVERLAY_WAIT         .UI_NONMODAL, ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/\n"
+                  },
+                  "id": "5c1501aa-67cc-4891-a0dc-265ced4327bd"
+                }
+              ]
+            },
+            "id": "6425eddf-38e5-419b-8cb6-1e6dd39b242f"
+          },
+          {
+            "command": "EVENT_ACTOR_MOVE_TO",
+            "args": {
+              "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04",
+              "x": {
+                "type": "number",
+                "value": 72
+              },
+              "y": {
+                "type": "number",
+                "value": 16
+              },
+              "moveType": "horizontal",
+              "useCollisions": false
+            },
+            "id": "d8aca98a-ca7d-4a38-86d7-3d3d19162032"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "443995c1-3c31-4375-80c4-2cfef8ac4d04"
+            },
+            "id": "1441f652-70a0-498e-b147-e9a4c3e07100"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "L0",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            },
+            "id": "f2df728e-c5f4-4e97-a200-39c1e198e894"
+          }
+        ],
+        "false": []
+      },
+      "id": "9580f924-dd65-4164-9d0d-56d2d2b52a72"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

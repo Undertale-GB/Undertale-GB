@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "4c4105de-97ca-4fda-84ee-2222fbee256f",
+  "name": "Room04",
+  "symbol": "bg_room04",
+  "width": 32,
+  "height": 24,
+  "imageWidth": 256,
+  "imageHeight": 192,
+  "filename": "Room04.png",
+  "tileColors": "005d+02!002a+012+001e+012+00a8+052+002+052+001a+052+002+052+001c+042+001e+042+001c+052+002+052+001a+052+002+052+001c+042+001e+042+00ca+",
+  "autoColor": false
+}

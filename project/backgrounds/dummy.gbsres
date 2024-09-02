@@ -1,0 +1,12 @@
+{
+  "_resourceType": "background",
+  "id": "5b677912-cf61-4d55-9cec-e67d4ff7e17c",
+  "name": "Dummy",
+  "symbol": "bg_dummy",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "Dummy.png",
+  "tileColors": ""
+}

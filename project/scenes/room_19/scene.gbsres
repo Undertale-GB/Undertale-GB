@@ -1,0 +1,27 @@
+{
+  "_resourceType": "scene",
+  "id": "5f9daac1-115d-4572-adaf-bdd8185409db",
+  "_index": 20,
+  "type": "TOPDOWN",
+  "name": "Room_19",
+  "symbol": "scene_room_19",
+  "x": 6805,
+  "y": 650,
+  "width": 64,
+  "height": 72,
+  "backgroundId": "0a9f850a-534b-46ca-bd74-bf4c81ad1aca",
+  "tilesetId": "",
+  "paletteIds": [
+    "",
+    "",
+    "567ea9e8-99db-4455-a703-7d70ed1c64c6",
+    "77094775-035b-41c3-8de3-c2d8af10a5a6"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}
