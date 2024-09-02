@@ -201,40 +201,16 @@ void utgb_battle_update(void) BANKED {
         angle = ANGLE_0DEG;
     }
 
-    /*
     if (player_moving) {
         point_translate_angle(&(PLAYER.pos), angle, PLAYER.move_speed);
-        // Clamp X
-        if ((PLAYER.pos.x >> 4) + PLAYER.bounds.left < bbox_left) {
-            PLAYER.pos.x = (-PLAYER.bounds.left + bbox_left) << 4;
-        } else if ((PLAYER.pos.x >> 4) + PLAYER.bounds.right > bbox_right) {
-            PLAYER.pos.x = (bbox_right - PLAYER.bounds.right) << 4;
-        }
-        // Clamp Y
-        if ((PLAYER.pos.y >> 4) + PLAYER.bounds.top < bbox_up) {
-            PLAYER.pos.y = -(PLAYER.bounds.top << 4) + (bbox_up << 4);
-        } else if ((PLAYER.pos.y >> 4) + PLAYER.bounds.bottom > bbox_down) {
-            PLAYER.pos.y = (bbox_down - PLAYER.bounds.bottom) << 4;
-        }    
-               
-    }
-    */
 
-    if (player_moving) {
-        point_translate_angle(&(PLAYER.pos), angle, PLAYER.move_speed);
         // Clamp X
-        if ((PLAYER.pos.x >> 4) < bbox_left) {
-            PLAYER.pos.x = (bbox_left) << 4;
-        } else if ((PLAYER.pos.x >> 4) + 7 > bbox_right) {
-            PLAYER.pos.x = (bbox_right - 7) << 4;
-        }
+        PLAYER.pos.x = MIN((bbox_right - 7) << 4, PLAYER.pos.x);
+        PLAYER.pos.x = MAX(bbox_left << 4, PLAYER.pos.x);
+        
         // Clamp Y
-        if ((PLAYER.pos.y >> 4) < bbox_up) {
-            PLAYER.pos.y = (bbox_up << 4);
-        } else if ((PLAYER.pos.y >> 4) + 7 > bbox_down) {
-            PLAYER.pos.y = (bbox_down - 7) << 4;
-        }    
-               
+        PLAYER.pos.y = MIN((bbox_down - 7) << 4, PLAYER.pos.y);
+        PLAYER.pos.y = MAX(bbox_up << 4, PLAYER.pos.y);
     }
 
 
