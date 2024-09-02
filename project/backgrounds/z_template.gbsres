@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "2e9b7f68-21d6-4e1d-a1b7-650e8daffd3e",
+  "name": "Z_Template",
+  "symbol": "bg_z_template",
+  "width": 41,
+  "height": 255,
+  "imageWidth": 330,
+  "imageHeight": 3853,
+  "filename": "Z_Template.png",
+  "tileColors": "",
+  "autoColor": false
+}

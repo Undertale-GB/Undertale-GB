@@ -1,0 +1,324 @@
+{
+  "_resourceType": "actor",
+  "id": "9ce83cb9-d91f-402f-93ec-41722283f4bf",
+  "_index": 0,
+  "symbol": "actor_43",
+  "prefabId": "",
+  "name": "Dialouge handling",
+  "x": 0,
+  "y": 0,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_TEXT_SET_ANIMATION_SPEED",
+      "args": {
+        "speedIn": 0,
+        "speedOut": 0,
+        "speed": 2,
+        "allowFastForward": true,
+        "__collapse": true
+      },
+      "id": "481789f1-df68-4403-970f-7671bb5ab021"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.4,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "95ead5d2-c591-468c-b926-cfd5dd0cda6c"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 72\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": false
+      },
+      "id": "728ad3ec-543a-492c-be9e-2abe58220bd0"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 6, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001See\\nthat\\nHeart?\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": true
+      },
+      "id": "f9648f52-b08a-4e6b-b966-f06760d6bf57"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 6, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 2\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\004{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001That is your\\nSOUL,\\nthe very\\nculmination\\nof your\\nbeing.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": false
+      },
+      "id": "756a38fa-edeb-4e68-8722-129ed30598cc"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 6, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 2\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\004{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001Your soul\\nstarts off\\nweak, but can\\ngrow strong\\nif you gain a\\nlot of LV.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": false
+      },
+      "id": "b166ab86-2222-4f2b-9368-4c3c7f3a5926"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 9, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001What's LV?\\nWhy, LOVE,\\nof course!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": false
+      },
+      "id": "f93e686e-b7a5-4063-ba48-de39a7a452c4"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 9, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\004\\007\\001\\003\\002\\001You want\\nsome LOVE,\\ndon't you?\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": false
+      },
+      "id": "dd3ca2be-e1f4-4641-b49f-f135d16883a7"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 4, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001Don't worry,\\nI'll share\\nsome with\\nyou!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": true
+      },
+      "id": "478e5a7a-7443-4d6e-b445-cbaa89ca5a9e"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "b10607d3-c311-47d4-bc81-b29ee4d7a75b",
+        "spriteStateId": "Animation_4",
+        "__collapse": true
+      },
+      "id": "f571d365-4243-4be1-89ed-858551311679"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.7,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "b8656b6d-53f5-4e76-9886-a04a992705eb"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "b10607d3-c311-47d4-bc81-b29ee4d7a75b",
+        "spriteStateId": "Animation_2",
+        "__collapse": true
+      },
+      "id": "d0900e85-363c-4d84-b406-305351dcc31c"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "6398471f-5384-42af-a348-9717d8e455f2",
+        "spriteStateId": "Animation_2",
+        "__collapse": true
+      },
+      "id": "95995ba3-c336-43ca-892b-cd3411d2e698"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 4, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001Down here,\\nLOVE is\\nshared\\nthrough...\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": false
+      },
+      "id": "91d475a0-5f07-4e93-97a0-bca8031490e4"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 4, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\004\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001little white\\001\\007...\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT",
+        "__collapse": false
+      },
+      "id": "2b01ed04-cfb7-4490-a34c-1388f658449c"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "b10607d3-c311-47d4-bc81-b29ee4d7a75b",
+        "spriteStateId": "Animation_3",
+        "__collapse": true
+      },
+      "id": "2f40219e-b589-4ae7-bb5d-64113a842015"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001\\nfriendliness\\npellets.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, .TEXT_TILE_CONTINUE\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": false
+      },
+      "id": "bc53fcd6-44e2-4fc8-aea7-f27f6e3fdecf"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "b10607d3-c311-47d4-bc81-b29ee4d7a75b",
+        "spriteStateId": "",
+        "__collapse": true
+      },
+      "id": "1e1555ce-c1ae-488f-8701-6b01ea3c38ed"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 7, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\1\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001Are you\\nready?\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": false
+      },
+      "id": "1282fe85-fe97-4f7a-a02b-8b9b63d6aed8"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ";Clear Screen\nVM_OVERLAY_CLEAR 0, 0, 12, 7, .UI_COLOR_BLACK, 0\n;Draw Bubble\nVM_OVERLAY_CLEAR 1, 0, 10, 3, .UI_COLOR_WHITE, 0\nVM_OVERLAY_SETPOS 8, 4\nVM_LOAD_TEXT 0 \n.asciz \"\\002\\001\\007\\001\\003\\001\\002{\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0 \nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Animate Mouth\nVM_SET_CONST            .LOCAL_ACTOR, 2\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 7\n;Draw Text\nVM_LOAD_TEXT 0 ;font|color|position\n.asciz \"\\002\\001\\007\\001\\003\\002\\001Move around!\\001\\007\\n\\001\\004Get as many\\nas you can!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 1\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\n;Stop Mouth Anim\nVM_ACTOR_SET_ANIM_TICK  .LOCAL_ACTOR, 255\nVM_SET_CONST            ^/(.LOCAL_ACTOR + 1)/, 0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_BTN_A\n;Hide Bubble\nVM_OVERLAY_SETPOS 20, 0",
+        "__collapse": false
+      },
+      "id": "aa6b587b-2619-4ae2-9320-d4fdfd7bf3b8"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "6398471f-5384-42af-a348-9717d8e455f2",
+        "spriteStateId": "Animation_3",
+        "__collapse": true
+      },
+      "id": "d529ed16-2e84-4b8d-8673-59dff2c06d10"
+    },
+    {
+      "command": "EVENT_LAUNCH_PROJECTILE",
+      "args": {
+        "spriteSheetId": "c1d4ab0f-30b0-44e3-9a45-9fe627b64fae",
+        "spriteStateId": "",
+        "actorId": "d1bd0fd0-896e-4283-98cd-3c807f2ac349",
+        "x": 0,
+        "y": 0,
+        "otherActorId": "$self$",
+        "direction": "down",
+        "angle": 128,
+        "angleVariable": "L0",
+        "directionType": "angle",
+        "initialOffset": 0,
+        "speed": 0.5,
+        "animSpeed": 15,
+        "lifeTime": 4,
+        "loopAnim": true,
+        "destroyOnHit": true,
+        "collisionGroup": "1",
+        "collisionMask": [
+          "player"
+        ],
+        "__collapse": true
+      },
+      "id": "018df5f9-2840-456c-8cbe-67fab5f1544e"
+    },
+    {
+      "command": "EVENT_LAUNCH_PROJECTILE",
+      "args": {
+        "spriteSheetId": "c1d4ab0f-30b0-44e3-9a45-9fe627b64fae",
+        "spriteStateId": "",
+        "actorId": "d1bd0fd0-896e-4283-98cd-3c807f2ac349",
+        "x": -32,
+        "y": 0,
+        "otherActorId": "$self$",
+        "direction": "down",
+        "angle": 109,
+        "angleVariable": "L0",
+        "directionType": "angle",
+        "initialOffset": 0,
+        "speed": 0.5,
+        "animSpeed": 15,
+        "lifeTime": 4,
+        "loopAnim": true,
+        "destroyOnHit": true,
+        "collisionGroup": "1",
+        "collisionMask": [
+          "player"
+        ],
+        "__collapse": true
+      },
+      "id": "76bf8c3f-f202-49ae-8cbf-9cfc173cd3bd"
+    },
+    {
+      "command": "EVENT_LAUNCH_PROJECTILE",
+      "args": {
+        "spriteSheetId": "c1d4ab0f-30b0-44e3-9a45-9fe627b64fae",
+        "spriteStateId": "",
+        "actorId": "d1bd0fd0-896e-4283-98cd-3c807f2ac349",
+        "x": 32,
+        "y": 0,
+        "otherActorId": "$self$",
+        "direction": "down",
+        "angle": 140,
+        "angleVariable": "L0",
+        "directionType": "angle",
+        "initialOffset": 0,
+        "speed": 0.5,
+        "animSpeed": 15,
+        "lifeTime": 4,
+        "loopAnim": true,
+        "destroyOnHit": true,
+        "collisionGroup": "1",
+        "collisionMask": [
+          "player"
+        ],
+        "__collapse": true
+      },
+      "id": "25809409-bc0f-44df-8458-c2d29f5d5558"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 4,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "3bbafd6a-800b-4a68-bb37-88570bfecfb6"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 150\nVM_OVERLAY_HIDE",
+        "__collapse": false
+      },
+      "id": "294455d1-ccd1-4611-aece-836b00f18cb0"
+    },
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "test"
+        ],
+        "avatarId": "",
+        "__collapse": true
+      },
+      "id": "01c2c21e-599c-406c-b706-a5f5e5e3c9dc"
+    },
+    {
+      "command": "EVENT_ACTOR_STOP_UPDATE",
+      "args": {
+        "actorId": "$self$",
+        "__collapse": true
+      },
+      "id": "f830e47e-5529-4492-9c64-de84e01c19b8"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

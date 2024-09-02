@@ -1,0 +1,83 @@
+{
+  "_resourceType": "scene",
+  "id": "b63924c4-4ca2-41ff-8d56-099be68d5ad9",
+  "_index": 34,
+  "type": "TOPDOWN",
+  "name": "Debug",
+  "symbol": "scene_debug",
+  "x": 928,
+  "y": 112,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "231f4ec6-4b02-461a-a4a1-194e39b60ba3",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "!F:d5ef2a44-056b-4d1b-90eb-f7e0a0c54367!{Test\n!F:af6efb91-51b6-465a-ae62-1dfb644a8665!{Test\n!F:467fb1e2-7678-49ee-86ec-b41c95ab38c5!TEST!\n$16$ $17$"
+        ],
+        "avatarId": ""
+      },
+      "id": "a58894a3-8d6b-4f07-b6dc-62c58b7fa7b8"
+    },
+    {
+      "command": "EVENT_SOUND_PLAY_EFFECT",
+      "args": {
+        "type": "55cba9a0-b51a-45d5-a129-4de762b0e7d1",
+        "priority": "medium",
+        "pitch": 4,
+        "frequency": 200,
+        "duration": 0.5,
+        "wait": true,
+        "effect": 1
+      },
+      "id": "744d5a4e-067f-4cd0-889a-3cc403dc39c9"
+    },
+    {
+      "command": "EVENT_SOUND_PLAY_EFFECT",
+      "args": {
+        "type": "55cba9a0-b51a-45d5-a129-4de762b0e7d1",
+        "priority": "medium",
+        "pitch": 4,
+        "frequency": 200,
+        "duration": 0.5,
+        "wait": true,
+        "effect": 0
+      },
+      "id": "37a769cc-ca1d-4e07-9e7f-a3975214db11"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "references": [
+          {
+            "type": "variable",
+            "id": "1"
+          },
+          {
+            "type": "variable",
+            "id": "4"
+          }
+        ],
+        "__collapse": false
+      },
+      "id": "22d7312a-684f-44f2-8ba0-f69335068c8b"
+    },
+    {
+      "command": "EVENT_INC_VALUE",
+      "args": {
+        "variable": "L0"
+      },
+      "id": "00bd8338-d59e-48c1-9989-c809bebfb1ed"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}

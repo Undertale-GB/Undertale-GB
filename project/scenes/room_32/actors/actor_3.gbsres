@@ -1,0 +1,38 @@
+{
+  "_resourceType": "actor",
+  "id": "ebd9fb07-f4be-4e15-a3ff-08a184cf751a",
+  "_index": 2,
+  "symbol": "actor_62",
+  "prefabId": "",
+  "name": "",
+  "x": 57,
+  "y": 8,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "*\"Room under \n|renovations\""
+        ],
+        "avatarId": ""
+      },
+      "id": "dac7e532-9d84-4c9c-813f-8e35b411f844"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

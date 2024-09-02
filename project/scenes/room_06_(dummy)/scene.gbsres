@@ -1,0 +1,40 @@
+{
+  "_resourceType": "scene",
+  "id": "1a420d11-7612-48e3-80f8-515f1f04dcc3",
+  "_index": 7,
+  "type": "TOPDOWN",
+  "name": "Room_06 (dummy)",
+  "symbol": "scene_room_06",
+  "x": 1208,
+  "y": 768,
+  "width": 32,
+  "height": 24,
+  "backgroundId": "a9d50f87-2a71-41bb-8e03-00e0d42cc3db",
+  "tilesetId": "8e9133c8-d49a-4fff-a75a-81460c67f103",
+  "paletteIds": [
+    "",
+    "77094775-035b-41c3-8de3-c2d8af10a5a6",
+    "469ea28d-cddd-4969-8b2c-fed5c3aeacf0"
+  ],
+  "spritePaletteIds": [
+    "",
+    "",
+    "",
+    "",
+    "a1566361-db8a-4828-bf68-c11b6cbfe78c"
+  ],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "607f10d6-9c93-4e11-aba3-998a05693a71"
+      },
+      "id": "34a16f4f-efc8-4ba5-a155-c66f9d0f9d66"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00cd+0f6+0014+0f7+004+0f7+00e+0f!0010+0f!00c+0f3+0010+0f3+00a+0f!0014+0f!008+0f3+0014+0f3+006+0f!0018+0f!003+0f4+0018+0f!001f+0f!001f+0f!001f+0f!001f+0f!003+0f6+0014+0f3+008+0f!0014+0f!00a+0f3+0010+0f3+00c+0f!0010+0f!00e+0f12+0027+"
+}

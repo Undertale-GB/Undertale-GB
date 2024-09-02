@@ -1,0 +1,1633 @@
+{
+  "_resourceType": "script",
+  "id": "39c248ca-b64a-4135-bdf2-a3686154940e",
+  "name": "Add Menu to Overworld",
+  "symbol": "script_add_menu_to_overworl",
+  "description": "Adds the start menu to any scene",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_GROUP",
+      "args": {
+        "__label": "Debug Statements",
+        "__collapse": false,
+        "__comment": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "17",
+              "value": {
+                "type": "number",
+                "value": 1
+              },
+              "__collapse": false
+            },
+            "id": "ff0091ac-e066-44db-acf9-63929a259c12"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "16",
+              "value": {
+                "type": "number",
+                "value": 0
+              },
+              "__collapse": false
+            },
+            "id": "f606db41-14b1-4fef-a581-176c52a174fb"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "19",
+              "value": {
+                "type": "number",
+                "value": 67
+              },
+              "__collapse": true
+            },
+            "id": "64e7f3fe-f6af-4d3c-bee8-fa86e31e625c"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "number",
+                "value": 104
+              },
+              "__collapse": true
+            },
+            "id": "b112e6d3-47fe-4c71-8940-e823e0eaa3df"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "21",
+              "value": {
+                "type": "number",
+                "value": 97
+              },
+              "__collapse": true
+            },
+            "id": "f42616a3-0cac-48a7-9d22-24e50eb682ca"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "22",
+              "value": {
+                "type": "number",
+                "value": 114
+              },
+              "__collapse": true
+            },
+            "id": "41e12781-6d63-4e48-9c9c-993e27f731cf"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "23",
+              "value": {
+                "type": "number",
+                "value": 97
+              },
+              "__collapse": true
+            },
+            "id": "b4938aef-94a5-42a2-b36e-5c816879937d"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "24",
+              "value": {
+                "type": "number",
+                "value": 127
+              },
+              "__collapse": true
+            },
+            "id": "a52f7488-9e89-45b5-8255-9ee37f3d2fa4"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "34",
+              "value": {
+                "type": "number",
+                "value": 513
+              },
+              "__collapse": true
+            },
+            "id": "57624d7e-e97c-49b7-a4a3-558ac08b9e09"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "35",
+              "value": {
+                "type": "number",
+                "value": 1027
+              },
+              "__collapse": true
+            },
+            "id": "2af20eac-fd32-4c9a-9a48-c06889f42c4d"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "36",
+              "value": {
+                "type": "number",
+                "value": 1541
+              },
+              "__collapse": true
+            },
+            "id": "fa6fa449-3735-4ecf-b99d-26329fdeeafa"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "37",
+              "value": {
+                "type": "number",
+                "value": 2055
+              },
+              "__collapse": true
+            },
+            "id": "0e2f7f7f-6ea0-478e-b1c5-c9b89c27ec7f"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "41",
+              "value": {
+                "type": "number",
+                "value": 262
+              },
+              "__collapse": true
+            },
+            "id": "366a84e5-956f-43f1-8369-a0ca96f450dc"
+          }
+        ]
+      },
+      "id": "83727abe-186e-40d6-befd-c70f4d450307"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "start"
+        ],
+        "override": true,
+        "__scriptTabs": "press",
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_CALL_CUSTOM_EVENT",
+            "args": {
+              "customEventId": "fd2cddfe-3b8f-4ba9-b535-d240e7d6761f"
+            },
+            "id": "b2620b70-6886-4bb8-b7c1-f8468cdd79d2"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "18",
+              "__collapse": true,
+              "value": {
+                "type": "true"
+              }
+            },
+            "id": "db94ff01-d637-402e-ad3e-4b43fef46d5f"
+          },
+          {
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {
+              "__comment": false
+            },
+            "id": "e17c343a-8887-47f4-a068-a1c6d43e2bd0"
+          },
+          {
+            "command": "EVENT_ACTOR_SHOW",
+            "args": {
+              "actorId": "$self$",
+              "__collapse": false,
+              "__comment": true
+            },
+            "id": "78f844a4-21dc-4a82-b644-cd129a005c6d"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_LOCK\nVM_OVERLAY_SETPOS 20, 3\nVM_SET_CONST_UINT8 _overlay_cut_scanline, 119\nVM_OVERLAY_CLEAR 0, 0, 8, 8, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_OVERLAY_CLEAR 0, 7, 8, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME",
+              "__collapse": false,
+              "references": []
+            },
+            "id": "886af74d-54cc-44dd-ba8f-336e3b5ee4af"
+          },
+          {
+            "command": "EVENT_LOOP_WHILE",
+            "args": {
+              "expression": "$18$ != 0",
+              "condition": {
+                "type": "expression",
+                "value": "$18$ != 0"
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "18",
+                    "__collapse": true,
+                    "value": {
+                      "type": "true"
+                    }
+                  },
+                  "id": "9ff288c6-f02c-4e2e-b2b6-8be832eee945"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\n\nVM_LOAD_TEXT 10 \n.dw VAR_NAME1, VAR_NAME2, VAR_NAME3, VAR_NAME4, VAR_NAME5, VAR_NAME6, VAR_LEVEL, VAR_CURRENT_HP, VAR_MAX_HP, VAR_GOLD_MONEY_\n.asciz \"\\001\\1\\003\\02\\02%c%c%c%c%c%c\\002\\005\\003\\02\\04LV: %d\\003\\02\\05HP: %d/%d\\003\\02\\06G: %d\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, 0\nVM_OVERLAY_WAIT .UI_NONMODAL, .UI_WAIT_TEXT\nVM_LOAD_TEXT 0 \n.asciz \"\\001\\1\\003\\03\\11ITEM\\nSTAT\\nCELL\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 104\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\nVM_OVERLAY_MOVE_TO      12, 3, 0\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW",
+                    "__collapse": false
+                  },
+                  "id": "989a9ef9-f45e-4a6f-ab0c-1fa3561010e8"
+                },
+                {
+                  "command": "EVENT_ACTOR_SHOW",
+                  "args": {
+                    "actorId": "$self$",
+                    "__collapse": true
+                  },
+                  "id": "60d7de3e-43ee-489e-86cd-0f22bb8f7dc2"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "script": "VM_OVERLAY_CLEAR 1, 8, 1, 3, .UI_COLOR_BLACK, 0\nVM_CHOICE               VAR_GLOBAL_TEMP_VAR, .UI_MENU_CANCEL_B, 3\n.MENUITEM           1, 8, 1, 3, 0, 2\n.MENUITEM           1, 9, 1, 3, 1, 3\n.MENUITEM           1, 10, 1, 3, 2, 0\n\n;for later: ^/(.UI_WAIT_WINDOW | .UI_WAIT_TEXT)/",
+                    "__collapse": false
+                  },
+                  "id": "d087a2a5-048d-4a85-87a5-5c53dd9eacf5"
+                },
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "15",
+                    "choices": 3,
+                    "__collapseCase0": false,
+                    "value0": 1,
+                    "__collapseCase1": true,
+                    "value1": 2,
+                    "__collapseCase2": true,
+                    "value2": 3,
+                    "__collapseCase3": false,
+                    "value3": 4,
+                    "__collapseCase4": false,
+                    "value4": 5,
+                    "__collapseCase5": false,
+                    "value5": 6,
+                    "__collapseCase6": false,
+                    "value6": 7,
+                    "__collapseCase7": false,
+                    "value7": 8,
+                    "__collapseCase8": false,
+                    "value8": 9,
+                    "__collapseCase9": false,
+                    "value9": 10,
+                    "__collapseCase10": false,
+                    "value10": 11,
+                    "__collapseCase11": false,
+                    "value11": 12,
+                    "__collapseCase12": false,
+                    "value12": 13,
+                    "__collapseCase13": false,
+                    "value13": 14,
+                    "__collapseCase14": false,
+                    "value14": 15,
+                    "__collapseCase15": false,
+                    "value15": 16,
+                    "__collapseElse": true,
+                    "__label": "Main Menu (1=ITEM, 2=STAT, 3=CELL)"
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_ACTOR_HIDE",
+                        "args": {
+                          "actorId": "$self$",
+                          "__collapse": true
+                        },
+                        "id": "f3d19801-b9de-411e-b779-0599ca9c9ce1"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "18",
+                          "__collapse": true,
+                          "value": {
+                            "type": "true"
+                          }
+                        },
+                        "id": "303e92aa-2b72-428d-9407-ff405baf0082"
+                      },
+                      {
+                        "command": "EVENT_LOOP_WHILE",
+                        "args": {
+                          "expression": "$18$ != 0",
+                          "__collapse": false,
+                          "__comment": false,
+                          "condition": {
+                            "type": "expression",
+                            "value": "$18$ != 0"
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "command": "EVENT_GBVM_SCRIPT",
+                              "args": {
+                                "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_OVERLAY_CLEAR 8, 0, 11, 12, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0 \n.asciz \"\\001\\1\\002\\005\\003\\13\\13USE\\003\\16\\13INFO\\003\\21\\13DROP\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, 16\n\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\n",
+                                "__collapse": false
+                              },
+                              "id": "0d4d9097-d1b2-4500-8cd6-24bad121100e"
+                            },
+                            {
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "39",
+                                "value": {
+                                  "type": "number",
+                                  "value": 11
+                                },
+                                "__collapse": true,
+                                "__comment": true
+                              },
+                              "id": "8c087817-9639-4a2c-8583-87a16ff01f89"
+                            },
+                            {
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "33",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                },
+                                "__collapse": true,
+                                "__comment": true
+                              },
+                              "id": "fa86387e-ef1b-4572-aece-3e64d59eb7bb"
+                            },
+                            {
+                              "command": "EVENT_LOOP_FOR",
+                              "args": {
+                                "variable": "18",
+                                "from": {
+                                  "type": "number",
+                                  "value": 0
+                                },
+                                "comparison": "<",
+                                "to": {
+                                  "type": "number",
+                                  "value": 8
+                                },
+                                "operation": "+=",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                },
+                                "__collapse": false,
+                                "__label": "Write Item names",
+                                "__comment": true
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                    "args": {
+                                      "variable": "40",
+                                      "expression": "$18$ + 2",
+                                      "__collapse": false
+                                    },
+                                    "id": "5a5669fd-2abc-431d-9e85-5e6169a10583"
+                                  },
+                                  {
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "32",
+                                      "value": {
+                                        "type": "variable",
+                                        "value": "18"
+                                      },
+                                      "__collapse": true
+                                    },
+                                    "id": "eb71deec-d8d0-4e37-8449-ac3d817f7913"
+                                  },
+                                  {
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "d26ffea5-7e12-4535-a12e-69698502911b",
+                                      "__collapse": true
+                                    },
+                                    "id": "91dfaa20-9ab8-4249-80ed-d27cb8740dd2"
+                                  },
+                                  {
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "variable": "38",
+                                      "__collapseElse": true,
+                                      "__collapse": true,
+                                      "__label": "Skip Empty Item Slots",
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "38"
+                                        },
+                                        "valueB": {
+                                          "type": "false"
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "18",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 8
+                                            },
+                                            "__collapse": true
+                                          },
+                                          "id": "778f8220-e835-49fc-b201-7c07389addd8"
+                                        }
+                                      ],
+                                      "false": []
+                                    },
+                                    "id": "3050f2f2-ff05-4856-b8a8-0b922f5809c3"
+                                  }
+                                ]
+                              },
+                              "id": "aaa6ff74-186b-4785-b5e7-3867d9c2fe11"
+                            },
+                            {
+                              "command": "EVENT_GBVM_SCRIPT",
+                              "args": {
+                                "script": "VM_CALL_NATIVE b_inv_load_pause_menu, _inv_load_pause_menu\nVM_DISPLAY_TEXT\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\nVM_OVERLAY_MOVE_TO      1, 3, 0"
+                              },
+                              "id": "dd632949-787d-49df-9d60-27bc95ff131a"
+                            },
+                            {
+                              "command": "EVENT_GBVM_SCRIPT",
+                              "args": {
+                                "script": ";VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\n;VM_OVERLAY_MOVE_TO      1, 3, 0\n\nVM_CHOICE VAR_GLOBAL_TEMP_VAR, .UI_MENU_CANCEL_B, 8\n.MENUITEM           9, 1, 1, 8, 0, 2\n.MENUITEM           9, 2, 1, 8, 1, 3\n.MENUITEM           9, 3, 1, 8, 2, 4\n.MENUITEM           9, 4, 1, 8, 3, 5\n.MENUITEM           9, 5, 1, 8, 4, 6\n.MENUITEM           9, 6, 1, 8, 5, 7\n.MENUITEM           9, 7, 1, 8, 6, 8\n.MENUITEM           9, 8, 1, 8, 7, 0\n\n",
+                                "references": [
+                                  {
+                                    "type": "variable",
+                                    "id": "25"
+                                  }
+                                ],
+                                "__collapse": true,
+                                "__label": "Item Selection Menu"
+                              },
+                              "id": "135bef26-177a-4a4f-9c5e-5fe78031d0f4"
+                            },
+                            {
+                              "command": "EVENT_IF",
+                              "args": {
+                                "variable": "15",
+                                "__collapseElse": false,
+                                "__collapse": false,
+                                "condition": {
+                                  "type": "variable",
+                                  "value": "15"
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "33",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 0
+                                      },
+                                      "__collapse": false
+                                    },
+                                    "id": "2b6510cf-a705-446f-9b65-ef02ed1e744b"
+                                  },
+                                  {
+                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                    "args": {
+                                      "variable": "32",
+                                      "expression": "$15$ - 1",
+                                      "__collapse": false
+                                    },
+                                    "id": "050aa83a-182c-462f-b2ca-d2d51e881a95"
+                                  },
+                                  {
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
+                                      "__collapse": false
+                                    },
+                                    "id": "3b393912-a29a-4dc6-b3c3-38cc5704a244"
+                                  },
+                                  {
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "variable": "38",
+                                      "__collapseElse": true,
+                                      "condition": {
+                                        "type": "variable",
+                                        "value": "38"
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "command": "EVENT_GBVM_SCRIPT",
+                                          "args": {
+                                            "script": "VM_CHOICE VAR_GLOBAL_TEMP_VAR3, .UI_MENU_CANCEL_B, 3\n.MENUITEM       9,  10, 0, 2, 0, 0\n.MENUITEM       12, 10, 1, 3, 0, 0\n.MENUITEM       15, 10, 2, 0, 0, 0",
+                                            "__collapse": true
+                                          },
+                                          "id": "03c050e5-a468-4d6b-aafb-615166b73584"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH",
+                                          "args": {
+                                            "variable": "25",
+                                            "choices": 3,
+                                            "__collapseCase0": false,
+                                            "value0": 1,
+                                            "__collapseCase1": false,
+                                            "value1": 2,
+                                            "__collapseCase2": false,
+                                            "value2": 3,
+                                            "__collapseCase3": false,
+                                            "value3": 4,
+                                            "__collapseCase4": false,
+                                            "value4": 5,
+                                            "__collapseCase5": false,
+                                            "value5": 6,
+                                            "__collapseCase6": false,
+                                            "value6": 7,
+                                            "__collapseCase7": false,
+                                            "value7": 8,
+                                            "__collapseCase8": false,
+                                            "value8": 9,
+                                            "__collapseCase9": false,
+                                            "value9": 10,
+                                            "__collapseCase10": false,
+                                            "value10": 11,
+                                            "__collapseCase11": false,
+                                            "value11": 12,
+                                            "__collapseCase12": false,
+                                            "value12": 13,
+                                            "__collapseCase13": false,
+                                            "value13": 14,
+                                            "__collapseCase14": false,
+                                            "value14": 15,
+                                            "__collapseCase15": false,
+                                            "value15": 16,
+                                            "__collapseElse": true,
+                                            "__label": "1=USE, 2=INFO, 3=DROP",
+                                            "__collapse": false
+                                          },
+                                          "children": {
+                                            "true0": [
+                                              {
+                                                "command": "EVENT_GBVM_SCRIPT",
+                                                "args": {
+                                                  "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME",
+                                                  "__collapse": false,
+                                                  "__comment": true
+                                                },
+                                                "id": "3b61061b-097b-4fe8-b9a0-086a02760ce2"
+                                              },
+                                              {
+                                                "command": "EVENT_SWITCH",
+                                                "args": {
+                                                  "variable": "38",
+                                                  "choices": 8,
+                                                  "__collapseCase0": false,
+                                                  "value0": 1,
+                                                  "__collapseCase1": false,
+                                                  "value1": 2,
+                                                  "__collapseCase2": false,
+                                                  "value2": 3,
+                                                  "__collapseCase3": false,
+                                                  "value3": 4,
+                                                  "__collapseCase4": false,
+                                                  "value4": 5,
+                                                  "__collapseCase5": false,
+                                                  "value5": 6,
+                                                  "__collapseCase6": false,
+                                                  "value6": 7,
+                                                  "__collapseCase7": false,
+                                                  "value7": 8,
+                                                  "__collapseCase8": false,
+                                                  "value8": 9,
+                                                  "__collapseCase9": false,
+                                                  "value9": 10,
+                                                  "__collapseCase10": false,
+                                                  "value10": 11,
+                                                  "__collapseCase11": false,
+                                                  "value11": 12,
+                                                  "__collapseCase12": false,
+                                                  "value12": 13,
+                                                  "__collapseCase13": false,
+                                                  "value13": 14,
+                                                  "__collapseCase14": false,
+                                                  "value14": 15,
+                                                  "__collapseCase15": false,
+                                                  "value15": 16,
+                                                  "__collapseElse": true,
+                                                  "__comment": true
+                                                },
+                                                "children": {
+                                                  "true0": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You re-applied\\n|the bandage.\\n*Still kind of gooey.\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\n;VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\n;VM_LOAD_TEXT 0\n;.asciz \"\\003\\02\\11*Still kind of gooey.\"\n;VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 84\n;VM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "f5bc5443-ccbe-43a5-b3ea-c513e309a2cf"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_GROUP",
+                                                      "args": {
+                                                        "__label": "Heal HP",
+                                                        "__collapse": false
+                                                      },
+                                                      "children": {
+                                                        "true": [
+                                                          {
+                                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                            "args": {
+                                                              "variable": "2",
+                                                              "expression": "$02$ + 10",
+                                                              "__collapse": true
+                                                            },
+                                                            "id": "2f17144e-6257-4adf-bdef-7f304d2f15a3"
+                                                          },
+                                                          {
+                                                            "command": "EVENT_IF_EXPRESSION",
+                                                            "args": {
+                                                              "expression": "$02$ >= $03$",
+                                                              "__collapseElse": false,
+                                                              "__collapse": false
+                                                            },
+                                                            "children": {
+                                                              "true": [
+                                                                {
+                                                                  "command": "EVENT_GBVM_SCRIPT",
+                                                                  "args": {
+                                                                    "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Your HP was\\n|maxed out!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                                    "__collapse": false
+                                                                  },
+                                                                  "id": "90a359ed-3915-49ca-a763-9a31dd47ff66"
+                                                                },
+                                                                {
+                                                                  "command": "EVENT_SET_VALUE",
+                                                                  "args": {
+                                                                    "variable": "2",
+                                                                    "value": {
+                                                                      "type": "variable",
+                                                                      "value": "3"
+                                                                    }
+                                                                  },
+                                                                  "id": "491aed83-7179-4f12-886f-327672227a16"
+                                                                }
+                                                              ],
+                                                              "false": [
+                                                                {
+                                                                  "command": "EVENT_GBVM_SCRIPT",
+                                                                  "args": {
+                                                                    "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You healed 10 HP.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                                    "__collapse": false
+                                                                  },
+                                                                  "id": "b2d0418d-0c6b-4efa-a1c5-088d3c7c10d0"
+                                                                }
+                                                              ]
+                                                            },
+                                                            "id": "8ec0b200-c5a0-4934-a146-995bf34e5d89"
+                                                          },
+                                                          {
+                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                            "args": {
+                                                              "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                              "__collapse": true
+                                                            },
+                                                            "id": "2996fdfd-088a-43c6-99ce-9ad539b88d7a"
+                                                          }
+                                                        ]
+                                                      },
+                                                      "id": "0f816e37-c788-45ae-91b5-a2a998bd4a19"
+                                                    }
+                                                  ],
+                                                  "true1": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You ate the\\n|Monster Candy.\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Very\\n|un-licorice-like.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "bff0500f-19c6-4485-84a1-9dc8c87c0740"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_GROUP",
+                                                      "args": {
+                                                        "__label": "Heal HP",
+                                                        "__collapse": true
+                                                      },
+                                                      "children": {
+                                                        "true": [
+                                                          {
+                                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                            "args": {
+                                                              "variable": "2",
+                                                              "expression": "$02$ + 10",
+                                                              "__collapse": true
+                                                            },
+                                                            "id": "41fbcc07-9c6b-4028-a5b1-b9ec06753331"
+                                                          },
+                                                          {
+                                                            "command": "EVENT_IF_EXPRESSION",
+                                                            "args": {
+                                                              "expression": "$02$ >= $03$",
+                                                              "__collapseElse": true,
+                                                              "__collapse": true
+                                                            },
+                                                            "children": {
+                                                              "true": [
+                                                                {
+                                                                  "command": "EVENT_GBVM_SCRIPT",
+                                                                  "args": {
+                                                                    "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Your HP was\\n|maxed out!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                                    "__collapse": false
+                                                                  },
+                                                                  "id": "9d04240c-a063-4fc7-8da6-2ab440617d05"
+                                                                },
+                                                                {
+                                                                  "command": "EVENT_SET_VALUE",
+                                                                  "args": {
+                                                                    "variable": "2",
+                                                                    "value": {
+                                                                      "type": "variable",
+                                                                      "value": "3"
+                                                                    }
+                                                                  },
+                                                                  "id": "7588c8de-c3fb-4110-9f35-7d68d085a5a0"
+                                                                }
+                                                              ],
+                                                              "false": [
+                                                                {
+                                                                  "command": "EVENT_GBVM_SCRIPT",
+                                                                  "args": {
+                                                                    "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You healed 10 HP.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                                    "__collapse": false
+                                                                  },
+                                                                  "id": "c05d9bf9-7cdd-4e03-828a-01b601e6548f"
+                                                                }
+                                                              ]
+                                                            },
+                                                            "id": "8c0a4e54-cde2-4081-afe4-0ec359fe9069"
+                                                          },
+                                                          {
+                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                            "args": {
+                                                              "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                              "__collapse": true
+                                                            },
+                                                            "id": "60b3de2d-a700-40be-9e71-05a5f62027ac"
+                                                          }
+                                                        ]
+                                                      },
+                                                      "id": "2576ff6f-1d4e-4f97-97b7-756070d0cd7e"
+                                                    }
+                                                  ],
+                                                  "true2": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You ate the\\n|Spider Donut.\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\n;VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\n;VM_LOAD_TEXT 0\n;.asciz \"\\003\\02\\11**Very\\n|un-licorice-like.\"\n;VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\n;VM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "def8eef8-f32c-413a-b332-f1cd7112469b"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_GROUP",
+                                                      "args": {
+                                                        "__label": "Heal HP",
+                                                        "__collapse": false
+                                                      },
+                                                      "children": {
+                                                        "true": [
+                                                          {
+                                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                            "args": {
+                                                              "variable": "2",
+                                                              "expression": "$02$ + 12",
+                                                              "__collapse": true
+                                                            },
+                                                            "id": "75ee1af5-e19c-4a22-bca3-1e9f515fbe71"
+                                                          },
+                                                          {
+                                                            "command": "EVENT_IF_EXPRESSION",
+                                                            "args": {
+                                                              "expression": "$02$ >= $03$",
+                                                              "__collapseElse": true,
+                                                              "__collapse": true
+                                                            },
+                                                            "children": {
+                                                              "true": [
+                                                                {
+                                                                  "command": "EVENT_GBVM_SCRIPT",
+                                                                  "args": {
+                                                                    "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Your HP was\\n|maxed out!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                                    "__collapse": false
+                                                                  },
+                                                                  "id": "385805f4-d242-448a-80c4-5d317b91f644"
+                                                                },
+                                                                {
+                                                                  "command": "EVENT_SET_VALUE",
+                                                                  "args": {
+                                                                    "variable": "2",
+                                                                    "value": {
+                                                                      "type": "variable",
+                                                                      "value": "3"
+                                                                    }
+                                                                  },
+                                                                  "id": "b694622a-2814-4f46-91fe-f7d942c5b9a4"
+                                                                }
+                                                              ],
+                                                              "false": [
+                                                                {
+                                                                  "command": "EVENT_GBVM_SCRIPT",
+                                                                  "args": {
+                                                                    "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You healed 12 HP.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                                    "__collapse": false
+                                                                  },
+                                                                  "id": "64824048-8130-4e53-9470-f7ab783d3bea"
+                                                                }
+                                                              ]
+                                                            },
+                                                            "id": "9304872e-517e-4d1d-985e-aa86d258cc77"
+                                                          },
+                                                          {
+                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                            "args": {
+                                                              "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                              "__collapse": true
+                                                            },
+                                                            "id": "034e0f34-2171-4a0c-85af-fceec6587786"
+                                                          }
+                                                        ]
+                                                      },
+                                                      "id": "8da1e960-715c-474d-87c4-38b6fe22e296"
+                                                    }
+                                                  ],
+                                                  "true3": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You drank the\\n|Spider Cider.\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\n;VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\n;VM_LOAD_TEXT 0\n;.asciz \"\\003\\02\\11**Very\\n|un-licorice-like.\"\n;VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\n;VM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "ead84c15-05a9-4250-bc9b-7a3334f26f7d"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_GROUP",
+                                                      "args": {
+                                                        "__label": "Heal HP",
+                                                        "__collapse": false
+                                                      },
+                                                      "children": {
+                                                        "true": [
+                                                          {
+                                                            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                                            "args": {
+                                                              "variable": "2",
+                                                              "expression": "$02$ + 24",
+                                                              "__collapse": false
+                                                            },
+                                                            "id": "95473afa-aee5-4f46-8a3f-fe4fc1256170"
+                                                          },
+                                                          {
+                                                            "command": "EVENT_IF_EXPRESSION",
+                                                            "args": {
+                                                              "expression": "$02$ >= $03$",
+                                                              "__collapseElse": true,
+                                                              "__collapse": true
+                                                            },
+                                                            "children": {
+                                                              "true": [
+                                                                {
+                                                                  "command": "EVENT_GBVM_SCRIPT",
+                                                                  "args": {
+                                                                    "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Your HP was\\n|maxed out!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                                    "__collapse": false
+                                                                  },
+                                                                  "id": "e7ef4e3f-da87-447f-a7b9-a7da068d5ab2"
+                                                                },
+                                                                {
+                                                                  "command": "EVENT_SET_VALUE",
+                                                                  "args": {
+                                                                    "variable": "2",
+                                                                    "value": {
+                                                                      "type": "variable",
+                                                                      "value": "3"
+                                                                    }
+                                                                  },
+                                                                  "id": "87792547-028a-4311-94f0-8f5a4e83d90d"
+                                                                }
+                                                              ],
+                                                              "false": [
+                                                                {
+                                                                  "command": "EVENT_GBVM_SCRIPT",
+                                                                  "args": {
+                                                                    "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You healed 24 HP.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                                    "__collapse": false
+                                                                  },
+                                                                  "id": "b1a2ced2-d0b8-46cc-b371-eebeba32712e"
+                                                                }
+                                                              ]
+                                                            },
+                                                            "id": "67c059ca-f294-4687-b74c-564b0aae5736"
+                                                          },
+                                                          {
+                                                            "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                            "args": {
+                                                              "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                              "__collapse": true
+                                                            },
+                                                            "id": "cc4d0ea9-a317-4a75-8615-114196188690"
+                                                          }
+                                                        ]
+                                                      },
+                                                      "id": "9929a3d9-5dc2-435f-9fe3-f357d6d8f77d"
+                                                    }
+                                                  ],
+                                                  "true4": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You ate the\\n|Butterscotch Pie.\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\n;VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\n;VM_LOAD_TEXT 0\n;.asciz \"\\003\\02\\11**Very\\n|un-licorice-like.\"\n;VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\n;VM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "e84f3768-572d-4adf-b732-a286c5209e02"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Your HP was\\n|maxed out!\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "bbc2af64-1074-4dae-bddd-f80359003b3e"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_SET_VALUE",
+                                                      "args": {
+                                                        "variable": "2",
+                                                        "value": {
+                                                          "type": "variable",
+                                                          "value": "3"
+                                                        }
+                                                      },
+                                                      "id": "c6394dc4-42c2-49fa-8f9f-07cfe0bcc4a4"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                      "args": {
+                                                        "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                                        "__collapse": true
+                                                      },
+                                                      "id": "f592cd97-20a7-44f8-bbd3-1bcc14ce6400"
+                                                    }
+                                                  ],
+                                                  "true5": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You threw the\\n|stick away.\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Then picked it\\n|back up.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "b7eb1eac-ae6c-4b95-a463-cd63036bee3b"
+                                                    }
+                                                  ],
+                                                  "true6": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You equipped the\\n|Toy Knife.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\n;VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME"
+                                                      },
+                                                      "id": "294bf1f4-e492-4f4f-a3fa-63acf28c30d6"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_SET_VALUE",
+                                                      "args": {
+                                                        "variable": "33",
+                                                        "value": {
+                                                          "type": "number",
+                                                          "value": 0
+                                                        },
+                                                        "__collapse": true
+                                                      },
+                                                      "id": "ae76143f-98fc-4688-a82f-56391d9db603"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                      "args": {
+                                                        "customEventId": "be4b9d54-0415-4667-9a95-719ea35c51bc",
+                                                        "__collapse": true
+                                                      },
+                                                      "id": "82993ea1-40a5-462a-8c2f-2a10c30418e7"
+                                                    }
+                                                  ],
+                                                  "true7": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*You equipped the\\n|Faded Ribbon.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\n;VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME"
+                                                      },
+                                                      "id": "cd4b97ff-9b88-4c99-8af4-492ad8375eca"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_SET_VALUE",
+                                                      "args": {
+                                                        "variable": "33",
+                                                        "value": {
+                                                          "type": "number",
+                                                          "value": 1
+                                                        },
+                                                        "__collapse": true
+                                                      },
+                                                      "id": "d6b0d96b-0eba-4b96-80a9-015496a14c8f"
+                                                    },
+                                                    {
+                                                      "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                      "args": {
+                                                        "customEventId": "be4b9d54-0415-4667-9a95-719ea35c51bc",
+                                                        "__collapse": true
+                                                      },
+                                                      "id": "fb3d51a9-44ba-4c4e-bd7f-cb53ed9803cc"
+                                                    }
+                                                  ],
+                                                  "true8": [],
+                                                  "true9": [],
+                                                  "true10": [],
+                                                  "true11": [],
+                                                  "true12": [],
+                                                  "true13": [],
+                                                  "true14": [],
+                                                  "true15": [],
+                                                  "false": []
+                                                },
+                                                "id": "a1c762b0-49f0-417d-add8-481b2e23a62b"
+                                              },
+                                              {
+                                                "command": "EVENT_GBVM_SCRIPT",
+                                                "args": {
+                                                  "script": "VM_PUSH_CONST 0\nVM_RPN\n  .R_REF VAR_GLOBAL_TEMP_VAR\n  .R_INT8 1\n  .R_OPERATOR .SUB\n  .R_STOP\n\nVM_CALL_NATIVE b_inv_use_item, _inv_use_item\nVM_POP 2",
+                                                  "__collapse": false
+                                                },
+                                                "id": "7657d631-dbba-4672-9d0d-727fcef182f4"
+                                              }
+                                            ],
+                                            "true1": [
+                                              {
+                                                "command": "EVENT_GBVM_SCRIPT",
+                                                "args": {
+                                                  "script": "VM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME",
+                                                  "__comment": true
+                                                },
+                                                "id": "cfd88161-c54c-4401-828c-8f842658bfa7"
+                                              },
+                                              {
+                                                "command": "EVENT_SWITCH",
+                                                "args": {
+                                                  "variable": "38",
+                                                  "choices": 8,
+                                                  "__collapseCase0": true,
+                                                  "value0": 1,
+                                                  "__collapseCase1": true,
+                                                  "value1": 2,
+                                                  "__collapseCase2": true,
+                                                  "value2": 3,
+                                                  "__collapseCase3": true,
+                                                  "value3": 4,
+                                                  "__collapseCase4": true,
+                                                  "value4": 5,
+                                                  "__collapseCase5": true,
+                                                  "value5": 6,
+                                                  "__collapseCase6": true,
+                                                  "value6": 7,
+                                                  "__collapseCase7": true,
+                                                  "value7": 8,
+                                                  "__collapseCase8": false,
+                                                  "value8": 9,
+                                                  "__collapseCase9": false,
+                                                  "value9": 10,
+                                                  "__collapseCase10": false,
+                                                  "value10": 11,
+                                                  "__collapseCase11": false,
+                                                  "value11": 12,
+                                                  "__collapseCase12": false,
+                                                  "value12": 13,
+                                                  "__collapseCase13": false,
+                                                  "value13": 14,
+                                                  "__collapseCase14": false,
+                                                  "value14": 15,
+                                                  "__collapseCase15": false,
+                                                  "value15": 16,
+                                                  "__collapseElse": true,
+                                                  "__comment": true,
+                                                  "__disableElse": false
+                                                },
+                                                "children": {
+                                                  "true0": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Bandage\\n\\n|Heals 10 HP\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*It has already\\n|been used many\\n|times.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "c106e753-5c26-49e5-90d1-a95e1e1ddc07"
+                                                    }
+                                                  ],
+                                                  "true1": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Monster Candy\\n\\n|Heals 10 HP\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Has a distinct,\\n|non-licorice\\n|flavor.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "ecffaf5b-7080-4b11-95c0-a408b9cd27fc"
+                                                    }
+                                                  ],
+                                                  "true2": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Spider Donut\\n\\n|Heals 12 HP\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*A donut made with\\n|Spider Cider in\\n|the batter.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "d8c18542-4bc5-4ac6-a3a8-b7e58df0b4f1"
+                                                    }
+                                                  ],
+                                                  "true3": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Spider Cider\\n\\n|Heals 24 HP\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Made with whole\\n|spiders, not just\\n|the juice.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "8f135104-8f20-4552-9483-88b732b1681c"
+                                                    }
+                                                  ],
+                                                  "true4": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Butterscotch Pie\\n\\n|Heals all HP\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Butterscotch-\\n|cinnamon pie,\\n|one slice.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "9edc8ac8-1acc-4d9e-93ef-c2b4cdd8de8f"
+                                                    }
+                                                  ],
+                                                  "true5": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Stick\\n\\n|0 ATK\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Its bark is\\n|worse than its\\n|bite.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "d6071912-b231-4a61-a990-480a8556a0db"
+                                                    }
+                                                  ],
+                                                  "true6": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Toy Knife\\n\\n|3 ATK\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Made of plastic.\\n*A rarity nowadays.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "f8795caf-b1c4-46b7-b8aa-2776f8af5f78"
+                                                    }
+                                                  ],
+                                                  "true7": [
+                                                    {
+                                                      "command": "EVENT_GBVM_SCRIPT",
+                                                      "args": {
+                                                        "script": "VM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*Faded Ribbon\\n\\n|3 DEF\"\n\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/\nVM_OVERLAY_CLEAR 0, 7, 19, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0\n.asciz \"\\003\\02\\11*If you're cuter,\\n|monsters won't hit\\n|you as hard.\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 68\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                                                        "__collapse": false
+                                                      },
+                                                      "id": "c5460680-ea59-4e9d-a33b-5582548a10db"
+                                                    }
+                                                  ],
+                                                  "true8": [],
+                                                  "true9": [],
+                                                  "true10": [],
+                                                  "true11": [],
+                                                  "true12": [],
+                                                  "true13": [],
+                                                  "true14": [],
+                                                  "true15": [],
+                                                  "false": []
+                                                },
+                                                "id": "164852e2-d3ee-4140-9489-2174648295ac"
+                                              },
+                                              {
+                                                "command": "EVENT_GBVM_SCRIPT",
+                                                "args": {
+                                                  "script": "VM_OVERLAY_CLEAR 0, 7, 8, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0 \n.asciz \"\\001\\1\\003\\03\\11ITEM\\nSTAT\\nCALL\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 104\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT",
+                                                  "__comment": true
+                                                },
+                                                "id": "eda981b5-7314-40de-8529-f8ee77741bf3"
+                                              },
+                                              {
+                                                "command": "EVENT_GBVM_SCRIPT",
+                                                "args": {
+                                                  "script": "VM_RPN\n  .R_REF VAR_GLOBAL_TEMP_VAR\n  .R_INT8 1\n  .R_OPERATOR .SUB\n  .R_STOP\n\nVM_CALL_NATIVE b_inv_write_item_desc, _inv_write_item_desc\nVM_POP 1"
+                                                },
+                                                "id": "f2f90f0f-988e-46a1-9da4-5b47220ccb9f"
+                                              }
+                                            ],
+                                            "true2": [
+                                              {
+                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                "args": {
+                                                  "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6"
+                                                },
+                                                "id": "06f445c5-b6e4-4574-8739-4ef6e5a32c68"
+                                              }
+                                            ],
+                                            "true3": [],
+                                            "true4": [],
+                                            "true5": [],
+                                            "true6": [],
+                                            "true7": [],
+                                            "true8": [],
+                                            "true9": [],
+                                            "true10": [],
+                                            "true11": [],
+                                            "true12": [],
+                                            "true13": [],
+                                            "true14": [],
+                                            "true15": [],
+                                            "false": []
+                                          },
+                                          "id": "d0102816-4b4c-4dae-b3a8-82c44c2fcf1a"
+                                        },
+                                        {
+                                          "command": "EVENT_GBVM_SCRIPT",
+                                          "args": {
+                                            "script": "VM_OVERLAY_CLEAR 0, 7, 8, 5, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 0 \n.asciz \"\\001\\1\\003\\03\\11ITEM\\nSTAT\\nCELL\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 104\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT",
+                                            "__collapse": true
+                                          },
+                                          "id": "29d11ca8-dd4b-4048-89d6-324e52241543"
+                                        }
+                                      ],
+                                      "false": []
+                                    },
+                                    "id": "c305ad78-3b4d-48cc-8460-e6aac1c19e08"
+                                  },
+                                  {
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "18",
+                                      "__collapse": false,
+                                      "value": {
+                                        "type": "true"
+                                      }
+                                    },
+                                    "id": "1551cd1d-de40-46a7-887d-cb80d9d120ca"
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "18",
+                                      "__collapse": false,
+                                      "value": {
+                                        "type": "false"
+                                      }
+                                    },
+                                    "id": "3d757d5e-f997-48f8-b64e-b74e4947728f"
+                                  }
+                                ]
+                              },
+                              "id": "fdb8d524-66e5-4b22-9098-faa1e570cf9b"
+                            }
+                          ]
+                        },
+                        "id": "ba3c0876-c8ec-4220-8922-54f85fbe4aa5"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "18",
+                          "__collapse": false,
+                          "value": {
+                            "type": "true"
+                          }
+                        },
+                        "id": "2b28129f-ea2e-4335-ba19-def69f168281"
+                      }
+                    ],
+                    "true1": [
+                      {
+                        "command": "EVENT_ACTOR_HIDE",
+                        "args": {
+                          "actorId": "$self$"
+                        },
+                        "id": "b129aec2-0562-47e7-8efe-d5d9a14d01ad"
+                      },
+                      {
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "fd2cddfe-3b8f-4ba9-b535-d240e7d6761f",
+                          "__collapse": true
+                        },
+                        "id": "ceaf4e1d-0f5f-406e-b494-3b87c53a06f1"
+                      },
+                      {
+                        "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                        "args": {
+                          "variable": "15",
+                          "expression": "$26$ + $30$"
+                        },
+                        "id": "4047e70e-312a-4687-b51c-a78912d8a5d4"
+                      },
+                      {
+                        "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                        "args": {
+                          "variable": "18",
+                          "expression": "$27$ + $31$"
+                        },
+                        "id": "fdd3b40e-456a-4dea-b2ee-18be9290c96e"
+                      },
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_OVERLAY_CLEAR 8, 0, 10, 12, .UI_COLOR_BLACK, .UI_DRAW_FRAME\nVM_LOAD_TEXT 12\n.dw VAR_NAME1, VAR_NAME2, VAR_NAME3, VAR_NAME4, VAR_NAME5, VAR_NAME6, VAR_GLOBAL_TEMP_VAR, VAR_ATTACK_BASE_,  VAR_GLOBAL_TEMP_VAR2, VAR_DEFENSE_BASE_, VAR_EXP, VAR_EXP_TO_NEXT_LEVEL\n.asciz \"\\001\\1\\003\\12\\02\\042%c%c%c%c%c%c\\042\\n\\n\\002\\005AT: %d(%d)\\nDF: %d(%d)\\n\\nEXP: %d\\nNEXT: %d\\n\\nWPN:\\nAMR:\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, 16\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\nVM_OVERLAY_MOVE_TO      2, 3, 0",
+                          "references": [
+                            {
+                              "type": "variable",
+                              "id": "26"
+                            },
+                            {
+                              "type": "variable",
+                              "id": "27"
+                            },
+                            {
+                              "type": "variable",
+                              "id": "28"
+                            },
+                            {
+                              "type": "variable",
+                              "id": "29"
+                            }
+                          ],
+                          "__collapse": false
+                        },
+                        "id": "60e32b4e-e963-4326-841c-fbd0931ad789"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "39",
+                          "value": {
+                            "type": "number",
+                            "value": 12
+                          },
+                          "__collapse": true
+                        },
+                        "id": "86279b3a-7956-47eb-8572-98af0eef8bd3"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "40",
+                          "value": {
+                            "type": "number",
+                            "value": 10
+                          },
+                          "__collapse": true
+                        },
+                        "id": "214480f7-79d7-4de2-87cc-8f941452635c"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "33",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          },
+                          "__collapse": true
+                        },
+                        "id": "0e99ed32-ff2e-4d4f-9ee1-1948b4229533"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "32",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          },
+                          "__collapse": true
+                        },
+                        "id": "83a594a6-3ffb-4e34-8ddb-c2e31bd9767b"
+                      },
+                      {
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
+                          "__collapse": true
+                        },
+                        "id": "13171a45-b1a9-4e41-87d3-cf079000c76f"
+                      },
+                      {
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "d26ffea5-7e12-4535-a12e-69698502911b",
+                          "__collapse": true
+                        },
+                        "id": "0dff2754-2221-41f3-8419-b5c39edb3549"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "40",
+                          "value": {
+                            "type": "number",
+                            "value": 11
+                          },
+                          "__collapse": true
+                        },
+                        "id": "c4034653-dcc0-4642-9250-bdf37e40b324"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "32",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          },
+                          "__collapse": true
+                        },
+                        "id": "7153717e-375a-4bcf-aaf0-e7883ae9d51c"
+                      },
+                      {
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
+                          "__collapse": true
+                        },
+                        "id": "00a55591-cb14-4a50-a53d-b806eee64499"
+                      },
+                      {
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "d26ffea5-7e12-4535-a12e-69698502911b",
+                          "__collapse": true
+                        },
+                        "id": "bec28173-d440-4997-a681-c8e547e29d29"
+                      },
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "__label": "TEMP",
+                          "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\003\\14\\12\\002\\006Stick\\nBandage\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, .TEXT_TILE_CONTINUE",
+                          "__comment": true
+                        },
+                        "id": "6f93326f-ecc7-461c-a00b-e13a42fedb03"
+                      },
+                      {
+                        "command": "EVENT_AWAIT_INPUT",
+                        "args": {
+                          "input": [
+                            "b"
+                          ],
+                          "__collapse": true
+                        },
+                        "id": "ba09263d-d4d8-47e9-a96c-6145dd56a3df"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "18",
+                          "__collapse": true,
+                          "value": {
+                            "type": "true"
+                          }
+                        },
+                        "id": "c22701a3-e934-4c5b-b67a-319c962fa863"
+                      }
+                    ],
+                    "true2": [
+                      {
+                        "command": "EVENT_ACTOR_HIDE",
+                        "args": {
+                          "actorId": "$self$",
+                          "__collapse": true
+                        },
+                        "id": "1eae43d9-4dc4-4434-8c6d-efa3b85a4322"
+                      },
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_OVERLAY_CLEAR 8, 0, 10, 12, .UI_COLOR_BLACK, .UI_DRAW_FRAME"
+                        },
+                        "id": "064a7006-eeaf-4345-bb6d-6237951d5b72"
+                      },
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\003\\13\\02Toriel\\nPapyrus\\nUndyne\\nDim.Box 1\\nDim.Box 2\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, 16",
+                          "__collapse": false
+                        },
+                        "id": "84915599-b4ce-4f09-ba44-7eb15dee995a"
+                      },
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\nVM_OVERLAY_MOVE_TO      2, 3, 0\n\nVM_CHOICE VAR_GLOBAL_TEMP_VAR, .UI_MENU_CANCEL_B, 5\n.MENUITEM           9, 1, 1, 5, 0, 2\n.MENUITEM           9, 2, 1, 5, 1, 3\n.MENUITEM           9, 3, 1, 5, 2, 4\n.MENUITEM           9, 4, 1, 5, 3, 5\n.MENUITEM           9, 5, 1, 5, 4, 0"
+                        },
+                        "id": "d10aac34-5f1f-447a-b372-fa700856d97e"
+                      }
+                    ],
+                    "true3": [],
+                    "true4": [],
+                    "true5": [],
+                    "true6": [],
+                    "true7": [],
+                    "true8": [],
+                    "true9": [],
+                    "true10": [],
+                    "true11": [],
+                    "true12": [],
+                    "true13": [],
+                    "true14": [],
+                    "true15": [],
+                    "false": [
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "18",
+                          "value": {
+                            "type": "false"
+                          }
+                        },
+                        "id": "1f5b5d29-68e8-483a-ac09-2881642aff63"
+                      },
+                      {
+                        "command": "EVENT_ACTOR_SHOW",
+                        "args": {
+                          "actorId": "$self$"
+                        },
+                        "id": "01974b09-092d-41a1-b930-c21dc0b8c841"
+                      },
+                      {
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {},
+                        "id": "0f029e7d-5512-41d7-bfc2-ffa226aef153"
+                      },
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_OVERLAY_MOVE_TO 20, 3, 0\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\nVM_SET_CONST_UINT8 _overlay_cut_scanline, 150\nVM_OVERLAY_SETPOS 0, 18",
+                          "__collapse": false
+                        },
+                        "id": "dfc2080c-2be2-4de0-b0bf-9681adc12a84"
+                      }
+                    ]
+                  },
+                  "id": "bd38051b-905c-4e4f-8b0d-f0cdca6f0e0b"
+                }
+              ]
+            },
+            "id": "0af48694-df6d-438d-8d1a-74da7f050d06"
+          }
+        ]
+      },
+      "id": "63a11986-8523-4c13-b2b2-2c526a7ffbe1"
+    }
+  ]
+}

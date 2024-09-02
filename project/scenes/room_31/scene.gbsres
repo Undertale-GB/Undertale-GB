@@ -1,0 +1,25 @@
+{
+  "_resourceType": "scene",
+  "id": "50284919-a277-47b9-bc53-c1a7929e89b7",
+  "_index": 44,
+  "type": "TOPDOWN",
+  "name": "Room_31",
+  "symbol": "scene_45",
+  "x": 1789,
+  "y": 837.25,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "3fd247ca-8348-4853-8e73-89c1feeb9dcc",
+  "tilesetId": "",
+  "paletteIds": [
+    "49d15b95-73c8-4fa3-86b1-ccce5a751252",
+    "d08b8b5f-5f6e-4acd-90f3-f84821add4b4"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00b5+0f12+002+0f!0010+0f!002+0f!0010+0f!002+0f!0010+0f!002+0f!0010+0f!002+0f!0010+0f!002+0f!0010+0f!002+0f4+004+0fa+005+0f!004+0f!00a+"
+}

@@ -1,0 +1,211 @@
+{
+  "_resourceType": "scene",
+  "id": "29fceef0-6b9a-4daf-a4db-a57bcb116a5b",
+  "_index": 41,
+  "type": "TOPDOWN",
+  "name": "Room_29",
+  "symbol": "scene_1",
+  "x": 2061.5,
+  "y": 982,
+  "width": 32,
+  "height": 24,
+  "backgroundId": "0b3e9973-acb0-4fb4-b85b-e7ed6adb5de5",
+  "tilesetId": "",
+  "paletteIds": [
+    "49d15b95-73c8-4fa3-86b1-ccce5a751252",
+    "d08b8b5f-5f6e-4acd-90f3-f84821add4b4",
+    "2ed88d63-a07f-4c64-8b80-7fa28cfe7318",
+    "019f09da-1765-4431-ac71-301a2687fa39",
+    "bd8319c4-e2cd-4566-9d58-deab4f19d0fd"
+  ],
+  "spritePaletteIds": [
+    "",
+    "",
+    "",
+    "",
+    "06e0c990-a482-47fe-8c05-30326cb65b55"
+  ],
+  "autoFadeSpeed": null,
+  "script": [
+    {
+      "command": "EVENT_IF_ACTOR_AT_POSITION",
+      "args": {
+        "actorId": "$self$",
+        "x": {
+          "type": "number",
+          "value": 19
+        },
+        "y": {
+          "type": "number",
+          "value": 13
+        },
+        "__collapseElse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_LOCK"
+            },
+            "id": "cdaee687-4a3d-4773-9297-19036431cfd7"
+          },
+          {
+            "command": "EVENT_CAMERA_MOVE_TO",
+            "args": {
+              "x": {
+                "type": "number",
+                "value": 2
+              },
+              "y": {
+                "type": "number",
+                "value": 4
+              },
+              "speed": 0
+            },
+            "id": "1b29f322-0055-47e7-a4fa-c44228bef2b5"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_OVERLAY_SET_SUBMAP 0, 0, 20, 9, 2, 13\nVM_OVERLAY_SETPOS 0, 9"
+            },
+            "id": "92a738cd-ff4e-495e-bd36-8b15bdf8abf9"
+          },
+          {
+            "command": "EVENT_FADE_IN",
+            "args": {
+              "speed": 1
+            },
+            "id": "b385b882-ae59-43d7-9216-4605fd9bbc78"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_POSITION_RELATIVE",
+            "args": {
+              "actorId": "$self$",
+              "x": {
+                "type": "number",
+                "value": 0
+              },
+              "y": {
+                "type": "number",
+                "value": -2
+              },
+              "units": "pixels"
+            },
+            "id": "acb3b47a-7b67-4f8b-9ff0-3d00cef52aa7"
+          },
+          {
+            "command": "EVENT_LOOP_FOR",
+            "args": {
+              "variable": "15",
+              "from": {
+                "type": "number",
+                "value": 0
+              },
+              "comparison": "<=",
+              "to": {
+                "type": "number",
+                "value": 5
+              },
+              "operation": "+=",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "actorId": "$self$",
+                    "x": {
+                      "type": "number",
+                      "value": -8
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "moveType": "horizontal",
+                    "useCollisions": false,
+                    "units": "pixels"
+                  },
+                  "id": "87a0abfb-fb38-4622-bf61-6af020399cf1"
+                },
+                {
+                  "command": "EVENT_ACTOR_SET_POSITION_RELATIVE",
+                  "args": {
+                    "actorId": "$self$",
+                    "x": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": -1
+                    },
+                    "units": "pixels"
+                  },
+                  "id": "4a7fcffa-9cc8-44f3-b14c-60907a08a7b3"
+                }
+              ]
+            },
+            "id": "01c72cd8-67bf-4022-8c1d-f7aeff13a9d2"
+          },
+          {
+            "command": "EVENT_ACTOR_MOVE_TO",
+            "args": {
+              "actorId": "$self$",
+              "x": {
+                "type": "number",
+                "value": 11
+              },
+              "y": {
+                "type": "property",
+                "target": "player",
+                "property": "ypos"
+              },
+              "moveType": "horizontal",
+              "useCollisions": false
+            },
+            "id": "6e39e393-7c60-48fe-af98-ccb5c551f16c"
+          },
+          {
+            "command": "EVENT_CAMERA_LOCK",
+            "args": {
+              "speed": 1,
+              "axis": [
+                "x",
+                "y"
+              ]
+            },
+            "id": "f5c335bf-8a51-4bbc-9ea1-93da8a855140"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_OVERLAY_SETPOS 0, 18\nVM_UNLOCK"
+            },
+            "id": "dff6b660-c34f-48c5-8dac-a3b0b7488a5c"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_FADE_IN",
+            "args": {
+              "speed": 1
+            },
+            "id": "be4f3a33-0232-4467-bf28-9c7443e6df35"
+          }
+        ]
+      },
+      "id": "12e5b8ee-a26b-49c3-9dce-3cab629ed61f"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00b4+0f5+00e+0f8+005+0f!003+0f5+006+0f5+006+0f!005+0f!007+0f!006+0f!003+0f!006+0f!005+0f!007+0f!006+0f!003+0f!006+0f!005+0f3+005+0f!006+0f!003+0f!005+0f2+007+0f!005+0f!006+0f!003+0f!006+0f!007+0f!005+0f!006+0f!003+0f!006+0f!007+0f!005+0f!006+0f!003+0f10+005+0f!003+0f4+0018+0f4+00c0+0f4+0018+0f4+003+0fb+004+0fb+0010+0f!004+0f!00d+"
+}
