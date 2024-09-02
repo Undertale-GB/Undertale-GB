@@ -1,0 +1,40 @@
+{
+  "_resourceType": "scene",
+  "id": "2d4ca7dc-1104-4dd1-b5d4-9aa998ff0b40",
+  "_index": 9,
+  "type": "TOPDOWN",
+  "name": "Room_09 (candy)",
+  "symbol": "scene_room_09",
+  "x": 4173.75,
+  "y": 377.9333333333335,
+  "width": 32,
+  "height": 24,
+  "backgroundId": "e48f68e8-e512-4ce6-96ef-d1f369170eac",
+  "tilesetId": "",
+  "paletteIds": [
+    "",
+    "",
+    "567ea9e8-99db-4455-a703-7d70ed1c64c6",
+    "77094775-035b-41c3-8de3-c2d8af10a5a6"
+  ],
+  "spritePaletteIds": [
+    "",
+    "",
+    "a99c163f-c703-4880-abd3-c3be11af7e24",
+    "067668f9-ac60-4453-90cd-0f0fe389d45b"
+  ],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "39c248ca-b64a-4135-bdf2-a3686154940e"
+      },
+      "id": "a25eed4a-6f92-4aea-9d7f-0d66882d3708"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00eb+0fa+0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f!008+0f!0016+0f3+004+0f3+0018+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!00d+"
+}

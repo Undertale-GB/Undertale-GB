@@ -1,0 +1,292 @@
+{
+  "_resourceType": "actor",
+  "id": "e0810279-37c8-4a7f-86bc-720780e77c9d",
+  "_index": 1,
+  "symbol": "actor_35",
+  "prefabId": "",
+  "name": "",
+  "x": 0,
+  "y": 0,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": true,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_GROUP",
+      "args": {
+        "__label": "Water Tileswapping",
+        "__collapse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GROUP",
+            "args": {
+              "__label": "Frame 1",
+              "__collapse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 1\nVM_REPLACE_TILE_XY 8, 8, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "c91d72e5-854d-4a91-a08b-f554e15259fa"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 3\nVM_REPLACE_TILE_XY 11, 8, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "4281cc34-fd57-4fef-b79f-ca1a2f37c31b"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 5\nVM_REPLACE_TILE_XY 8, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "5d216418-7488-4c98-9c2a-0d8dc4aa1248"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 9\nVM_REPLACE_TILE_XY 11, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "071ea028-e21b-43a2-ae80-6566bb8f9f74"
+                }
+              ]
+            },
+            "id": "27ffb896-78f5-4d65-8b71-fc7cf55c8605"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.3,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "d0ae19f7-7671-4a82-a459-b5679c8f78c7"
+          },
+          {
+            "command": "EVENT_GROUP",
+            "args": {
+              "__collapse": false,
+              "__label": "Frame 2"
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 6\nVM_REPLACE_TILE_XY 8, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "c2078b67-7df3-4bf8-a562-dd4df004ae84"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 10\nVM_REPLACE_TILE_XY 11, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "3d0dee7b-9737-4940-992a-cc682b345014"
+                }
+              ]
+            },
+            "id": "fe5664cd-6fe0-40a8-a4a3-db985b0e88ca"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.3,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "f8536d6e-2676-4d9c-9a01-e74ae69589bb"
+          },
+          {
+            "command": "EVENT_GROUP",
+            "args": {
+              "__label": "Frame 3",
+              "__collapse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 0\nVM_REPLACE_TILE_XY 8, 8, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "ba07808e-aad9-4e6e-a4a3-e7fe7eae0088"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 2\nVM_REPLACE_TILE_XY 11, 8, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "d6e975e9-8a53-402d-9fb5-134c98784f15"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 7\nVM_REPLACE_TILE_XY 8, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "8ee8ca30-5a73-417c-b79a-a0e048dae21a"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 11, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "f818b7a6-c421-471e-af0a-7cd0e5b1eccb"
+                }
+              ]
+            },
+            "id": "9947278e-e0e0-4138-b5c0-ecec8e5da219"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.3,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "4df9b706-9f5b-4e46-8af2-62a1f79001d9"
+          },
+          {
+            "command": "EVENT_GROUP",
+            "args": {
+              "__collapse": false,
+              "__label": "Frame 4"
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 4\nVM_REPLACE_TILE_XY 8, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "e54429f3-a9a8-498b-9d57-ba6fd4d858aa"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "references": [
+                      {
+                        "type": "background",
+                        "id": "65f2cd7a-9b18-4df0-8d69-6653b9e48aa0"
+                      }
+                    ],
+                    "script": "VM_PUSH_CONST 8\nVM_REPLACE_TILE_XY 11, 9, ___bank_bg_water_tileset, _bg_water_tileset .ARG0\nVM_POP 1",
+                    "__collapse": false
+                  },
+                  "id": "94782b09-f550-497a-a512-b3f41430e38d"
+                }
+              ]
+            },
+            "id": "2c7d7df6-25ac-4c40-a539-80c57eccf430"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.3,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "207c5016-8b89-4c13-9564-c60a1d4b425e"
+          }
+        ]
+      },
+      "id": "9f4c80aa-17ee-4cad-b793-b8f897b4e74f"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

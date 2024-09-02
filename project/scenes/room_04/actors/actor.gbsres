@@ -1,0 +1,40 @@
+{
+  "_resourceType": "actor",
+  "id": "3137ef81-a3f7-40dc-ac1e-6b89dc752bc3",
+  "_index": 0,
+  "symbol": "actor_40",
+  "prefabId": "",
+  "name": "",
+  "x": 8,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "*Only the fearless\n may proceed.",
+          "*Brave ones,\n foolish ones.",
+          "*Both walk not \n the middle road."
+        ],
+        "avatarId": ""
+      },
+      "id": "db403b1f-e12b-4db0-a3c6-b65e0b4bcb74"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "cc75f5d5-383c-4fbb-b917-529b11b8ca6c",
+  "name": "LogoBig",
+  "symbol": "bg_logobig",
+  "width": 80,
+  "height": 72,
+  "imageWidth": 640,
+  "imageHeight": 576,
+  "filename": "LogoBig.png",
+  "tileColors": "",
+  "autoColor": false
+}

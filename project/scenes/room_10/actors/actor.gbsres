@@ -1,0 +1,277 @@
+{
+  "_resourceType": "actor",
+  "id": "cb3005c6-a3b4-4feb-8fe1-cabc1b950ce7",
+  "_index": 0,
+  "symbol": "actor_11",
+  "prefabId": "",
+  "name": "",
+  "x": 21,
+  "y": 15,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "29fd287e-6be7-40a6-af00-0c6578972a4e",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "*(Playfully \n|crinkling through\n|the leaves",
+          "|fills you with\n|determination.)",
+          "*(HP fully\n|restored.)"
+        ],
+        "avatarId": ""
+      },
+      "id": "8847b539-b7fe-402b-8a4b-e29505936a77"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ".SUBMAP_TEMPVAR = -6\nVM_RESERVE 6\nVM_SET_CONST    .SUBMAP_TEMPVAR,       0\nVM_SET_CONST ^/(.SUBMAP_TEMPVAR + 1)/, 0\nVM_SET_CONST ^/(.SUBMAP_TEMPVAR + 2)/, 20\nVM_SET_CONST ^/(.SUBMAP_TEMPVAR + 3)/, 18\n\nVM_GET_INT16 VAR_TEXT_X _scroll_x\nVM_GET_INT16 VAR_TEXT_Y _scroll_y\n\nVM_RPN\n  .R_REF VAR_TEXT_X\n  .R_INT16 8\n  .R_OPERATOR .DIV\n  .R_STOP\nVM_SET ^/(.SUBMAP_TEMPVAR + 4 - 1)/, .ARG0\nVM_POP 1\n\nVM_RPN\n  .R_REF VAR_TEXT_Y\n  .R_INT16 8\n  .R_OPERATOR .DIV\n  .R_STOP\nVM_SET ^/(.SUBMAP_TEMPVAR + 5 - 1)/, .ARG0\nVM_POP 1\n\nVM_OVERLAY_SET_SUBMAP_EX .SUBMAP_TEMPVAR\nVM_RESERVE -6\n\nVM_OVERLAY_CLEAR 2, 6, 16, 6, .UI_COLOR_BLACK, .UI_DRAW_FRAME\n\nVM_LOAD_TEXT 6\n.dw VAR_NAME1, VAR_NAME2, VAR_NAME3, VAR_NAME4, VAR_NAME5, VAR_NAME6\n.asciz \"\\001\\1\\003\\04\\10%c%c%c%c%c%c\\nRuins-Leaf Pile\\003\\05\\13Save\\003\\14\\13Return\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\n\n\nVM_SET_CONST_UINT8 _show_actors_on_overlay, 1\nVM_OVERLAY_SETPOS 0, 0"
+      },
+      "id": "55137f8f-34b5-4fe2-bd08-5948072d972d"
+    },
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "cae605a7-c825-4ddd-a27e-4f20ca8b76ff"
+    },
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "player"
+      },
+      "id": "7c25b4a9-8be5-4f84-a5d2-d10738f663fb"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_CHOICE               VAR_GLOBAL_TEMP_VAR, .UI_MENU_CANCEL_B, 2\n.MENUITEM           3, 10, 0, 2, 0, 0\n.MENUITEM           10, 10, 1, 0, 0, 0"
+      },
+      "id": "ab1e6f6b-986e-4799-83c1-c2edfabbf624"
+    },
+    {
+      "command": "PT_EVENT_ADVANCED_MENU",
+      "args": {
+        "variable": "L0",
+        "__scriptTabs": "items",
+        "width": 20,
+        "height": 6,
+        "from": "bottom",
+        "items": 4,
+        "option_1_text": "Save",
+        "option1_x": 1,
+        "option1_y": 4,
+        "option1_l": 0,
+        "option1_r": 2,
+        "option1_u": 0,
+        "option1_d": 0,
+        "option_2_text": "Return",
+        "option2_x": 11,
+        "option2_y": 4,
+        "option2_l": 1,
+        "option2_r": 0,
+        "option2_u": 0,
+        "option2_d": 0,
+        "option_3_text": "Chara",
+        "option3_x": 1,
+        "option3_y": 1,
+        "option3_l": 0,
+        "option3_r": 0,
+        "option3_u": 0,
+        "option3_d": 0,
+        "option_4_text": "Ruins-Entrance",
+        "option4_x": 1,
+        "option4_y": 2,
+        "option4_l": 0,
+        "option4_r": 0,
+        "option4_u": 0,
+        "option4_d": 0,
+        "option_5_text": "",
+        "option5_x": 0,
+        "option5_y": 0,
+        "option5_l": 0,
+        "option5_r": 0,
+        "option5_u": 0,
+        "option5_d": 0,
+        "option_6_text": "",
+        "option6_x": 0,
+        "option6_y": 0,
+        "option6_l": 0,
+        "option6_r": 0,
+        "option6_u": 0,
+        "option6_d": 0,
+        "option_7_text": "",
+        "option7_x": 0,
+        "option7_y": 0,
+        "option7_l": 0,
+        "option7_r": 0,
+        "option7_u": 0,
+        "option7_d": 0,
+        "option_8_text": "",
+        "option8_x": 0,
+        "option8_y": 0,
+        "option8_l": 0,
+        "option8_r": 0,
+        "option8_u": 0,
+        "option8_d": 0,
+        "option_9_text": "",
+        "option9_x": 0,
+        "option9_y": 0,
+        "option9_l": 0,
+        "option9_r": 0,
+        "option9_u": 0,
+        "option9_d": 0,
+        "option_10_text": "",
+        "option10_x": 0,
+        "option10_y": 0,
+        "option10_l": 0,
+        "option10_r": 0,
+        "option10_u": 0,
+        "option10_d": 0,
+        "option_11_text": "",
+        "option11_x": 0,
+        "option11_y": 0,
+        "option11_l": 0,
+        "option11_r": 0,
+        "option11_u": 0,
+        "option11_d": 0,
+        "option_12_text": "",
+        "option12_x": 0,
+        "option12_y": 0,
+        "option12_l": 0,
+        "option12_r": 0,
+        "option12_u": 0,
+        "option12_d": 0,
+        "option_13_text": "",
+        "option13_x": 0,
+        "option13_y": 0,
+        "option13_l": 0,
+        "option13_r": 0,
+        "option13_u": 0,
+        "option13_d": 0,
+        "option_14_text": "",
+        "option14_x": 0,
+        "option14_y": 0,
+        "option14_l": 0,
+        "option14_r": 0,
+        "option14_u": 0,
+        "option14_d": 0,
+        "option_15_text": "",
+        "option15_x": 0,
+        "option15_y": 0,
+        "option15_l": 0,
+        "option15_r": 0,
+        "option15_u": 0,
+        "option15_d": 0,
+        "option_16_text": "",
+        "option16_x": 0,
+        "option16_y": 0,
+        "option16_l": 0,
+        "option16_r": 0,
+        "option16_u": 0,
+        "option16_d": 0,
+        "__comment": true
+      },
+      "id": "1a255704-0921-4efc-8125-51a0f8638414"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "variable": "15",
+        "operator": "==",
+        "comparator": 1,
+        "__collapseElse": true,
+        "__comment": false,
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "15"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SAVE_DATA",
+            "args": {
+              "saveSlot": 0,
+              "__scriptTabs": "save"
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "script": ";VM_OVERLAY_CLEAR 13, 10, 3, 1, .UI_COLOR_BLACK, 0\n\nVM_OVERLAY_CLEAR 2, 6, 16, 6, .UI_COLOR_BLACK, .UI_DRAW_FRAME\n\nVM_LOAD_TEXT 6\n.dw VAR_NAME1, VAR_NAME2, VAR_NAME3, VAR_NAME4, VAR_NAME5, VAR_NAME6\n.asciz \"\\001\\1\\002\\02\\003\\04\\10%c%c%c%c%c%c\\nRuins-Leaf Pile\\003\\04\\13Game Saved\"\nVM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, 0\nVM_OVERLAY_WAIT .UI_MODAL, ^/(.UI_WAIT_BTN_A | .UI_WAIT_TEXT)/",
+                    "references": [
+                      {
+                        "type": "font",
+                        "id": "65b14082-e495-439d-998b-852e6b72073f"
+                      }
+                    ]
+                  },
+                  "id": "6914a0c1-d7d8-4b8d-930b-7091012b8de2"
+                },
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "!F:65b14082-e495-439d-998b-852e6b72073f!*File Saved."
+                    ],
+                    "avatarId": "",
+                    "__comment": true
+                  },
+                  "id": "aaaef083-e6f9-4d34-a6f0-5565741d1361"
+                }
+              ]
+            },
+            "id": "421092b5-6fa9-4302-8e2f-d7c3900f0520"
+          }
+        ],
+        "false": []
+      },
+      "id": "301393d1-5e13-44b5-920b-62002078def8"
+    },
+    {
+      "command": "EVENT_ACTOR_SHOW",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "be92c070-d344-4992-b38b-443a708c2b62"
+    },
+    {
+      "command": "EVENT_ACTOR_SHOW",
+      "args": {
+        "actorId": "player"
+      },
+      "id": "ab4da562-7b97-457d-9135-726012f7be17"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_OVERLAY_SETPOS 0, 18\nVM_SET_CONST_UINT8 _show_actors_on_overlay, 0\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_WINDOW\n"
+      },
+      "id": "78858e14-8c9d-4f4d-87cf-c600a86f33b9"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

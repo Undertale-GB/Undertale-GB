@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "6627df50-5654-49be-bbf3-78f0427d83b4",
+  "name": "Room24",
+  "symbol": "bg_room24",
+  "width": 40,
+  "height": 44,
+  "imageWidth": 320,
+  "imageHeight": 352,
+  "filename": "Room24.png",
+  "tileColors": "",
+  "autoColor": false
+}
