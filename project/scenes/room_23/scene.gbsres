@@ -1,0 +1,22 @@
+{
+  "_resourceType": "scene",
+  "id": "48c2c998-9002-4ecd-b9c1-34dc10216e8f",
+  "_index": 24,
+  "type": "TOPDOWN",
+  "name": "Room_23",
+  "symbol": "scene_room_23",
+  "x": 1104,
+  "y": 1480,
+  "width": 40,
+  "height": 44,
+  "backgroundId": "ec1fbda5-006d-44f1-aeaf-371f1e9574a7",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "006e0+"
+}

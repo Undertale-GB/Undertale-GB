@@ -1,0 +1,200 @@
+{
+  "_resourceType": "trigger",
+  "id": "a49ae610-e902-4593-a203-84907384cca0",
+  "_index": 2,
+  "symbol": "trigger_37",
+  "prefabId": "",
+  "name": "",
+  "x": 5,
+  "y": 28,
+  "width": 22,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT_SET_ANIMATION_SPEED",
+      "args": {
+        "speedIn": 0,
+        "speedOut": 0,
+        "speed": 2,
+        "allowFastForward": true
+      },
+      "id": "7f016450-c958-4c30-927d-d7ed5a596e20"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "variable": "0",
+        "operator": "<",
+        "comparator": 2,
+        "__collapseElse": true,
+        "condition": {
+          "type": "lt",
+          "valueA": {
+            "type": "variable",
+            "value": "0"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "0",
+              "value": {
+                "type": "number",
+                "value": 2
+              }
+            },
+            "id": "d78aede9-8d79-48db-9095-e6ab400bc8f3"
+          },
+          {
+            "command": "EVENT_MUSIC_PLAY",
+            "args": {
+              "musicId": "24474660-636c-4085-a1c3-a645a083b04b"
+            },
+            "id": "3d8f8754-0d09-4aa6-b4dd-3bdf40adff8a"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_SET_TEXT_SOUND ___bank_sound_voices_sav_01, _sound_voices_sav_01, ___mute_mask_sound_voices_sav_01",
+              "references": []
+            },
+            "id": "e6a900dc-63e5-4f94-a724-3b91beb61b22"
+          },
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "\\001\\004 *Howdy!\n *I'm !F:be4454bf-4583-4683-ae77-0a0bedc5e82d!FLOWEY!F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!.\n *!F:be4454bf-4583-4683-ae77-0a0bedc5e82d!FLOWEY !F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!the \n  !F:be4454bf-4583-4683-ae77-0a0bedc5e82d!FLOWER!F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!!"
+              ],
+              "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+            },
+            "id": "bd59427f-5bd6-40a3-9411-8075bfb4a594"
+          },
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "\\001\\004 *Hmm..."
+              ],
+              "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+            },
+            "id": "740b96cb-ba5f-4752-a957-1fc17c2361cf"
+          },
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "\\001\\004 *You're new\n  to the\n  underground,\n  aren'tcha?"
+              ],
+              "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+            },
+            "id": "b42f8e00-4995-4c86-9a45-f994f7ee32d4"
+          },
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "\\001\\004 *Golly,\n  you must be\n  so confused."
+              ],
+              "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+            },
+            "id": "6c466f38-ad7d-442d-9cac-dff2da216640"
+          },
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "\\001\\004 *Someone ought\n  to teach you\n  how things\n  work around\n  here!"
+              ],
+              "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+            },
+            "id": "9c0ab1ba-2868-4e46-b803-665cfa137b44"
+          },
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "\\001\\004 *I guess little\n  old me will\n  have to do."
+              ],
+              "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+            },
+            "id": "1728b3a0-eb3b-4a54-9978-9c645bc1624c"
+          },
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "\\001\\004 *Ready?\n *Here we go!"
+              ],
+              "avatarId": "ad8a7fb8-b281-4f81-880b-dd1480785107"
+            },
+            "id": "2a789a52-b999-46d3-836c-39b53b48525d"
+          },
+          {
+            "command": "EVENT_FADE_OUT",
+            "args": {
+              "speed": 1
+            },
+            "id": "8e93746d-6b1b-4291-8430-3766028bf72b"
+          },
+          {
+            "command": "EVENT_FADE_IN",
+            "args": {
+              "speed": 1
+            },
+            "id": "641f537d-6412-4c77-a2a4-43d500de2927"
+          },
+          {
+            "command": "EVENT_FADE_OUT",
+            "args": {
+              "speed": 1
+            },
+            "id": "a0845017-97b1-454a-a85d-936ad4bbfff8"
+          },
+          {
+            "command": "EVENT_FADE_IN",
+            "args": {
+              "speed": 1
+            },
+            "id": "2903e3ea-6130-4305-b70d-c4b32d32c0b2"
+          },
+          {
+            "command": "EVENT_FADE_OUT",
+            "args": {
+              "speed": 1
+            },
+            "id": "91417869-ebb6-4aef-a45c-4f1452a25f74"
+          },
+          {
+            "command": "EVENT_SWITCH_SCENE",
+            "args": {
+              "sceneId": "75a3bbe1-811e-4374-bd28-338103c4e97d",
+              "x": {
+                "type": "number",
+                "value": 9
+              },
+              "y": {
+                "type": "number",
+                "value": 12
+              },
+              "direction": "",
+              "fadeSpeed": "2"
+            },
+            "id": "d56abd44-a376-4bd5-a5e5-8e573a6b322f"
+          }
+        ],
+        "false": []
+      },
+      "id": "7c4f1fce-b758-4ca9-8a85-685e28fb7d80"
+    }
+  ],
+  "leaveScript": []
+}

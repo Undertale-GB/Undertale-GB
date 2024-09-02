@@ -1,0 +1,66 @@
+{
+  "_resourceType": "script",
+  "id": "607f10d6-9c93-4e11-aba3-998a05693a71",
+  "name": "run new menu",
+  "symbol": "script_19",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "__label": "Variables",
+        "references": [
+          {
+            "type": "variable",
+            "id": "26"
+          },
+          {
+            "type": "variable",
+            "id": "27"
+          },
+          {
+            "type": "variable",
+            "id": "28"
+          },
+          {
+            "type": "variable",
+            "id": "29"
+          },
+          {
+            "type": "variable",
+            "id": "30"
+          },
+          {
+            "type": "variable",
+            "id": "31"
+          }
+        ]
+      },
+      "id": "c0dd4b0b-7769-44b7-971b-a019e03669b4"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "start"
+        ],
+        "override": true,
+        "__scriptTabs": "press"
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_PUSH_CONST 0\nVM_GET_UINT8 .ARG0, _show_actors_on_overlay\nVM_SET_CONST_UINT8 _show_actors_on_overlay, 1\n\nVM_CALL_NATIVE b_ugb_show_pause_menu, _ugb_show_pause_menu\n\nVM_SET_UINT8 _show_actors_on_overlay, .ARG0\nVM_POP 1"
+            },
+            "id": "5739095f-1117-444d-acd0-7aebe9704694"
+          }
+        ]
+      },
+      "id": "5e8fc2c2-c192-413c-bd24-7e1592d080ef"
+    }
+  ]
+}

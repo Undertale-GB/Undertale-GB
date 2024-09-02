@@ -1,0 +1,47 @@
+{
+  "_resourceType": "script",
+  "id": "dccfd7b4-f89d-4956-abde-0dd1444240e8",
+  "name": "Leave Battle (unused?)",
+  "symbol": "script_16",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET_CONST_UINT8 _overlay_cut_scanline, 150\nVM_SET_CONST_UINT8 _show_actors_on_overlay, 0\nVM_OVERLAY_SETPOS 0, 18"
+      },
+      "id": "22f22e27-fb68-4d4f-b43e-06cc8ae628d0"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "43",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "d613cfd5-5ff6-4a11-bc47-592db5f2f471"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "6",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "f9caf2be-c75d-46bb-bc3e-94f7e4c8c91f"
+    },
+    {
+      "command": "EVENT_SCENE_POP_STATE",
+      "args": {
+        "fadeSpeed": "2"
+      },
+      "id": "b32a46b8-2c24-4185-a223-4ce033af836c"
+    }
+  ]
+}

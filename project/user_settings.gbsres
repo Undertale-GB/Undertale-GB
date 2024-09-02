@@ -1,0 +1,38 @@
+{
+  "_resourceType": "settings",
+  "worldScrollX": 0,
+  "worldScrollY": 201,
+  "zoom": 100,
+  "navigatorSplitSizes": [
+    30,
+    220,
+    702
+  ],
+  "showNavigator": true,
+  "showCollisions": true,
+  "showConnections": "selected",
+  "previewAsMono": false,
+  "showCollisionSlopeTiles": false,
+  "favoriteEvents": [
+    "EVENT_SWITCH_SCENE",
+    "EVENT_CALL_CUSTOM_EVENT",
+    "EVENT_WAIT",
+    "EVENT_IF_VALUE",
+    "UTGB_EVENT_BATTLE_TEXT",
+    "UTGB_EVENT_BATTLE_MENU",
+    "EVENT_ACTOR_START_UPDATE",
+    "EVENT_VARIABLE_MATH_EVALUATE",
+    "EVENT_GBVM_SCRIPT",
+    "EVENT_SET_TRUE",
+    "EVENT_INC_VALUE"
+  ],
+  "debuggerEnabled": false,
+  "debuggerScriptType": "editor",
+  "debuggerVariablesFilter": "all",
+  "debuggerCollapsedPanes": [],
+  "debuggerPauseOnScriptChanged": false,
+  "debuggerPauseOnWatchedVariableChanged": false,
+  "debuggerBreakpoints": [],
+  "debuggerWatchedVariables": [],
+  "openBuildLogOnWarnings": true
+}

@@ -1,0 +1,212 @@
+{
+  "_resourceType": "actor",
+  "id": "cb3005c6-a3b4-4feb-8fe1-cabc1b950ce7",
+  "_index": 0,
+  "symbol": "actor_11",
+  "prefabId": "",
+  "name": "",
+  "x": 21,
+  "y": 15,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "29fd287e-6be7-40a6-af00-0c6578972a4e",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "*(playfully \n crinkling through\n the leaves",
+          " fills you with\n determination.)",
+          "*(HP fully\n restored.)"
+        ],
+        "avatarId": ""
+      },
+      "id": "8847b539-b7fe-402b-8a4b-e29505936a77"
+    },
+    {
+      "command": "PT_EVENT_ADVANCED_MENU",
+      "args": {
+        "variable": "L0",
+        "__scriptTabs": "items",
+        "width": 20,
+        "height": 6,
+        "from": "bottom",
+        "items": 4,
+        "option_1_text": "Save",
+        "option1_x": 1,
+        "option1_y": 4,
+        "option1_l": 0,
+        "option1_r": 2,
+        "option1_u": 0,
+        "option1_d": 0,
+        "option_2_text": "Return",
+        "option2_x": 11,
+        "option2_y": 4,
+        "option2_l": 1,
+        "option2_r": 0,
+        "option2_u": 0,
+        "option2_d": 0,
+        "option_3_text": "Chara",
+        "option3_x": 1,
+        "option3_y": 1,
+        "option3_l": 0,
+        "option3_r": 0,
+        "option3_u": 0,
+        "option3_d": 0,
+        "option_4_text": "Ruins-Leaf Pile",
+        "option4_x": 1,
+        "option4_y": 2,
+        "option4_l": 0,
+        "option4_r": 0,
+        "option4_u": 0,
+        "option4_d": 0,
+        "option_5_text": "",
+        "option5_x": 0,
+        "option5_y": 0,
+        "option5_l": 0,
+        "option5_r": 0,
+        "option5_u": 0,
+        "option5_d": 0,
+        "option_6_text": "",
+        "option6_x": 0,
+        "option6_y": 0,
+        "option6_l": 0,
+        "option6_r": 0,
+        "option6_u": 0,
+        "option6_d": 0,
+        "option_7_text": "",
+        "option7_x": 0,
+        "option7_y": 0,
+        "option7_l": 0,
+        "option7_r": 0,
+        "option7_u": 0,
+        "option7_d": 0,
+        "option_8_text": "",
+        "option8_x": 0,
+        "option8_y": 0,
+        "option8_l": 0,
+        "option8_r": 0,
+        "option8_u": 0,
+        "option8_d": 0,
+        "option_9_text": "",
+        "option9_x": 0,
+        "option9_y": 0,
+        "option9_l": 0,
+        "option9_r": 0,
+        "option9_u": 0,
+        "option9_d": 0,
+        "option_10_text": "",
+        "option10_x": 0,
+        "option10_y": 0,
+        "option10_l": 0,
+        "option10_r": 0,
+        "option10_u": 0,
+        "option10_d": 0,
+        "option_11_text": "",
+        "option11_x": 0,
+        "option11_y": 0,
+        "option11_l": 0,
+        "option11_r": 0,
+        "option11_u": 0,
+        "option11_d": 0,
+        "option_12_text": "",
+        "option12_x": 0,
+        "option12_y": 0,
+        "option12_l": 0,
+        "option12_r": 0,
+        "option12_u": 0,
+        "option12_d": 0,
+        "option_13_text": "",
+        "option13_x": 0,
+        "option13_y": 0,
+        "option13_l": 0,
+        "option13_r": 0,
+        "option13_u": 0,
+        "option13_d": 0,
+        "option_14_text": "",
+        "option14_x": 0,
+        "option14_y": 0,
+        "option14_l": 0,
+        "option14_r": 0,
+        "option14_u": 0,
+        "option14_d": 0,
+        "option_15_text": "",
+        "option15_x": 0,
+        "option15_y": 0,
+        "option15_l": 0,
+        "option15_r": 0,
+        "option15_u": 0,
+        "option15_d": 0,
+        "option_16_text": "",
+        "option16_x": 0,
+        "option16_y": 0,
+        "option16_l": 0,
+        "option16_r": 0,
+        "option16_u": 0,
+        "option16_d": 0
+      },
+      "id": "45e1e568-3518-4340-9e97-140ad0657b31"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "variable": "L0",
+        "operator": "==",
+        "comparator": 1,
+        "__collapseElse": true,
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "L0"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SAVE_DATA",
+            "args": {
+              "saveSlot": 0,
+              "__scriptTabs": "save"
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "!F:be4454bf-4583-4683-ae77-0a0bedc5e82d!*File Saved."
+                    ],
+                    "avatarId": ""
+                  },
+                  "id": "9a7c1abe-7a4b-43c3-9ccb-50c119f8ea54"
+                }
+              ]
+            },
+            "id": "421d90ac-3321-49be-9c89-8c737d247200"
+          }
+        ],
+        "false": []
+      },
+      "id": "46f33272-6c54-478a-a869-f6dd2b9e229c"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

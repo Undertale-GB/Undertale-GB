@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "b2023c63-7e29-4ca2-9e39-93f3807638ca",
+  "name": "Intro08WIP",
+  "symbol": "bg_intro08wip",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "Intro08WIP.png",
+  "tileColors": "",
+  "autoColor": false
+}

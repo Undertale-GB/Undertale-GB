@@ -1,0 +1,35 @@
+{
+  "_resourceType": "actor",
+  "id": "5fb173cc-a4ab-450d-ae6e-0381fd366be5",
+  "_index": 5,
+  "symbol": "actor_41",
+  "prefabId": "",
+  "name": "FSwitch_5",
+  "x": 18,
+  "y": 11,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "dfbb1b9f-e685-4335-96c3-f201fb1cb1b7",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 255,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [],
+  "startScript": [
+    {
+      "command": "EVENT_ACTOR_COLLISIONS_DISABLE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "7c5e8fa5-72ab-44fd-bf03-719e5c8e07cf"
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

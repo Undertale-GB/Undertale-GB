@@ -1,0 +1,1091 @@
+{
+  "_resourceType": "script",
+  "id": "08951e2d-d963-4cad-aa92-f6e823489286",
+  "name": "Battle Inventory",
+  "symbol": "script_17",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "8",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      },
+      "id": "a4fb8b7d-2953-4739-9445-ff47034e5df8"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "18",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "7de11a0b-f76c-4b04-86a9-358f878d940e"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "33",
+        "value": {
+          "type": "number",
+          "value": 0
+        },
+        "__collapse": false
+      },
+      "id": "daec6a95-fa54-43ea-bee2-af9f66b81bac"
+    },
+    {
+      "command": "EVENT_LOOP_WHILE",
+      "args": {
+        "expression": "$08$ == 5",
+        "condition": {
+          "type": "expression",
+          "value": "$08$ == 5"
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_OVERLAY_CLEAR 3, 1, 14, 4, .UI_COLOR_BLACK, 0\nVM_LOAD_TEXT 0\n.asciz \"\"\nVM_DISPLAY_TEXT_EX .DISPLAY_PRESERVE_POS, 5",
+              "__comment": false
+            },
+            "id": "8063b51d-8f20-48ab-afcc-77494cb032c8"
+          },
+          {
+            "command": "EVENT_LOOP_FOR",
+            "args": {
+              "variable": "25",
+              "from": {
+                "type": "number",
+                "value": 0
+              },
+              "comparison": "<=",
+              "to": {
+                "type": "number",
+                "value": 3
+              },
+              "operation": "+=",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                  "args": {
+                    "variable": "39",
+                    "expression": "(($25$ % 2) * 7) + 5"
+                  },
+                  "id": "536ffda0-52dd-4cc5-b5d5-989f3f042e73"
+                },
+                {
+                  "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                  "args": {
+                    "variable": "40",
+                    "expression": "(($25$ / 2) * 2) + 2"
+                  },
+                  "id": "9937985b-4078-4a41-8fa9-ec328299c98c"
+                },
+                {
+                  "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                  "args": {
+                    "variable": "32",
+                    "expression": "$25$ + ($18$ * 4)"
+                  },
+                  "id": "80c5be54-8a6b-4038-a78b-648ea8b5f875"
+                },
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd"
+                  },
+                  "id": "2d64dbd8-6215-40c1-95c0-c50c9474c7f1"
+                },
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "38",
+                    "choices": 9,
+                    "__collapseCase0": true,
+                    "value0": 0,
+                    "__collapseCase1": true,
+                    "value1": 1,
+                    "__collapseCase2": true,
+                    "value2": 2,
+                    "__collapseCase3": true,
+                    "value3": 3,
+                    "__collapseCase4": true,
+                    "value4": 4,
+                    "__collapseCase5": true,
+                    "value5": 5,
+                    "__collapseCase6": true,
+                    "value6": 6,
+                    "__collapseCase7": true,
+                    "value7": 7,
+                    "__collapseCase8": true,
+                    "value8": 8,
+                    "__collapseCase9": false,
+                    "value9": 10,
+                    "__collapseCase10": false,
+                    "value10": 11,
+                    "__collapseCase11": false,
+                    "value11": 12,
+                    "__collapseCase12": false,
+                    "value12": 13,
+                    "__collapseCase13": false,
+                    "value13": 14,
+                    "__collapseCase14": false,
+                    "value14": 15,
+                    "__collapseCase15": false,
+                    "value15": 16,
+                    "__collapseElse": true
+                  },
+                  "children": {
+                    "true0": [],
+                    "true1": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cBandage\"",
+                          "__collapse": false
+                        },
+                        "id": "a4c579e0-5d52-4e93-8b46-65cd472d0637"
+                      }
+                    ],
+                    "true2": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cMnstrCndy\"",
+                          "__collapse": false
+                        },
+                        "id": "bb4eff6f-1c3c-4a1b-b7bb-9a1d01077d1c"
+                      }
+                    ],
+                    "true3": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cSpidrDont\""
+                        },
+                        "id": "347e7e36-e5f6-4baa-beaf-a7577331a7f0"
+                      }
+                    ],
+                    "true4": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cSpidrCidr\""
+                        },
+                        "id": "cfcceb2d-61d1-461f-9aa7-71aa889b7598"
+                      }
+                    ],
+                    "true5": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cButtsPie\""
+                        },
+                        "id": "503f8e88-53c8-4501-a0f1-3c91e4a20535"
+                      }
+                    ],
+                    "true6": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cStick\""
+                        },
+                        "id": "fe8503a3-eb36-48dc-90cf-0286dbdb9404"
+                      }
+                    ],
+                    "true7": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cToy Knife\""
+                        },
+                        "id": "56187b47-029d-4c1f-9e09-eeca33ddf492"
+                      }
+                    ],
+                    "true8": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cRibbon\""
+                        },
+                        "id": "b549e072-48af-4526-9d3a-e4de588f21f6"
+                      }
+                    ],
+                    "true9": [],
+                    "true10": [],
+                    "true11": [],
+                    "true12": [],
+                    "true13": [],
+                    "true14": [],
+                    "true15": [],
+                    "false": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cUnknownItem\""
+                        },
+                        "id": "8b2edd36-44fb-47c2-b231-dda9e0c7d1d2"
+                      }
+                    ]
+                  },
+                  "id": "c5e9e71f-f162-4a53-b7c3-b6380086fa3c"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "script": "VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, .TEXT_TILE_CONTINUE\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT"
+                  },
+                  "id": "be414149-bd49-43d7-97c6-61e43c4da1c9"
+                }
+              ]
+            },
+            "id": "c1de9fd2-76cf-4e72-8b42-eda5db8b0f24"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "variable": "18",
+              "operator": "==",
+              "comparator": "0",
+              "__collapseElse": false,
+              "__collapse": true,
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "18"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\002\\005\\003\\012\\05Next\""
+                  },
+                  "id": "c9dd91d4-3ce4-4bfb-b2ea-642fbc4b22f8"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\002\\005\\003\\012\\05Prev\""
+                  },
+                  "id": "42c0b00a-df9a-4caf-b047-d8e7b0b2dfc9"
+                }
+              ]
+            },
+            "id": "6936e253-9389-48e9-a52c-29b1a45516dc"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_DISPLAY_TEXT_EX .DISPLAY_DEFAULT, .TEXT_TILE_CONTINUE\nVM_OVERLAY_WAIT .UI_MODAL, .UI_WAIT_TEXT\n\nVM_CHOICE VAR_MENUSUB, .UI_MENU_CANCEL_B, 5\n  .MENUITEM           3,  1, 0, 2, 0, 3\n  .MENUITEM           10, 1, 1, 0, 0, 4\n  .MENUITEM           3,  3, 0, 4, 1, 5\n  .MENUITEM           10, 3, 3, 0, 2, 5\n  .MENUITEM           8,  4, 0, 0, 3, 0"
+            },
+            "id": "46f06b6f-a644-43de-82a2-6bf10c2b58f3"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "variable": "8",
+              "operator": "!=",
+              "comparator": 5,
+              "__collapseElse": false,
+              "condition": {
+                "type": "ne",
+                "valueA": {
+                  "type": "variable",
+                  "value": "8"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_IF",
+                  "args": {
+                    "variable": "8",
+                    "operator": "!=",
+                    "comparator": "0",
+                    "__collapseElse": true,
+                    "condition": {
+                      "type": "ne",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "8"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                        "args": {
+                          "variable": "32",
+                          "expression": "($08$ - 1) + ($18$ * 4)"
+                        },
+                        "id": "944c393d-fc21-441e-9743-26da3de10559"
+                      },
+                      {
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
+                          "__comment": true
+                        },
+                        "id": "5dd0b916-34a1-43c8-afae-f93175c0efa3"
+                      },
+                      {
+                        "command": "EVENT_SWITCH",
+                        "args": {
+                          "variable": "38",
+                          "choices": 8,
+                          "__collapseCase0": true,
+                          "value0": 1,
+                          "__collapseCase1": true,
+                          "value1": 2,
+                          "__collapseCase2": true,
+                          "value2": 3,
+                          "__collapseCase3": true,
+                          "value3": 4,
+                          "__collapseCase4": true,
+                          "value4": 5,
+                          "__collapseCase5": true,
+                          "value5": 6,
+                          "__collapseCase6": true,
+                          "value6": 7,
+                          "__collapseCase7": true,
+                          "value7": 8,
+                          "__collapseCase8": false,
+                          "value8": 9,
+                          "__collapseCase9": false,
+                          "value9": 10,
+                          "__collapseCase10": false,
+                          "value10": 11,
+                          "__collapseCase11": false,
+                          "value11": 12,
+                          "__collapseCase12": false,
+                          "value12": 13,
+                          "__collapseCase13": false,
+                          "value13": 14,
+                          "__collapseCase14": false,
+                          "value14": 15,
+                          "__collapseCase15": false,
+                          "value15": 16,
+                          "__collapseElse": true,
+                          "__comment": true
+                        },
+                        "children": {
+                          "true0": [
+                            {
+                              "command": "UTGB_EVENT_BATTLE_TEXT",
+                              "args": {
+                                "text": "*You re-applied\n|the bandage.\n*Still kind of\n|gooey."
+                              },
+                              "id": "1e724c43-81ea-49b4-8649-64cbf6ef0e0e"
+                            },
+                            {
+                              "command": "EVENT_AWAIT_INPUT",
+                              "args": {
+                                "input": [
+                                  "b",
+                                  "a"
+                                ]
+                              },
+                              "id": "900491ad-4547-4c72-b488-32ae72319008"
+                            },
+                            {
+                              "command": "EVENT_GROUP",
+                              "args": {
+                                "__label": "Heal HP",
+                                "__collapse": true
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                    "args": {
+                                      "variable": "2",
+                                      "expression": "$02$ + 10",
+                                      "__collapse": false
+                                    },
+                                    "id": "55110d6b-7c96-443d-a667-0c8247d0464c"
+                                  },
+                                  {
+                                    "command": "EVENT_IF_EXPRESSION",
+                                    "args": {
+                                      "expression": "$02$ >= $03$",
+                                      "__collapseElse": false,
+                                      "__collapse": false
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "command": "UTGB_EVENT_BATTLE_TEXT",
+                                          "args": {
+                                            "text": "*Your HP was\n|maxed out!"
+                                          },
+                                          "id": "fdf8d8a2-f3df-4c8b-bd82-1f099800d884"
+                                        },
+                                        {
+                                          "command": "EVENT_AWAIT_INPUT",
+                                          "args": {
+                                            "input": [
+                                              "b",
+                                              "a"
+                                            ]
+                                          },
+                                          "id": "444caae6-6d37-4c16-b626-b7828eeb8e57"
+                                        },
+                                        {
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "2",
+                                            "value": {
+                                              "type": "variable",
+                                              "value": "3"
+                                            }
+                                          },
+                                          "id": "523cd55b-afd8-45b7-8303-0ff432b01927"
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "command": "UTGB_EVENT_BATTLE_TEXT",
+                                          "args": {
+                                            "text": "*You healed 10 HP."
+                                          },
+                                          "id": "d8126c0b-8c11-4205-bd97-90760b01948c"
+                                        },
+                                        {
+                                          "command": "EVENT_AWAIT_INPUT",
+                                          "args": {
+                                            "input": [
+                                              "b",
+                                              "a"
+                                            ]
+                                          },
+                                          "id": "be063ba5-10dd-4638-995c-d8d58f9eeee0"
+                                        }
+                                      ]
+                                    },
+                                    "id": "da43c5b3-34fe-4df2-b3f4-cb1b60cb42ef"
+                                  },
+                                  {
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                      "__collapse": false
+                                    },
+                                    "id": "9a803fa8-e230-47df-813c-7a916d4ccd62"
+                                  }
+                                ]
+                              },
+                              "id": "928603e5-25df-4988-b8db-5a1b440ffbf2"
+                            }
+                          ],
+                          "true1": [
+                            {
+                              "command": "UTGB_EVENT_BATTLE_TEXT",
+                              "args": {
+                                "text": "*You ate the\n|Monster Candy.\n*Very\n|un-licorice-like"
+                              },
+                              "id": "703daf18-42b9-402c-adb4-6c17c8c6abf3"
+                            },
+                            {
+                              "command": "EVENT_AWAIT_INPUT",
+                              "args": {
+                                "input": [
+                                  "b",
+                                  "a"
+                                ]
+                              },
+                              "id": "e202c7e0-3695-4401-92f1-4fb2b5cc719a"
+                            },
+                            {
+                              "command": "EVENT_GROUP",
+                              "args": {
+                                "__label": "Heal HP",
+                                "__collapse": false
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                    "args": {
+                                      "variable": "2",
+                                      "expression": "$02$ + 10",
+                                      "__collapse": true
+                                    },
+                                    "id": "f94e5c93-b4ed-4b70-ace0-90ec4b612d66"
+                                  },
+                                  {
+                                    "command": "EVENT_IF_EXPRESSION",
+                                    "args": {
+                                      "expression": "$02$ >= $03$",
+                                      "__collapseElse": false,
+                                      "__collapse": false
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "command": "UTGB_EVENT_BATTLE_TEXT",
+                                          "args": {
+                                            "text": "*Your HP was\\n|maxed out!"
+                                          },
+                                          "id": "4ac61fb5-7f1a-4037-b772-74cdead70493"
+                                        },
+                                        {
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "2",
+                                            "value": {
+                                              "type": "variable",
+                                              "value": "3"
+                                            }
+                                          },
+                                          "id": "26021374-ff2e-4517-aab4-820c05f95f35"
+                                        },
+                                        {
+                                          "command": "EVENT_AWAIT_INPUT",
+                                          "args": {
+                                            "input": [
+                                              "b",
+                                              "a"
+                                            ]
+                                          },
+                                          "id": "af4dc16c-3f0c-40dd-a0d5-d278a29178de"
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "command": "UTGB_EVENT_BATTLE_TEXT",
+                                          "args": {
+                                            "text": "*You healed 10 HP."
+                                          },
+                                          "id": "151691d2-1289-4e62-855c-b1db617f0051"
+                                        },
+                                        {
+                                          "command": "EVENT_AWAIT_INPUT",
+                                          "args": {
+                                            "input": [
+                                              "b",
+                                              "a"
+                                            ]
+                                          },
+                                          "id": "d7711271-289b-4b46-a6c7-682c8e5be158"
+                                        }
+                                      ]
+                                    },
+                                    "id": "104c1a2b-8085-466e-ad89-b61c4a6e9d69"
+                                  },
+                                  {
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                      "__collapse": true
+                                    },
+                                    "id": "b4f3e32f-ef55-41fb-a69d-cd8803851bd7"
+                                  }
+                                ]
+                              },
+                              "id": "97cabd53-216c-4f1c-9564-468f4a621506"
+                            }
+                          ],
+                          "true2": [
+                            {
+                              "command": "UTGB_EVENT_BATTLE_TEXT",
+                              "args": {
+                                "text": "*You ate the\\n|Spider Donut."
+                              },
+                              "id": "f06f4d73-a6b0-4f64-9ffb-42235ea7c83f"
+                            },
+                            {
+                              "command": "EVENT_AWAIT_INPUT",
+                              "args": {
+                                "input": [
+                                  "b",
+                                  "a"
+                                ]
+                              },
+                              "id": "c0fc3f8f-7d1d-41cf-8322-c66f9a1775dc"
+                            },
+                            {
+                              "command": "EVENT_GROUP",
+                              "args": {
+                                "__label": "Heal HP",
+                                "__collapse": false
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                    "args": {
+                                      "variable": "2",
+                                      "expression": "$02$ + 12",
+                                      "__collapse": true
+                                    },
+                                    "id": "c58cf6a7-185f-428f-96f3-ab0eab5270ea"
+                                  },
+                                  {
+                                    "command": "EVENT_IF_EXPRESSION",
+                                    "args": {
+                                      "expression": "$02$ >= $03$",
+                                      "__collapseElse": false,
+                                      "__collapse": false
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "command": "UTGB_EVENT_BATTLE_TEXT",
+                                          "args": {
+                                            "text": "*Your HP was\\n|maxed out!"
+                                          },
+                                          "id": "a890813d-e607-4101-bf3f-9b9a22e7fb2f"
+                                        },
+                                        {
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "2",
+                                            "value": {
+                                              "type": "variable",
+                                              "value": "3"
+                                            },
+                                            "__collapse": false
+                                          },
+                                          "id": "7f41f218-e4ae-45ef-af7b-9d9013631530"
+                                        },
+                                        {
+                                          "command": "EVENT_AWAIT_INPUT",
+                                          "args": {
+                                            "input": [
+                                              "b",
+                                              "a"
+                                            ]
+                                          },
+                                          "id": "5576a4b7-9923-4867-8bfd-dde718ae6665"
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "command": "UTGB_EVENT_BATTLE_TEXT",
+                                          "args": {
+                                            "text": "*You healed 12 HP."
+                                          },
+                                          "id": "613fced9-cf14-4bef-b3da-2cd110b710da"
+                                        },
+                                        {
+                                          "command": "EVENT_AWAIT_INPUT",
+                                          "args": {
+                                            "input": [
+                                              "b",
+                                              "a"
+                                            ]
+                                          },
+                                          "id": "d8a93720-b0cd-48c3-aa57-39bd8ce5c635"
+                                        }
+                                      ]
+                                    },
+                                    "id": "5b239e95-a340-4dd8-83c4-a9bbf17a9410"
+                                  },
+                                  {
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                      "__collapse": true
+                                    },
+                                    "id": "e49ec0d3-08ac-4238-9cb5-8c4c0179f482"
+                                  }
+                                ]
+                              },
+                              "id": "8b3f6f88-a3ac-4bec-aa83-0750b720b624"
+                            }
+                          ],
+                          "true3": [
+                            {
+                              "command": "UTGB_EVENT_BATTLE_TEXT",
+                              "args": {
+                                "text": "*You drank the\\n|Spider Cider."
+                              },
+                              "id": "e7c7e4fc-5072-421e-8030-01866a9b6112"
+                            },
+                            {
+                              "command": "EVENT_AWAIT_INPUT",
+                              "args": {
+                                "input": [
+                                  "b",
+                                  "a"
+                                ]
+                              },
+                              "id": "bc2bfb23-a1dd-4cc8-8f19-aa2d5a6716bc"
+                            },
+                            {
+                              "command": "EVENT_GROUP",
+                              "args": {
+                                "__label": "Heal HP",
+                                "__collapse": false
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "command": "EVENT_VARIABLE_MATH_EVALUATE",
+                                    "args": {
+                                      "variable": "2",
+                                      "expression": "$02$ + 24",
+                                      "__collapse": false
+                                    },
+                                    "id": "d1313c2e-cfcb-4fae-a7b9-ce51774a1140"
+                                  },
+                                  {
+                                    "command": "EVENT_IF_EXPRESSION",
+                                    "args": {
+                                      "expression": "$02$ >= $03$",
+                                      "__collapseElse": false,
+                                      "__collapse": false
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "command": "UTGB_EVENT_BATTLE_TEXT",
+                                          "args": {
+                                            "text": "*Your HP was\\n|maxed out!"
+                                          },
+                                          "id": "065f0958-28b0-428e-af11-63ce3fbb313f"
+                                        },
+                                        {
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "2",
+                                            "value": {
+                                              "type": "variable",
+                                              "value": "3"
+                                            }
+                                          },
+                                          "id": "199cd58d-ceb3-4ca9-80e6-d6949742b58c"
+                                        },
+                                        {
+                                          "command": "EVENT_AWAIT_INPUT",
+                                          "args": {
+                                            "input": [
+                                              "b",
+                                              "a"
+                                            ]
+                                          },
+                                          "id": "09074bd0-5edc-4dbf-b1bc-63c8af11188a"
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "command": "UTGB_EVENT_BATTLE_TEXT",
+                                          "args": {
+                                            "text": "*You healed 24 HP."
+                                          },
+                                          "id": "186a931c-4da5-4d4c-b3f4-75641623c48d"
+                                        },
+                                        {
+                                          "command": "EVENT_AWAIT_INPUT",
+                                          "args": {
+                                            "input": [
+                                              "b",
+                                              "a"
+                                            ]
+                                          },
+                                          "id": "bd3abdea-60df-40b0-b3d3-2a81c821097f"
+                                        }
+                                      ]
+                                    },
+                                    "id": "5bdda23d-b250-4eb3-9d99-5e4dddcab89d"
+                                  },
+                                  {
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                      "__collapse": true
+                                    },
+                                    "id": "8758e043-562c-485f-9338-2bfa84f46314"
+                                  }
+                                ]
+                              },
+                              "id": "32d945f7-37fa-46cf-9425-cbc41174a630"
+                            }
+                          ],
+                          "true4": [
+                            {
+                              "command": "UTGB_EVENT_BATTLE_TEXT",
+                              "args": {
+                                "text": "*You ate the\n|Butterscotch\n|Pie."
+                              },
+                              "id": "863fe28e-8237-4963-9419-715eb576e8be"
+                            },
+                            {
+                              "command": "EVENT_AWAIT_INPUT",
+                              "args": {
+                                "input": [
+                                  "b",
+                                  "a"
+                                ]
+                              },
+                              "id": "f6fae4db-0b3b-42e6-99c4-854d4cc06202"
+                            },
+                            {
+                              "command": "UTGB_EVENT_BATTLE_TEXT",
+                              "args": {
+                                "text": "*Your HP was\n|maxed out!"
+                              },
+                              "id": "a011a4d0-e591-43de-a1a6-1775a1ef85ef"
+                            },
+                            {
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "2",
+                                "value": {
+                                  "type": "variable",
+                                  "value": "3"
+                                }
+                              },
+                              "id": "08b84ebf-16df-4f16-800b-3600d3380ce9"
+                            },
+                            {
+                              "command": "EVENT_AWAIT_INPUT",
+                              "args": {
+                                "input": [
+                                  "b",
+                                  "a"
+                                ]
+                              },
+                              "id": "9443d615-ef5c-409f-bc04-b9b3d1dc7dcd"
+                            },
+                            {
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+                                "__collapse": true
+                              },
+                              "id": "03b588bf-c850-4304-9052-81effdb1b750"
+                            }
+                          ],
+                          "true5": [
+                            {
+                              "command": "UTGB_EVENT_BATTLE_TEXT",
+                              "args": {
+                                "text": "*You threw the\\n|stick away.\n*Then picked it\\n|back up."
+                              },
+                              "id": "151061d6-2d8d-4fe1-bec0-4f2c7e292a91"
+                            },
+                            {
+                              "command": "EVENT_AWAIT_INPUT",
+                              "args": {
+                                "input": [
+                                  "b",
+                                  "a"
+                                ]
+                              },
+                              "id": "46a3a52d-79c5-4512-8655-af063318d5d3"
+                            }
+                          ],
+                          "true6": [
+                            {
+                              "command": "UTGB_EVENT_BATTLE_TEXT",
+                              "args": {
+                                "text": "*You equipped the\\n|Toy Knife."
+                              },
+                              "id": "7b9b4406-476e-4e34-8818-1a20e180408b"
+                            },
+                            {
+                              "command": "EVENT_AWAIT_INPUT",
+                              "args": {
+                                "input": [
+                                  "b",
+                                  "a"
+                                ]
+                              },
+                              "id": "e9a51637-a631-4c7d-937e-234953f2d8b1"
+                            },
+                            {
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "33",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                },
+                                "__collapse": true
+                              },
+                              "id": "ed10048f-29a6-440c-833d-9dc73ee63487"
+                            },
+                            {
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "be4b9d54-0415-4667-9a95-719ea35c51bc",
+                                "__collapse": true
+                              },
+                              "id": "33f65911-f334-4d05-a0f3-82bff3662411"
+                            }
+                          ],
+                          "true7": [
+                            {
+                              "command": "UTGB_EVENT_BATTLE_TEXT",
+                              "args": {
+                                "text": "*You equipped the\\n|Faded Ribbon."
+                              },
+                              "id": "a562ef40-1b2d-43a7-bafa-8043350cdf1d"
+                            },
+                            {
+                              "command": "EVENT_AWAIT_INPUT",
+                              "args": {
+                                "input": [
+                                  "b",
+                                  "a"
+                                ]
+                              },
+                              "id": "2920037e-a941-4000-9901-b80416a05835"
+                            },
+                            {
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "33",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                },
+                                "__collapse": true
+                              },
+                              "id": "c702ab79-cb57-40a6-9499-cf8c54402621"
+                            },
+                            {
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "be4b9d54-0415-4667-9a95-719ea35c51bc",
+                                "__collapse": true
+                              },
+                              "id": "3f6e4af8-34a5-4be3-9a3f-79f27d34a6a8"
+                            }
+                          ],
+                          "true8": [],
+                          "true9": [],
+                          "true10": [],
+                          "true11": [],
+                          "true12": [],
+                          "true13": [],
+                          "true14": [],
+                          "true15": [],
+                          "false": [
+                            {
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "8",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              },
+                              "id": "48458ed1-93f4-4eb5-954a-21feaafe7974"
+                            }
+                          ]
+                        },
+                        "id": "a3016af8-2a31-4aae-bdaa-33070b58ef8f"
+                      },
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_PUSH_CONST 1\nVM_PUSH_VALUE VAR_INVENTORY_SLOT_TEMP_\nVM_CALL_NATIVE b_inv_use_item, _inv_use_item\nVM_POP 2"
+                        },
+                        "id": "9c4db1dd-9ca9-4d9e-9f09-925717b3d1bf"
+                      }
+                    ],
+                    "false": []
+                  },
+                  "id": "b8617827-4205-4e98-8881-4034c2621236"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_IF",
+                  "args": {
+                    "variable": "18",
+                    "operator": "==",
+                    "comparator": "0",
+                    "__collapseElse": true,
+                    "__collapse": true,
+                    "__label": "Invert global_temp_var2",
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "18"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "18",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        },
+                        "id": "e17014aa-109b-44ec-9cc2-89915a5e4975"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "18",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        },
+                        "id": "d7ce3222-0abf-4605-a314-cdab56d93991"
+                      }
+                    ]
+                  },
+                  "id": "03131301-a383-49d8-b6c2-0926f7bce840"
+                }
+              ]
+            },
+            "id": "9bf683b6-b17b-444c-9def-0ee6cfaaa69c"
+          }
+        ]
+      },
+      "id": "f603fc4d-94fa-4a8c-becc-c487a5696113"
+    }
+  ]
+}
