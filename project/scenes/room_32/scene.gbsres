@@ -1,0 +1,88 @@
+{
+  "_resourceType": "scene",
+  "id": "ac78273a-65aa-4b92-8c9a-1a0cf5b451a9",
+  "_index": 44,
+  "name": "Room_32",
+  "backgroundId": "dcbc227b-34a8-409c-aedd-d8edb97372fa",
+  "tilesetId": "",
+  "width": 74,
+  "height": 18,
+  "type": "TOPDOWN",
+  "paletteIds": [
+    "efb5b5c6-7a2f-49b2-9f71-626a6220b02c",
+    "0d39ad2d-acd6-4d14-a1bf-d4e3078fcf35",
+    "61ebc0cf-b99b-4f3b-a6df-005890185375",
+    "6c7578bf-c793-4b27-951b-c081fc25882d"
+  ],
+  "spritePaletteIds": [
+    "",
+    "",
+    "",
+    "",
+    "f9802fd9-c3d7-4d0d-ad23-b89fd55e5613",
+    "d6942c73-2f25-4abe-8f84-e0da2da4b01d",
+    "efb5b5c6-7a2f-49b2-9f71-626a6220b02c"
+  ],
+  "collisions": "00214+0f4+0011+0f4+0023+0ff+002+0f13+002+0f23+0049+0f!0049+0f!0049+0f!0049+0f!0049+0f!0049+0f!00!0f49+0095+",
+  "autoFadeSpeed": 1,
+  "symbol": "scene_45",
+  "x": 2872,
+  "y": 1144,
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ".LOCAL_ACTOR = -4\nVM_SET_CONST .LOCAL_ACTOR, 2\nVM_ACTOR_SET_BOUNDS .LOCAL_ACTOR, -8, 23, -8, 0"
+      },
+      "id": "bd913b77-e299-4e44-9b73-5fd72f3834e9"
+    },
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "cccff0e7-1b5d-4bc7-a586-8ffea18cfb64"
+      },
+      "id": "af80dead-e7da-4c1a-adb2-67c0c6f44dba"
+    },
+    {
+      "command": "EVENT_ACTOR_ACTIVATE",
+      "args": {
+        "actorId": "cccff0e7-1b5d-4bc7-a586-8ffea18cfb64"
+      },
+      "id": "8a4381c9-00d0-4753-997a-3683a1f888c5"
+    },
+    {
+      "command": "EVENT_ACTOR_STOP_UPDATE",
+      "args": {
+        "actorId": "cccff0e7-1b5d-4bc7-a586-8ffea18cfb64"
+      },
+      "id": "5514bf32-d25d-4148-9290-50b95ec4ec95"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_POSITION",
+      "args": {
+        "actorId": "cccff0e7-1b5d-4bc7-a586-8ffea18cfb64",
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "2d46ef56-4d20-4c22-b6bb-5d718952bccb"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "cccff0e7-1b5d-4bc7-a586-8ffea18cfb64",
+        "spriteStateId": "Animation_3",
+        "__comment": false
+      },
+      "id": "57e2d9fd-6a28-4015-9dff-29cee4739bdd"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

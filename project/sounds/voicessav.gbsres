@@ -4,5 +4,6 @@
   "name": "voices.sav",
   "symbol": "sound_voices_sav",
   "filename": "voices.sav",
-  "type": "fxhammer"
+  "type": "fxhammer",
+  "numEffects": 12
 }
