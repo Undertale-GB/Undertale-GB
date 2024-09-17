@@ -4,5 +4,6 @@
   "name": "ui.sav",
   "symbol": "sound_ui_sav",
   "filename": "ui.sav",
-  "type": "fxhammer"
+  "type": "fxhammer",
+  "numEffects": 12
 }

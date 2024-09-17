@@ -1,0 +1,149 @@
+{
+  "_resourceType": "actor",
+  "id": "cccff0e7-1b5d-4bc7-a586-8ffea18cfb64",
+  "name": "",
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "2d4c8692-c5fa-4c12-ad48-79372dce717f",
+  "prefabId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 255,
+  "paletteId": "",
+  "isPinned": false,
+  "persistent": true,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "_index": 0,
+  "symbol": "actor_20",
+  "x": 65,
+  "y": 7,
+  "script": [],
+  "startScript": [
+    {
+      "command": "EVENT_ACTOR_STOP_UPDATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "e47a02ed-e266-49d7-b802-46983602d043"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_POSITION",
+      "args": {
+        "actorId": "$self$",
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "31424594-f4fc-445b-9e2c-f1056f16fc08"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_STATE",
+      "args": {
+        "actorId": "$self$",
+        "spriteStateId": "Animation_3",
+        "__comment": false
+      },
+      "id": "682931c9-a6e3-46c6-b129-cd95a8511ab0"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "T0",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "a70a7be4-cbb5-40d4-9527-24a2258955da"
+    }
+  ],
+  "updateScript": [
+    {
+      "command": "EVENT_GROUP",
+      "args": {
+        "__comment": true,
+        "__label": "Source Events"
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_POSITION",
+            "args": {
+              "actorId": "player",
+              "vectorX": "15",
+              "vectorY": "18",
+              "units": "pixels"
+            },
+            "id": "a5b643cd-07a4-4c94-95ff-a6f76b3fe772"
+          },
+          {
+            "command": "EVENT_VARIABLE_MATH_EVALUATE",
+            "args": {
+              "variable": "18",
+              "expression": "54 - ($18$ - (9*8))"
+            },
+            "id": "1b40b1fe-f927-4f77-91dd-2565bed9ef9b"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_POSITION",
+            "args": {
+              "actorId": "$self$",
+              "x": {
+                "type": "variable",
+                "value": "15"
+              },
+              "y": {
+                "type": "variable",
+                "value": "18"
+              },
+              "units": "pixels"
+            },
+            "id": "e1e69e56-f383-4c29-9d18-fc41c2bef1c5"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_FRAME",
+            "args": {
+              "actorId": "$self$",
+              "frame": {
+                "type": "property",
+                "target": "player",
+                "property": "frame"
+              }
+            },
+            "id": "748416c5-eb84-495c-ac9d-a3c2b2c615a8"
+          },
+          {
+            "command": "EVENT_ACTOR_SET_DIRECTION",
+            "args": {
+              "actorId": "$self$",
+              "direction": {
+                "type": "property",
+                "target": "player",
+                "property": "direction"
+              }
+            },
+            "id": "b441238f-1a8e-4dc5-aba4-37039c37da7c"
+          }
+        ]
+      },
+      "id": "1799b201-a436-4d3c-b1a2-566990d4bb13"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": ".LOCAL_ACTOR = -4\n\nVM_RESERVE              4\n; Actor Set Active\nVM_SET_CONST            .LOCAL_ACTOR, 0\n\n; Store Position In Variables\nVM_ACTOR_GET_POS        .LOCAL_ACTOR\nVM_RPN\n      .R_REF      ^/(.LOCAL_ACTOR + 1)/\n      .R_INT16    54\n      .R_REF      ^/(.LOCAL_ACTOR + 2)/\n      .R_INT16    16\n      .R_OPERATOR .DIV\n      .R_INT16    9\n      .R_INT16    8\n      .R_OPERATOR .MUL\n      .R_OPERATOR .SUB\n      .R_OPERATOR .SUB\n      .R_INT16    16\n      .R_OPERATOR .MUL\n      .R_STOP\n      \nVM_SET                  ^/(.LOCAL_ACTOR + 1 - 2)/, .ARG1\nVM_SET                  ^/(.LOCAL_ACTOR + 2 - 2)/, .ARG0\nVM_POP                  2\n\n; Actor Set Active\nVM_SET_CONST            .LOCAL_ACTOR, 1\n\n; Actor Set Position To Variables\nVM_ACTOR_SET_POS        .LOCAL_ACTOR\n\nVM_SET_CONST            .LOCAL_ACTOR, 0\n; Store Frame In Variable\nVM_ACTOR_GET_ANIM_FRAME .LOCAL_ACTOR\nVM_SET                  VAR_TEMP_0, ^/(.LOCAL_ACTOR + 1)/\n\n; Actor Set Active\nVM_SET_CONST            .LOCAL_ACTOR, 1\n\n; Actor Set Animation Frame To Variable\nVM_SET                  ^/(.LOCAL_ACTOR + 1)/, VAR_TEMP_0\nVM_ACTOR_SET_ANIM_FRAME .LOCAL_ACTOR\n\nVM_SET_CONST            .LOCAL_ACTOR, 0\n; Store Direction In Variable\nVM_ACTOR_GET_DIR        .LOCAL_ACTOR, VAR_TEMP_0\n\n; Actor Set Active\nVM_SET_CONST            .LOCAL_ACTOR, 1\n\n; Actor Set Direction To Variable\nVM_IF_CONST             .EQ, VAR_TEMP_0, .DIR_LEFT, 2$, 0\nVM_IF_CONST             .EQ, VAR_TEMP_0, .DIR_RIGHT, 3$, 0\nVM_IF_CONST             .EQ, VAR_TEMP_0, .DIR_UP, 4$, 0\nVM_ACTOR_SET_DIR        .LOCAL_ACTOR, .DIR_DOWN\nVM_JUMP                 5$\n2$:\nVM_ACTOR_SET_DIR        .LOCAL_ACTOR, .DIR_LEFT\nVM_JUMP                 5$\n3$:\nVM_ACTOR_SET_DIR        .LOCAL_ACTOR, .DIR_RIGHT\nVM_JUMP                 5$\n4$:\nVM_ACTOR_SET_DIR        .LOCAL_ACTOR, .DIR_UP\n5$:\n\nVM_RESERVE -4",
+        "__comment": false
+      },
+      "id": "2e553a5d-2d73-4d32-8ed8-32db3796b8ac"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

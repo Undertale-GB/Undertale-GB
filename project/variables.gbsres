@@ -133,13 +133,13 @@
     },
     {
       "id": "26",
-      "name": "Attack",
-      "symbol": "var_attack"
+      "name": "Attack(Item)",
+      "symbol": "var_attack_item_"
     },
     {
       "id": "27",
-      "name": "Defense",
-      "symbol": "var_defense"
+      "name": "Defense(Item)",
+      "symbol": "var_defense_item_"
     },
     {
       "id": "28",
@@ -220,16 +220,6 @@
       "id": "43",
       "name": "Have you killed toriel",
       "symbol": "var_have_you_killed_toriel"
-    },
-    {
-      "id": "44",
-      "name": "Attack(Item)",
-      "symbol": "var_attack_item_"
-    },
-    {
-      "id": "45",
-      "name": "Defense(Item)",
-      "symbol": "var_defense_item_"
     },
     {
       "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
@@ -320,6 +310,11 @@
       "id": "d0a3cdfd-d3c8-4694-89b9-3268359c5af3__L0",
       "name": "Local 0",
       "symbol": "var_local_2"
+    },
+    {
+      "id": "518b3cea-f6e0-4551-a439-5faf3a44ddd1__L0",
+      "name": "Local 0",
+      "symbol": "var_local_3"
     }
   ]
 }

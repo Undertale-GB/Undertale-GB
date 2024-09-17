@@ -4,5 +4,6 @@
   "name": "puzzles.sav",
   "symbol": "sound_puzzles_sav",
   "filename": "puzzles.sav",
-  "type": "fxhammer"
+  "type": "fxhammer",
+  "numEffects": 12
 }

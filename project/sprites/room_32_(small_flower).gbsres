@@ -22,29 +22,29 @@
               "id": "882af351-a4df-443f-b190-38edad5ee827",
               "tiles": [
                 {
-                  "id": "af07d1e6-868f-45c1-9396-1bf88922cab3",
+                  "id": "ec415178-b447-48f5-b401-ff33cd7f2e4d",
                   "x": 0,
-                  "y": 0,
+                  "y": 16,
                   "sliceX": 0,
                   "sliceY": 0,
+                  "palette": 0,
                   "flipX": false,
                   "flipY": false,
-                  "palette": 0,
-                  "paletteIndex": 0,
                   "objPalette": "OBP0",
+                  "paletteIndex": 4,
                   "priority": false
                 },
                 {
-                  "id": "e0a223c7-24f6-413a-9fb8-bd9db5fa9c24",
+                  "id": "08b26a71-d777-4918-8e5b-00fd957140c3",
                   "x": 8,
-                  "y": 0,
+                  "y": 16,
                   "sliceX": 8,
                   "sliceY": 0,
+                  "palette": 0,
                   "flipX": false,
                   "flipY": false,
-                  "palette": 0,
-                  "paletteIndex": 0,
                   "objPalette": "OBP0",
+                  "paletteIndex": 4,
                   "priority": false
                 }
               ]
@@ -119,7 +119,7 @@
   ],
   "numTiles": 2,
   "canvasWidth": 16,
-  "canvasHeight": 16,
+  "canvasHeight": 32,
   "boundsX": 0,
   "boundsY": 0,
   "boundsWidth": 16,

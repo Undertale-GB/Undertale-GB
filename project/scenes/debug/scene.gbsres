@@ -5,8 +5,8 @@
   "type": "TOPDOWN",
   "name": "Debug",
   "symbol": "scene_debug",
-  "x": 611,
-  "y": 124,
+  "x": 608,
+  "y": 128,
   "width": 20,
   "height": 18,
   "backgroundId": "231f4ec6-4b02-461a-a4a1-194e39b60ba3",
@@ -77,15 +77,7 @@
           },
           {
             "type": "font",
-            "id": "be4454bf-4583-4683-ae77-0a0bedc5e82d"
-          },
-          {
-            "type": "font",
             "id": "83310758-af73-4193-825e-1fb70e7986e1"
-          },
-          {
-            "type": "font",
-            "id": "cf952bf5-8e3f-432a-b9bf-e91d27ed51a2"
           },
           {
             "type": "variable",
