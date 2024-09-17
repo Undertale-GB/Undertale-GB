@@ -40,7 +40,9 @@
           "type": "number",
           "value": 13
         },
-        "__collapseElse": false
+        "__collapseElse": false,
+        "__collapse": true,
+        "__label": "If Player entering through stairs"
       },
       "children": {
         "true": [
@@ -203,6 +205,14 @@
         ]
       },
       "id": "1d9283b8-5b15-4b0b-bb89-b1a594c2593d"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "39c248ca-b64a-4135-bdf2-a3686154940e",
+        "__collapse": true
+      },
+      "id": "b6e65be1-f678-429a-b31e-32fa5751e941"
     }
   ],
   "playerHit1Script": [],
