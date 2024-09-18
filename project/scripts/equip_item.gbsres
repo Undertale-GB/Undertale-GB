@@ -1,0 +1,117 @@
+{
+  "_resourceType": "script",
+  "id": "4b5ebb5b-e2d4-4fd6-9b04-3d336eadac5a",
+  "name": "Equip Item",
+  "symbol": "script_15",
+  "description": "Equips items like Weapons and Armor\n\nVariables:\n\nInventory Slot: Slot in the main inventory to equip\nItemID: ID of the Item to equip\nInventory Type (repurposed): what slot to equip to\n   0=Weapon,\n   1= Armor",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_VALUE VAR_ITEMID\nVM_PUSH_VALUE VAR_INVENTORY_SLOT_TEMP_\n;VM_PUSH_VALUE VAR_INVENTORY_TYPE_TEMP_;?",
+        "__collapse": false
+      },
+      "id": "fa51bc0f-6b72-475d-a21e-d0eeb97c60bb"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "32",
+        "value": {
+          "type": "variable",
+          "value": "33"
+        },
+        "__collapse": true
+      },
+      "id": "551f627c-2c65-44dc-9127-8d6f7f96f5c5"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "33",
+        "value": {
+          "type": "number",
+          "value": 1
+        },
+        "__collapse": true
+      },
+      "id": "5fea72d3-0d9c-4dcb-bb13-c6ee6a2aa871"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "d66f889f-302a-436b-b378-b32e0b74d760",
+        "__collapse": true
+      },
+      "id": "f6446da7-1ddc-4107-b9f4-62032f4385ce"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_VALUE VAR_ITEMID \nVM_SET VAR_ITEMID, .ARG2",
+        "__collapse": false
+      },
+      "id": "41951d67-8bff-4712-9849-13a0a8cfc6fa"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "11de989c-1c1a-4d29-81d1-b405f1663586",
+        "__collapse": true
+      },
+      "id": "4d2a9bb9-969f-46f9-9687-dbc2c13f1795"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET VAR_INVENTORY_SLOT_TEMP_, .ARG1"
+      },
+      "id": "5c4e851a-5bf7-4346-bbe6-8cb04cf50c54"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "33",
+        "value": {
+          "type": "number",
+          "value": 0
+        },
+        "__collapse": true
+      },
+      "id": "f61fdd5e-baf6-4da1-a43f-f76fe5e3f69f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "aa0b97e0-fc8b-4e41-bfc3-51b691feb438",
+        "__collapse": true
+      },
+      "id": "8109c9c5-7904-4082-9672-d3e7c7197a43"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET VAR_ITEMID, .ARG0"
+      },
+      "id": "5f724679-da7d-48f1-8a74-05c16d609e34"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c161350d-ed50-4985-becd-6c532d0a6e64",
+        "__collapse": true
+      },
+      "id": "9ddf6f10-2ff3-4bf2-8944-961d2f25b78a"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_POP 3",
+        "__collapse": false
+      },
+      "id": "0bb0f689-b4d1-4efe-8482-20cc60f10cfb"
+    }
+  ]
+}

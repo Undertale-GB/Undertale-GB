@@ -1,0 +1,96 @@
+{
+  "_resourceType": "scene",
+  "id": "b4887780-0a45-45e6-b7af-d171ae0018ff",
+  "_index": 26,
+  "type": "TOPDOWN",
+  "name": "Intro_01",
+  "symbol": "scene_intro_01",
+  "x": 112,
+  "y": 112,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "dce70c45-965b-4f67-b982-835f03dec8a6",
+  "tilesetId": "",
+  "paletteIds": [
+    "default-ui",
+    "6dad24ea-cdfb-4752-8027-735e96e81d53"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "playerSpriteSheetId": "a58fc11f-fa2c-4928-a1bc-3e3e640f9b85",
+  "script": [
+    {
+      "command": "EVENT_MUSIC_PLAY",
+      "args": {
+        "musicId": "da2056c7-842d-4ac5-9104-0337383f66fb"
+      },
+      "id": "f522194b-b899-4734-b010-7a2a6d56a816"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "d870498c-7a3e-470a-85c3-8a7bf4d6e28a",
+        "__collapse": false
+      },
+      "id": "3556fbbd-4fde-4753-8442-2aca23a0c491"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_OVERLAY_CLEAR 0, 0, 1, 1, .UI_COLOR_BLACK, 0\nVM_UNLOCK"
+      },
+      "id": "84169001-b426-440c-bb3f-2dce433b0270"
+    },
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "f7d4bab0-b9ab-4bc8-93e7-a9bce9075d8b"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1
+      },
+      "id": "cbe286f0-6b31-445b-9e55-8cf053015ec9"
+    },
+    {
+      "command": "PT_EVENT_BACKGROUND_TEXT",
+      "args": {
+        "text": "\\002\\004\\001\\4Long ago, two\\nraces ruled over\\nEarth: HUMANS\\nand MONSTERS.",
+        "x": 1,
+        "y": 12
+      },
+      "id": "d4f3eccb-0e61-4f12-918b-adcc0ad99a5f"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1
+      },
+      "id": "ad0a8a93-b971-4475-837b-c5124f79c597"
+    },
+    {
+      "command": "EVENT_SWITCH_SCENE",
+      "args": {
+        "sceneId": "ff526a0e-2bb1-4b89-a2e7-5119e1324870",
+        "x": {
+          "type": "number",
+          "value": 0
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        },
+        "direction": "down",
+        "fadeSpeed": "2"
+      },
+      "id": "c472e707-858f-49ad-97c2-1c65169e8ed1"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}

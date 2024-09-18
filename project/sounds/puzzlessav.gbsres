@@ -1,0 +1,9 @@
+{
+  "_resourceType": "sound",
+  "id": "5f17b054-188d-4c8b-8ddc-44ffc94fe123",
+  "name": "puzzles.sav",
+  "symbol": "sound_puzzles_sav",
+  "filename": "puzzles.sav",
+  "type": "fxhammer",
+  "numEffects": 12
+}

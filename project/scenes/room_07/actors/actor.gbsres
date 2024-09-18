@@ -1,0 +1,38 @@
+{
+  "_resourceType": "actor",
+  "id": "f3823530-9fa1-49b5-a756-091d25e7681c",
+  "_index": 0,
+  "symbol": "actor_25",
+  "prefabId": "",
+  "name": "",
+  "x": 58,
+  "y": 15,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "*The western room\n|is the eastern\n|room's blueprint."
+        ],
+        "avatarId": ""
+      },
+      "id": "95483a27-68ff-4da2-b8e2-2ca3735a39b7"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

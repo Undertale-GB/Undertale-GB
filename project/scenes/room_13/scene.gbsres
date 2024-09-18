@@ -1,0 +1,34 @@
+{
+  "_resourceType": "scene",
+  "id": "fc1df5ef-9d12-4129-89e3-c1e4bae23365",
+  "_index": 13,
+  "type": "TOPDOWN",
+  "name": "Room_13",
+  "symbol": "scene_room_13",
+  "x": 5064,
+  "y": 760,
+  "width": 58,
+  "height": 76,
+  "backgroundId": "3be91a85-8857-44ec-8c9f-b265ba1f9ed9",
+  "tilesetId": "",
+  "paletteIds": [
+    "",
+    "63a3e2f2-2a6d-4b91-8914-c58011a6672b",
+    "567ea9e8-99db-4455-a703-7d70ed1c64c6"
+  ],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "39c248ca-b64a-4135-bdf2-a3686154940e"
+      },
+      "id": "76042ba4-80bf-4500-9d44-b53c5b015c71"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "0020a+0f25+0039+0f!0039+0f!0039+0f!0039+0f!0015+0f18+00c+0f!002c+0f!00c+0f!002c+0f!00c+0f!002c+0f!00c+0f13+001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f4+0017+0f!0039+0f!0039+0f!0039+0f!0039+0f!001e+0f4+0017+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f20+003ea+0f6+002a+0fb+004+0f13+0018+0f!0020+0f!0018+0f!0020+0f!0018+0f!0020+0f!0018+0f!0020+0f!0018+0f15+00c+0f!002c+0f!00c+0f!002c+0f!00c+0f!002c+0f!00c+0f13+001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f!001e+0f!001a+0f20+00125+"
+}

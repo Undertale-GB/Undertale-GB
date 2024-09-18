@@ -1,0 +1,115 @@
+{
+  "_resourceType": "sprite",
+  "id": "0e8f35da-c505-4206-8a37-8aa12dbb2881",
+  "name": "TorielWallLampFix",
+  "symbol": "sprite_torielwalllampfix",
+  "numFrames": 1,
+  "filename": "TorielWallLampFix.png",
+  "checksum": "f81004107064eabd2417c4837dd9a42cea66edcf",
+  "width": 16,
+  "height": 16,
+  "states": [
+    {
+      "id": "3ba849ad-85ec-46c1-b052-8aafa418d7d7",
+      "name": "",
+      "animationType": "fixed",
+      "flipLeft": false,
+      "animations": [
+        {
+          "id": "f0a18ded-18ea-496b-b128-ef2a66e82c70",
+          "frames": [
+            {
+              "id": "8f9d5fa5-af7d-407a-a655-f551a3ba5261",
+              "tiles": [
+                {
+                  "id": "7cce0f0e-e570-47c3-90b5-47d613a198a8",
+                  "x": 0,
+                  "y": 0,
+                  "sliceX": 0,
+                  "sliceY": 0,
+                  "flipX": false,
+                  "flipY": false,
+                  "palette": 0,
+                  "paletteIndex": 6,
+                  "objPalette": "OBP0",
+                  "priority": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "a4c63a59-1485-464c-8678-a345058558e8",
+          "frames": [
+            {
+              "id": "02eb763a-30a1-4096-bec5-776d9adb427f",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "640b2b93-8a2a-49bd-82ee-a4000e95b048",
+          "frames": [
+            {
+              "id": "0343fd3f-464f-4c45-979d-7a0c2c9d6304",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "a632f54b-5b10-409c-a7f0-a09ac55d088a",
+          "frames": [
+            {
+              "id": "4a726cc9-a367-46f4-a791-d2acb542a055",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "a0f1813e-68d6-44a6-983a-8c0b6df30108",
+          "frames": [
+            {
+              "id": "97108b85-3a72-41ef-8f27-d7b3cee54d26",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "4dcc6cd1-38d6-4160-8e17-ff55c8e675ba",
+          "frames": [
+            {
+              "id": "04ede0fc-de00-4746-88f9-df92345f8f2b",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "5746cd57-a719-4f49-8d47-46e1126b3f70",
+          "frames": [
+            {
+              "id": "7141b3f3-6878-4690-a709-b15b380e1441",
+              "tiles": []
+            }
+          ]
+        },
+        {
+          "id": "c2058100-5002-4fbc-9a53-d90e75e95293",
+          "frames": [
+            {
+              "id": "1ae579fd-ca61-47a8-9725-7e4c2e30791d",
+              "tiles": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "numTiles": 1,
+  "canvasWidth": 16,
+  "canvasHeight": 16,
+  "boundsX": 0,
+  "boundsY": 0,
+  "boundsWidth": 16,
+  "boundsHeight": 16,
+  "animSpeed": 15
+}

@@ -1,0 +1,81 @@
+{
+  "_resourceType": "scene",
+  "id": "147ca1ef-aa1b-4cf9-a79d-b1d95d5896de",
+  "_index": 3,
+  "type": "TOPDOWN",
+  "name": "Room_02 (flowey)",
+  "symbol": "scene_room_02",
+  "x": 616,
+  "y": 1512,
+  "width": 32,
+  "height": 34,
+  "backgroundId": "f1761914-39a7-48fd-b398-fd598966071b",
+  "tilesetId": "",
+  "paletteIds": [
+    "",
+    "96ed06b5-ae33-4829-aebe-336481d6d229"
+  ],
+  "spritePaletteIds": [
+    "",
+    "",
+    "af23545e-e1ed-4021-8892-22adc06fec38",
+    "66360ae4-f505-4cd0-95c8-d7b77402d025",
+    "a12d0b0d-dedb-4ad8-8d13-35e5fb60811b"
+  ],
+  "autoFadeSpeed": 1,
+  "playerSpriteSheetId": "",
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET_TEXT_SOUND ___bank_sound_voices_sav_00, _sound_voices_sav_00, ___mute_mask_sound_voices_sav_00",
+        "references": []
+      },
+      "id": "bda5cb3a-7dfb-49ab-bcbd-2c30237a7d02"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "39c248ca-b64a-4135-bdf2-a3686154940e"
+      },
+      "id": "d192ba6f-e827-4923-a389-ec6a6ad19a78"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "variable": "42",
+        "operator": "==",
+        "comparator": 1,
+        "__collapseElse": true,
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "42"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "e7e9fef3-2732-49a1-9736-df05101412ef"
+            },
+            "id": "b16ea1f7-b034-40a3-83ee-25ff097ded41"
+          }
+        ],
+        "false": []
+      },
+      "id": "b2497c8b-311e-466f-94d6-0a0850766010"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00d+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f6+0016+0f5+004+0f5+0010+0f3+00c+0f3+00c+0f3+0010+0f3+008+0f3+0014+0f3+005+0f2+0018+0f2+004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f2+0018+0f2+005+0f3+0014+0f3+008+0f3+0010+0f3+00c+0f7+004+0f7+0014+0f!004+0f!001a+0f!004+0f!00d+"
+}

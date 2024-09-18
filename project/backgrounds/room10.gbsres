@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "d05cc171-deee-4e46-a90a-b676e5b0ccd3",
+  "name": "Room10",
+  "symbol": "bg_room10",
+  "width": 32,
+  "height": 48,
+  "imageWidth": 256,
+  "imageHeight": 384,
+  "filename": "Room10.png",
+  "tileColors": "0048+022+00c+022+0010+022+00c+022+0010+022+00c+022+0010+022+00c+022+0010+022+00c+022+0010+022+00c+022+009c+014+001c+014+001c+014+001c+014+001c+014+001c+014+0050+014+001c+014+001c+014+001c+014+0015c+016+001a+016+001a+016+001a+016+00152+",
+  "autoColor": false
+}

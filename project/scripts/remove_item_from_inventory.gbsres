@@ -1,0 +1,111 @@
+{
+  "_resourceType": "script",
+  "id": "2fb7e16d-50d8-423a-9158-7792397eaeb6",
+  "name": "Remove Item from inventory",
+  "symbol": "script_19",
+  "description": "removes the item in the specified inventory slot and moves all items after it to fill the gap\nVariables used:\n\nInventory Type: \n0 = Inventory, \n1 = Equipped Items (0 = Weapon, 1 = Armor),\n2 = Dimensional Box 1 / Regular Box,\n3 = Dimensional Box 2\n\nInventory Slot:\n0-indexed",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_GROUP",
+      "args": {
+        "__comment": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_PUSH_VALUE VAR_INVENTORY_SLOT_TEMP_"
+            },
+            "id": "6f97c239-850c-4235-bb48-9d4ecb0aa7e7"
+          },
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "38",
+              "value": {
+                "type": "number",
+                "value": 127
+              },
+              "__collapse": true
+            },
+            "id": "5f6e255f-867d-4b26-ab89-667b0fad9244"
+          },
+          {
+            "command": "EVENT_LOOP_WHILE",
+            "args": {
+              "expression": "$38$ != 0",
+              "__collapse": false,
+              "condition": {
+                "type": "expression",
+                "value": "$38$ != 0"
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_INC_VALUE",
+                  "args": {
+                    "variable": "32",
+                    "__collapse": false
+                  },
+                  "id": "87629803-8791-42dc-aa04-32ca3fbe1cbb"
+                },
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
+                    "__collapse": true
+                  },
+                  "id": "d71a6679-f57d-42fe-82a2-2574612278a3"
+                },
+                {
+                  "command": "EVENT_DEC_VALUE",
+                  "args": {
+                    "variable": "32",
+                    "__collapse": false
+                  },
+                  "id": "c3f717c1-9197-4bb6-9b3e-abe5d229e75e"
+                },
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "ca5fbe21-30a0-4bac-9b53-1eb27389dce9",
+                    "__collapse": true
+                  },
+                  "id": "424d6c51-34f0-47d1-b7e4-b12146e58225"
+                },
+                {
+                  "command": "EVENT_INC_VALUE",
+                  "args": {
+                    "variable": "32",
+                    "__collapse": false
+                  },
+                  "id": "78c746ad-cec7-4598-941e-f33724872865"
+                }
+              ]
+            },
+            "id": "4aea0da6-473e-4043-943a-57a2bc7479c2"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_SET VAR_INVENTORY_SLOT_TEMP_, .ARG0\nVM_POP 1"
+            },
+            "id": "d482597c-274e-4d55-a5f6-2d063af56b21"
+          }
+        ]
+      },
+      "id": "9f7594e1-0f53-4d0b-bad4-18708ecaf7be"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_VALUE VAR_INVENTORY_SLOT_TEMP_\nVM_CALL_NATIVE b_inv_remove_item, _inv_remove_item\nVM_POP 1"
+      },
+      "id": "f58429d5-f92b-4c83-82e1-16019442961d"
+    }
+  ]
+}

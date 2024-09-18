@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "3966f301-2ff2-4884-96fa-cc78a4a0178d",
+  "name": "Intro9",
+  "symbol": "bg_intro9",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "Intro9.png",
+  "tileColors": "",
+  "autoColor": false
+}

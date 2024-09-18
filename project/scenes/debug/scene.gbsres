@@ -1,0 +1,106 @@
+{
+  "_resourceType": "scene",
+  "id": "b63924c4-4ca2-41ff-8d56-099be68d5ad9",
+  "_index": 33,
+  "type": "TOPDOWN",
+  "name": "Debug",
+  "symbol": "scene_debug",
+  "x": 608,
+  "y": 128,
+  "width": 20,
+  "height": 18,
+  "backgroundId": "231f4ec6-4b02-461a-a4a1-194e39b60ba3",
+  "tilesetId": "",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "autoFadeSpeed": 1,
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "!F:cf952bf5-8e3f-432a-b9bf-e91d27ed51a2!{Test\n!F:af6efb91-51b6-465a-ae62-1dfb644a8665!{Test\n!F:83310758-af73-4193-825e-1fb70e7986e1!TEST!"
+        ],
+        "avatarId": ""
+      },
+      "id": "a58894a3-8d6b-4f07-b6dc-62c58b7fa7b8"
+    },
+    {
+      "command": "EVENT_SOUND_PLAY_EFFECT",
+      "args": {
+        "type": "55cba9a0-b51a-45d5-a129-4de762b0e7d1",
+        "priority": "medium",
+        "pitch": 4,
+        "frequency": 200,
+        "duration": 0.5,
+        "wait": true,
+        "effect": 1
+      },
+      "id": "744d5a4e-067f-4cd0-889a-3cc403dc39c9"
+    },
+    {
+      "command": "EVENT_SOUND_PLAY_EFFECT",
+      "args": {
+        "type": "55cba9a0-b51a-45d5-a129-4de762b0e7d1",
+        "priority": "medium",
+        "pitch": 4,
+        "frequency": 200,
+        "duration": 0.5,
+        "wait": true,
+        "effect": 0
+      },
+      "id": "37a769cc-ca1d-4e07-9e7f-a3975214db11"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "references": [
+          {
+            "type": "variable",
+            "id": "1"
+          },
+          {
+            "type": "variable",
+            "id": "4"
+          },
+          {
+            "type": "variable",
+            "id": "6"
+          },
+          {
+            "type": "font",
+            "id": "65b14082-e495-439d-998b-852e6b72073f"
+          },
+          {
+            "type": "font",
+            "id": "af6efb91-51b6-465a-ae62-1dfb644a8665"
+          },
+          {
+            "type": "font",
+            "id": "83310758-af73-4193-825e-1fb70e7986e1"
+          },
+          {
+            "type": "variable",
+            "id": "44"
+          },
+          {
+            "type": "variable",
+            "id": "45"
+          }
+        ]
+      },
+      "id": "d793ccbd-62e1-4a35-ac55-a10a07eb1b94"
+    },
+    {
+      "command": "EVENT_INC_VALUE",
+      "args": {
+        "variable": "L0"
+      },
+      "id": "964458eb-c016-48f8-8ca0-ed2794d441c3"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00168+"
+}

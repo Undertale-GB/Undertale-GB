@@ -1,0 +1,58 @@
+{
+  "_resourceType": "scene",
+  "id": "af57949c-8221-47b4-b91b-7cd34fc99d09",
+  "_index": 40,
+  "type": "TOPDOWN",
+  "name": "Room_04",
+  "symbol": "scene_42",
+  "x": 616,
+  "y": 952,
+  "width": 32,
+  "height": 24,
+  "backgroundId": "4c4105de-97ca-4fda-84ee-2222fbee256f",
+  "tilesetId": "",
+  "paletteIds": [
+    "",
+    "567ea9e8-99db-4455-a703-7d70ed1c64c6",
+    "",
+    "",
+    "b6669f48-5bca-40a6-994c-4ad37c0415e7",
+    "195dc3d6-4829-47f5-8a4a-88231ff89322"
+  ],
+  "spritePaletteIds": [
+    "",
+    "",
+    "af23545e-e1ed-4021-8892-22adc06fec38",
+    "66360ae4-f505-4cd0-95c8-d7b77402d025",
+    "163bd4ff-b91f-4a56-b0d5-ddb5e439d402",
+    "febb35e6-e85e-4843-a2a4-739d9bd45eb3",
+    "febb35e6-e85e-4843-a2a4-739d9bd45eb3",
+    "feefa7dd-b7fa-46fe-8023-452e533e7587"
+  ],
+  "autoFadeSpeed": 1,
+  "autoFadeEventCollapse": true,
+  "script": [
+    {
+      "command": "EVENT_TEXT_SET_ANIMATION_SPEED",
+      "args": {
+        "speedIn": 1,
+        "speedOut": 1,
+        "speed": 2,
+        "allowFastForward": false
+      },
+      "id": "c8601aec-77d6-432c-a897-c7165991d721"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "\n;button 1\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 17, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 16, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 2\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 3\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 15, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 14, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 4\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 20, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 13, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 20, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 21, 12, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 5\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 18, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 18, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 19, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\n;button 6\nVM_PUSH_CONST 10\nVM_PUSH_CONST 9\nVM_PUSH_CONST 12\nVM_PUSH_CONST 11\nVM_REPLACE_TILE_XY 22, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 11, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 22, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1\nVM_REPLACE_TILE_XY 23, 10, ___bank_bg_misc_tileset, _bg_misc_tileset .ARG0\nVM_POP 1",
+        "__collapse": true
+      },
+      "id": "b939731f-7f5b-400b-b4db-21fdf29545ce"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "00b+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f!004+0f!001a+0f6+0014+0f7+004+0f9+00c+0f!0012+0f!00a+0f3+0012+0f3+008+0f!0016+0f!008+0f!0016+0f3+006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f2+0016+0f2+007+0f2+0014+0f2+009+0f4+0010+0f2+00d+0f2+00e+0f2+00f+0f5+004+0f7+0014+0f!004+0f!00d+"
+}
