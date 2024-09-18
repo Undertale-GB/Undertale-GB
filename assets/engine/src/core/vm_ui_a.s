@@ -28,8 +28,10 @@ _itoa_fmt::
 
     ld      A, D
     add     A, A
-    jr      NC, 2$
-
+    jr      C, 3$
+    call    .utoa_fmt
+    jr      2$
+3$:
     rra         ; DE = abs(DE)
     cpl
     ld      D, A
@@ -48,9 +50,8 @@ _itoa_fmt::
     ld      (BC), A
     inc     BC
 
-2$:
     call    .utoa_fmt
-
+2$:
     ld      H, B
     ld      L, C
     pop     DE

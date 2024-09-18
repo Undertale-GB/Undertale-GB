@@ -1,9 +1,0 @@
-{
-  "_resourceType": "music",
-  "id": "afb104d3-683a-4baf-8394-060002449cce",
-  "name": "Settings",
-  "symbol": "song_settings",
-  "filename": "Settings.uge",
-  "settings": {},
-  "type": "uge"
-}
