@@ -1,8 +1,8 @@
 {
   "_resourceType": "settings",
-  "startSceneId": "b4887780-0a45-45e6-b7af-d171ae0018ff",
-  "startX": 0,
-  "startY": 0,
+  "startSceneId": "6a615439-fb8c-4753-85f1-a387caa0f013",
+  "startX": 10,
+  "startY": 12,
   "startMoveSpeed": 1,
   "startAnimSpeed": 15,
   "startDirection": "up",
@@ -40,7 +40,8 @@
     "ADVENTURE": "f8206024-75de-41ed-838d-5a8d52fb5b16",
     "SHMUP": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
     "POINTNCLICK": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
-    "LOGO": "581d34d0-9591-4e6e-a609-1d94f203b0cd"
+    "LOGO": "581d34d0-9591-4e6e-a609-1d94f203b0cd",
+    "utgb_battle": "f8206024-75de-41ed-838d-5a8d52fb5b16"
   },
   "musicDriver": "huge",
   "cartType": "mbc5",

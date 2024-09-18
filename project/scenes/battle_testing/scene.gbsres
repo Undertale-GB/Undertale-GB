@@ -1,0 +1,24 @@
+{
+  "_resourceType": "scene",
+  "id": "6a615439-fb8c-4753-85f1-a387caa0f013",
+  "_index": 46,
+  "name": "Battle Testing",
+  "backgroundId": "952baa32-2635-4fb6-b881-08b289bbdc6e",
+  "tilesetId": "",
+  "width": 20,
+  "height": 18,
+  "type": "utgb_battle",
+  "paletteIds": [
+    "f28f94b8-5237-4219-b184-04a3c24fe464"
+  ],
+  "spritePaletteIds": [],
+  "collisions": "",
+  "autoFadeSpeed": 1,
+  "symbol": "scene_47",
+  "x": 696,
+  "y": 432,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}
