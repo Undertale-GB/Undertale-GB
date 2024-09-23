@@ -10,6 +10,9 @@
 #include "input.h"
 #include "trigger.h"
 #include "vm.h"
+#include "ui.h"
+
+#include "utgb_battle_drawing.h"
 
 //debug only!
 #include "data/sprite_toriel.h"
@@ -18,6 +21,10 @@ UBYTE bbox_left, bbox_right;
 UBYTE bbox_up, bbox_down;
 uint16_t attackTimer;
 
+const uint8_t dialogue_bbox_left = 18;
+const uint8_t dialogue_bbox_right = 141;
+const uint8_t dialogue_bbox_up = 74;
+const uint8_t dialogue_bbox_down = 117;
 
 
 const metasprite_t var_metasprite_end = {metasprite_end};
@@ -95,10 +102,16 @@ void utgb_battle_init(void) BANKED {
     //actor_set_anim(&PLAYER, ANIM_CURSOR);
 
     //========================== Debug Start ==========================//
+    /*
     bbox_left = 37;
     bbox_right = 122;
     bbox_up = 77;
     bbox_down = 114;
+    */
+    bbox_left = 72;
+    bbox_right = 87;
+    bbox_up = 88;
+    bbox_down = 103;
 
     attackTimer = 0;
     num_attack_metasprites = 0;
@@ -155,8 +168,8 @@ void utgb_battle_update(void) BANKED {
 
     attackTimer++;
     num_attack_metasprites = 1;
-
-    for (int8_t i = 0; i < 6; i++) {
+    /*
+    for (uint8_t i = 0; i < 6; i++) {
 
         metasprite_t tmp = { .dy = 77 + 16, .dx = 37 + 8 - 2 + ((i << 4) + attackTimer) % (64 + 16), .dtile = 16, .props = 11 };
         if(tmp.dx < (122 + 6)) {
@@ -164,9 +177,38 @@ void utgb_battle_update(void) BANKED {
         }
         
     }
-
+    */
 
     //========================== Debug End ==========================//
+
+    //temp start
+    //utgb_draw_battle_attackbg();
+
+    //uint8_t prevLineX = (attackTimer - 1) % 8;
+    //uint8_t lineX = attackTimer % 8;
+
+    //get_bkg_data(0x20, 1, vwf_tile_data);
+
+    //vram_buffer_draw_rect(vwf_tile_data, lineX, lineX, 0, 7, 0);
+    //vram_buffer_draw_rect(vwf_tile_data, prevLineX, prevLineX, 0, 7, 1);
+
+    //set_bkg_data(0x20, 1, vwf_tile_data);
+    //if(attackTimer%8 == 0) bbox_right++;
+
+    utgb_draw_battle_border(bbox_left-1, bbox_up-1, bbox_right+1, bbox_down+1);
+    if(attackTimer > 180) {
+        if(bbox_left < dialogue_bbox_left) bbox_left++;
+        if(bbox_left > dialogue_bbox_left) bbox_left--;
+        if(bbox_right < dialogue_bbox_right) bbox_right++;
+        if(bbox_right > dialogue_bbox_right) bbox_right--;
+        if(bbox_up < dialogue_bbox_up) bbox_up++;
+        if(bbox_up > dialogue_bbox_up) bbox_up--;
+        if(bbox_down < dialogue_bbox_down) bbox_down++;
+        if(bbox_down > dialogue_bbox_down) bbox_down--;
+    }
+    
+    
+    //temp end
 
     player_moving = FALSE;
 

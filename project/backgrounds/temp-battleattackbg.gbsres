@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "2dc7e864-5a3e-493f-b2e5-be8ae484335d",
+  "name": "!temp-battleAttackBG",
+  "symbol": "bg_temp_battleattackbg",
+  "width": 14,
+  "height": 4,
+  "imageWidth": 112,
+  "imageHeight": 32,
+  "filename": "!temp-battleAttackBG.png",
+  "tileColors": "034+026+038+026+038+026+038+026+034+",
+  "autoColor": false
+}
