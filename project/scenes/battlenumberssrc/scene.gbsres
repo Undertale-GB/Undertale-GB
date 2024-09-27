@@ -1,0 +1,22 @@
+{
+  "_resourceType": "scene",
+  "id": "ff1666b8-993d-4a66-ba6c-6151b6ef0370",
+  "_index": 46,
+  "name": "BattleNumbersSrc",
+  "backgroundId": "1fe08248-80bf-4151-b1f3-4afc58af5675",
+  "tilesetId": "",
+  "width": 20,
+  "height": 18,
+  "type": "TOPDOWN",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "",
+  "autoFadeSpeed": 1,
+  "symbol": "scene_47",
+  "x": 1088,
+  "y": 128,
+  "script": [],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

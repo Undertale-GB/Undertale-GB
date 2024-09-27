@@ -222,6 +222,26 @@
       "symbol": "var_have_you_killed_toriel"
     },
     {
+      "id": "44",
+      "name": "BattleDialogueID",
+      "symbol": "var_battledialogueid"
+    },
+    {
+      "id": "45",
+      "name": "Defense(Enemy)",
+      "symbol": "var_defense_enemy_"
+    },
+    {
+      "id": "46",
+      "name": "Attack(Enemy)",
+      "symbol": "var_attack_enemy_"
+    },
+    {
+      "id": "47",
+      "name": "ActState",
+      "symbol": "var_actstate"
+    },
+    {
       "id": "9fa0dedf-e220-4b04-bf34-4155ac3d4d88__L0",
       "name": "Counter",
       "symbol": "var_counter_0"
@@ -315,6 +335,26 @@
       "id": "518b3cea-f6e0-4551-a439-5faf3a44ddd1__L0",
       "name": "Local 0",
       "symbol": "var_local_3"
+    },
+    {
+      "id": "8699695d-3cc9-402b-b3c2-46a420041f22__L0",
+      "name": "Local 0",
+      "symbol": "var_local_4"
+    },
+    {
+      "id": "27e48d31-865a-466f-ba5e-b07851f3e1e7__L1",
+      "name": "Fight Timer_Local1",
+      "symbol": "var_fight_timer_local1"
+    },
+    {
+      "id": "27e48d31-865a-466f-ba5e-b07851f3e1e7__L2",
+      "name": "DamageDealt_Local2",
+      "symbol": "var_damagedealt_local2"
+    },
+    {
+      "id": "27e48d31-865a-466f-ba5e-b07851f3e1e7__L0",
+      "name": "Battle_A_LOCAL_0",
+      "symbol": "var_battle_a_local_0"
     }
   ]
 }

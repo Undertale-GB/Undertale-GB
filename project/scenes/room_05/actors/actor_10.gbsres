@@ -25,7 +25,7 @@
       "command": "EVENT_GROUP",
       "args": {
         "__label": "Water Tileswapping",
-        "__collapse": true
+        "__collapse": false
       },
       "children": {
         "true": [
