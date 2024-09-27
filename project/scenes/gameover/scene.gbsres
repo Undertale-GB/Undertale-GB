@@ -1,7 +1,7 @@
 {
   "_resourceType": "scene",
   "id": "908ee9ef-25ca-4673-b0bb-2841ef92252f",
-  "_index": 36,
+  "_index": 34,
   "type": "TOPDOWN",
   "name": "GameOver",
   "symbol": "scene_gameover",

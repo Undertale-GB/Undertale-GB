@@ -1,0 +1,70 @@
+{
+  "_resourceType": "actor",
+  "id": "75032eab-38d3-4f6c-9359-466e8f7d171e",
+  "name": "Battle Actor 1",
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "prefabId": "",
+  "direction": "down",
+  "moveSpeed": 0.5,
+  "animSpeed": 15,
+  "paletteId": "",
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "_index": 3,
+  "symbol": "actor_68",
+  "x": 18,
+  "y": 10,
+  "script": [],
+  "startScript": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "425691cb-7721-48a2-bb68-d5c801bbcb06"
+    },
+    {
+      "command": "EVENT_ACTOR_STOP_UPDATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "0b4e1522-03fe-4d57-b286-96dc99784a84"
+    }
+  ],
+  "updateScript": [
+    {
+      "command": "EVENT_ACTOR_MOVE_TO",
+      "args": {
+        "actorId": "75032eab-38d3-4f6c-9359-466e8f7d171e",
+        "x": {
+          "type": "property",
+          "target": "player",
+          "property": "pxpos"
+        },
+        "y": {
+          "type": "property",
+          "target": "player",
+          "property": "pypos"
+        },
+        "moveType": "diagonal",
+        "useCollisions": false,
+        "units": "pixels"
+      },
+      "id": "3b28a90e-a1c5-438b-bad4-f0fdb27d795f"
+    },
+    {
+      "command": "EVENT_ACTOR_STOP_UPDATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "6c41bf9f-29b0-4118-ac58-1cf135965d6a"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

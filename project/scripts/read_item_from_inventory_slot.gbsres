@@ -1,11 +1,11 @@
 {
   "_resourceType": "script",
-  "id": "d66f889f-302a-436b-b378-b32e0b74d760",
+  "id": "79675d3b-2253-40f7-8fc2-8a49b2db11dd",
   "name": "Read Item from Inventory Slot",
-  "symbol": "script_9",
   "description": "Writes the item ID at a specific slot into a Variable\nVariables used:\n\nInventory Type: \n0 = Inventory, \n1 = Equipped Items (0 = Weapon, 1 = Armor),\n2 = Dimensional Box 1 / Regular Box,\n3 = Dimensional Box 2\n\nInventory Slot:\n0-indexed\n\nOutput Variable: ItemID",
   "variables": {},
   "actors": {},
+  "symbol": "script_0",
   "script": [
     {
       "command": "EVENT_GBVM_SCRIPT",
@@ -35,19 +35,27 @@
           },
           {
             "type": "variable",
+            "id": "32"
+          },
+          {
+            "type": "variable",
             "id": "33"
           },
           {
             "type": "variable",
             "id": "41"
-          },
-          {
-            "type": "variable",
-            "id": "32"
           }
-        ]
+        ],
+        "__comment": true
       },
-      "id": "ad921302-3e1f-49d8-b097-e9d901988656"
+      "id": "9cb6c354-e866-43ba-aad3-b6395df90a9f"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_PUSH_VALUE VAR_INVENTORY_TYPE_TEMP_\nVM_PUSH_VALUE VAR_INVENTORY_SLOT_TEMP_\nVM_CALL_NATIVE b_inv_read_item, _inv_read_item\nVM_SET VAR_ITEMID, .ARG0\nVM_POP 2"
+      },
+      "id": "7896e8b8-334b-4e11-b12a-a709379e80c3"
     }
   ]
 }
