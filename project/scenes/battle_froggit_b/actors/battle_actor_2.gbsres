@@ -1,0 +1,96 @@
+{
+  "_resourceType": "actor",
+  "id": "4beff641-d7e6-48f0-82be-a4cc4b819dec",
+  "name": "Battle Actor 2",
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "318dde55-9f1b-4411-b923-12cbff8b58c9",
+  "prefabId": "",
+  "direction": "down",
+  "moveSpeed": 0.5,
+  "animSpeed": 15,
+  "paletteId": "",
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "_index": 0,
+  "symbol": "actor_7",
+  "x": 18,
+  "y": 11,
+  "script": [],
+  "startScript": [
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "3d705b2a-00f3-4ef7-9f74-8bf9fa7466f0"
+    },
+    {
+      "command": "EVENT_ACTOR_STOP_UPDATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "b3de3994-8f4d-4766-b9f9-d91d9e67e33a"
+    }
+  ],
+  "updateScript": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "variable": "4",
+        "operator": "==",
+        "comparator": "0",
+        "__collapseElse": true,
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "4"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_MOVE_TO",
+            "args": {
+              "actorId": "$self$",
+              "x": {
+                "type": "property",
+                "target": "player",
+                "property": "pxpos"
+              },
+              "y": {
+                "type": "property",
+                "target": "player",
+                "property": "pypos"
+              },
+              "moveType": "diagonal",
+              "useCollisions": false,
+              "units": "pixels"
+            },
+            "id": "3b476be1-3340-4111-acda-cf589d434bc6"
+          }
+        ],
+        "false": []
+      },
+      "id": "c1b4131a-e3e3-4eb2-a735-f120c9cab227"
+    },
+    {
+      "command": "EVENT_ACTOR_STOP_UPDATE",
+      "args": {
+        "actorId": "$self$"
+      },
+      "id": "bb39a138-b4cf-4034-9c37-0b22cb7fa1e8"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

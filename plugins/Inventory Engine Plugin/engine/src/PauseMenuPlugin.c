@@ -129,7 +129,7 @@ void copy_screen_area_to_overlay(SCRIPT_CTX * THIS, UBYTE x, UBYTE y, UBYTE w, U
 // Shorten ui_run_menu() commands
 #define PM_DEFAULT _current_bank, (MENU_CANCEL_B | MENU_SET_START)
 const char PM_InstSpeed[] = "\001\001";
-const char PM_SmallFont[] = FONT_SMALL;
+const char PM_SmallFont[] = FONT_SMALL_COLOR;
 const char PM_ColoredFont[] = FONT_VARWIDTH_COLOR;
 
 
