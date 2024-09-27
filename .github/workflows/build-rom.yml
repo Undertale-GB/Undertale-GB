@@ -23,6 +23,7 @@ jobs:
         run: |
           git clone https://github.com/chrismaltby/gb-studio.git
           cd gb-studio
+          corepack enable
           yarn
           npm run make:cli
           yarn link
