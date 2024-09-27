@@ -14,7 +14,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.14.0
+          node-version: 21.7.1
 
       - name: Install Yarn
         run: npm install -g yarn
@@ -32,7 +32,7 @@ jobs:
       - name: Export Project and Make ROM
         run: |
           cd gb-studio
-          gb-studio-cli make:rom ../"Undertale GB Main.gbsproj" out/game.gb
+          gb-studio-cli make:rom ../"Undertale GB.gbsproj" out/game.gb
 
       - name: Upload Artifact
         id: upload-artifact
