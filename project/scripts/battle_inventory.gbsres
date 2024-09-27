@@ -157,7 +157,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cBandage\"",
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\002\\003%c%cBandage\"",
                           "__collapse": false
                         },
                         "id": "0654d41f-2f01-430d-a998-b75944fbd83f"
@@ -167,7 +167,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cMnstrCndy\"",
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\002\\003%c%cMnstrCndy\"",
                           "__collapse": false
                         },
                         "id": "820dd640-1c06-4da9-bba9-8500f860cee7"
@@ -177,7 +177,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cSpidrDont\""
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\002\\003%c%cSpidrDont\""
                         },
                         "id": "0bea9495-bd42-430b-827c-2ca8275e957c"
                       }
@@ -186,7 +186,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cSpidrCidr\""
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\002\\003%c%cSpidrCidr\""
                         },
                         "id": "7801b11e-79ce-462b-a516-0e526842a18c"
                       }
@@ -195,7 +195,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cButtsPie\""
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\002\\003%c%cButtsPie\""
                         },
                         "id": "59d8a7ba-cc8e-47a3-87e1-138517f9cbf3"
                       }
@@ -204,7 +204,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cStick\""
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\002\\003%c%cStick\""
                         },
                         "id": "6d61c2f5-2e89-4050-8ca1-1bb5652dd1bd"
                       }
@@ -213,7 +213,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cToy Knife\""
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\002\\003%c%cToy Knife\""
                         },
                         "id": "dc34c45b-235d-406e-bfed-dfb37e9d178c"
                       }
@@ -222,7 +222,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\005\\003%c%cRibbon\""
+                          "script": "VM_LOAD_TEXT 2\n.dw VAR_TEXT_X, VAR_TEXT_Y\n.asciz \"\\001\\1\\002\\002\\003%c%cRibbon\""
                         },
                         "id": "4be4c9d8-2589-4394-9c89-d338a378ddcd"
                       }
@@ -282,7 +282,7 @@
                 {
                   "command": "EVENT_GBVM_SCRIPT",
                   "args": {
-                    "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\002\\005\\003\\012\\05Next\""
+                    "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\002\\002\\003\\012\\05Next\""
                   },
                   "id": "c3e88882-1a7b-4304-abc5-116c9be81934"
                 }
@@ -291,7 +291,7 @@
                 {
                   "command": "EVENT_GBVM_SCRIPT",
                   "args": {
-                    "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\002\\005\\003\\012\\05Prev\""
+                    "script": "VM_LOAD_TEXT 0\n.asciz \"\\001\\1\\002\\002\\003\\012\\05Prev\""
                   },
                   "id": "25c43257-833b-4578-b742-9a8bd549a90f"
                 }
