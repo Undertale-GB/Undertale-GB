@@ -27,13 +27,12 @@ jobs:
           yarn
           npm run make:cli
           yarn link
-          chmod 777 /usr/local/bin/gb-studio-cli
           cd ..
 
       - name: Export Project and Make ROM
         run: |
           cd gb-studio
-          gb-studio-cli make:rom ../"Undertale GB.gbsproj" out/game.gb
+          $(yarn bin gb-studio-cli) make:rom ../"Undertale GB.gbsproj" out/game.gb
 
       - name: Upload Artifact
         id: upload-artifact
