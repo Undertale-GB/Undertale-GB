@@ -355,6 +355,36 @@
       "id": "27e48d31-865a-466f-ba5e-b07851f3e1e7__L0",
       "name": "Battle_A_LOCAL_0",
       "symbol": "var_battle_a_local_0"
+    },
+    {
+      "id": "89e47f9b-62d1-4d70-8d43-433951103bb8__L0",
+      "name": "BottomMenu",
+      "symbol": "var_bottommenu_0"
+    },
+    {
+      "id": "89e47f9b-62d1-4d70-8d43-433951103bb8__L1",
+      "name": "CursorX",
+      "symbol": "var_cursorx"
+    },
+    {
+      "id": "89e47f9b-62d1-4d70-8d43-433951103bb8__L2",
+      "name": "CursorY",
+      "symbol": "var_cursory"
+    },
+    {
+      "id": "89e47f9b-62d1-4d70-8d43-433951103bb8__L3",
+      "name": "CharacterID",
+      "symbol": "var_characterid"
+    },
+    {
+      "id": "89e47f9b-62d1-4d70-8d43-433951103bb8__L4",
+      "name": "charIsLowercase",
+      "symbol": "var_charislowercase"
+    },
+    {
+      "id": "89e47f9b-62d1-4d70-8d43-433951103bb8__L5",
+      "name": "CharCount",
+      "symbol": "var_charcount"
     }
   ]
 }

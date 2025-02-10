@@ -1,0 +1,137 @@
+{
+  "_resourceType": "script",
+  "id": "438eddd9-6028-41e3-b671-4a3657706f63",
+  "name": "NameEntry_UpdateCursor",
+  "description": "",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "BottomMemu",
+      "passByReference": true
+    }
+  },
+  "actors": {},
+  "symbol": "script_11",
+  "script": [
+    {
+      "command": "EVENT_SWITCH",
+      "args": {
+        "variable": "V0",
+        "choices": 4,
+        "__collapseCase0": false,
+        "value0": 0,
+        "__collapseCase1": false,
+        "value1": 1,
+        "__collapseCase2": false,
+        "value2": 2,
+        "__collapseCase3": false,
+        "value3": 3,
+        "__collapseCase4": false,
+        "value4": 5,
+        "__collapseCase5": false,
+        "value5": 6,
+        "__collapseCase6": false,
+        "value6": 7,
+        "__collapseCase7": false,
+        "value7": 8,
+        "__collapseCase8": false,
+        "value8": 9,
+        "__collapseCase9": false,
+        "value9": 10,
+        "__collapseCase10": false,
+        "value10": 11,
+        "__collapseCase11": false,
+        "value11": 12,
+        "__collapseCase12": false,
+        "value12": 13,
+        "__collapseCase13": false,
+        "value13": 14,
+        "__collapseCase14": false,
+        "value14": 15,
+        "__collapseCase15": false,
+        "value15": 16,
+        "__collapseElse": true
+      },
+      "children": {
+        "true0": [
+          {
+            "command": "EVENT_PALETTE_SET_BACKGROUND",
+            "args": {
+              "palette0": "keep",
+              "palette1": "default-ui",
+              "palette2": "default-ui",
+              "palette3": "default-ui",
+              "palette4": "keep",
+              "palette5": "keep",
+              "palette6": "keep",
+              "palette7": "keep"
+            },
+            "id": "d5709683-f6b1-47cf-9ed3-7736cfecf77d"
+          }
+        ],
+        "true1": [
+          {
+            "command": "EVENT_PALETTE_SET_BACKGROUND",
+            "args": {
+              "palette0": "keep",
+              "palette1": "bb838eeb-5a51-494a-9e73-91b45d826233",
+              "palette2": "default-ui",
+              "palette3": "default-ui",
+              "palette4": "keep",
+              "palette5": "keep",
+              "palette6": "keep",
+              "palette7": "keep"
+            },
+            "id": "1f227a99-e195-4794-a187-2775b9ad8cd9"
+          }
+        ],
+        "true2": [
+          {
+            "command": "EVENT_PALETTE_SET_BACKGROUND",
+            "args": {
+              "palette0": "keep",
+              "palette1": "default-ui",
+              "palette2": "bb838eeb-5a51-494a-9e73-91b45d826233",
+              "palette3": "default-ui",
+              "palette4": "keep",
+              "palette5": "keep",
+              "palette6": "keep",
+              "palette7": "keep"
+            },
+            "id": "4b97aa26-b79c-48f3-aa06-b9362f6f0d66"
+          }
+        ],
+        "true3": [
+          {
+            "command": "EVENT_PALETTE_SET_BACKGROUND",
+            "args": {
+              "palette0": "keep",
+              "palette1": "default-ui",
+              "palette2": "default-ui",
+              "palette3": "bb838eeb-5a51-494a-9e73-91b45d826233",
+              "palette4": "keep",
+              "palette5": "keep",
+              "palette6": "keep",
+              "palette7": "keep"
+            },
+            "id": "2c564c04-abe9-499c-83c9-2a8bf3700d0e"
+          }
+        ],
+        "true4": [],
+        "true5": [],
+        "true6": [],
+        "true7": [],
+        "true8": [],
+        "true9": [],
+        "true10": [],
+        "true11": [],
+        "true12": [],
+        "true13": [],
+        "true14": [],
+        "true15": [],
+        "false": []
+      },
+      "id": "b251ac48-b342-4ef1-abe3-aaf54904e3e6"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "26e63a28-6fa8-40c0-a2a3-9c47e5551fff",
+  "name": "NameEntry_1",
+  "symbol": "bg_nameentry_1",
+  "width": 20,
+  "height": 18,
+  "imageWidth": 160,
+  "imageHeight": 144,
+  "filename": "NameEntry_1.png",
+  "tileColors": "00142+014+028+00!034+0015+",
+  "autoColor": false
+}
