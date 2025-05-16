@@ -57,7 +57,8 @@
                         "value": 0
                       }
                     },
-                    "__collapseElse": false
+                    "__collapseElse": false,
+                    "__collapse": false
                   },
                   "children": {
                     "true": [
@@ -67,7 +68,7 @@
                           "text": [
                             "* The first switch \nis over on the wall."
                           ],
-                          "__scriptTabs": "text",
+                          "__scriptTabs": "layout",
                           "minHeight": 4,
                           "maxHeight": 7,
                           "position": "top",
@@ -78,7 +79,9 @@
                           "textY": 1,
                           "textHeight": 3,
                           "closeWithButtons": "a",
-                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3"
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "open_speed": "default",
+                          "openSpeed": "instant"
                         },
                         "id": "96816bf7-9117-483b-a86d-93d5895a49e8"
                       },
@@ -97,7 +100,7 @@
                           "text": [
                             "* Do you need some \n* help .. ? \n* Press the switch \n* on the wall."
                           ],
-                          "__scriptTabs": "text",
+                          "__scriptTabs": "layout",
                           "minHeight": 6,
                           "maxHeight": 7,
                           "position": "top",
@@ -108,7 +111,8 @@
                           "textY": 1,
                           "textHeight": 4,
                           "closeWithButtons": "a",
-                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3"
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
                         },
                         "id": "701ff577-f84d-48f2-a4f9-8816ab402cbb"
                       },
@@ -118,7 +122,7 @@
                           "text": [
                             "* Come on, \n* you can do it!"
                           ],
-                          "__scriptTabs": "text",
+                          "__scriptTabs": "layout",
                           "minHeight": 4,
                           "maxHeight": 7,
                           "position": "top",
@@ -129,7 +133,8 @@
                           "textY": 1,
                           "textHeight": 3,
                           "closeWithButtons": "a",
-                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3"
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
                         },
                         "id": "47c691e0-ffda-4763-b189-5d90dc90192d"
                       }
@@ -176,7 +181,7 @@
                           "text": [
                             "* Go on, press the\n switch on the left."
                           ],
-                          "__scriptTabs": "text",
+                          "__scriptTabs": "layout",
                           "minHeight": 4,
                           "maxHeight": 7,
                           "position": "top",
@@ -187,7 +192,8 @@
                           "textY": 1,
                           "textHeight": 3,
                           "closeWithButtons": "a",
-                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3"
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
                         },
                         "id": "bd8b4ef1-f414-498e-84df-3c2d13234791"
                       },
@@ -217,7 +223,8 @@
                           "textY": 1,
                           "textHeight": 3,
                           "closeWithButtons": "a",
-                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3"
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
                         },
                         "id": "16c3e196-d14a-413b-9de9-dab5ef6312e1"
                       },
@@ -227,7 +234,7 @@
                           "text": [
                             "* Press the switch\n  I labeled for you."
                           ],
-                          "__scriptTabs": "text",
+                          "__scriptTabs": "layout",
                           "minHeight": 4,
                           "maxHeight": 7,
                           "position": "top",
@@ -238,7 +245,8 @@
                           "textY": 1,
                           "textHeight": 2,
                           "closeWithButtons": "a",
-                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3"
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
                         },
                         "id": "23a4a60f-0029-4ec9-ab1d-a10f3d2dae30"
                       }

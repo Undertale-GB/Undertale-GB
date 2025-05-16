@@ -115,7 +115,7 @@
                   "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
                   "args": {
                     "text": [
-                      "* Let us move to the\n next room."
+                      "* Let us move to\n  the next room."
                     ],
                     "__scriptTabs": "text",
                     "minHeight": 4,
