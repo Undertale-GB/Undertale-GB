@@ -241,8 +241,8 @@ const compile = (input, helpers) => {
   console.log(input);
   console.log(maxHeight, minHeight, textX, textY, textHeight);
 
-  const speedIn = `.OVERLAY_IN_SPEED`;
-  const speedOut = `.OVERLAY_OUT_SPEED`;
+  const speedIn = `.OVERLAY_SPEED_INSTANT`;
+  const speedOut = `.OVERLAY_SPEED_INSTANT`;
 
   const textInputs = Array.isArray(input.text) ? input.text : [input.text];
   const avatarId = input.avatarId;
