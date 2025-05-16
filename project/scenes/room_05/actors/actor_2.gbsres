@@ -37,8 +37,9 @@
     {
       "command": "EVENT_IF_EXPRESSION",
       "args": {
-        "expression": "$11$ && $10$ >= 1",
-        "__collapseElse": false
+        "expression": "$11$ && $10$ >= 1 && $00$ != 5",
+        "__collapseElse": false,
+        "__collapse": false
       },
       "children": {
         "true": [
@@ -79,6 +80,99 @@
               }
             },
             "id": "6ad482f2-ffcc-46e6-b7bc-9572911ed3c2"
+          },
+          {
+            "command": "UTGB_EVENT_BUTTON_FREEZE_WRAPPER",
+            "args": {
+              "vmunlock": "true",
+              "variable": "T0",
+              "__collapse": false
+            },
+            "children": {
+              "event": [
+                {
+                  "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
+                  "args": {
+                    "text": [
+                      "* Splendid!\n* I am proud of you,\n little one."
+                    ],
+                    "__scriptTabs": "text",
+                    "minHeight": 5,
+                    "maxHeight": 7,
+                    "position": "top",
+                    "showBorder": "true",
+                    "clearPrevious": true,
+                    "haveChoices": true,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 3,
+                    "closeWithButtons": "a",
+                    "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3"
+                  },
+                  "id": "5d2a3a4c-2034-4ecb-b65d-a807dc98d2dc"
+                },
+                {
+                  "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
+                  "args": {
+                    "text": [
+                      "* Let us move to the\n next room."
+                    ],
+                    "__scriptTabs": "text",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "top",
+                    "showBorder": "true",
+                    "clearPrevious": true,
+                    "haveChoices": true,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 3,
+                    "closeWithButtons": "a",
+                    "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3"
+                  },
+                  "id": "1abcd971-6c50-4147-ab57-82095416f7ac"
+                }
+              ]
+            },
+            "id": "bc0b3009-3b8d-40d5-9303-b7fa52f139cc"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_UNLOCK"
+            },
+            "id": "c5fa5e8b-7239-4759-9489-e4aa51b1e8e4"
+          },
+          {
+            "command": "EVENT_ACTOR_MOVE_TO",
+            "args": {
+              "actorId": "aae550a8-1c40-4723-984b-1630ca3040d5",
+              "x": {
+                "type": "number",
+                "value": 74
+              },
+              "y": {
+                "type": "number",
+                "value": 16
+              },
+              "moveType": "horizontal",
+              "useCollisions": false
+            },
+            "id": "c4d803a7-583b-426e-a88b-e3dc81cef6e2"
+          },
+          {
+            "command": "EVENT_ACTOR_DEACTIVATE",
+            "args": {
+              "actorId": "aae550a8-1c40-4723-984b-1630ca3040d5"
+            },
+            "id": "6b1eeb23-e4ea-4b3c-b9b4-f55e8bd83e62"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_LOCK"
+            },
+            "id": "bacdf141-305b-4381-8cb7-3b108cd297f1"
           }
         ],
         "false": []
