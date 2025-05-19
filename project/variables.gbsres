@@ -355,6 +355,11 @@
       "id": "27e48d31-865a-466f-ba5e-b07851f3e1e7__L0",
       "name": "Battle_A_LOCAL_0",
       "symbol": "var_battle_a_local_0"
+    },
+    {
+      "id": "aae550a8-1c40-4723-984b-1630ca3040d5__L0",
+      "name": "Local 0",
+      "symbol": "var_local_5"
     }
   ]
 }

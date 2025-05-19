@@ -13,13 +13,31 @@
   "tilesetId": "",
   "paletteIds": [
     "",
-    "63a3e2f2-2a6d-4b91-8914-c58011a6672b"
+    "63a3e2f2-2a6d-4b91-8914-c58011a6672b",
+    null,
+    "29a9fc6d-b55f-4f8f-b84d-d4ed59bf3c58"
   ],
-  "spritePaletteIds": [],
+  "spritePaletteIds": [
+    null,
+    null,
+    "af23545e-e1ed-4021-8892-22adc06fec38",
+    "66360ae4-f505-4cd0-95c8-d7b77402d025",
+    null,
+    null,
+    "29a9fc6d-b55f-4f8f-b84d-d4ed59bf3c58"
+  ],
   "autoFadeSpeed": 1,
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "755356f7-e01a-47da-bd29-9df73125397d"
+      },
+      "id": "fb472da3-42f5-4613-848b-6c07cce1db03"
+    }
+  ],
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": [],
-  "collisions": ""
+  "collisions": "00cd+0f6+0010+0fb+004+0fb+006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f!0018+0f!006+0f1a+00a3+"
 }

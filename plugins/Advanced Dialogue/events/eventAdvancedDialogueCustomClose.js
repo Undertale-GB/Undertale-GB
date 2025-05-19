@@ -80,6 +80,22 @@ const fields = [].concat(
       ],
     },
     {
+      key: `openSpeed`,
+      label: "Opening Speed",
+      type: "select",
+      defaultValue: "default",
+      options: [
+        ["default", "Default"],
+        ["instant", "Instant"],
+      ],
+      conditions: [
+        {
+          key: "__scriptTabs",
+          in: ["layout"],
+        },
+      ],
+    },
+    {
       type: "group",
       conditions: [
         {
@@ -241,8 +257,13 @@ const compile = (input, helpers) => {
   console.log(input);
   console.log(maxHeight, minHeight, textX, textY, textHeight);
 
-  const speedIn = `.OVERLAY_IN_SPEED`;
-  const speedOut = `.OVERLAY_OUT_SPEED`;
+  let speedIn = `.OVERLAY_IN_SPEED`;
+  let speedOut = `.OVERLAY_OUT_SPEED`;
+
+  if (input.openSpeed === 'instant') {
+    speedIn = `.OVERLAY_SPEED_INSTANT`;
+    speedOut = `.OVERLAY_SPEED_INSTANT`;
+  }
 
   const textInputs = Array.isArray(input.text) ? input.text : [input.text];
   const avatarId = input.avatarId;

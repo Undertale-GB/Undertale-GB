@@ -1,0 +1,360 @@
+{
+  "_resourceType": "actor",
+  "id": "aae550a8-1c40-4723-984b-1630ca3040d5",
+  "name": "",
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "4f217269-38f7-417f-a42f-e5b2048e8fc5",
+  "prefabId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "paletteId": "",
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "prefabScriptOverrides": {},
+  "symbol": "actor_69",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "10"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        },
+        "__collapseElse": false
+      },
+      "children": {
+        "true": [
+          {
+            "command": "UTGB_EVENT_BUTTON_FREEZE_WRAPPER",
+            "args": {
+              "vmunlock": "true",
+              "variable": "T0",
+              "__collapse": false
+            },
+            "children": {
+              "event": [
+                {
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "L0"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    },
+                    "__collapseElse": false,
+                    "__collapse": false
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
+                        "args": {
+                          "text": [
+                            "* The first switch \nis over on the wall."
+                          ],
+                          "__scriptTabs": "layout",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "top",
+                          "showBorder": "true",
+                          "clearPrevious": true,
+                          "haveChoices": true,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 3,
+                          "closeWithButtons": "a",
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "open_speed": "default",
+                          "openSpeed": "instant"
+                        },
+                        "id": "96816bf7-9117-483b-a86d-93d5895a49e8"
+                      },
+                      {
+                        "command": "EVENT_INC_VALUE",
+                        "args": {
+                          "variable": "L0"
+                        },
+                        "id": "6cda04de-9695-480b-89a0-a51a7bead4f5"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
+                        "args": {
+                          "text": [
+                            "* Do you need some \n* help .. ? \n* Press the switch \n* on the wall."
+                          ],
+                          "__scriptTabs": "layout",
+                          "minHeight": 6,
+                          "maxHeight": 7,
+                          "position": "top",
+                          "showBorder": "true",
+                          "clearPrevious": true,
+                          "haveChoices": true,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "closeWithButtons": "a",
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
+                        },
+                        "id": "701ff577-f84d-48f2-a4f9-8816ab402cbb"
+                      },
+                      {
+                        "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
+                        "args": {
+                          "text": [
+                            "* Come on, \n* you can do it!"
+                          ],
+                          "__scriptTabs": "layout",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "top",
+                          "showBorder": "true",
+                          "clearPrevious": true,
+                          "haveChoices": true,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 3,
+                          "closeWithButtons": "a",
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
+                        },
+                        "id": "47c691e0-ffda-4763-b189-5d90dc90192d"
+                      }
+                    ]
+                  },
+                  "id": "9a219115-b9fe-4598-9ac9-4807ca99d1c0"
+                }
+              ]
+            },
+            "id": "0a7b44e0-51fd-4181-aab1-27bd56b4b143"
+          }
+        ],
+        "false": [
+          {
+            "command": "UTGB_EVENT_BUTTON_FREEZE_WRAPPER",
+            "args": {
+              "vmunlock": "true",
+              "variable": "T0",
+              "__collapse": false
+            },
+            "children": {
+              "event": [
+                {
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "L1"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    },
+                    "__collapseElse": false
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
+                        "args": {
+                          "text": [
+                            "* Go on, press the\n switch on the left."
+                          ],
+                          "__scriptTabs": "layout",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "top",
+                          "showBorder": "true",
+                          "clearPrevious": true,
+                          "haveChoices": true,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 3,
+                          "closeWithButtons": "a",
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
+                        },
+                        "id": "bd8b4ef1-f414-498e-84df-3c2d13234791"
+                      },
+                      {
+                        "command": "EVENT_INC_VALUE",
+                        "args": {
+                          "variable": "L1"
+                        },
+                        "id": "fc6bfa89-60cc-452f-904f-a74c311da95f"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
+                        "args": {
+                          "text": [
+                            "* You do know which\n* way left is, \n* do you not?"
+                          ],
+                          "__scriptTabs": "layout",
+                          "minHeight": 5,
+                          "maxHeight": 7,
+                          "position": "top",
+                          "showBorder": "true",
+                          "clearPrevious": true,
+                          "haveChoices": true,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 3,
+                          "closeWithButtons": "a",
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
+                        },
+                        "id": "16c3e196-d14a-413b-9de9-dab5ef6312e1"
+                      },
+                      {
+                        "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
+                        "args": {
+                          "text": [
+                            "* Press the switch\n  I labeled for you."
+                          ],
+                          "__scriptTabs": "layout",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "top",
+                          "showBorder": "true",
+                          "clearPrevious": true,
+                          "haveChoices": true,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 2,
+                          "closeWithButtons": "a",
+                          "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3",
+                          "openSpeed": "instant"
+                        },
+                        "id": "23a4a60f-0029-4ec9-ab1d-a10f3d2dae30"
+                      }
+                    ]
+                  },
+                  "id": "6f3b8f08-cbef-4054-ab94-a50165e77ee6"
+                }
+              ]
+            },
+            "id": "97831beb-16cc-4836-af38-320b5e2e40d2"
+          }
+        ]
+      },
+      "id": "f4ecdf94-0194-4c7b-80b6-c53e2c93dc0f"
+    }
+  ],
+  "startScript": [
+    {
+      "command": "UTGB_EVENT_BUTTON_FREEZE_WRAPPER",
+      "args": {
+        "vmunlock": "true",
+        "variable": "T0",
+        "__collapse": false
+      },
+      "children": {
+        "event": [
+          {
+            "command": "PT_EVENT_ADVANCED_DIALOGUE_CUSTOM_CLOSE",
+            "args": {
+              "text": [
+                "To make progress\nhere, you will \nneed to trigger\nseveral switches."
+              ],
+              "__scriptTabs": "layout",
+              "minHeight": 6,
+              "maxHeight": 7,
+              "position": "top",
+              "showBorder": "true",
+              "clearPrevious": true,
+              "haveChoices": true,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 4,
+              "closeWithButtons": "a",
+              "avatarId": "151af878-4aaf-4046-b3aa-5a88789c36c3"
+            },
+            "id": "613076ee-45d9-4017-8260-ef3e6ac02085"
+          }
+        ]
+      },
+      "id": "9d300516-d8fc-48f6-b41c-8b37d60f06ae"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.5,
+        "frames": 1,
+        "units": "frames"
+      },
+      "id": "cb256ae2-d52e-40f5-9a92-085a50208c1f"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_UNLOCK"
+      },
+      "id": "d760a2d9-7179-448c-8935-ece0cbb035a8"
+    },
+    {
+      "command": "EVENT_ACTOR_MOVE_TO",
+      "args": {
+        "actorId": "$self$",
+        "x": {
+          "type": "number",
+          "value": 46
+        },
+        "y": {
+          "type": "number",
+          "value": 16
+        },
+        "moveType": "horizontal",
+        "useCollisions": false
+      },
+      "id": "2326943a-6960-4cae-b694-f3c4b21dfd39"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "$self$",
+        "direction": {
+          "type": "direction",
+          "value": "left"
+        }
+      },
+      "id": "e9e5be06-9aed-44b8-a16a-9a495f561ea2"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_LOCK"
+      },
+      "id": "a2ba5820-368b-4472-a8cb-0de36e48dc85"
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": [],
+  "x": 16,
+  "y": 16,
+  "_index": 10
+}

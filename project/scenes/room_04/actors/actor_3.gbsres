@@ -25,7 +25,8 @@
       "command": "EVENT_IF_EXPRESSION",
       "args": {
         "expression": "$L0$ == 0",
-        "__collapseElse": true
+        "__collapseElse": true,
+        "__collapse": false
       },
       "children": {
         "true": [
