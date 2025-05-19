@@ -34,6 +34,13 @@
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
+        "customEventId": "0b860a7a-eeb5-4dfb-b27d-1c31091b0cfe"
+      },
+      "id": "7b38ed8a-780e-4e57-ab25-83b0884b4d3b"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
         "customEventId": "39c248ca-b64a-4135-bdf2-a3686154940e"
       },
       "id": "061adb22-833d-4631-b6a6-48b6a87ef37f"

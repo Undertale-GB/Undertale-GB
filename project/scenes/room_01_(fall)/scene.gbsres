@@ -24,9 +24,17 @@
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "customEventId": "678c23ac-af19-4d6d-92ce-7c26f79aba89"
+        "customEventId": "678c23ac-af19-4d6d-92ce-7c26f79aba89",
+        "__comment": true
       },
       "id": "29611703-a69e-41a8-822f-224dca0d18a1"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "0b860a7a-eeb5-4dfb-b27d-1c31091b0cfe"
+      },
+      "id": "518dbba4-b107-4404-8f0a-0a44816453cf"
     },
     {
       "command": "EVENT_MUSIC_STOP",
