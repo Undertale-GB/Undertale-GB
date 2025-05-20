@@ -11,7 +11,9 @@
   "paletteIds": [
     "f28f94b8-5237-4219-b184-04a3c24fe464"
   ],
-  "spritePaletteIds": [],
+  "spritePaletteIds": [
+    "e6076ba1-e3bd-4043-ad94-c350ffdb060b"
+  ],
   "collisions": "",
   "autoFadeSpeed": 1,
   "symbol": "scene_47",

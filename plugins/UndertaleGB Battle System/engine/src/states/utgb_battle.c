@@ -10,21 +10,49 @@
 #include "input.h"
 #include "trigger.h"
 #include "vm.h"
+#include "vm_ui.h"
 #include "ui.h"
+#include <string.h>
 
 #include "utgb_battle_drawing.h"
 
 //debug only!
 #include "data/sprite_toriel.h"
 
+extern void __bank_utgb_battle_run_menu;
+extern const UBYTE utgb_battle_run_menu[];
+
 UBYTE bbox_left, bbox_right;
 UBYTE bbox_up, bbox_down;
+UBYTE target_bbox_left, target_bbox_right;
+UBYTE target_bbox_up, target_bbox_down;
 uint16_t attackTimer;
 
 const uint8_t dialogue_bbox_left = 18;
 const uint8_t dialogue_bbox_right = 141;
 const uint8_t dialogue_bbox_up = 74;
 const uint8_t dialogue_bbox_down = 117;
+
+
+//temp:
+const uint8_t battle_bbox_left = 72;
+const uint8_t battle_bbox_right = 87;
+const uint8_t battle_bbox_up = 88;
+const uint8_t battle_bbox_down = 103;
+
+
+
+bool resizingBBox = FALSE;
+
+
+typedef enum {
+    BattleState_Enter = 0,
+    BattleState_Menu = 1,
+    BattleState_EnemyAttack = 2,
+    BattleState_TransitionTo_Menu = 3,
+    BattleState_TransitionTo_EnemyAttack = 4
+} BattleState;
+BattleState currentBattleState = 0;
 
 
 const metasprite_t var_metasprite_end = {metasprite_end};
@@ -76,6 +104,38 @@ uint8_t ugb_load_banked_metasprite(far_ptr_t spritesheet_ptr, UINT8 base_tile, U
 }
 */
 
+//Untested!
+void bankedStrCat(UBYTE* d, far_ptr_t stringData) NONBANKED {
+    
+    UBYTE* s = stringData.ptr;
+    
+    while (*d)
+    {
+        d++;
+    }
+    
+    //Save bank in Var
+    uint8_t save = _current_bank;
+
+    //Switch Banks
+    SWITCH_ROM(stringData.bank);
+
+
+    while (*s)
+    {
+        *d = *s;
+        d++;
+        s++;
+
+    }
+
+    *s = 0;
+
+    //Reset Bank
+    SWITCH_ROM(save);
+
+}
+
 // run late in main game loop
 // called in core.c during shadow_oam
 void utgb_draw_attack(void) BANKED {
@@ -91,6 +151,36 @@ void utgb_draw_attack(void) BANKED {
         );
     }
 }
+
+
+
+
+void utgb_battle_run_menu_native(SCRIPT_CTX * THIS) BANKED {
+    
+    unsigned char * d = ui_text_data;
+    *d = 0;
+
+    strcat(d, "\003\001\001Menu code started!");
+
+    vm_overlay_setpos(THIS, 5, 17);
+
+    vm_display_text(THIS, 0, 29);
+    vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
+
+    vm_overlay_setpos(THIS, 0, 18);
+
+    
+    target_bbox_left = battle_bbox_left;
+    target_bbox_right = battle_bbox_right;
+    target_bbox_up = battle_bbox_up;
+    target_bbox_down = battle_bbox_down;
+
+    resizingBBox = TRUE;
+
+    currentBattleState = BattleState_TransitionTo_EnemyAttack;
+}
+
+
 
 
 void utgb_battle_init(void) BANKED {
@@ -166,7 +256,7 @@ void utgb_battle_update(void) BANKED {
     */
 
 
-    attackTimer++;
+    //attackTimer++;
     num_attack_metasprites = 1;
     /*
     for (uint8_t i = 0; i < 6; i++) {
@@ -195,65 +285,136 @@ void utgb_battle_update(void) BANKED {
     //set_bkg_data(0x20, 1, vwf_tile_data);
     //if(attackTimer%8 == 0) bbox_right++;
 
-    utgb_draw_battle_border(bbox_left-1, bbox_up-1, bbox_right+1, bbox_down+1);
-    if(attackTimer > 180) {
-        if(bbox_left < dialogue_bbox_left) bbox_left++;
-        if(bbox_left > dialogue_bbox_left) bbox_left--;
-        if(bbox_right < dialogue_bbox_right) bbox_right++;
-        if(bbox_right > dialogue_bbox_right) bbox_right--;
-        if(bbox_up < dialogue_bbox_up) bbox_up++;
-        if(bbox_up > dialogue_bbox_up) bbox_up--;
-        if(bbox_down < dialogue_bbox_down) bbox_down++;
-        if(bbox_down > dialogue_bbox_down) bbox_down--;
-    }
-    
-    
     //temp end
 
+    if(resizingBBox) {
+        if(bbox_left < target_bbox_left) bbox_left++;
+        if(bbox_left > target_bbox_left) bbox_left--;
+        if(bbox_right < target_bbox_right) bbox_right++;
+        if(bbox_right > target_bbox_right) bbox_right--;
+        if(bbox_up < target_bbox_up) bbox_up++;
+        if(bbox_up > target_bbox_up) bbox_up--;
+        if(bbox_down < target_bbox_down) bbox_down++;
+        if(bbox_down > target_bbox_down) bbox_down--;
+
+        if(bbox_left == target_bbox_left && bbox_right == target_bbox_right && bbox_up == target_bbox_up && bbox_down == target_bbox_down) {
+            resizingBBox = FALSE;
+        }
+    }
+    utgb_draw_battle_border(bbox_left-1, bbox_up-1, bbox_right+1, bbox_down+1);
+
+    // Movement:
     player_moving = FALSE;
-
     UBYTE angle;
-    
-    // Handle input
-    if (INPUT_LEFT) {
-        player_moving = TRUE;
-        if (INPUT_UP) {
-            angle = ANGLE_315DEG;
-        } else if (INPUT_DOWN) {
-            angle = ANGLE_225DEG;
-        } else {
-            angle = ANGLE_270DEG;
-        }
-    } else if (INPUT_RIGHT) {
-        player_moving = TRUE;
-        if (INPUT_UP) {
-            angle = ANGLE_45DEG;
-        } else if (INPUT_DOWN) {
-            angle = ANGLE_135DEG;
-        } else {
-            angle = ANGLE_90DEG;
-        }
-    } else if (INPUT_UP) {
-        player_moving = TRUE;
-        angle = ANGLE_0DEG;
-    } else if (INPUT_DOWN) {
-        player_moving = TRUE;
-        angle = ANGLE_180DEG;
-    } else {
-        angle = ANGLE_0DEG;
-    }
 
-    if (player_moving) {
-        point_translate_angle(&(PLAYER.pos), angle, PLAYER.move_speed);
 
-        // Clamp X
-        PLAYER.pos.x = MIN((bbox_right - 7) << 4, PLAYER.pos.x);
-        PLAYER.pos.x = MAX(bbox_left << 4, PLAYER.pos.x);
+    switch (currentBattleState)
+    {
+    case BattleState_Enter:
+        target_bbox_left = dialogue_bbox_left;
+        target_bbox_right = dialogue_bbox_right;
+        target_bbox_up = dialogue_bbox_up;
+        target_bbox_down = dialogue_bbox_down;
+
+        resizingBBox = TRUE;
+
+        currentBattleState = BattleState_TransitionTo_Menu;
+        break;
+
+    case BattleState_TransitionTo_Menu:
+
+        PLAYER.pos.x = 18<<4;
+        PLAYER.pos.y = 132<<4;
+        if (resizingBBox == FALSE)
+        {
+            currentBattleState = BattleState_Menu;
+
+            script_execute(BANK(utgb_battle_run_menu), utgb_battle_run_menu, 0, 0);
+        }
         
-        // Clamp Y
-        PLAYER.pos.y = MIN((bbox_down - 7) << 4, PLAYER.pos.y);
-        PLAYER.pos.y = MAX(bbox_up << 4, PLAYER.pos.y);
+        break;
+
+    case BattleState_Menu:
+        // Script runs in GBVM context
+        // No other onUpdate code neccesary
+        break;
+    
+    case BattleState_TransitionTo_EnemyAttack:
+
+        PLAYER.pos.x = 76<<4;
+        PLAYER.pos.y = 92<<4;
+        if (resizingBBox == FALSE)
+        {
+            currentBattleState = BattleState_EnemyAttack;
+
+            // Init Attack Data here
+            attackTimer = 0;
+        }
+        break;
+
+    case BattleState_EnemyAttack:
+        // Handle input
+        if (INPUT_LEFT) {
+            player_moving = TRUE;
+            if (INPUT_UP) {
+                angle = ANGLE_315DEG;
+            } else if (INPUT_DOWN) {
+                angle = ANGLE_225DEG;
+            } else {
+                angle = ANGLE_270DEG;
+            }
+        } else if (INPUT_RIGHT) {
+            player_moving = TRUE;
+            if (INPUT_UP) {
+                angle = ANGLE_45DEG;
+            } else if (INPUT_DOWN) {
+                angle = ANGLE_135DEG;
+            } else {
+                angle = ANGLE_90DEG;
+            }
+        } else if (INPUT_UP) {
+            player_moving = TRUE;
+            angle = ANGLE_0DEG;
+        } else if (INPUT_DOWN) {
+            player_moving = TRUE;
+            angle = ANGLE_180DEG;
+        } else {
+            angle = ANGLE_0DEG;
+        }
+
+        if (player_moving) {
+            point_translate_angle(&(PLAYER.pos), angle, PLAYER.move_speed);
+
+            // Clamp X
+            PLAYER.pos.x = MIN((bbox_right - 7) << 4, PLAYER.pos.x);
+            PLAYER.pos.x = MAX(bbox_left << 4, PLAYER.pos.x);
+        
+            // Clamp Y
+            PLAYER.pos.y = MIN((bbox_down - 7) << 4, PLAYER.pos.y);
+            PLAYER.pos.y = MAX(bbox_up << 4, PLAYER.pos.y);
+        }
+
+        // Temp:
+        if (attackTimer >= 160)
+        {
+            target_bbox_left = dialogue_bbox_left;
+            target_bbox_right = dialogue_bbox_right;
+            target_bbox_up = dialogue_bbox_up;
+            target_bbox_down = dialogue_bbox_down;
+
+            resizingBBox = TRUE;
+
+            currentBattleState = BattleState_TransitionTo_Menu;
+        }
+        
+        attackTimer++;
+
+        break;
+
+    default:
+        break;
     }
+    
 
 
 
