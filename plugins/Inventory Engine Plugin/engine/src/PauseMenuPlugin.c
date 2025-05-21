@@ -128,9 +128,9 @@ void copy_screen_area_to_overlay(SCRIPT_CTX * THIS, UBYTE x, UBYTE y, UBYTE w, U
 
 // Shorten ui_run_menu() commands
 #define PM_DEFAULT _current_bank, (MENU_CANCEL_B | MENU_SET_START)
-const char PM_InstSpeed[] = "\001\001";
-const char PM_SmallFont[] = FONT_SMALL_COLOR;
-const char PM_ColoredFont[] = FONT_VARWIDTH_COLOR;
+const char UTGB_UI_InstSpeed[] = "\001\001";
+const char UTGB_UI_SmallFont[] = FONT_SMALL_COLOR;
+const char UTGB_UI_ColoredFont[] = FONT_VARWIDTH_COLOR;
 
 
 
@@ -168,9 +168,9 @@ void PM_Main_Show(SCRIPT_CTX * THIS) BANKED {
 
     *d = 0;
 
-    strcat(d, PM_InstSpeed);
+    strcat(d, UTGB_UI_InstSpeed);
     strcat(d, PM_Main_StartPos);
-    strcat(d, PM_ColoredFont);
+    strcat(d, UTGB_UI_ColoredFont);
     strcat(d, "ITEM\nSTAT\nCELL");
     strcat(d, "\n");
 
@@ -191,9 +191,9 @@ void PM_Quick_Overview_Show(SCRIPT_CTX * THIS) BANKED {
 
     *d = 0;
 
-    strcat(d, PM_InstSpeed);
+    strcat(d, UTGB_UI_InstSpeed);
     strcat(d, "\003\002\003");
-    strcat(d, PM_ColoredFont);
+    strcat(d, UTGB_UI_ColoredFont);
     
     INT16* namePtr = (INT16 *)VM_REF_TO_PTR(VAR_NAME1);
     utgb_cat_var_as_char(d, *namePtr++);
@@ -206,7 +206,7 @@ void PM_Quick_Overview_Show(SCRIPT_CTX * THIS) BANKED {
     
 
     strcat(d, "\n");
-    strcat(d, PM_SmallFont);
+    strcat(d, UTGB_UI_SmallFont);
 
     strcat(d, "\nLV: ");
     utgb_cat_var_to_string(d, VAR_VAL(VAR_LEVEL));
@@ -258,8 +258,8 @@ void PM_Item_Show(SCRIPT_CTX * THIS) BANKED {
 
     *d = 0;
 
-    strcat(d, PM_InstSpeed);
-    strcat(d, PM_SmallFont);
+    strcat(d, UTGB_UI_InstSpeed);
+    strcat(d, UTGB_UI_SmallFont);
 
     strcat(d, "\003\014\014USE");
     strcat(d, "\003\017\014INFO");
@@ -287,13 +287,13 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) BANKED { //on "USE"
     unsigned char * d = ui_text_data;
     *d = 0;
     strcat(d, PM_Dialogue_StartPos);
-    strcat(d, PM_ColoredFont);
+    strcat(d, UTGB_UI_ColoredFont);
 
     if(inv_load_use_main_text(THIS, d, itemSlot, 1)){ //is there use text?
         PM_Dialogue_Write(THIS);
         *d = 0; //reset text buffer
         strcat(d, PM_Dialogue_StartPos);
-        strcat(d, PM_ColoredFont);
+        strcat(d, UTGB_UI_ColoredFont);
     }
 
 
@@ -301,7 +301,7 @@ void PM_Item_Use(SCRIPT_CTX * THIS, uint8_t itemSlot) BANKED { //on "USE"
         PM_Dialogue_Write(THIS);
         *d = 0; //reset text buffer
         strcat(d, PM_Dialogue_StartPos);
-        strcat(d, PM_ColoredFont);
+        strcat(d, UTGB_UI_ColoredFont);
     }
 
     bool hasStatText = inv_use_item_new(THIS, d, itemSlot); //use Item 
@@ -322,14 +322,14 @@ void PM_Item_Info(SCRIPT_CTX * THIS, uint8_t itemSlot) BANKED { //on "INFO"
     *d = 0;
 
     strcat(d, PM_Dialogue_StartPos);
-    strcat(d, PM_ColoredFont);
+    strcat(d, UTGB_UI_ColoredFont);
     inv_load_info_stats(THIS, d, itemSlot); // Load stat text like "*ItemName\nHeals X HP"
     PM_Dialogue_Write(THIS);
 
     *d = 0; //clear text buffer
 
     strcat(d, PM_Dialogue_StartPos);
-    strcat(d, PM_ColoredFont);
+    strcat(d, UTGB_UI_ColoredFont);
     inv_load_info_desc(THIS, d, itemSlot); // Load item description
     PM_Dialogue_Write(THIS);
 
@@ -341,7 +341,7 @@ void PM_Item_Drop(SCRIPT_CTX * THIS, uint8_t itemSlot) BANKED { //on "DROP"
     unsigned char * d = ui_text_data;
     *d = 0;
     strcat(d, PM_Dialogue_StartPos);
-    strcat(d, PM_ColoredFont);
+    strcat(d, UTGB_UI_ColoredFont);
 
     inv_drop_item_new(THIS, d, itemSlot);
 
@@ -366,9 +366,9 @@ void PM_Stat_Show(SCRIPT_CTX * THIS) BANKED {
 
     *d = 0;
 
-    strcat(d, PM_InstSpeed);
+    strcat(d, UTGB_UI_InstSpeed);
     strcat(d, PM_Stat_StartPos);
-    strcat(d, PM_ColoredFont);
+    strcat(d, UTGB_UI_ColoredFont);
 
     // Write name:
     strcat(d, "\"");
@@ -381,7 +381,7 @@ void PM_Stat_Show(SCRIPT_CTX * THIS) BANKED {
     utgb_cat_var_as_char(d, *namePtr  );
     strcat(d, "\"\n\n");
 
-    strcat(d, PM_SmallFont);
+    strcat(d, UTGB_UI_SmallFont);
 
     INT16 attack = VAR_VAL(VAR_ATTACK_BASE_) + VAR_VAL(VAR_ATTACK_ITEM_);
     INT16 defense = VAR_VAL(VAR_DEFENSE_BASE_) + VAR_VAL(VAR_DEFENSE_ITEM_);
@@ -439,9 +439,9 @@ void PM_Cell_Show(SCRIPT_CTX * THIS) BANKED {
     unsigned char * d = ui_text_data;
     *d = 0;
 
-    strcat(d, PM_InstSpeed);
+    strcat(d, UTGB_UI_InstSpeed);
     strcat(d, PM_Cell_StartPos);
-    strcat(d, PM_ColoredFont);
+    strcat(d, UTGB_UI_ColoredFont);
 
     strcat(d, "Cell Menu\nplaceholder");
 

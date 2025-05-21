@@ -157,6 +157,31 @@ void utgb_draw_attack(void) BANKED {
 }
 
 
+extern const char UTGB_UI_InstSpeed[];
+extern const char UTGB_UI_SmallFont[];
+extern const char UTGB_UI_ColoredFont[];
+
+const char Battle_UI_StartPos[] = "\003\004\002";
+
+
+const struct menu_item_t EnemySelect1[] = {
+    {.X=3u, .Y=1u,  .iL=0u, .iR=0u, .iU=0u, .iD=0u}
+};
+const struct menu_item_t EnemySelect2[] = {
+    {.X=3u, .Y=1u,  .iL=0u, .iR=0u, .iU=0u, .iD=2u},
+    {.X=3u, .Y=2u,  .iL=0u, .iR=0u, .iU=1u, .iD=0u}
+};
+const menu_item_t EnemySelect3[] = {
+    {.X=3u, .Y=1u,  .iL=0u, .iR=0u, .iU=0u, .iD=2u},
+    {.X=3u, .Y=2u,  .iL=0u, .iR=0u, .iU=1u, .iD=3u},
+    {.X=3u, .Y=3u,  .iL=0u, .iR=0u, .iU=2u, .iD=0u}
+};
+const menu_item_t* const EnemySelect[] = {
+    EnemySelect1,
+    EnemySelect2,
+    EnemySelect3
+};
+
 
 
 void utgb_battle_run_menu_native(SCRIPT_CTX * THIS) BANKED {
