@@ -42,6 +42,9 @@ const uint8_t battle_bbox_up = 88;
 const uint8_t battle_bbox_down = 103;
 
 
+UBYTE prevMovementAngle = ANGLE_0DEG;
+
+
 
 bool resizingBBox = FALSE;
 
@@ -405,6 +408,14 @@ void utgb_battle_update(void) BANKED {
         }
 
         if (player_moving) {
+
+            if (angle != prevMovementAngle)
+            {
+                PLAYER.pos.x &= 0b1111111111110000;
+                PLAYER.pos.y &= 0b1111111111110000;
+            }
+            prevMovementAngle = angle;
+            
             point_translate_angle(&(PLAYER.pos), angle, PLAYER.move_speed);
 
             // Clamp X
