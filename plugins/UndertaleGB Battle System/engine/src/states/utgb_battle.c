@@ -12,6 +12,7 @@
 #include "vm.h"
 #include "vm_ui.h"
 #include "ui.h"
+#include "interrupts.h"
 #include <string.h>
 
 #include "utgb_battle_drawing.h"
@@ -160,16 +161,37 @@ void utgb_battle_run_menu_native(SCRIPT_CTX * THIS) BANKED {
     unsigned char * d = ui_text_data;
     *d = 0;
 
-    strcat(d, "\003\001\001Menu code started!");
+    strcat(d, "\003\004\002*Menu code\n|started!");
 
-    vm_overlay_setpos(THIS, 5, 17);
+    show_actors_on_overlay = 1;
+
+    vm_overlay_set_submap(THIS, 0, 0, 20, 9, 0, 9);
+    vm_overlay_clear(THIS, 2, 0, 16, 6, 0, UI_DRAW_FRAME);
+
+    //vm_overlay_clear(THIS, 0, 0, 1, 1, 0, UI_DRAW_FRAME);
+
+
+    vm_overlay_setpos(THIS, 0, 9);
+
+    //vm_switch_text_layer(THIS, 0);
 
     vm_display_text(THIS, 0, 29);
     vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
 
     vm_overlay_setpos(THIS, 0, 18);
 
+    show_actors_on_overlay = 0;
+
+
+    // Draw Attack background graphics
+    utgb_draw_battle_attackbg();
+
+    vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_B));
+
+    utgb_clear_battle_attackbg();
+
     
+    // transition to enemy turn
     target_bbox_left = battle_bbox_left;
     target_bbox_right = battle_bbox_right;
     target_bbox_up = battle_bbox_up;

@@ -9,7 +9,9 @@
   "height": 18,
   "type": "utgb_battle",
   "paletteIds": [
-    "f28f94b8-5237-4219-b184-04a3c24fe464"
+    "f28f94b8-5237-4219-b184-04a3c24fe464",
+    "4395d65d-0f9d-444a-ac63-e6d9f3cf2c25",
+    "4a6ba389-a34a-472b-bb4b-17145a0c7ada"
   ],
   "spritePaletteIds": [
     "e6076ba1-e3bd-4043-ad94-c350ffdb060b"
