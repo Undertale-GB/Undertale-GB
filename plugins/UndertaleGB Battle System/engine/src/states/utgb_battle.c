@@ -3,22 +3,30 @@
 #include "data/states_defines.h"
 #include "states/utgb_battle.h"
 
+#include "system.h"
+#include "shadow.h"
+#include "projectiles.h"
 #include "actor.h"
 #include "camera.h"
+#include "scroll.h"
 #include "data_manager.h"
 #include "game_time.h"
 #include "input.h"
 #include "trigger.h"
 #include "vm.h"
 #include "vm_ui.h"
+#include "vm_actor.h"
 #include "ui.h"
 #include "interrupts.h"
 #include <string.h>
 
 #include "utgb_battle_drawing.h"
+#include "data/game_globals.h"
 
 //debug only!
 #include "data/sprite_toriel.h"
+
+uint8_t menu_actor_id = 1;
 
 extern void __bank_utgb_battle_run_menu;
 extern const UBYTE utgb_battle_run_menu[];
@@ -40,6 +48,10 @@ const uint8_t battle_bbox_left = 72;
 const uint8_t battle_bbox_right = 87;
 const uint8_t battle_bbox_up = 88;
 const uint8_t battle_bbox_down = 103;
+const uint8_t enemyCount = 1;
+const char* const enemyNames[] = {
+    "Dummy"
+};
 
 
 UBYTE prevMovementAngle = ANGLE_0DEG;
@@ -157,9 +169,9 @@ void utgb_draw_attack(void) BANKED {
 }
 
 
-extern const char UTGB_UI_InstSpeed[];
-extern const char UTGB_UI_SmallFont[];
-extern const char UTGB_UI_ColoredFont[];
+//extern const char UTGB_UI_InstSpeed[];
+//extern const char UTGB_UI_SmallFont[];
+//extern const char UTGB_UI_ColoredFont[];
 
 const char Battle_UI_StartPos[] = "\003\004\002";
 
@@ -183,41 +195,148 @@ const menu_item_t* const EnemySelect[] = {
 };
 
 
+uint8_t utgb_battle_enemy_select(SCRIPT_CTX * THIS, uint8_t selectedEnemy) BANKED {
+
+    unsigned char * d = ui_text_data;
+    *d = 0;
+
+    strcat(d, "\001\001");
+    strcat(d, Battle_UI_StartPos);
+
+    //debug
+    //TODO: Load text from battle data
+    strcat(d, "|Dummy");
+
+    vm_display_text(THIS, 0, 0);
+    vm_overlay_wait(THIS, 1, UI_WAIT_TEXT);
+    
+
+    menu_item_t* const enemyMenuPointer = (menu_item_t*)EnemySelect[enemyCount - 1];
+    return ui_run_menu(enemyMenuPointer, _current_bank, (MENU_CANCEL_B | MENU_SET_START), enemyCount, selectedEnemy);
+}
+
+
+
+uint8_t menuSelection_1;
+void utgb_battle_runBottomMenu(SCRIPT_CTX * THIS) BANKED {
+    THIS;
+
+    actor_t* menuActor = (actors+menu_actor_id);
+
+    menuActor->hidden = false;
+
+    //init
+    actor_set_frame_offset(menuActor, menuSelection_1);
+
+    while (TRUE) {
+        input_update();
+        ui_update();
+
+        toggle_shadow_OAM();
+        //camera_update();
+        //scroll_update();
+        actors_update();
+        projectiles_render();
+        activate_shadow_OAM();
+
+        game_time++;
+        wait_vbl_done();
+
+
+        if (INPUT_LEFT_PRESSED && menuSelection_1 != 0) {
+            menuSelection_1--;
+            actor_set_frame_offset(menuActor, menuSelection_1);
+        } else if (INPUT_RIGHT_PRESSED && menuSelection_1 != 0b0011) {
+            menuSelection_1++;
+            actor_set_frame_offset(menuActor, menuSelection_1);
+        } else if (INPUT_A_PRESSED) {
+            actor_set_frame_offset(menuActor, menuSelection_1 | 0b0100);
+            return;
+        }
+
+    }
+
+}
+
+#define utgb_battle_overlay_clear() vm_overlay_clear(THIS, 2, 0, 16, 6, 0, UI_DRAW_FRAME)
 
 void utgb_battle_run_menu_native(SCRIPT_CTX * THIS) BANKED {
     
     unsigned char * d = ui_text_data;
-    *d = 0;
-
-    strcat(d, "\003\004\002*Menu code\n|started!");
-
+    
+    // Open Window
     show_actors_on_overlay = 1;
-
     vm_overlay_set_submap(THIS, 0, 0, 20, 9, 0, 9);
-    vm_overlay_clear(THIS, 2, 0, 16, 6, 0, UI_DRAW_FRAME);
-
+    //vm_overlay_clear(THIS, 2, 0, 16, 6, 0, UI_DRAW_FRAME);
     //vm_overlay_clear(THIS, 0, 0, 1, 1, 0, UI_DRAW_FRAME);
-
-
     vm_overlay_setpos(THIS, 0, 9);
 
     //vm_switch_text_layer(THIS, 0);
 
-    vm_display_text(THIS, 0, 29);
-    vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
+    //vm_display_text(THIS, 0, 29);
+    //vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
 
+    //utgb_battle_runBottomMenu(THIS);
+
+    menuSelection_1 = 0;
+    
+    bool turnComplete = false;
+    while (turnComplete == false)
+    {
+        // clear text buffer
+        *d = 0;
+        utgb_battle_overlay_clear();
+
+        //debug
+        strcat(d, "\003\004\002*You approached\n|the dummy!");
+
+
+        vm_display_text(THIS, 0, 0);
+        utgb_battle_runBottomMenu(THIS);
+
+        switch (menuSelection_1)
+        {
+        case 0: // FIGHT
+            // Draw Attack background graphics
+            utgb_draw_battle_attackbg();
+            vm_overlay_setpos(THIS, 0, 18);
+
+            vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_B));
+
+            utgb_clear_battle_attackbg();
+
+            turnComplete = true;
+            break;
+        
+        case 1: // ACT
+
+            vm_overlay_wait(THIS, 1, UI_WAIT_TEXT);
+            utgb_battle_overlay_clear();
+            
+            uint8_t menuSelection_enemy = 1;
+            while (menuSelection_enemy)
+            {
+                menuSelection_enemy = utgb_battle_enemy_select(THIS, menuSelection_enemy);
+                
+                //TODO: show act menu here
+            }
+            
+            break;
+
+        default:
+            break;
+        }
+        
+    }
+    
+
+
+    // hide bottom menu
+    actors[menu_actor_id].hidden = true;
+
+    // Close Window
     vm_overlay_setpos(THIS, 0, 18);
-
     show_actors_on_overlay = 0;
-
-
-    // Draw Attack background graphics
-    utgb_draw_battle_attackbg();
-
-    vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_B));
-
-    utgb_clear_battle_attackbg();
-
     
     // transition to enemy turn
     target_bbox_left = battle_bbox_left;
@@ -275,7 +394,7 @@ void utgb_battle_init(void) BANKED {
 }
 
 void UTGB_battle_data_init(SCRIPT_CTX * THIS) BANKED {
-    
+    THIS;
     // TODO: Add battle loading code
 }
 
@@ -373,8 +492,10 @@ void utgb_battle_update(void) BANKED {
 
     case BattleState_TransitionTo_Menu:
 
+        PLAYER.hidden = true;
         PLAYER.pos.x = 18<<4;
         PLAYER.pos.y = 132<<4;
+        menuSelection_1 = 0;
         if (resizingBBox == FALSE)
         {
             currentBattleState = BattleState_Menu;
@@ -393,6 +514,7 @@ void utgb_battle_update(void) BANKED {
 
         PLAYER.pos.x = 76<<4;
         PLAYER.pos.y = 92<<4;
+        PLAYER.hidden = false;
         if (resizingBBox == FALSE)
         {
             currentBattleState = BattleState_EnemyAttack;
