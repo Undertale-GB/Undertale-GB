@@ -20,6 +20,16 @@ typedef struct battle_t
 
 } battle_t;
 
+typedef struct act_t {
+
+    unsigned char* title;
+    UBYTE actVar;
+    UBYTE minActVarValue;
+    UBYTE actVarInc;
+    unsigned char* test;
+
+} act_t;
+
 typedef struct enemy_t
 {
     unsigned char* name;
@@ -31,14 +41,5 @@ typedef struct enemy_t
 
 } enemy_t;
 
-typedef struct act_t {
-
-    unsigned char* title;
-    UBYTE actVar;
-    UBYTE minActVarValue;
-    UBYTE actVarInc;
-    unsigned char* test;
-
-} act_t;
 
 #endif
