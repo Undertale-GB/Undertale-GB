@@ -11,12 +11,34 @@ typedef struct battledata_t {
 
 } battledata_t;
 
-typedef struct actdata_t {
+typedef struct battle_t
+{
+    unsigned char* introText;
+    UBYTE enemyCount;
+    far_ptr_t enemies[2];
+    unsigned char* randomDialogue[];
+
+} battle_t;
+
+typedef struct enemy_t
+{
+    unsigned char* name;
+    uint16_t health;
+    uint16_t attack;
+    uint16_t defense;
+
+    act_t acts[];
+
+} enemy_t;
+
+typedef struct act_t {
 
     unsigned char* title;
-
+    UBYTE actVar;
+    UBYTE minActVarValue;
+    UBYTE actVarInc;
     unsigned char* test;
 
-} actdata_t;
+} act_t;
 
 #endif

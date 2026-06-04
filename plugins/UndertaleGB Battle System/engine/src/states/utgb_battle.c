@@ -26,6 +26,8 @@
 //debug only!
 #include "data/sprite_toriel.h"
 
+#include "data/battledata_001_dummy.h"
+
 uint8_t menu_actor_id = 1;
 
 extern void __bank_utgb_battle_run_menu;
@@ -52,6 +54,15 @@ const uint8_t enemyCount = 1;
 const char* const enemyNames[] = {
     "Dummy"
 };
+
+/*
+struct utgb_act
+{
+    char* title,
+    char* text,
+    far_ptr_t code
+} utgb_act;
+*/
 
 
 UBYTE prevMovementAngle = ANGLE_0DEG;
@@ -123,8 +134,6 @@ uint8_t ugb_load_banked_metasprite(far_ptr_t spritesheet_ptr, UINT8 base_tile, U
 //Untested!
 void bankedStrCat(UBYTE* d, far_ptr_t stringData) NONBANKED {
     
-    UBYTE* s = stringData.ptr;
-    
     while (*d)
     {
         d++;
@@ -135,6 +144,10 @@ void bankedStrCat(UBYTE* d, far_ptr_t stringData) NONBANKED {
 
     //Switch Banks
     SWITCH_ROM(stringData.bank);
+
+    //Get pointer to text start
+    UBYTE** sPtr = stringData.ptr;
+    UBYTE* s = *sPtr;
 
 
     while (*s)
@@ -230,17 +243,7 @@ void utgb_battle_runBottomMenu(SCRIPT_CTX * THIS) BANKED {
 
     while (TRUE) {
         input_update();
-        ui_update();
-
-        toggle_shadow_OAM();
-        //camera_update();
-        //scroll_update();
-        actors_update();
-        projectiles_render();
-        activate_shadow_OAM();
-
-        game_time++;
-        wait_vbl_done();
+        
 
 
         if (INPUT_LEFT_PRESSED && menuSelection_1 != 0) {
@@ -253,6 +256,18 @@ void utgb_battle_runBottomMenu(SCRIPT_CTX * THIS) BANKED {
             actor_set_frame_offset(menuActor, menuSelection_1 | 0b0100);
             return;
         }
+
+        ui_update();
+
+        toggle_shadow_OAM();
+        //camera_update();
+        //scroll_update();
+        actors_update();
+        projectiles_render();
+        activate_shadow_OAM();
+
+        game_time++;
+        wait_vbl_done();
 
     }
 
@@ -288,7 +303,11 @@ void utgb_battle_run_menu_native(SCRIPT_CTX * THIS) BANKED {
         utgb_battle_overlay_clear();
 
         //debug
-        strcat(d, "\003\004\002*You approached\n|the dummy!");
+        far_ptr_t IntroString = TO_FAR_PTR_T(battledata_001_dummy);
+        IntroString.ptr = &(battledata_001_dummy[0].testTxt);
+
+        strcat(d, "\003\004\002*");
+        bankedStrCat(d, IntroString);
 
 
         vm_display_text(THIS, 0, 0);
