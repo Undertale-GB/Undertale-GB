@@ -621,10 +621,32 @@ void utgb_battle_update(void) BANKED {
 
 
 
+// REWRITE START:
 
 
+// UNTESTED ASSEMBLY, BEWARE!!!
+uint8_t call_far(const far_ptr_t *ptr) NONBANKED NAKED {
+    ptr;
+__asm
+    ld h, d
+    ld l, e
+    ld a, (hl+)
+    ld e, a         ; e = ptr->SEG
+    ld a, (hl+)
+    ld h, (hl)
+    ld l, a         ; hl = ptr->SEG
+    or h
+    jp nz, ___sdcc_bcall_ehl
+    ret
+__endasm;
+}
 
 
+union bd {
+    struct { // 001_dummy
+        uint8_t actState;
+    } bd_001_dummy;
+};
 
 
 

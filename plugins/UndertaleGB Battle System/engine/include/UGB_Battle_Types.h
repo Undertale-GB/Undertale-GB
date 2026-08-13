@@ -58,4 +58,14 @@ typedef struct ugb_pattern_command_t {
 
 
 
+// REWRITE START:
+
+
+typedef struct battle_def_t {
+    far_ptr_t funcInit;
+    far_ptr_t funcUpdate;
+}
+
+
+
 #endif
