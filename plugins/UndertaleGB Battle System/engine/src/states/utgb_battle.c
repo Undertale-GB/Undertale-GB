@@ -1,5 +1,6 @@
 #pragma bank 255
 
+
 #include "data/states_defines.h"
 #include "states/utgb_battle.h"
 
@@ -222,7 +223,7 @@ uint8_t utgb_battle_enemy_select(SCRIPT_CTX * THIS, uint8_t selectedEnemy) BANKE
 
     vm_display_text(THIS, 0, 0);
     vm_overlay_wait(THIS, 1, UI_WAIT_TEXT);
-    
+
 
     menu_item_t* const enemyMenuPointer = (menu_item_t*)EnemySelect[enemyCount - 1];
     return ui_run_menu(enemyMenuPointer, _current_bank, (MENU_CANCEL_B | MENU_SET_START), enemyCount, selectedEnemy);
@@ -456,6 +457,9 @@ void utgb_battle_update(void) BANKED {
         
     }
     */
+
+    //const far_ptr_t tmpFarPtr = TO_FAR_PTR_T(battledata_001_act);
+    //call_far(&tmpFarPtr);
 
     //========================== Debug End ==========================//
 

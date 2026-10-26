@@ -64,7 +64,7 @@ typedef struct ugb_pattern_command_t {
 typedef struct battle_def_t {
     far_ptr_t funcInit;
     far_ptr_t funcUpdate;
-}
+}battle_def_t;
 
 
 
