@@ -381,12 +381,6 @@ void utgb_battle_init(void) BANKED {
     //actor_set_anim(&PLAYER, ANIM_CURSOR);
 
     //========================== Debug Start ==========================//
-    /*
-    bbox_left = 37;
-    bbox_right = 122;
-    bbox_up = 77;
-    bbox_down = 114;
-    */
     bbox_left = 72;
     bbox_right = 87;
     bbox_up = 88;
@@ -419,7 +413,7 @@ void UTGB_battle_data_init(SCRIPT_CTX * THIS) BANKED {
 }
 
 
-void utgb_battle_update(void) BANKED {
+void utgb_battle_update_old(void) BANKED {
 
 
     //========================== Debug Start ==========================//
@@ -499,6 +493,8 @@ void utgb_battle_update(void) BANKED {
     player_moving = FALSE;
     UBYTE angle;
 
+
+    //State Machine
 
     switch (currentBattleState)
     {
@@ -645,12 +641,56 @@ __asm
 __endasm;
 }
 
-
 union bd {
     struct { // 001_dummy
         uint8_t actState;
     } bd_001_dummy;
 };
+
+
+
+struct battle_state {
+
+} bs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
