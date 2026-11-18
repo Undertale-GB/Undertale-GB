@@ -1,3 +1,4 @@
+/*
 #pragma bank 255
 
 #include <gbdk/platform.h>
@@ -238,3 +239,4 @@ void core_run(void) BANKED {
     // execute VM
     process_VM();
 }
+*/

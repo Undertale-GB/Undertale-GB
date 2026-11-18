@@ -1,0 +1,806 @@
+#pragma bank 255
+
+
+#include "data/states_defines.h"
+#include "states/utgb_battle.h"
+
+#include "system.h"
+#include "shadow.h"
+#include "projectiles.h"
+#include "actor.h"
+#include "camera.h"
+#include "scroll.h"
+#include "data_manager.h"
+#include "game_time.h"
+#include "input.h"
+#include "trigger.h"
+#include "vm.h"
+#include "vm_ui.h"
+#include "vm_actor.h"
+#include "ui.h"
+#include "interrupts.h"
+#include <string.h>
+
+#include "utgb_battle_drawing.h"
+#include "data/game_globals.h"
+
+//debug only!
+#include "data/sprite_toriel.h"
+
+#include "data/battledata_001_dummy.h"
+
+uint8_t menu_actor_id = 1;
+
+extern void __bank_utgb_battle_run_menu;
+extern const UBYTE utgb_battle_run_menu[];
+
+UBYTE bbox_left, bbox_right;
+UBYTE bbox_up, bbox_down;
+UBYTE target_bbox_left, target_bbox_right;
+UBYTE target_bbox_up, target_bbox_down;
+uint16_t attackTimer;
+
+const uint8_t dialogue_bbox_left = 18;
+const uint8_t dialogue_bbox_right = 141;
+const uint8_t dialogue_bbox_up = 74;
+const uint8_t dialogue_bbox_down = 117;
+
+
+//temp:
+const uint8_t battle_bbox_left = 72;
+const uint8_t battle_bbox_right = 87;
+const uint8_t battle_bbox_up = 88;
+const uint8_t battle_bbox_down = 103;
+const uint8_t enemyCount = 1;
+const char* const enemyNames[] = {
+    "Dummy"
+};
+
+/*
+struct utgb_act
+{
+    char* title,
+    char* text,
+    far_ptr_t code
+} utgb_act;
+*/
+
+
+UBYTE prevMovementAngle = ANGLE_0DEG;
+
+
+
+bool resizingBBox = FALSE;
+
+
+typedef enum {
+    BattleState_Enter = 0,
+    BattleState_Menu = 1,
+    BattleState_EnemyAttack = 2,
+    BattleState_TransitionTo_Menu = 3,
+    BattleState_TransitionTo_EnemyAttack = 4
+} BattleState;
+BattleState currentBattleState = 0;
+
+
+const metasprite_t var_metasprite_end = {metasprite_end};
+
+metasprite_t attack_metasprite[10][10];
+UBYTE num_attack_metasprites;
+
+
+inline void add_attack_metasprite(metasprite_t* sprite, UBYTE spriteNum) {
+    UBYTE i;
+    for(i = 0; i < spriteNum; i++) {
+        attack_metasprite[num_attack_metasprites][i] = sprite[i];
+    }
+    attack_metasprite[num_attack_metasprites][i] = var_metasprite_end;
+    
+    num_attack_metasprites++;
+}
+
+
+
+
+inline UBYTE load_sprite_tileset(UBYTE base_tile, const tileset_t * tileset, UBYTE bank) {
+    UBYTE n_tiles = ReadBankedUBYTE(&(tileset->n_tiles), bank);
+    if (n_tiles) SetBankedSpriteData(base_tile, n_tiles, tileset->tiles, bank);
+    return n_tiles;
+}
+/*
+//loads metasprite from banked code
+//Debug for now, might clean up later
+uint8_t ugb_load_banked_metasprite(far_ptr_t spritesheet_ptr, UINT8 base_tile, UINT8 base_sprite, UINT8 x, UINT8 y) NONBANKED {
+    
+    UBYTE _save = CURRENT_BANK;
+    SWITCH_ROM(spritesheet_ptr.bank);
+
+    spritesheet_t* current_spritesheet = spritesheet_ptr.ptr;
+    metasprite_t* current_metasprite = current_spritesheet->metasprites[0];
+    
+    UBYTE metasprite_size = move_metasprite(
+        current_metasprite,
+        base_tile,
+        base_sprite,
+        x,
+        y
+    );
+
+    SWITCH_ROM(_save);
+
+    return metasprite_size;
+}
+*/
+
+//Untested!
+void bankedStrCat(UBYTE* d, far_ptr_t stringData) NONBANKED {
+    
+    while (*d)
+    {
+        d++;
+    }
+    
+    //Save bank in Var
+    uint8_t save = _current_bank;
+
+    //Switch Banks
+    SWITCH_ROM(stringData.bank);
+
+    //Get pointer to text start
+    UBYTE** sPtr = stringData.ptr;
+    UBYTE* s = *sPtr;
+
+
+    while (*s)
+    {
+        *d = *s;
+        d++;
+        s++;
+
+    }
+
+    *s = 0;
+
+    //Reset Bank
+    SWITCH_ROM(save);
+
+}
+
+// run late in main game loop
+// called in core.c during shadow_oam
+void utgb_draw_attack(void) BANKED {
+
+    for (UBYTE i = 0; i < num_attack_metasprites; i++) {
+
+        allocated_hardware_sprites += move_metasprite(
+            attack_metasprite[i],
+            0,
+            allocated_hardware_sprites,
+            0,
+            0
+        );
+    }
+}
+
+
+//extern const char UTGB_UI_InstSpeed[];
+//extern const char UTGB_UI_SmallFont[];
+//extern const char UTGB_UI_ColoredFont[];
+
+const char Battle_UI_StartPos[] = "\003\004\002";
+
+
+const struct menu_item_t EnemySelect1[] = {
+    {.X=3u, .Y=1u,  .iL=0u, .iR=0u, .iU=0u, .iD=0u}
+};
+const struct menu_item_t EnemySelect2[] = {
+    {.X=3u, .Y=1u,  .iL=0u, .iR=0u, .iU=0u, .iD=2u},
+    {.X=3u, .Y=2u,  .iL=0u, .iR=0u, .iU=1u, .iD=0u}
+};
+const menu_item_t EnemySelect3[] = {
+    {.X=3u, .Y=1u,  .iL=0u, .iR=0u, .iU=0u, .iD=2u},
+    {.X=3u, .Y=2u,  .iL=0u, .iR=0u, .iU=1u, .iD=3u},
+    {.X=3u, .Y=3u,  .iL=0u, .iR=0u, .iU=2u, .iD=0u}
+};
+const menu_item_t* const EnemySelect[] = {
+    EnemySelect1,
+    EnemySelect2,
+    EnemySelect3
+};
+
+
+uint8_t utgb_battle_enemy_select(SCRIPT_CTX * THIS, uint8_t selectedEnemy) BANKED {
+
+    unsigned char * d = ui_text_data;
+    *d = 0;
+
+    strcat(d, "\001\001");
+    strcat(d, Battle_UI_StartPos);
+
+    //debug
+    //TODO: Load text from battle data
+    strcat(d, "|Dummy");
+
+    vm_display_text(THIS, 0, 0);
+    vm_overlay_wait(THIS, 1, UI_WAIT_TEXT);
+
+
+    menu_item_t* const enemyMenuPointer = (menu_item_t*)EnemySelect[enemyCount - 1];
+    return ui_run_menu(enemyMenuPointer, _current_bank, (MENU_CANCEL_B | MENU_SET_START), enemyCount, selectedEnemy);
+}
+
+
+
+uint8_t menuSelection_1;
+void utgb_battle_runBottomMenu(SCRIPT_CTX * THIS) BANKED {
+    THIS;
+
+    actor_t* menuActor = (actors+menu_actor_id);
+
+    menuActor->hidden = false;
+
+    //init
+    actor_set_frame_offset(menuActor, menuSelection_1);
+
+    while (TRUE) {
+        input_update();
+        
+
+
+        if (INPUT_LEFT_PRESSED && menuSelection_1 != 0) {
+            menuSelection_1--;
+            actor_set_frame_offset(menuActor, menuSelection_1);
+        } else if (INPUT_RIGHT_PRESSED && menuSelection_1 != 0b0011) {
+            menuSelection_1++;
+            actor_set_frame_offset(menuActor, menuSelection_1);
+        } else if (INPUT_A_PRESSED) {
+            actor_set_frame_offset(menuActor, menuSelection_1 | 0b0100);
+            return;
+        }
+
+        ui_update();
+
+        toggle_shadow_OAM();
+        //camera_update();
+        //scroll_update();
+        actors_update();
+        projectiles_render();
+        activate_shadow_OAM();
+
+        game_time++;
+        wait_vbl_done();
+
+    }
+
+}
+
+#define utgb_battle_overlay_clear() vm_overlay_clear(THIS, 2, 0, 16, 6, 0, UI_DRAW_FRAME)
+
+void utgb_battle_run_menu_native(SCRIPT_CTX * THIS) BANKED {
+    
+    unsigned char * d = ui_text_data;
+    
+    // Open Window
+    show_actors_on_overlay = 1;
+    vm_overlay_set_submap(THIS, 0, 0, 20, 9, 0, 9);
+    //vm_overlay_clear(THIS, 2, 0, 16, 6, 0, UI_DRAW_FRAME);
+    //vm_overlay_clear(THIS, 0, 0, 1, 1, 0, UI_DRAW_FRAME);
+    vm_overlay_setpos(THIS, 0, 9);
+
+    //vm_switch_text_layer(THIS, 0);
+
+    //vm_display_text(THIS, 0, 29);
+    //vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_A));
+
+    //utgb_battle_runBottomMenu(THIS);
+
+    menuSelection_1 = 0;
+    
+    bool turnComplete = false;
+    while (turnComplete == false)
+    {
+        // clear text buffer
+        *d = 0;
+        utgb_battle_overlay_clear();
+
+        //debug
+        far_ptr_t IntroString = TO_FAR_PTR_T(battledata_001_dummy);
+        IntroString.ptr = &(battledata_001_dummy[0].testTxt);
+
+        strcat(d, "\003\004\002*");
+        bankedStrCat(d, IntroString);
+
+
+        vm_display_text(THIS, 0, 0);
+        utgb_battle_runBottomMenu(THIS);
+
+        switch (menuSelection_1)
+        {
+        case 0: // FIGHT
+            // Draw Attack background graphics
+            utgb_draw_battle_attackbg();
+            vm_overlay_setpos(THIS, 0, 18);
+
+            vm_overlay_wait(THIS, 1, (UI_WAIT_TEXT | UI_WAIT_BTN_B));
+
+            utgb_clear_battle_attackbg();
+
+            turnComplete = true;
+            break;
+        
+        case 1: // ACT
+
+            vm_overlay_wait(THIS, 1, UI_WAIT_TEXT);
+            utgb_battle_overlay_clear();
+            
+            uint8_t menuSelection_enemy = 1;
+            while (menuSelection_enemy)
+            {
+                menuSelection_enemy = utgb_battle_enemy_select(THIS, menuSelection_enemy);
+                
+                //TODO: show act menu here
+            }
+            
+            break;
+
+        default:
+            break;
+        }
+        
+    }
+    
+
+
+    // hide bottom menu
+    actors[menu_actor_id].hidden = true;
+
+    // Close Window
+    vm_overlay_setpos(THIS, 0, 18);
+    show_actors_on_overlay = 0;
+    
+    // transition to enemy turn
+    target_bbox_left = battle_bbox_left;
+    target_bbox_right = battle_bbox_right;
+    target_bbox_up = battle_bbox_up;
+    target_bbox_down = battle_bbox_down;
+
+    resizingBBox = TRUE;
+
+    currentBattleState = BattleState_TransitionTo_EnemyAttack;
+}
+
+
+
+
+void utgb_battle_init(void) BANKED {
+    camera_offset_x = 0;
+    camera_offset_y = 0;
+    camera_deadzone_x = 0;
+    camera_deadzone_y = 0;
+    //PLAYER.dir = DIR_RIGHT;
+    //actor_set_anim(&PLAYER, ANIM_CURSOR);
+
+    //========================== Debug Start ==========================//
+    bbox_left = 72;
+    bbox_right = 87;
+    bbox_up = 88;
+    bbox_down = 103;
+
+    attackTimer = 0;
+    num_attack_metasprites = 0;
+
+    //load sprites
+    far_ptr_t spritesheet_FarPtr = TO_FAR_PTR_T(sprite_toriel);
+
+    //ReadBankedFarPtr(&spritesheet_ptr, sprite.ptr, sprite.bank); // FarPtr to Spritesheet data 
+
+    spritesheet_t* spritesheetPtr = spritesheet_FarPtr.ptr;
+
+    far_ptr_t data;
+    ReadBankedFarPtr(&data, (void *)&spritesheetPtr->tileset, spritesheet_FarPtr.bank);
+    
+    VBK_REG = 1;
+    UBYTE n_tiles = load_sprite_tileset(0, data.ptr, data.bank);
+    VBK_REG = 0;
+
+
+    //========================== Debug End ==========================//
+}
+
+void UTGB_battle_data_init(SCRIPT_CTX * THIS) BANKED {
+    THIS;
+    // TODO: Add battle loading code
+}
+
+
+void utgb_battle_update_old(void) BANKED {
+
+
+    //========================== Debug Start ==========================//
+
+    /*
+
+    //load sprites
+    far_ptr_t spritesheet_FarPtr = TO_FAR_PTR_T(sprite_toriel);
+
+    //ReadBankedFarPtr(&spritesheet_ptr, sprite.ptr, sprite.bank); // FarPtr to Spritesheet data 
+
+    spritesheet_t* spritesheetPtr = spritesheet_FarPtr.ptr;
+    
+    //draw sprites
+    allocated_hardware_sprites += ugb_load_banked_metasprite(
+        spritesheet_FarPtr,
+        0,
+        allocated_hardware_sprites,
+        64,
+        64
+    );
+
+    */
+
+
+    //attackTimer++;
+    num_attack_metasprites = 1;
+    /*
+    for (uint8_t i = 0; i < 6; i++) {
+
+        metasprite_t tmp = { .dy = 77 + 16, .dx = 37 + 8 - 2 + ((i << 4) + attackTimer) % (64 + 16), .dtile = 16, .props = 11 };
+        if(tmp.dx < (122 + 6)) {
+            add_attack_metasprite(&tmp, 1);
+        }
+        
+    }
+    */
+
+    //const far_ptr_t tmpFarPtr = TO_FAR_PTR_T(battledata_001_act);
+    //call_far(&tmpFarPtr);
+
+    //========================== Debug End ==========================//
+
+    //temp start
+    //utgb_draw_battle_attackbg();
+
+    //uint8_t prevLineX = (attackTimer - 1) % 8;
+    //uint8_t lineX = attackTimer % 8;
+
+    //get_bkg_data(0x20, 1, vwf_tile_data);
+
+    //vram_buffer_draw_rect(vwf_tile_data, lineX, lineX, 0, 7, 0);
+    //vram_buffer_draw_rect(vwf_tile_data, prevLineX, prevLineX, 0, 7, 1);
+
+    //set_bkg_data(0x20, 1, vwf_tile_data);
+    //if(attackTimer%8 == 0) bbox_right++;
+
+    //temp end
+
+    if(resizingBBox) {
+        if(bbox_left < target_bbox_left) bbox_left++;
+        if(bbox_left > target_bbox_left) bbox_left--;
+        if(bbox_right < target_bbox_right) bbox_right++;
+        if(bbox_right > target_bbox_right) bbox_right--;
+        if(bbox_up < target_bbox_up) bbox_up++;
+        if(bbox_up > target_bbox_up) bbox_up--;
+        if(bbox_down < target_bbox_down) bbox_down++;
+        if(bbox_down > target_bbox_down) bbox_down--;
+
+        if(bbox_left == target_bbox_left && bbox_right == target_bbox_right && bbox_up == target_bbox_up && bbox_down == target_bbox_down) {
+            resizingBBox = FALSE;
+        }
+    }
+    utgb_draw_battle_border(bbox_left-1, bbox_up-1, bbox_right+1, bbox_down+1);
+
+    // Movement:
+    player_moving = FALSE;
+    UBYTE angle;
+
+
+    //State Machine
+
+    switch (currentBattleState)
+    {
+    case BattleState_Enter:
+        target_bbox_left = dialogue_bbox_left;
+        target_bbox_right = dialogue_bbox_right;
+        target_bbox_up = dialogue_bbox_up;
+        target_bbox_down = dialogue_bbox_down;
+
+        resizingBBox = TRUE;
+
+        currentBattleState = BattleState_TransitionTo_Menu;
+        break;
+
+    case BattleState_TransitionTo_Menu:
+
+        PLAYER.hidden = true;
+        PLAYER.pos.x = 18<<4;
+        PLAYER.pos.y = 132<<4;
+        menuSelection_1 = 0;
+        if (resizingBBox == FALSE)
+        {
+            currentBattleState = BattleState_Menu;
+
+            script_execute(BANK(utgb_battle_run_menu), utgb_battle_run_menu, 0, 0);
+        }
+        
+        break;
+
+    case BattleState_Menu:
+        // Script runs in GBVM context
+        // No other onUpdate code neccesary
+        break;
+    
+    case BattleState_TransitionTo_EnemyAttack:
+
+        PLAYER.pos.x = 76<<4;
+        PLAYER.pos.y = 92<<4;
+        PLAYER.hidden = false;
+        if (resizingBBox == FALSE)
+        {
+            currentBattleState = BattleState_EnemyAttack;
+
+            // Init Attack Data here
+            attackTimer = 0;
+        }
+        break;
+
+    case BattleState_EnemyAttack:
+        // Handle input
+        if (INPUT_LEFT) {
+            player_moving = TRUE;
+            if (INPUT_UP) {
+                angle = ANGLE_315DEG;
+            } else if (INPUT_DOWN) {
+                angle = ANGLE_225DEG;
+            } else {
+                angle = ANGLE_270DEG;
+            }
+        } else if (INPUT_RIGHT) {
+            player_moving = TRUE;
+            if (INPUT_UP) {
+                angle = ANGLE_45DEG;
+            } else if (INPUT_DOWN) {
+                angle = ANGLE_135DEG;
+            } else {
+                angle = ANGLE_90DEG;
+            }
+        } else if (INPUT_UP) {
+            player_moving = TRUE;
+            angle = ANGLE_0DEG;
+        } else if (INPUT_DOWN) {
+            player_moving = TRUE;
+            angle = ANGLE_180DEG;
+        } else {
+            angle = ANGLE_0DEG;
+        }
+
+        if (player_moving) {
+
+            if (angle != prevMovementAngle)
+            {
+                PLAYER.pos.x &= 0b1111111111110000;
+                PLAYER.pos.y &= 0b1111111111110000;
+            }
+            prevMovementAngle = angle;
+            
+            point_translate_angle(&(PLAYER.pos), angle, PLAYER.move_speed);
+
+            // Clamp X
+            PLAYER.pos.x = MIN((bbox_right - 7) << 4, PLAYER.pos.x);
+            PLAYER.pos.x = MAX(bbox_left << 4, PLAYER.pos.x);
+        
+            // Clamp Y
+            PLAYER.pos.y = MIN((bbox_down - 7) << 4, PLAYER.pos.y);
+            PLAYER.pos.y = MAX(bbox_up << 4, PLAYER.pos.y);
+        }
+
+        // Temp:
+        if (attackTimer >= 160)
+        {
+            target_bbox_left = dialogue_bbox_left;
+            target_bbox_right = dialogue_bbox_right;
+            target_bbox_up = dialogue_bbox_up;
+            target_bbox_down = dialogue_bbox_down;
+
+            resizingBBox = TRUE;
+
+            currentBattleState = BattleState_TransitionTo_Menu;
+        }
+        
+        attackTimer++;
+
+        break;
+
+    default:
+        break;
+    }
+    
+
+
+
+}
+
+
+
+// REWRITE START:
+
+
+// UNTESTED ASSEMBLY, BEWARE!!!
+uint8_t call_far(const far_ptr_t *ptr) NONBANKED NAKED {
+    ptr;
+__asm
+    ld h, d
+    ld l, e
+    ld a, (hl+)
+    ld e, a         ; e = ptr->SEG
+    ld a, (hl+)
+    ld h, (hl)
+    ld l, a         ; hl = ptr->SEG
+    or h
+    jp nz, ___sdcc_bcall_ehl
+    ret
+__endasm;
+}
+
+union bd {
+    struct { // 001_dummy
+        uint8_t actState;
+    } bd_001_dummy;
+};
+
+
+
+struct battle_state {
+
+} bs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+#include "actor.h"
+#include "camera.h"
+#include "data_manager.h"
+#include "game_time.h"
+#include "input.h"
+#include "trigger.h"
+#include "vm.h"
+
+#ifndef POINT_N_CLICK_CAMERA_DEADZONE
+#define POINT_N_CLICK_CAMERA_DEADZONE 24
+#endif
+
+UBYTE last_hit_trigger = MAX_TRIGGERS;
+
+void pointnclick_init() BANKED {
+    camera_offset_x = 0;
+    camera_offset_y = 0;
+    camera_deadzone_x = POINT_N_CLICK_CAMERA_DEADZONE;
+    camera_deadzone_y = POINT_N_CLICK_CAMERA_DEADZONE;
+    PLAYER.dir = DIR_RIGHT;
+    actor_set_anim(&PLAYER, ANIM_CURSOR);
+}
+
+void pointnclick_update() BANKED {
+    UBYTE angle, hit_trigger, is_hover_trigger, is_hover_actor;
+    actor_t *hit_actor;
+
+    player_moving = FALSE;
+
+    // Handle input
+    if (INPUT_LEFT) {
+        player_moving = TRUE;
+        if (INPUT_UP) {
+            angle = ANGLE_315DEG;
+        } else if (INPUT_DOWN) {
+            angle = ANGLE_225DEG;
+        } else {
+            angle = ANGLE_270DEG;
+        }
+    } else if (INPUT_RIGHT) {
+        player_moving = TRUE;
+        if (INPUT_UP) {
+            angle = ANGLE_45DEG;
+        } else if (INPUT_DOWN) {
+            angle = ANGLE_135DEG;
+        } else {
+            angle = ANGLE_90DEG;
+        }
+    } else if (INPUT_UP) {
+        player_moving = TRUE;
+        angle = ANGLE_0DEG;
+    } else if (INPUT_DOWN) {
+        player_moving = TRUE;
+        angle = ANGLE_180DEG;
+    } else {
+        angle = ANGLE_0DEG;
+    }
+
+    // Move cursor
+    if (player_moving) {
+        point_translate_angle(&(PLAYER.pos), angle, PLAYER.move_speed);
+        // Clamp X
+        if ((PLAYER.pos.x >> 4) - PLAYER.bounds.left > image_width) {
+            PLAYER.pos.x = (PLAYER.bounds.left << 4);
+        } else if ((PLAYER.pos.x >> 4) + PLAYER.bounds.right > image_width) {
+            PLAYER.pos.x = (image_width - PLAYER.bounds.right) << 4;
+        }
+        // Clamp Y
+        if ((PLAYER.pos.y >> 4) + PLAYER.bounds.top > image_height) {
+            PLAYER.pos.y = -(PLAYER.bounds.top << 4);
+        } else if ((PLAYER.pos.y >> 4) + PLAYER.bounds.bottom > image_height) {
+            PLAYER.pos.y = (image_height - PLAYER.bounds.bottom) << 4;
+        }             
+    }
+
+    // Check for trigger collisions
+    hit_trigger = trigger_at_intersection(&PLAYER.bounds, &PLAYER.pos);
+
+    // Check for actor collisions
+    hit_actor = actor_overlapping_player(FALSE);
+
+    is_hover_trigger = (hit_trigger != NO_TRIGGER_COLLISON)
+        && (triggers[hit_trigger].script.bank);
+
+    is_hover_actor = hit_actor && hit_actor->script.bank;
+
+    // Set cursor animation
+    if (is_hover_trigger || is_hover_actor) {
+        actor_set_anim(&PLAYER, ANIM_CURSOR_HOVER);
+    } else {
+        actor_set_anim(&PLAYER, ANIM_CURSOR);
+    }
+
+    if (INPUT_A_PRESSED) {
+        player_moving = FALSE;
+        if (is_hover_actor) {
+            // Run actor script
+            script_execute(hit_actor->script.bank, hit_actor->script.ptr, 0, 1, 0);
+        }
+        else if (is_hover_trigger) {
+            // Run trigger script
+            trigger_interact(hit_trigger);
+        }
+    }
+}
+
+
+*/
