@@ -5,6 +5,8 @@
 #include "states/utgb_battle.h"
 #include "data/game_globals.h"
 
+#include "utgb_battle_definitions.h"
+
 #include "system.h"
 #include "camera.h"
 #include "scroll.h"
